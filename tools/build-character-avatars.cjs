@@ -1,6 +1,6 @@
 // Mechanical crops only: keep each avatar identical to its neutral standing art.
 const fs=require('node:fs'),path=require('node:path');
-const sharp=require('./live2d-build/node_modules/sharp');
+const sharp=require('sharp');
 const root=path.resolve(__dirname,'..');
 const crops={hero:[210,0,390,390],mira:[210,250,390,390],toren:[210,0,390,390],sylvi:[190,0,420,420],'ridge-scout':[210,0,390,390],alchemist:[200,0,420,420]};
 (async()=>{

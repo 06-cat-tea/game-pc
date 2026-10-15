@@ -1,6 +1,6 @@
 // Encoding/resize only; runtime sprites and model texture preserve visible RGBA pixels.
 const fs=require('node:fs'),path=require('node:path');
-const sharp=require('./live2d-build/node_modules/sharp'),root=path.resolve(__dirname,'..'),report=[];
+const sharp=require('sharp'),root=path.resolve(__dirname,'..'),report=[];
 async function convert(input,output,resize){
   const src=path.join(root,input),dest=path.join(root,output);let image=sharp(src);if(resize)image=image.resize(...resize);
   await image.webp(resize?{quality:86,effort:6}:{lossless:true,effort:6}).toFile(dest);

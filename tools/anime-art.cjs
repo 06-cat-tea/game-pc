@@ -1,6 +1,6 @@
 // Production packaging only. All raster artwork is created by imagegen.
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
-const sharp=require(process.env.SHARP_MODULE||path.join(require('os').homedir(),'.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp'));
+const sharp=require(process.env.SHARP_MODULE||'sharp');
 const root='assets/art-v2',catalogPath=root+'/catalog.json';
 const scope={};scope.window=scope;vm.createContext(scope);
 for(const name of ['city-content','world-layout','world-regions','world-content','building-system','crafting-system','skill-tree','class-content','npc-system','growth-system','region-content','game-data','party-system','scene-layouts','scene-system','expedition-stories'])vm.runInContext(fs.readFileSync('js/'+name+'.js','utf8'),scope);

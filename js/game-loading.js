@@ -7,16 +7,18 @@
   // Include off-camera decorations and the whole region's terrain, not just visible sprites.
   function loadingKey(s){return GameUI.getCurrent()==='title'?'title':s.place+':'+(s.location?.sceneId||'outdoor')+(s.battle?':battle:'+s.battle.name:'');}
   function manifest(s){
-    const items=new Map(),add=(kind,id)=>{if(id)items.set(kind+':'+id,{kind,id});},place=s.place,room=SceneSystem.get(s.location?.sceneId);
+    const items=new Map(),add=(kind,id,optional=false)=>{if(id)items.set(kind+':'+id,{kind,id,optional});},place=s.place,room=SceneSystem.get(s.location?.sceneId);
     if(GameUI.getCurrent()==='title'){
       add('url',TitleScreen.artwork);add('url','assets/art-v2/title.webp');add('emblems','brand');return [...items.values()];
     }
+    if(window.ArtCatalog?.loadingScreens?.[place])add('loading',place,true);
+    if(place==='town')for(const id of Object.keys(window.ArtV3Catalog?.terrain||{}))add('terrain',id);
     if(room){
       if(!room.procedural||window.ArtCatalog?.scenes[room.sceneId])add('expansion',room.sceneId);
       for(const n of NPCSystem.inside(room.occupantKey||room.buildingId))add('portraits',n.type);
     }else{
       if(place!=='city')add('scenes',place);
-      for(const b of BuildingSystem.at(place))add('buildings',b.asset);
+      for(const b of BuildingSystem.at(place))add('buildings',b.artId||b.asset);
       if(window.ArtCatalog?.terrain?.[place])add('terrain',place);if(window.ArtCatalog?.terrain?.road)add('terrain','road');
       for(const id of WorldTerrain.resourceIds(place))add('environment',id);
       for(const o of SceneEnvironment.objects(place))add('environment',o.asset);
@@ -71,7 +73,7 @@
   });
   async function run(s,retry=false){
     const token=++generation;currentState=s;currentKey=loadingKey(s);
-    const room=SceneSystem.get(s.location?.sceneId);destination.textContent=room?.title||GameData.PLACES[s.place].name;title.textContent='循光赴远境';lock();
+    const room=SceneSystem.get(s.location?.sceneId);destination.textContent=room?.title||GameData.PLACES[s.place].name;title.textContent='循光赴远境';screen.dataset.loadingPlace=currentKey==='title'?'title':s.place;screen.dataset.loadingScene=room?.sceneId||'outdoor';screen.style.removeProperty('--loading-art');screen.querySelector('.loading-tip').textContent=currentKey==='title'?'灯火照亮来路，也指引下一段旅程。':WorldLore.loadingTips[s.place];if(currentKey!=='title'&&WorldAssets.inspect('loading',s.place)?.status==='ready')screen.style.setProperty('--loading-art','url("'+new URL(WorldAssets.path('loading',s.place),document.baseURI).href+'")');lock();
     const resources=manifest(s);diagnostics={key:currentKey,status:'loading',completed:0,total:resources.length,percent:0,failed:[]};update(0,'正在唤醒这片远境…');
     // Cap parallel decodes to avoid a memory spike on phones.
     let cursor=0;
@@ -80,7 +82,7 @@
         while(cursor<resources.length&&token===generation){
           const resource=resources[cursor++],result=await WorldAssets.load(resource.kind,resource.id,retry);
           if(token!==generation)return;
-          diagnostics.completed++;if(result.status!=='ready')diagnostics.failed.push(resource);
+          diagnostics.completed++;if(result.status!=='ready'&&!resource.optional)diagnostics.failed.push(resource);if(resource.kind==='loading'&&result.status==='ready')screen.style.setProperty('--loading-art','url("'+new URL(WorldAssets.path('loading',resource.id),document.baseURI).href+'")');
           update(Math.floor(diagnostics.completed/resources.length*90),'正在载入场景 · '+diagnostics.completed+' / '+resources.length);
         }
       }));

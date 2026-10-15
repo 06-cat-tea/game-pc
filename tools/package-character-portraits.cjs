@@ -1,5 +1,5 @@
 // Mechanical export only: preserve PNG alpha, resize and encode runtime WebP.
-const fs=require('node:fs'),path=require('node:path'),sharp=require('./live2d-build/node_modules/sharp');
+const fs=require('node:fs'),path=require('node:path'),sharp=require('sharp');
 const root=path.resolve(__dirname,'..'),sourceRoot=path.join(root,'artifacts/character-portraits');
 const people=[['hero','主角'],['mira','米拉'],['toren','托伦'],['sylvi','希薇'],['ridge-scout','夜岚'],['alchemist','瑟琳']];
 const moods=['neutral','smile','serious'],report=[];

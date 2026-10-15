@@ -1,14 +1,13 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
-const runtime=path.join(require('os').homedir(),'.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules');
-const {chromium}=require(process.env.PLAYWRIGHT_MODULE||path.join(runtime,'playwright'));
-const sharp=require(process.env.SHARP_MODULE||path.join(runtime,'sharp'));
+const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
+const sharp=require(process.env.SHARP_MODULE||'sharp');
 const url=process.argv[2]||'file:///'+path.resolve('frontier.html').replaceAll('\\','/');
 const output='artifacts/improvements';
 (async()=>{
-  fs.mkdirSync(output,{recursive:true});const browser=await chromium.launch({executablePath:process.env.CHROME_PATH||'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true}),checks=[],errors=[];
+  fs.mkdirSync(output,{recursive:true});const browser=await chromium.launch({executablePath:process.env.CHROME_PATH,headless:true}),checks=[],errors=[];
   const ready=p=>p.waitForFunction(()=>window.GameLoading&&!GameLoading.blocked());
   async function boot(width=1280,height=720,touch=false,setup){const p=await browser.newPage({viewport:{width,height},hasTouch:touch,isMobile:touch});p.on('pageerror',e=>errors.push(e.message));if(setup)await setup(p);await p.goto(url);await ready(p);await p.locator('[data-command=continue]').click();await ready(p);return p;}
-  async function seed(p){await p.evaluate(()=>{const s=AshenGame.getState();s.party.roster=Object.keys(GameData.COMPANIONS);s.party.active=['mira','sylvi','toren'];localStorage.setItem('ashen-frontier-save-v3',JSON.stringify(s));AshenGame.command('load');});await ready(p);}
+  async function seed(p){await p.evaluate(()=>{const s=AshenGame.getState();s.party.roster=Object.keys(GameData.COMPANIONS);s.party.active=['mira','sylvi','toren'];localStorage.setItem('ashen-frontier-save-v3-desktop',JSON.stringify(s));AshenGame.command('load');});await ready(p);}
   async function mapClick(p,local,id){const point=await p.evaluate(({local,id})=>{const c=document.querySelector('#circleMap'),r=GameViewport.localRect(c),n=CircleMap.nodes(AshenGame.getState(),local).find(n=>n.id===id);return GameViewport.localToClient(n.p[0]*r.width,n.p[1]*r.width,c);},{local,id});await p.mouse.click(point.x,point.y);await ready(p);}
   const p=await boot(),requests=[];p.on('request',r=>requests.push(r.url()));await seed(p);
   await p.waitForFunction(()=>[...document.querySelectorAll('.hud-companions [data-avatar-id]')].every(i=>i.dataset.avatarState==='ready'&&i.naturalWidth===256));
@@ -28,7 +27,7 @@ const output='artifacts/improvements';
   // The same movement loop serves both ordinary rooms and route scenes.
   await p.evaluate(()=>{AshenGame.travel('town');});await ready(p);await p.evaluate(()=>AshenGame.enterBuilding('inn'));await ready(p);await p.keyboard.down('Shift');await p.keyboard.down('w');await p.waitForTimeout(100);assert(await p.evaluate(()=>SceneCharacters.diagnostics().running));await p.evaluate(()=>AshenGame.leaveBuilding());assert.equal(await p.evaluate(()=>PixelWorld.movementDiagnostics().sprint),false);await p.keyboard.up('w');await p.keyboard.up('Shift');
   await p.evaluate(()=>AshenGame.enterScene('town-wall'));await ready(p);await p.keyboard.down('Shift');await p.keyboard.down('w');await p.waitForTimeout(100);assert(await p.evaluate(()=>SceneCharacters.diagnostics().running));await p.evaluate(()=>AshenGame.leaveBuilding());await p.keyboard.up('w');await p.keyboard.up('Shift');checks.push('Running works in indoor and adventure route scenes');
-  for(const [width,height,touch]of [[1920,1080,false],[1280,720,false],[844,390,true],[640,360,true],[390,844,true],[360,640,true]]){
+  for(const [width,height,touch]of require('./client-fixture.cjs').viewports){
     const page=await boot(width,height,touch);await seed(page);
     assert(await page.evaluate(()=>{const b=GameViewport.localRect(document.querySelector('[data-sprint]')),s=GameViewport.size();return b.width>=44&&b.height>=44&&b.x>=0&&b.y>=0&&b.x+b.width<=s.width&&b.y+b.height<=s.height;}));
     if(touch){await page.evaluate(()=>{const stick=document.querySelector('[data-stick]'),r=GameViewport.localRect(stick),point=GameViewport.localToClient(r.width*.8,r.height*.5,stick),run=document.querySelector('[data-sprint]');stick.dispatchEvent(new PointerEvent('pointerdown',{bubbles:true,pointerId:41,pointerType:'touch',button:0,clientX:point.x,clientY:point.y}));run.dispatchEvent(new PointerEvent('pointerdown',{bubbles:true,pointerId:42,pointerType:'touch',button:0}));});await page.waitForTimeout(80);assert(await page.evaluate(()=>PixelWorld.movementDiagnostics().sprint&&SceneCharacters.diagnostics().running));await page.evaluate(()=>document.dispatchEvent(new PointerEvent('pointercancel',{bubbles:true,pointerId:42,pointerType:'touch'})));assert.equal(await page.evaluate(()=>PixelWorld.movementDiagnostics().sprint),false);await page.evaluate(()=>PixelWorld.clearInput());}
@@ -37,7 +36,7 @@ const output='artifacts/improvements';
     await page.screenshot({path:output+'/map-'+width+'x'+height+'.png'});if(width===1280)await page.screenshot({path:output+'/map-after.png'});
     await mapClick(page,false,'wood');assert.equal(await page.evaluate(()=>AshenGame.getState().place),'wood');
     await page.evaluate(()=>AshenGame.showScreen('codex','map'));await page.locator('[data-map-mode=local]').click();const id=await page.evaluate(()=>WorldRegions.districts(AshenGame.getState().place)[0].id);await page.screenshot({path:output+'/local-'+width+'x'+height+'.png'});await mapClick(page,true,id);assert(await page.evaluate(id=>{const s=AshenGame.getState(),d=WorldRegions.districts(s.place).find(v=>v.id===id);return Math.hypot(s.location.x-d.x,s.location.y-d.y)<3&&!s.location.sceneId;},id));await page.close();
-  }checks.push('Six viewport sizes: run controls, two-finger touch/cancel, square maps and rotated map hit tests');
+  }checks.push('Configured client viewports: run controls, two-finger touch/cancel, square maps and rotated map hit tests');
   for(const place of ['wood','pass','fen','coast','city','town']){await p.evaluate(()=>{AshenGame.showScreen('codex','map');GameUI.views.codex.mapMode='world';GameUI.render();});const before=await p.evaluate(()=>{const s=AshenGame.getState();return {ticks:s.day*4+s.phase,place:s.place};});await mapClick(p,false,place);const after=await p.evaluate(()=>{const s=AshenGame.getState();return {ticks:s.day*4+s.phase,place:s.place};});assert.equal(after.place,place);assert.equal(after.ticks-before.ticks,before.place===place?0:2);await p.evaluate(()=>AshenGame.showScreen('codex','map'));await p.locator('[data-map-mode=local]').click();await p.screenshot({path:output+'/local-'+place+'.png'});}
   checks.push('All world travel markers preserve time cost; all six region maps render');
   if(url.startsWith('http')){

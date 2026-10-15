@@ -37,7 +37,7 @@
   function progress(s,id,h){const r=scenes[id],key=id+':survey';if(!r||r.kind!=='submap'||s.sceneProgress[key])return;s.sceneProgress[key]=true;const q=s.expeditions[r.place]||(s.expeditions[r.place]={stage:0,done:false});while(q.stage<3&&s.sceneProgress[routes[r.place][q.stage][0]+':survey'])q.stage++;if(q.stage===3&&!q.done){q.done=true;const def=quests[r.place];s.player.xp+=def.reward.xp;s.player.gold+=def.reward.gold;window.GrowthSystem.addAffinity(s,def.npc,10);h.levelUp(s);h.log(s,'调查「'+def.name+'」完成，五地归路多了一段新的记录。');}}
   const originalInside=window.NPCSystem.inside;window.NPCSystem.inside=id=>['fen-temple','fen-crypt'].includes(id)?[{...window.NPCSystem.all[id==='fen-temple'?'eira':'silent-archivist'],id:id==='fen-temple'?'eira':'silent-archivist',x:4.5,y:3.4}]:originalInside(id);
   const entrances={'north-gate':'town-wall','violet-rift':'town-drain',guildhall:'town-trial','forest-hut':'wood-trail','moss-shrine':'wood-roots','moon-well':'wood-well','caravan-yard':'pass-path','deep-mine':'pass-mine','ember-fortress':'pass-core','sunken-temple':'fen-temple','royal-crypt':'fen-crypt','moon-shrine':'fen-seal','tide-harbor':'coast-reef','wreck-shrine':'coast-hold',lighthouse:'coast-deck'};
-  for(const scene of Object.values(scenes)){const art=window.ArtCatalog?.scenes?.[scene.sceneId];if(art)scene.background="assets/art-v2/"+art.file;}
+  for(const scene of Object.values(scenes)){const art=window.ArtCatalog?.scenes?.[scene.sceneId];if(art)scene.background=art.url||"assets/art-v2/"+art.file;}
   window.SceneSystem={routes,scenes,rooms,quests,manifests,entrances,get:id=>scenes[id]||null,canEnter,normalize,progress,route:place=>(routes[place]||[]).map(r=>scenes[r[0]])};
 })();
 

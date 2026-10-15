@@ -1,6 +1,6 @@
 // Development-only: derive UI sizes, verify alpha and render contact sheets.
 const fs=require('fs'),path=require('path');
-const sharp=require(process.env.SHARP_MODULE||path.join(require('os').homedir(),'.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp'));
+const sharp=require(process.env.SHARP_MODULE||'sharp');
 const root='assets/world',catalog=JSON.parse(fs.readFileSync(root+'/catalog.json','utf8').replace(/^\uFEFF/,''));
 (async()=>{fs.mkdirSync('artifacts',{recursive:true});const report=[],masks={};
  for(const [kind,entries]of [['buildings',catalog.buildings],['portraits',catalog.portraits]]){

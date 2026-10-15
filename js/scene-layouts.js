@@ -53,18 +53,24 @@
   };
   const point=(x,y)=>({x:(y-42.5)/20.7+(x-240)/39,y:(y-42.5)/20.7-(x-240)/39});
   function apply(scene) {
-    const list=anchors[scene.sceneId];if(!list)throw Error('Missing scene layout: '+scene.sceneId);
+    const artwork=window.ArtV3Catalog?.scenes[scene.sceneId];
+    const list=artwork?.props?.map(p=>[p.screen.x,p.screen.y])||anchors[scene.sceneId];if(!list)throw Error('Missing scene layout: '+scene.sceneId);
     scene.walkArea={minX:.5,minY:.5,maxX:9.5,maxY:9.5};
     scene.collisions=[];scene.occluders=[];
     scene.props.forEach((p,i)=>{
       const [x,y]=list[i],foot=point(x,y);
-      p.screen={x,y};p.x=Math.max(.65,Math.min(9.35,foot.x));p.y=Math.max(.65,Math.min(9.35,foot.y));
+      p.screen={x,y};p.x=artwork?foot.x:Math.max(.65,Math.min(9.35,foot.x));p.y=artwork?foot.y:Math.max(.65,Math.min(9.35,foot.y));
       p.w=.8;p.d=.75;
       if(scene.kind==='room'&&roomNames[scene.buildingId]&&i<2)p.name=roomNames[scene.buildingId][i];
       // Route signposts mark open paths; solid furniture blocks only its base.
       if(!['portal','encounter','event'].includes(p.action))scene.collisions.push({x:p.x,y:p.y,w:p.w,d:p.d,id:p.id});
       if(y>135&&['cache','restore','service'].includes(p.action))scene.occluders.push({depth:p.x+p.y,polygon:[[x-15,y-24],[x+16,y-24],[x+20,y+3],[x-18,y+5]]});
     });
+    for(const fixture of artwork?.fixtures||[]){
+      const polygon=fixture.footprint.map(([x,y])=>{const p=point(x,y);return[p.x,p.y];});
+      scene.collisions.push({id:fixture.id,polygon});
+      if(fixture.occluder){const y=fixture.footprint.reduce((sum,p)=>sum+p[1],0)/fixture.footprint.length;scene.occluders.push({depth:(y-42.5)/10.35,polygon:fixture.occluder});}
+    }
     scene.exit={x:9,y:9};
     return scene;
   }

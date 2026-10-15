@@ -1,0 +1,18 @@
+{
+  "tool": "built-in imagegen",
+  "status": "Source artwork only; not included in Mira release",
+  "prompts": [
+    {
+      "name": "heroMasterPrompt",
+      "prompt": "Use case: stylized-concept. Asset type: Japanese fantasy RPG protagonist standing portrait, source art for a genuine Cubism Live2D model. Generate ONE new adult male traveler, early twenties, slim athletic build, black tousled medium-short hair, warm gray-brown eyes, quietly determined neutral expression. Charcoal and muted slate-blue travel cloak, cream high-collar tunic, worn brown leather shoulder straps, belt and practical satchel; modest adventurer appearance fixed for all classes. Fine anime linework, polished soft dimensional shading, natural handsome masculine face. Straight-on relaxed standing pose, both arms slightly away from torso, both hands fully visible, complete head and knees included. Portrait 1024x1536 composition, centered, broad clear silhouette with generous transparent margins. Genuine transparent alpha background with absolutely no backdrop, glow cloud, shadow rectangle, checkerboard drawing, text, frame or watermark. No sword crossing the face, no extra person. This is a brand-new protagonist design, not Mira."
+    },
+    {
+      "name": "heroBodyPrompt",
+      "prompt": "Use case: background-extraction. Asset type: isolated Cubism body art layer. Input image is the protagonist design reference. Draw ONLY this adult male traveler's body, from high collar down through the knees and boots, front-facing neutral standing with both gloved hands slightly separated from torso. Preserve exactly charcoal/slate-blue cloak, cream tunic, leather straps, waist satchel and worn travel equipment from the reference. Remove the entire head, face and all hair; collar opening and the space above it must be fully transparent. Paint the missing clothing underneath hair or neck, complete the cloak behind shoulders. No face, no hair, no eyes. Centered portrait, complete garment and hands, transparent alpha everywhere outside clothing/body. Same precise Japanese anime illustration and soft shading. No backdrop or shadow, no text, no frame. This is a separated body part for later PSD composition, not a full character."
+    },
+    {
+      "name": "heroFacePrompt",
+      "prompt": "Use case: precise-object-edit. Asset type: Cubism face base isolated layer. Input image is the protagonist reference. Draw ONLY the frontal adult male face, both ears, jaw and full neck, with exactly the same masculine identity and pale warm skin as this black-haired traveler. Remove all hair, eyebrows, eyes, eyelids, eyelashes, and mouth entirely: those regions should be smoothly painted plain skin to support separate eye and mouth layers. Retain only his subtle nose shading and cheek/jaw dimensional shading. Complete forehead and hidden skin under all hair. No hollow eye sockets, no headgear, no clothing, no torso. Portrait centered bald face and neck, clean Japanese anime linework. Genuine transparent background outside skin silhouette, no gray backdrop, no glow, no shadow rectangle, no text. Neutral straight-on face with two symmetrical ears. Head shape is approximately 1.05 times wider than its face-height, including ears, with neck below."
+    }
+  ]
+}

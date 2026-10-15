@@ -1,12 +1,12 @@
 // Follow actual runtime resolvers; catalogs also retain authoring provenance.
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),crypto=require('node:crypto');
 const {execFileSync}=require('node:child_process');
-const root=path.resolve(__dirname,'..'),git=args=>execFileSync('git',args,{cwd:root,encoding:'utf8'}).trim();
+const root=path.resolve(__dirname,'..'),git=args=>{if(!fs.existsSync(path.join(root,'.git')))return '';try{return execFileSync('git',args,{cwd:root,encoding:'utf8',stdio:['ignore','pipe','ignore']}).trim();}catch{return '';}};
 function audit(){
-  const context={addEventListener(){},dispatchEvent(){},performance:{now:()=>0},document:{body:{classList:{contains:()=>false}}}};context.window=context;vm.createContext(context);
+  const context={addEventListener(){},dispatchEvent(){},performance:{now:()=>0},document:{body:{classList:{contains:()=>false}}}};context.window=context;context.PixelWorld={project:()=>({x:0,y:0})};vm.createContext(context);
   const scripts=JSON.parse(fs.readFileSync(path.join(root,'tools/game-scripts.json'),'utf8'));
   const end=scripts.indexOf('js/scene-characters.js');
-  for(const file of scripts.slice(1,end+1))vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),context,{filename:file});
+  for(const file of scripts.slice(0,end+1).filter(file=>!/^js\/(client-platform|game-viewport)\.js$/.test(file)))vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),context,{filename:file});
   vm.runInContext(fs.readFileSync(path.join(root,'js/character-portraits.js'),'utf8'),context);
   const w=context,used=new Set(),reasons=new Map(),add=(file,reason)=>{file=file.replaceAll('\\','/');used.add(file);if(!reasons.has(file))reasons.set(file,[]);reasons.get(file).push(reason);};
   const resource=(kind,id,size)=>add(w.WorldAssets.path(kind,id,size),kind+':'+id);

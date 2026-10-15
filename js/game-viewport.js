@@ -1,7 +1,7 @@
 (() => {
   'use strict';
   const stage=document.querySelector('#gameViewport');
-  const touch=()=>matchMedia('(pointer:coarse)').matches&&navigator.maxTouchPoints>0;
+  const touch=()=>false;
   let layout={width:0,height:0,rotated:false,touch:false};
   const probe=document.createElement('div');probe.className='safe-insets';document.body.append(probe);
   function rawPoint(x,y){const r=stage.getBoundingClientRect();return layout.rotated?{x:y-r.top,y:r.right-x}:{x:x-r.left,y:y-r.top};}

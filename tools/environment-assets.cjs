@@ -1,6 +1,6 @@
 // Development-only preparation and verification. Image edits are performed with imagegen.
 const fs=require('fs'),path=require('path');
-const sharp=require(process.env.SHARP_MODULE||path.join(require('os').homedir(),'.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp'));
+const sharp=require(process.env.SHARP_MODULE||'sharp');
 const root=path.resolve(__dirname,'../assets/environment');
 const groups=[
  ['water','水域王国环境图标集',['blue-pool','deep-pool','clear-pool','grass-bank','sand-bank','flower-bank','canal-horizontal','canal-vertical','canal-left','canal-right','canal-cross','canal-cross-wide','waterfall','royal-channel','royal-basin','water-bridge','royal-fountain','lion-fountain','well','reeds','stepping-stones','dock','drain','lilies']],

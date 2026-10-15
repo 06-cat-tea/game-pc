@@ -1,9 +1,9 @@
 const sceneReady=require('./scene-ready.cjs');
 const fs=require('fs'),path=require('path'),assert=require('assert/strict');
-const {chromium}=require(process.env.PLAYWRIGHT_MODULE||path.join(require('os').homedir(),'.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright'));
+const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
 const url=process.argv[2]||'file:///'+path.resolve('frontier.html').replaceAll('\\','/');
 (async()=>{
- const browser=await chromium.launch({executablePath:process.env.CHROME_PATH||'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true}),page=await browser.newPage({viewport:{width:1920,height:1080}}),errors=[];
+ const browser=await chromium.launch({executablePath:process.env.CHROME_PATH,headless:true}),page=await browser.newPage({viewport:{width:1920,height:1080}}),errors=[];
  sceneReady(page);page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});
  await page.goto(url);await page.waitForFunction(()=>window.AshenGame);await page.locator('[data-command=continue]').click();
  const inventory=await page.evaluate(async()=>{const result=[];for(const [kind,ids,sizes]of [['buildings',WorldAssets.buildings,[1024,512]],['portraits',WorldAssets.portraits,[512,256]],['scenes',WorldAssets.scenes,[1920]]])for(const id of ids)for(const size of sizes){const image=new Image(),ok=await new Promise(resolve=>{image.onload=()=>resolve(true);image.onerror=()=>resolve(false);image.src=WorldAssets.path(kind,id,size);});result.push({kind,id,size,expected:kind==='buildings'?ArtCatalog.buildings[id].width:kind==='scenes'?480:size,ok,w:image.naturalWidth,h:image.naturalHeight});}return result;});
@@ -21,7 +21,7 @@ const url=process.argv[2]||'file:///'+path.resolve('frontier.html').replaceAll('
      if(b.room){await page.evaluate(id=>AshenGame.enterBuilding(id),b.id);const room=await page.evaluate(()=>{const r=PixelWorld.getInterior();return {props:r.props.length,npcs:NPCSystem.inside(r.occupantKey).length};});assert(room.props>=2&&room.npcs>=1);await page.evaluate(()=>AshenGame.leaveBuilding());}
    }
  }console.log('PASS five generated backgrounds render; all 30 landmarks can be hit, opened and entered when applicable');
- const s=await page.evaluate(()=>AshenGame.getState());s.player.gold=1000;s.inventory.materials={herb:30,ore:30,shard:30};await page.evaluate(s=>{localStorage.setItem('ashen-frontier-save-v3',JSON.stringify(s));AshenGame.command('load');},s);
+ const s=await page.evaluate(()=>AshenGame.getState());s.player.gold=1000;s.inventory.materials={herb:30,ore:30,shard:30};await page.evaluate(s=>{localStorage.setItem('ashen-frontier-save-v3-desktop',JSON.stringify(s));AshenGame.command('load');},s);
  for(const [id,n]of await page.evaluate(()=>Object.entries(WorldContent.residents).filter(([,n])=>n.place!=="city"))){
    await page.evaluate(({id,n})=>{AshenGame.travel(n.place);AshenGame.talkNPC(id);},{id,n});assert.equal(await page.locator('.dialogue-portrait').count(),1);await page.locator('[data-dialogue-menu=service]').click();assert.equal(await page.locator('[data-indoor-service]').count(),1);await page.locator('[data-indoor-service]').click();
    const after=await page.evaluate(()=>AshenGame.getState());assert(after.log.some(x=>x.text.includes(WorldContentName(n.service))));
@@ -33,7 +33,7 @@ const url=process.argv[2]||'file:///'+path.resolve('frontier.html').replaceAll('
  await page.reload();await page.waitForFunction(()=>window.AshenGame);assert.equal((await page.evaluate(()=>AshenGame.getState())).relationships['mine-chief'].value,4); // Saved interaction, not the isolated resolver fixture.
  await page.locator('[data-command=continue]').click();
  const mobileContext=await browser.newContext({hasTouch:true,isMobile:true});const mobilePage=sceneReady(await mobileContext.newPage());await mobilePage.goto(url);await mobilePage.locator('[data-command=continue]').click();
- for(const v of [{width:390,height:844},{width:360,height:640},{width:844,height:390}]){await mobilePage.setViewportSize(v);await mobilePage.waitForTimeout(250);await mobilePage.evaluate(()=>AshenGame.showScreen('adventure','people'));const layout=await mobilePage.evaluate(()=>({overflow:document.documentElement.scrollWidth>innerWidth,cards:document.querySelectorAll('.npc-card').length,bottom:document.querySelector('.screen.active').getBoundingClientRect().bottom}));assert(!layout.overflow);assert(layout.cards<=4);assert(layout.bottom<=v.height);await mobilePage.screenshot({path:`artifacts/world-mobile-${v.width}.png`});}
+ for(const v of require('./client-fixture.cjs').viewports.map(([width,height])=>({width,height}))){await mobilePage.setViewportSize(v);await mobilePage.waitForTimeout(250);await mobilePage.evaluate(()=>AshenGame.showScreen('adventure','people'));const layout=await mobilePage.evaluate(()=>({overflow:document.documentElement.scrollWidth>innerWidth,cards:document.querySelectorAll('.npc-card').length,bottom:document.querySelector('.screen.active').getBoundingClientRect().bottom}));assert(!layout.overflow);assert(layout.cards<=4);assert(layout.bottom<=v.height);await mobilePage.screenshot({path:`artifacts/world-mobile-${v.width}.png`});}
  console.log('PASS portrait and landmark layouts fit mobile portrait and landscape');assert.deepEqual(errors,[]);console.log('PASS no runtime or local resource errors');
  fs.writeFileSync('artifacts/world-acceptance.json',JSON.stringify({url,images:inventory.length,...content,passed:true},null,2));await browser.close();
 })().catch(e=>{console.error(e);process.exit(1);});

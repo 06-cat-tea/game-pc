@@ -14,6 +14,11 @@
   // Feathered, wrapped interior samples omit ornamented source borders.
   function texture(place,kind='ground'){
     const key=place+':'+kind;if(textures.has(key))return textures.get(key);
+    if(place==='town'){
+      const id='town-'+({ground:'grass',road:'road',soil:'soil',brick:'brick',gravel:'gravel'}[kind]||'grass');
+      const image=window.ArtV3Catalog?.terrain[id]&&WorldAssets.ready('terrain',id);
+      if(image){const canvas=document.createElement('canvas');canvas.width=canvas.height=256;canvas.getContext('2d').drawImage(image,0,0,256,256);textures.set(key,canvas);return canvas;}
+    }
     const theme=themes[place]||themes.town;
     const id=kind==='water'?'water-03-clear-pool':kind==='marble'?'royal-01-marble':kind==='brick'?'royal-03-brick':theme[kind];
     const image=WorldAssets.ready('environment',id),canvas=document.createElement('canvas');canvas.width=768;canvas.height=384;
@@ -33,7 +38,8 @@
     for(let i=0;i<4000;i++){const x=noise(i,17)*768,y=noise(i,29)*384;c.fillStyle=i%2?'#e4d7a51c':'#172b2920';c.beginPath();c.ellipse(x,y,noise(i,21)*2+.4,.4,0,0,Math.PI*2);c.fill();}
     textures.set(key,canvas);return canvas;
   }
-  function fill(ctx,place,kind,x,y,w,h){ctx.fillStyle=ctx.createPattern(texture(place,kind),'repeat');ctx.fillRect(x,y,w,h);}
+  function pattern(ctx,place,kind){const p=ctx.createPattern(texture(place,kind),'repeat');if(place==='town'&&window.ArtV3Catalog?.terrain['town-grass'])p.setTransform(new DOMMatrix([.5,9/34,-.5,9/34,450,92]));return p;}
+  function fill(ctx,place,kind,x,y,w,h){ctx.fillStyle=pattern(ctx,place,kind);ctx.fillRect(x,y,w,h);}
   function get(place,project){
     const ratio=window.GameViewport?.size().width>=1280?4:2;if(cache.get(place)?.ratio===ratio)return cache.get(place);cache.delete(place);
     const b=WorldRegions.bounds(place),corners=[project(0,0),project(b.columns,0),project(0,b.rows),project(b.columns,b.rows)],left=Math.floor(Math.min(...corners.map(p=>p.x))-24),top=0,width=Math.ceil(Math.max(...corners.map(p=>p.x))-left+24),height=Math.ceil(Math.max(...corners.map(p=>p.y))+24),canvas=document.createElement('canvas');canvas.width=width*ratio;canvas.height=height*ratio;
@@ -44,7 +50,18 @@
       const material=['water','bridge'].includes(kind)?'water':kind==='rock'?'brick':place==='city'&&y<24&&x>32&&x<60?'marble':place==='city'&&y>48?'brick':'road';if(!surfaces.has(material))surfaces.set(material,[]);surfaces.get(material).push(project(x,y));
     }
     // Clip each continuous material once, avoiding antialias cracks between tiles.
-    for(const [material,points]of surfaces){ctx.save();ctx.beginPath();for(const p of points){ctx.moveTo(p.x*2,p.y*2);ctx.lineTo((p.x+8.5)*2,(p.y+4.5)*2);ctx.lineTo(p.x*2,(p.y+9)*2);ctx.lineTo((p.x-8.5)*2,(p.y+4.5)*2);ctx.closePath();}ctx.clip();fill(ctx,place,material,left*2,0,width*2,height*2);ctx.restore();}
+    for(const [material,points]of surfaces){ctx.save();ctx.beginPath();for(const p of points){ctx.moveTo(p.x*2,p.y*2);ctx.lineTo((p.x+8.5)*2,(p.y+4.5)*2);ctx.lineTo(p.x*2,(p.y+9)*2);ctx.lineTo((p.x-8.5)*2,(p.y+4.5)*2);ctx.closePath();}if(place==='town'&&material==='road'){ctx.strokeStyle=pattern(ctx,place,'soil');ctx.lineWidth=4;ctx.lineJoin='round';ctx.filter='blur(.75px)';ctx.stroke();ctx.filter='none';}ctx.clip();fill(ctx,place,material,left*2,0,width*2,height*2);ctx.restore();}
+    if(place==='town'&&window.ArtV3Catalog?.terrain['town-soil']){
+      // A material apron joins every building footing to the street; logical paths stay unchanged.
+      for(const b of BuildingSystem.at('town')){
+        const material=b.id==='artisan-quarter'?'brick':b.id==='town-stables'?'gravel':['market','guildhall','royal-hall','north-gate'].includes(b.id)?'road':'soil';
+        for(const [pad,alpha]of [[.65,.16],[.4,.3],[.18,.9]]){
+          const corners=[[b.x-pad,b.y-pad],[b.x+b.w+pad,b.y-pad],[b.x+b.w+pad,b.y+b.d+pad+.35],[b.x-pad,b.y+b.d+pad+.35]].map(([x,y])=>project(x,y));
+          ctx.save();ctx.globalAlpha=alpha;ctx.beginPath();corners.forEach((p,i)=>i?ctx.lineTo(p.x*2,p.y*2):ctx.moveTo(p.x*2,p.y*2));ctx.closePath();ctx.clip();fill(ctx,place,material,left*2,0,width*2,height*2);ctx.restore();
+        }
+      }
+    }
+    if(place==='town')for(const b of BuildingSystem.at('town'))if(b.artId)TownArt.shadow(ctx,b,project);
     if(place==='city')for(const b of RoyalCity.buildings){const corners=[[b.x-.6,b.y-.6],[b.x+b.w+.6,b.y-.6],[b.x+b.w+.6,b.y+b.d+.9],[b.x-.6,b.y+b.d+.9]].map(([x,y])=>project(x,y));ctx.save();ctx.beginPath();corners.forEach((p,i)=>i?ctx.lineTo(p.x*2,p.y*2):ctx.moveTo(p.x*2,p.y*2));ctx.closePath();ctx.clip();fill(ctx,place,b.district==='palace'?'marble':'road',left*2,0,width*2,height*2);ctx.restore();}
     const result={canvas,left,top,width,height,ratio};cache.set(place,result);while(cache.size>2)cache.delete(cache.keys().next().value);return result;
   }

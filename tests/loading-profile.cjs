@@ -1,9 +1,9 @@
 // Cold-cache startup measurements using an isolated browser and fixed network.
 const fs=require('node:fs'),path=require('node:path');
-const {chromium}=require(path.join(require('node:os').homedir(),'.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright'));
-const url=process.argv[2]||'http://127.0.0.1:8080/frontier.html',label=process.argv[3]||'current';
+const {chromium}=require('playwright');
+const url=process.argv[2]||'file:///'+path.resolve('frontier.html').replaceAll('\\','/'),label=process.argv[3]||'current';
 (async()=>{
-  const browser=await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});
+  const browser=await chromium.launch({executablePath:process.env.CHROME_PATH,headless:true});
   const page=await browser.newPage({viewport:{width:1280,height:720}}),cdp=await page.context().newCDPSession(page),requested=[];
   await cdp.send('Network.enable');await cdp.send('Network.setCacheDisabled',{cacheDisabled:true});
   await cdp.send('Network.emulateNetworkConditions',{offline:false,latency:80,downloadThroughput:2*1024*1024,uploadThroughput:1024*1024});

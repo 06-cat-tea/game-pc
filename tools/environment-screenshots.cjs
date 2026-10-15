@@ -1,6 +1,6 @@
 const fs=require('fs'),path=require('path');
-const {chromium}=require(process.env.PLAYWRIGHT_MODULE||path.join(require('os').homedir(),'.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright'));
-(async()=>{fs.mkdirSync('artifacts',{recursive:true});const browser=await chromium.launch({executablePath:process.env.CHROME_PATH||'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});const page=await browser.newPage({viewport:{width:1920,height:1080}});await page.goto(process.argv[3]||'file:///'+path.resolve('frontier.html').replaceAll('\\','/'));await page.waitForFunction(()=>window.AshenGame);await page.evaluate(()=>AshenGame.command('continue'));
+const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
+(async()=>{fs.mkdirSync('artifacts',{recursive:true});const browser=await chromium.launch({executablePath:process.env.CHROME_PATH,headless:true});const page=await browser.newPage({viewport:{width:1920,height:1080}});await page.goto(process.argv[3]||'file:///'+path.resolve('frontier.html').replaceAll('\\','/'));await page.waitForFunction(()=>window.AshenGame);await page.evaluate(()=>AshenGame.command('continue'));
  for(const place of ['town','wood','pass','fen','coast','city']){await page.evaluate(place=>{AshenGame.travel(place);AshenGame.showScreen('adventure');},place);await page.waitForTimeout(1800);await page.screenshot({path:'artifacts/environment-'+(process.argv[2]||'after')+'-'+place+'.png'});}
  if(process.argv[2]==='after'){
   await page.evaluate(()=>{AshenGame.travel('city');AshenGame.showScreen('adventure');});

@@ -1,14 +1,14 @@
 // Real asset and UI checks, using isolated saves. Accepts file:// or a preview URL.
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),crypto=require('node:crypto');
-const sharp=require('../tools/live2d-build/node_modules/sharp');
-const {chromium}=require(path.join(require('node:os').homedir(),'.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright'));
+const sharp=require('sharp');
+const {chromium}=require('playwright');
 const url=process.argv[2]||'file:///'+path.resolve('frontier.html').replaceAll('\\','/');
 const ids=['hero','mira','toren','sylvi','ridge-scout','alchemist'],checks=[],errors=[];let browser;
 async function meet(page,id,reduceMotion=id==='mira'){
   await page.evaluate(({id,reduceMotion})=>{
     const n=GrowthSystem.npcs()[id],b=BuildingSystem.all.find(b=>{const r=BuildingSystem.interior(b.id);return r&&NPCSystem.inside(r.occupantKey).some(n=>n.id===id);}),s=AshenGame.getState();
     s.place=n.place||b.place;s.battle=null;s.settings.reduceMotion=reduceMotion;s.relationships[id].value=80;
-    s.location={sceneId:null,x:10,y:12,zoom:1,stack:[]};localStorage.setItem('ashen-frontier-save-v3',JSON.stringify(s));AshenGame.command('load');if(!n.place)AshenGame.enterBuilding(b.id);AshenGame.talkNPC(id,false);
+    s.location={sceneId:null,x:10,y:12,zoom:1,stack:[]};localStorage.setItem('ashen-frontier-save-v3-desktop',JSON.stringify(s));AshenGame.command('load');if(!n.place)AshenGame.enterBuilding(b.id);AshenGame.talkNPC(id,false);
   },{id,reduceMotion});
   await page.waitForFunction(()=>!GameLoading.blocked());
 }
@@ -23,7 +23,7 @@ async function chooseCompanion(page,id){await page.locator('[data-ui-search=part
     const {data}=await sharp(bytes).ensureAlpha().raw().toBuffer({resolveWithObject:true});let transparent=0,maxAlpha=0;for(let i=3;i<data.length;i+=4){if(!data[i])transparent++;maxAlpha=Math.max(maxAlpha,data[i]);}assert(transparent>768*1152*.12);assert(maxAlpha>=200);assert.equal(data[3],0);
   }assert.equal(hashes.size,3,id+' expressions are distinct');}
   assert(total<11*1024*1024);checks.push('18 distinct transparent WebP portraits fit the dimensions and byte budget');
-  browser=await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});
+  browser=await chromium.launch({executablePath:process.env.CHROME_PATH,headless:true});
   async function create(){const p=await browser.newPage({viewport:{width:1280,height:720}});p.on('pageerror',e=>errors.push(e.message));return p;}
   async function boot(p){await p.goto(url,{waitUntil:'domcontentloaded'});await p.waitForFunction(()=>window.AshenGame&&!GameLoading.blocked());await p.locator('[data-command=continue]').click();await p.waitForFunction(()=>!GameLoading.blocked());}
   const p=await create(),requests=[];p.on('request',r=>requests.push(r.url()));await p.goto(url,{waitUntil:'domcontentloaded'});await p.waitForFunction(()=>window.AshenGame&&!GameLoading.blocked());
@@ -41,13 +41,13 @@ async function chooseCompanion(page,id){await page.locator('[data-ui-search=part
   await p.evaluate(()=>AshenGame.showScreen('party','companions'));
   for(const id of ['mira','toren','sylvi','ridge-scout','alchemist']){await chooseCompanion(p,id);await loaded(p,id,'neutral');assert.equal(await p.locator('.companion-standing-art+canvas').count(),0);}
   await chooseCompanion(p,'eira');assert.equal(await p.locator('[data-standing-id=eira]').count(),0);assert((await p.locator('.detail-portrait').getAttribute('src')).includes('priest-256.png'));checks.push('Companion details use static neutral art; Eira keeps her existing portrait');
-  for(const [width,height,touch] of [[1920,1080,false],[1280,720,false],[844,390,true],[640,360,true],[390,844,true],[360,640,true]]){
+  for(const [width,height,touch] of require('./client-fixture.cjs').viewports){
     const mobile=await browser.newPage({viewport:{width,height},hasTouch:touch,isMobile:touch});mobile.on('pageerror',e=>errors.push(e.message));await boot(mobile);await meet(mobile,'sylvi');await loaded(mobile,'sylvi','neutral');
     const fits=await mobile.evaluate(()=>{const size=GameViewport.size();return ['.dialogue-options','.dialogue-caption'].every(selector=>{const r=GameViewport.localRect(document.querySelector(selector));return r.x>=0&&r.y>=0&&r.x+r.width<=size.width+1&&r.y+r.height<=size.height+1;});});assert(fits,width+' dialogue');await mobile.screenshot({path:'artifacts/static-dialogue-'+width+'x'+height+'.png'});
     await mobile.evaluate(()=>AshenGame.showScreen('party','companions'));await chooseCompanion(mobile,'sylvi');await loaded(mobile,'sylvi','neutral');
     assert(await mobile.evaluate(()=>{const image=document.querySelector('.companion-standing-art');return image.offsetHeight<=image.closest('.detail-body').clientHeight;}),width+' complete standing art fits detail body');
     await mobile.locator('[data-recruit=sylvi],[data-party=sylvi]').scrollIntoViewIfNeeded();assert(await mobile.locator('[data-recruit=sylvi],[data-party=sylvi]').isVisible());await mobile.screenshot({path:'artifacts/static-party-'+width+'x'+height+'.png'});await mobile.close();
-  }checks.push('Dialogue and companion details remain usable at six desktop/mobile sizes');
+  }checks.push('Dialogue and companion details remain usable at configured client sizes');
   if(url.startsWith('http')){
     const fallback=await create();await fallback.route('**/hero/static-v1/smile.webp*',r=>r.abort());await boot(fallback);await inject(fallback,'hero','smile');await loaded(fallback,'hero','neutral');assert.equal(await fallback.evaluate(()=>GameLoading.diagnostics().status),'ready');
     const missing=await create();await missing.route('**/hero/static-v1/**',r=>r.abort());await boot(missing);await inject(missing,'hero','smile');await missing.waitForFunction(()=>WorldAssets.inspect('url',CharacterPortraits.entries.hero.image)?.status==='failed');assert((await missing.locator('#portrait-fixture img').getAttribute('src')).includes('portraits/hero-256.png'));assert.equal(await missing.evaluate(()=>GameLoading.blocked()),false);checks.push('Missing expression falls back to neutral, missing character falls back to avatar without blocking');

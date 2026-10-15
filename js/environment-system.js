@@ -1,8 +1,9 @@
 (() => {
   'use strict';
   const catalog=new Map(EnvironmentCatalog.map(e=>[e.id,window.ArtCatalog?.environment[e.id]?{...e,width:512,height:512,anchor:window.ArtCatalog.environment[e.id].anchor}:e])),layouts=new Map(),groundCache=new Map();
+  for(const [id,e] of Object.entries(window.ArtV3Catalog?.environment||{}))catalog.set(id,{...e,id});
   const assets={
-    town:['village-07-tavern-sign','village-08-market-stall','village-09-supplies','village-10-well','village-11-noticeboard','village-12-lantern-string','water-19-well','forest-08-lamp','forest-12-barrels','forest-09-signpost'],
+    town:['village-07-tavern-sign','village-08-market-stall','village-09-supplies','village-10-well','village-11-noticeboard','village-12-lantern-string','water-19-well','forest-08-lamp','forest-12-barrels','forest-09-signpost','forest-04-rocks'],
     wood:['forest-01-oak','forest-02-pine','forest-03-bush','village-16-bush','village-17-stump','village-18-fallen-log','village-20-campfire','village-21-tent','village-22-signpost','village-23-berry-bush','forest-11-flowers'],
     pass:['forest-04-rocks','village-15-cliff','village-19-rocks','village-24-fence','forest-10-fence','village-09-supplies','forest-12-barrels','village-21-tent'],
     fen:['water-20-reeds','water-24-lilies','water-21-stepping-stones','water-13-waterfall','forest-03-bush'],
@@ -19,7 +20,7 @@
   };
   const cityReplace={lamp:'royal-10-lamp',tree:'royal-07-tree',fountain:'royal-13-fountain',bench:'royal-12-bench',board:'royal-24-noticeboard',wall:'royal-17-wall',bridge:'royal-22-bridge'};
   const npcPoints=place=>(NPCSystem.at(place)||[]).map(n=>({x:Number(n.position?.x??n.x??4),y:Number(n.position?.y??n.y??10)}));
-  function reservedPoints(place){const p=window.WorldLayout?.portal(place);return [WorldRegions.spawn(place),...BuildingSystem.at(place).map(b=>({x:b.x+b.w/2,y:b.y+b.d+1.4})),...npcPoints(place),...(p?[p]:[])];}
+  function reservedPoints(place){const p=window.WorldLayout?.portal(place);return [WorldRegions.spawn(place),...BuildingSystem.at(place).map(b=>WorldLayout.entrance(b)),...npcPoints(place),...(p?[p]:[])];}
   function objectWidth(id){return /oak|pine|tree|cypress/.test(id)?52:/lamp/.test(id)?32:/banner/.test(id)?22:/bridge/.test(id)?64:/cliff|waterfall|arch|stairs/.test(id)?42:/fountain|dock|tent|market-stall|lantern-string/.test(id)?34:23;}
   function available(place,x,y,radius=1.1){
     const b=WorldRegions.bounds(place);if(x<3||y<3||x>b.columns-4||y>b.rows-4)return false;
@@ -52,12 +53,13 @@
     if(place==='city'){const bridge=list.find(o=>o.fallback?.kind==='bridge'&&o.y===18);if(bridge)bridge.asset='water-16-water-bridge';}
     for(const b of window.WorldLayout?.regions[place]?.bridges||[])list.push({kind:'environment',asset:b.asset,x:b.x,y:b.y,width:b.width,anchor:[.5,.75],fallback:{kind:'bridge',x:b.x,y:b.y}});
     for(const o of list)o.place=place;
-    layouts.set(place,list);return list;
+    const result=place==='town'?TownArt.objects(list):list;layouts.set(place,result);return result;
   }
   function sprite(ctx,o,project,base=false){
     const e=catalog.get(o.asset),image=e&&WorldAssets.ready('environment',o.asset);if(!image)return false;
     const p=project(o.x,o.y),w=o.width||objectWidth(o.asset),h=w*e.height/e.width,[ax,ay]=o.anchor||e.anchor;
     ctx.save();ctx.imageSmoothingEnabled=true;
+    if(e.legacyId&&!o.fitting){ctx.fillStyle='rgba(36,40,30,.12)';ctx.beginPath();ctx.ellipse(p.x*2,p.y*2,Math.min(w*.36,8)*2,Math.min(w*.12,2.5)*2,0,0,Math.PI*2);ctx.fill();}
     if(o.place==='fen')ctx.filter=/oak|tree|bush/.test(o.asset)?'saturate(.48) brightness(.72) hue-rotate(24deg)':'saturate(.72) brightness(.87)';
     // Bridge deck belongs behind walkers; only its near base overlaps the actor layer.
     if(o.fallback?.kind==='bridge'&&!base){ctx.beginPath();ctx.rect((p.x-w)*2,(p.y+2)*2,w*4,h*2);ctx.clip();}

@@ -1,10 +1,10 @@
 // Uses an isolated browser profile; never changes the user's game save.
 const fs = require('node:fs'), path = require('node:path'), assert = require('node:assert/strict');
-const {chromium} = require(process.env.PLAYWRIGHT_MODULE || path.join(require('node:os').homedir(), '.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright'));
+const {chromium} = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
 const url = process.argv[2] || 'file:///' + path.resolve('frontier.html').replaceAll('\\', '/');
 (async () => {
   fs.mkdirSync('artifacts', {recursive:true});
-  const browser = await chromium.launch({executablePath:process.env.CHROME_PATH || 'C:/Program Files/Google/Chrome/Application/chrome.exe', headless:true});
+  const browser = await chromium.launch({executablePath:process.env.CHROME_PATH, headless:true});
   const page = await browser.newPage({viewport:{width:1280,height:720}}), errors=[], expectedErrors=[], warnings=[], passed=[];
   let corruptFixture=false;
   function recordError(message) {(corruptFixture && /moc/i.test(message) ? expectedErrors : errors).push(message);}
@@ -14,7 +14,7 @@ const url = process.argv[2] || 'file:///' + path.resolve('frontier.html').replac
     await page.evaluate(reduceMotion => {
       const s = AshenGame.getState(); s.place='town';s.battle=null;s.relationships.mira.value=80;s.settings.reduceMotion=reduceMotion;
       s.location={sceneId:null,x:10,y:12,zoom:1,stack:[]};
-      localStorage.setItem('ashen-frontier-save-v3',JSON.stringify(s));AshenGame.command('load');AshenGame.talkNPC('mira',false);
+      localStorage.setItem('ashen-frontier-save-v3-desktop',JSON.stringify(s));AshenGame.command('load');AshenGame.talkNPC('mira',false);
     }, reduceMotion);
   }
   async function ready() {await page.waitForFunction(()=>Live2DPortraits.inspect().active && document.querySelector('.character-standing-art')?.hidden);}
@@ -111,18 +111,18 @@ const url = process.argv[2] || 'file:///' + path.resolve('frontier.html').replac
     await page.evaluate(()=>DialogueSystem.advance());await page.waitForTimeout(140);assert.equal(await page.evaluate(()=>Live2DPortraits.inspect().mouthOpen),false);
     await page.locator('[data-dialogue-auto]').click();
   });
-  await test('animated portrait fits six desktop/mobile sizes including rotated touch coordinates',async()=>{
-    for(const viewport of [{width:1920,height:1080},{width:1280,height:720},{width:390,height:844},{width:360,height:640},{width:844,height:390},{width:640,height:360}]){
+  await test('animated portrait fits configured client sizes including rotated touch coordinates',async()=>{
+    for(const viewport of require('./client-fixture.cjs').viewports.map(([width,height])=>({width,height}))){
       const layoutPage=await browser.newPage({viewport,hasTouch:viewport.width<900,isMobile:viewport.width<900});
       layoutPage.on('pageerror',e=>recordError(e.message));layoutPage.on('console',m=>{if(m.type()==='error')recordError(m.text());});
       await layoutPage.goto(url);await layoutPage.waitForFunction(()=>window.AshenGame);await layoutPage.locator('[data-command=continue]').click();
       await layoutPage.evaluate(()=>{const s=AshenGame.getState();s.place='town';s.battle=null;s.relationships.mira.value=80;s.settings.reduceMotion=false;
-        s.location={sceneId:null,x:10,y:12,zoom:1,stack:[]};localStorage.setItem('ashen-frontier-save-v3',JSON.stringify(s));AshenGame.command('load');AshenGame.talkNPC('mira',false);});
+        s.location={sceneId:null,x:10,y:12,zoom:1,stack:[]};localStorage.setItem('ashen-frontier-save-v3-desktop',JSON.stringify(s));AshenGame.command('load');AshenGame.talkNPC('mira',false);});
       await layoutPage.waitForFunction(()=>Live2DPortraits.inspect().active&&document.querySelector('.character-standing-art')?.hidden);await layoutPage.waitForTimeout(180);
       const layout=await layoutPage.evaluate(()=>{const canvas=document.querySelector('.character-live2d'),r=GameViewport.localRect(canvas);return {r,frame:GameViewport.size(),width:canvas.width,height:canvas.height,scroll:document.documentElement.scrollWidth};});
       assert(layout.r.x>=0&&layout.r.y>=0&&layout.r.x+layout.r.width<=layout.frame.width+1&&layout.r.y+layout.r.height<=layout.frame.height+1);
       assert.equal(layout.width,Math.round(layout.r.width));assert.equal(layout.height,Math.round(layout.r.height));assert(layout.scroll<=viewport.width);
-      if(viewport.width<viewport.height)assert(layout.frame.rotated);
+      assert.equal(layout.frame.rotated,require('./client-fixture.cjs').mobile&&viewport.width<viewport.height);
       await layoutPage.screenshot({path:'artifacts/live2d-'+viewport.width+'x'+viewport.height+'.png'});await layoutPage.close();
     }
   });

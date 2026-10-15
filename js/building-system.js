@@ -50,6 +50,7 @@
   for(const list of Object.values(buildings))for(const b of list){b.asset=b.asset||expansion.existingAssets[b.id]||"ruins";b.place=Object.keys(buildings).find(k=>buildings[k].includes(b));}
   rooms.market=rooms.shop;rooms["forest-hut"]=rooms.hut;
   const interiors=Object.fromEntries(Object.entries(buildings).flatMap(([,items])=>items.filter(b=>b.interior).map(b=>[b.id,{...rooms[b.interior],buildingId:b.id,occupantKey:b.interior}])));
+  for(const b of buildings.town)if(window.ArtV3Catalog?.buildings["town-"+b.id])b.artId="town-"+b.id;
   const all = Object.values(buildings).flat();
   window.WorldLayout?.applyBuildings(all);
   window.BuildingSystem = {

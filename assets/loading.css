@@ -1,4 +1,4 @@
-#gameLoading{position:absolute;inset:0;z-index:100;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;color:#f2e6c7;background:#0e211e url('art-v2/title.webp') center/cover no-repeat;isolation:isolate;text-align:center;outline:none}
+#gameLoading{position:absolute;inset:0;z-index:100;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;color:#f2e6c7;background-color:#0e211e;background-image:var(--loading-art,url('art-v2/title.webp'));background-position:center;background-size:cover;background-repeat:no-repeat;isolation:isolate;text-align:center;outline:none}
 #gameLoading[hidden]{display:none}
 #gameLoading::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#081a1814 18%,#081a1840 44%,#071915e8 88%,#071915 100%)}
 #gameLoading::after{content:"";position:absolute;inset:14px;pointer-events:none;border:1px solid #d4b57055;box-shadow:inset 0 0 50px #09171330}

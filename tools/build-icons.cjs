@@ -1,6 +1,6 @@
 // Resize the generated transparent masters. No runtime dependency is added to the game.
 const fs=require('fs'),path=require('path');
-const sharp=require(process.env.SHARP_MODULE||path.join(require('os').homedir(),'.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp'));
+const sharp=require(process.env.SHARP_MODULE||'sharp');
 const ids=['main-quest','side-quest','character','backpack','skills','equipment','enhancement','crafting','map','exploration','combat','rest','dialogue','affinity','achievement','save','load','settings','travel','title'];
 (async()=>{
   fs.mkdirSync('assets/icons',{recursive:true});fs.mkdirSync('artifacts/legacy-icons',{recursive:true});

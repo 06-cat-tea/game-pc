@@ -9,7 +9,7 @@
       <div class="launch-art" aria-hidden="true"></div><div class="launch-shade" aria-hidden="true"></div>
       <div class="launch-atmosphere" aria-hidden="true">${Array.from({length:18},(_,i)=>`<i style="--x:${7+(i*37)%89}%;--y:${12+(i*29)%77}%;--delay:${-i*1.7}s;--duration:${13+i%6*3}s;--size:${i%3===0?3:2}px"></i>`).join('')}</div>
       <div class="launch-frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-      <header class="launch-header"><div class="launch-brand"><img src="assets/expansion/icons/brand.png" alt="" width="44" height="44"><span>星陨纪事<small>CHRONICLES OF THE FALLEN STAR</small></span></div><button class="launch-fullscreen" data-fullscreen="1" aria-label="全屏显示" title="全屏显示"><span aria-hidden="true">⛶</span></button></header>
+      <header class="launch-header"><div class="launch-brand"><img src="assets/expansion/icons/brand.png" alt="" width="44" height="44"><span>星陨纪事<small>CHRONICLES OF THE FALLEN STAR</small></span></div><div class="launch-client-actions">${window.GameClient.switchLink()}<button class="launch-fullscreen" data-fullscreen="1" aria-label="全屏显示" title="全屏显示"><span aria-hidden="true">⛶</span></button></div></header>
       <section class="launch-content" aria-labelledby="launchTitle">
         <p class="launch-eyebrow">ASHEN FRONTIER</p>
         <h1 id="launchTitle">灰烬边境</h1>

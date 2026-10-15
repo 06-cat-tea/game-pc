@@ -1,18 +1,20 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-client="desktop">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#172235">
-  <title>灰烬边境：星陨纪事</title>
+  <title>灰烬边境：星陨纪事 · 电脑版</title>
   <link rel="icon" type="image/svg+xml" href="assets/expansion/icons/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/expansion/icons/favicon-32.png">
   <link rel="stylesheet" href="assets/game.css?v=6.3"><link rel="stylesheet" href="assets/expansion.css?v=6.3">
   <link rel="stylesheet" href="assets/hud.css?v=6.3">
   <link rel="stylesheet" href="assets/character-portraits.css?v=7.1">
-  <link rel="stylesheet" href="assets/loading.css?v=7.1">
+  <link rel="stylesheet" href="assets/loading.css?v=7.2">
   <link rel="stylesheet" href="assets/title-screen.css?v=7.1">
-  <link rel="stylesheet" href="assets/rail-ui.css?v=7.1">
+  <link rel="stylesheet" href="assets/rail-ui.css?v=7.2">
+  <link rel="stylesheet" href="assets/art-v3.css?v=7.2">
+  <link rel="stylesheet" href="assets/client.css?v=7.3">
   <link rel="preload" as="image" href="assets/art-v2/title.webp" fetchpriority="high">
 </head>
 <body>
@@ -43,6 +45,7 @@
     <div class="modal-backdrop" id="modal" role="dialog" aria-modal="true"><div class="modal" id="modalContent"></div></div>
     <div class="toast" id="toast"></div>
   </main>
-  <script src="js/game-bundle.js?v=7.1.1" defer></script>
+  <script src="js/deployment-config.js?v=7.3" defer></script>
+  <script src="js/game-bundle.js?v=7.3" defer></script>
 </body>
 </html>

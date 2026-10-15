@@ -1,20 +1,20 @@
 // Isolated browser saves only; supports file:// and optional static-server URL.
 const fs=require('fs'),path=require('path'),assert=require('assert/strict');
-const {chromium}=require(process.env.PLAYWRIGHT_MODULE||path.join(require('os').homedir(),'.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright'));
+const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
 const url=process.argv[2]||'file:///'+path.resolve('frontier.html').replaceAll('\\','/');
 (async()=>{
   fs.mkdirSync('artifacts',{recursive:true});
-  const browser=await chromium.launch({executablePath:process.env.CHROME_PATH||'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});
+  const browser=await chromium.launch({executablePath:process.env.CHROME_PATH,headless:true});
   const page=await browser.newPage({hasTouch:true,isMobile:true,viewport:{width:1280,height:720}}),errors=[],passed=[];
   page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});
   const test=async(name,fn)=>{await fn();passed.push(name);console.log('PASS '+name);};
   await page.goto(url);await page.waitForFunction(()=>window.AshenGame);await page.locator('[data-command=continue]').click();
   const state=()=>page.evaluate(()=>AshenGame.getState()),base=await state();
-  const seed=async mutate=>{const s=JSON.parse(JSON.stringify(base));mutate(s);await page.evaluate(s=>{localStorage.setItem('ashen-frontier-save-v3',JSON.stringify(s));AshenGame.command('load');},s);};
+  const seed=async mutate=>{const s=JSON.parse(JSON.stringify(base));mutate(s);await page.evaluate(s=>{localStorage.setItem('ashen-frontier-save-v3-desktop',JSON.stringify(s));AshenGame.command('load');},s);};
   const meet=async(id,affinity=80)=>page.evaluate(({id,affinity})=>{
     const n=GrowthSystem.npcs()[id],b=BuildingSystem.all.find(b=>{const r=BuildingSystem.interior(b.id);return r&&NPCSystem.inside(r.occupantKey).some(n=>n.id===id);}),s=AshenGame.getState();
     s.battle=null;s.place=n.place||b.place;s.location={sceneId:null,x:10,y:12,zoom:1,stack:[]};s.relationships[id].value=affinity;s.relationships[id].chatDay=s.day;
-    localStorage.setItem('ashen-frontier-save-v3',JSON.stringify(s));AshenGame.command('load');if(!n.place)AshenGame.enterBuilding(b.id);AshenGame.talkNPC(id,false);
+    localStorage.setItem('ashen-frontier-save-v3-desktop',JSON.stringify(s));AshenGame.command('load');if(!n.place)AshenGame.enterBuilding(b.id);AshenGame.talkNPC(id,false);
   },{id,affinity});
   const advanceToChoice=async(id,topic)=>page.evaluate(({id,topic})=>{const started=DialogueSystem.start(id,topic);DialogueSystem.next();DialogueSystem.next();return started;},{id,topic});
   await test('all 66 residents have 198 base and six deep topics, each branch has five valid lines',async()=>{
@@ -26,7 +26,7 @@ const url=process.argv[2]||'file:///'+path.resolve('frontier.html').replaceAll('
     }assert.equal(count,204);
     for(const id of content.ids){await meet(id);for(const topic of Object.keys(content.people[id])){
       for(const index of [0,1]){
-        await page.evaluate(({id,topic})=>{const s=AshenGame.getState();delete s.flags[`dialogue:${id}:${topic}:choice`];localStorage.setItem('ashen-frontier-save-v3',JSON.stringify(s));AshenGame.command('load');}, {id,topic});
+        await page.evaluate(({id,topic})=>{const s=AshenGame.getState();delete s.flags[`dialogue:${id}:${topic}:choice`];localStorage.setItem('ashen-frontier-save-v3-desktop',JSON.stringify(s));AshenGame.command('load');}, {id,topic});
         const before=await state();assert(await advanceToChoice(id,topic));
         const result=await page.evaluate(index=>{const chosen=DialogueSystem.choose(index),response=!!document.querySelector('.dialogue-text');DialogueSystem.next();DialogueSystem.next();DialogueSystem.next();return {chosen,response,active:DialogueSystem.reading()};},index);
         assert(result.chosen&&result.response&&!result.active);const after=await state();assert.equal(after.flags[`dialogue:${id}:${topic}:seen`],true);
@@ -95,11 +95,11 @@ const url=process.argv[2]||'file:///'+path.resolve('frontier.html').replaceAll('
     await seed(s=>{s.player.gold=100;s.relationships['stable-hand'].value=60;});await page.evaluate(()=>AshenGame.talkNPC('stable-hand',false));await page.locator('[data-dialogue-menu=service]').click();assert((await page.locator('[data-indoor-service]').textContent()).includes('金币 7'));
     await seed(s=>{s.flags['world-service:drill:town']=s.day;});await page.evaluate(()=>AshenGame.talkNPC('gate-knight',false));await page.locator('[data-dialogue-menu=service]').click();assert(await page.locator('[data-indoor-service]').isDisabled());assert((await page.locator('[data-indoor-service]').textContent()).includes('今日已使用'));
   });
-  await test('dialogue segments, Escape hierarchy, focus trap and six frame layouts',async()=>{
+  await test('dialogue segments, Escape hierarchy, focus trap and configured client frame layouts',async()=>{
     await seed(s=>{s.relationships.mira.value=40;s.settings.reduceMotion=true;});
     await page.evaluate(()=>AshenGame.talkNPC('mira',false));await page.locator('[data-dialogue-menu=topics]').click();await page.locator('[data-dialogue-start=daily]').click();
     await page.keyboard.press('Escape');assert.equal(await page.evaluate(()=>DialogueSystem.inspect().layer),'topics');await page.keyboard.press('Escape');assert.equal(await page.evaluate(()=>DialogueSystem.inspect().layer),'hub');await page.keyboard.press('Escape');assert.equal(await page.locator('#modal.open').count(),0);
-    for(const viewport of [{width:1920,height:1080},{width:1280,height:720},{width:390,height:844},{width:360,height:640},{width:844,height:390},{width:640,height:360}]){
+    for(const viewport of require('./client-fixture.cjs').viewports.map(([width,height])=>({width,height}))){
       await page.setViewportSize(viewport);await page.waitForTimeout(180);await page.evaluate(()=>AshenGame.talkNPC('mira',false));await advanceToChoice('mira','daily');
       const layout=await page.evaluate(()=>({width:document.documentElement.scrollWidth,frame:GameViewport.size(),buttons:[...document.querySelectorAll('.dialogue-reader button:not([hidden])')].map(b=>GameViewport.localRect(b))}));
       assert(layout.width<=viewport.width);for(const r of layout.buttons){assert(r.height>=43.9);assert(r.y>=-1&&r.y+r.height<=layout.frame.height+1,JSON.stringify({viewport,r}));}

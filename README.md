@@ -1,8 +1,43 @@
 # 灰烬边境：星陨纪事
 
-原生 JavaScript 与 Canvas 的暗色奇幻 RPG。直接打开 `index.html` 或 `frontier.html` 即可游玩，无需构建、服务器、账号或外部运行时资源。场景分辨率为 1920×1080，桌面与手机统一使用完整 16:9 游戏区域，所有界面都位于游戏画面内部；触控设备竖屏时，游戏区域自动旋转 90°。
+## 独立电脑版工程
 
-线上：https://06-cat-tea.github.io/game/frontier.html
+两端互不隶属、互不干涉。以后各自修改、测试和发布，不自动同步代码、资源或进度；具体约束见 AGENTS.md。
+
+本目录是一套完整工程，含独立代码、运行资源、原画与可编辑模型，可单独复制并建仓、部署。固定电脑布局，使用 WASD / Shift / E / Tab 与鼠标操作，触控电脑仍保持电脑布局。
+
+直接打开 frontier.html 即可游玩。开发需要 Node.js 20 或更高版本及 pnpm 11：
+
+```sh
+pnpm install --frozen-lockfile
+pnpm run build
+pnpm run preview
+pnpm run test:setup
+pnpm test
+pnpm run test:regression
+pnpm run test:standalone
+```
+
+预览默认使用 8080 端口，可通过 pnpm run preview -- 8081 指定另一端口。测试默认使用 Playwright Chromium，也可通过 CHROME_PATH 指定浏览器。
+
+本端存档键为 ashen-frontier-save-v3-desktop；首次启动可从同来源的旧档继承进度，此后两端分别保存。跨设备、跨域名或另一端之间转移进度，请在设置中导出、导入 JSON。
+
+修改 js/deployment-config.js 配置另一端的正式地址；地址相对于 frontier.html。另一端地址设为 null 时隐藏切换入口。静态发布不需要安装开发依赖。
+
+常规运行、构建和验收不依赖其他工程。历史 Git 对比与资源恢复工具需要原始历史；下文保留原版本的功能和制作记录。
+
+
+原生 JavaScript 与 Canvas 的暗色奇幻 RPG。直接打开 `index.html` 或 `frontier.html` 即可游玩，无需构建、服务器、账号或外部运行时资源。场景分辨率为 1920×1080，本端使用完整 16:9 游戏区域，所有界面都位于游戏画面内部；触控设备竖屏时，游戏区域自动旋转 90°。
+
+原统一工程地址：https://06-cat-tea.github.io/game/frontier.html
+
+## 7.2 晨星镇手绘样板、装备图标与地方文化
+
+晨星镇采用克制的日式手绘奇幻素材：11 栋专属建筑、12 项环境物件、5 种地面材质、11 个内室与三张冒险地图。建筑按实际宽高和接地锚点绘制，接触阴影缓存到地面，土石边缘渐隐；室外人物按门窗比例显示，手机点击仍保留足够的命中范围。原有 82 栋地标、人物立绘、任务数值与 v6 存档保持兼容，其余五区域继续使用原场景素材。
+
+38 件装备使用独立透明图标，接入背包、装备栏、制作、强化、交易和奖励。六地分别使用当地特色的加载插画，内室及子地图显示具体地点名称；加载画面沿用真实进度、自动重试、手动回退与快速切图保护。世界记录新增世界沿革，六地介绍、装备来源、晨星镇建筑及居民对白统一到沉星王朝、旧商路、黑潮与归灯的背景，关键记录按主线进度开放。
+
+所有新原图由内置 imagegen 逐项生成并保留在 `assets/art-v3/sources/`，运行资源为本地 WebP。提示词、参考图关系和校准布局见 [风格与制作说明](assets/art-v3/STYLE.md)、[逐项提示词](assets/art-v3/prompts.json)、[世界观](assets/art-v3/WORLD.md)。验收与对比见 [晨星镇样板验收](晨星镇样板-验收说明.md)。
 
 ## 7.1 跑步、人物肖像与彩绘地图
 

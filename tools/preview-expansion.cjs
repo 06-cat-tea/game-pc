@@ -1,5 +1,5 @@
 const fs = require('fs'), path = require('path');
-const sharp = require(process.env.SHARP_MODULE || path.join(require('os').homedir(), '.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp'));
+const sharp = require(process.env.SHARP_MODULE || 'sharp');
 (async () => {
   const catalog = JSON.parse(fs.readFileSync('assets/expansion/catalog.json', 'utf8'));
   fs.mkdirSync('artifacts', {recursive:true});

@@ -1,0 +1,28 @@
+{
+  "name": "ashen-frontier-desktop",
+  "version": "7.3.0",
+  "private": true,
+  "description": "灰烬边境：星陨纪事 · 电脑版",
+  "license": "CC0-1.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@11.25.0",
+  "scripts": {
+    "build": "node tools/build-game.cjs",
+    "preview": "node tools/serve.cjs",
+    "dev": "node tools/serve.cjs",
+    "test": "node tools/test.cjs",
+    "test:regression": "node tools/test.cjs --full",
+    "test:standalone": "node tools/verify-standalone.cjs",
+    "test:setup": "playwright install chromium",
+    "build:live2d": "node tools/live2d-build/build-sdk.cjs",
+    "test:static": "node tests/static-acceptance.cjs"
+  },
+  "devDependencies": {
+    "ag-psd": "31.0.3",
+    "esbuild": "0.25.12",
+    "playwright": "1.62.1",
+    "sharp": "0.35.5"
+  }
+}
