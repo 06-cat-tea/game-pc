@@ -2,9 +2,11 @@
 
 ## 独立电脑版工程
 
+电脑版仓库：[06-cat-tea/game-pc](https://github.com/06-cat-tea/game-pc)。本仓库只发布电脑版，手机端暂未发布，因此标题页与设置页默认隐藏手机版切换入口。
+
 两端互不隶属、互不干涉。以后各自修改、测试和发布，不自动同步代码、资源或进度；具体约束见 AGENTS.md。
 
-本目录是一套完整工程，含独立代码、运行资源、原画与可编辑模型，可单独复制并建仓、部署。固定电脑布局，使用 WASD / Shift / E / Tab 与鼠标操作，触控电脑仍保持电脑布局。
+本目录是一套完整的独立 Git 工程，含独立代码、运行资源、原画与可编辑模型，可单独克隆、构建和部署。固定电脑布局，使用 WASD / Shift / E / Tab 与鼠标操作，触控电脑仍保持电脑布局。
 
 直接打开 frontier.html 即可游玩。开发需要 Node.js 20 或更高版本及 pnpm 11：
 
@@ -22,12 +24,12 @@ pnpm run test:standalone
 
 本端存档键为 ashen-frontier-save-v3-desktop；首次启动可从同来源的旧档继承进度，此后两端分别保存。跨设备、跨域名或另一端之间转移进度，请在设置中导出、导入 JSON。
 
-修改 js/deployment-config.js 配置另一端的正式地址；地址相对于 frontier.html。另一端地址设为 null 时隐藏切换入口。静态发布不需要安装开发依赖。
+js/deployment-config.js 中的 mobile 默认为 null；将来手机端正式发布后，可在此填写它的独立地址来显示切换入口，地址相对于 frontier.html。静态发布不需要安装开发依赖。
 
 常规运行、构建和验收不依赖其他工程。历史 Git 对比与资源恢复工具需要原始历史；下文保留原版本的功能和制作记录。
 
 
-原生 JavaScript 与 Canvas 的暗色奇幻 RPG。直接打开 `index.html` 或 `frontier.html` 即可游玩，无需构建、服务器、账号或外部运行时资源。场景分辨率为 1920×1080，本端使用完整 16:9 游戏区域，所有界面都位于游戏画面内部；触控设备竖屏时，游戏区域自动旋转 90°。
+原生 JavaScript 与 Canvas 的暗色奇幻 RPG。直接打开 `index.html` 或 `frontier.html` 即可游玩，无需构建、服务器、账号或外部运行时资源。场景分辨率为 1920×1080，本端使用完整 16:9 游戏区域，所有界面都位于游戏画面内部，固定使用电脑布局。
 
 原统一工程地址：https://06-cat-tea.github.io/game/frontier.html
 

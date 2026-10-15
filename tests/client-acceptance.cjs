@@ -20,7 +20,8 @@ let browser;
     const frame=await p.evaluate(()=>({client:GameClient.id,size:GameViewport.size(),scroll:document.documentElement.scrollWidth}));
     assert.equal(frame.client,id);assert.equal(frame.size.touch,mobile);assert.equal(frame.size.rotated,mobile&&height>width);
     assert(Math.abs(frame.size.width/frame.size.height-16/9)<.001);assert(frame.scroll<=width);
-    const switcher=p.locator('.launch-header [data-switch-client]');assert(await switcher.isVisible());
+    const switching=await p.evaluate(()=>!!GameClient.switchLink());
+    const switcher=p.locator('.launch-header [data-switch-client]');assert.equal(await switcher.isVisible(),switching);
     await p.screenshot({path:`artifacts/client-title-${width}x${height}-${touch?'touch':'mouse'}.png`});
     await p.locator('[data-command=continue]').click();await ready(p);
     assert.equal(await p.locator('[data-stick]').isVisible(),mobile);
@@ -47,7 +48,7 @@ let browser;
     for(const screen of ['inventory','journal','party','crafting','codex','settings','more']){
       await p.evaluate(screen=>AshenGame.showScreen(screen),screen);
       assert(await p.evaluate(()=>document.querySelector('#pixelWorld')===window.clientTestCanvas));
-      if(screen==='settings')assert(await p.locator('#screen-settings [data-switch-client]').isVisible());
+      if(screen==='settings')assert.equal(await p.locator('#screen-settings [data-switch-client]').isVisible(),switching);
       await p.keyboard.press('Escape');
     }
     await p.screenshot({path:`artifacts/client-${width}x${height}-${touch?'touch':'mouse'}.png`});
