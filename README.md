@@ -28,9 +28,9 @@
 
 网页的自动档与三个手动档位保存在当前浏览器的 IndexedDB 中，刷新后可继续。不同浏览器、隐私窗口、网站地址和 Windows 版的存档彼此独立；清除网站数据会清除本地进度。可在存档菜单下载 JSON 备份，再主动选择文件导入。
 
-推送到 main 或手动运行 Godot Web 工作流后，GitHub Actions 使用固定 Godot 4.7.2 和官方模板执行原生回归、Web 导出及 Chromium 验证，通过后使用官方 Pages Actions 发布。仓库 Settings → Pages 的 Source 设为 GitHub Actions。只部署 artifacts/godot/web/，源码、制作工具与缓存不作为网站文件上传；失败的构建不会替换线上版本。
+推送到 main 或手动运行 Godot Web 工作流后，GitHub Actions 使用固定 Godot 4.7.2 和官方模板执行原生回归、Web 导出及 Chrome（Chromium 引擎）验证，通过后使用官方 Pages Actions 发布。仓库 Settings → Pages 的 Source 设为 GitHub Actions。只部署 artifacts/godot/web/，源码、制作工具与缓存不作为网站文件上传；失败的构建不会替换线上版本。
 
-浏览器验收使用固定 Playwright 1.62.1 与 sharp 0.35.5，可独立安装到 artifacts/web-test-deps/：运行 npm install --prefix artifacts/web-test-deps --no-save --package-lock=false --ignore-scripts playwright@1.62.1 sharp@0.35.5，再运行 node artifacts/web-test-deps/node_modules/playwright/cli.js install chromium，并让 NODE_PATH 指向其 node_modules 后执行 pnpm test:web。CI 使用同样版本。
+浏览器验收使用固定 Playwright 1.62.1 与 sharp 0.35.5，可独立安装到 artifacts/web-test-deps/：运行 npm install --prefix artifacts/web-test-deps --no-save --package-lock=false --ignore-scripts playwright@1.62.1 sharp@0.35.5，再运行 node artifacts/web-test-deps/node_modules/playwright/cli.js install chromium，并让 NODE_PATH 指向其 node_modules 后执行 pnpm test:web。CI 使用同样的工具版本与 Ubuntu 运行器预装的 Google Chrome，无需另行下载浏览器。
 
 ## 操作
 

@@ -68,15 +68,17 @@ jobs:
         run: node tools/godot.cjs build-web
 
       - name: Install pinned browser verification tools
+        timeout-minutes: 5
         shell: bash
         run: |
-          npm install --prefix artifacts/web-test-deps --no-save --package-lock=false --ignore-scripts "playwright@${PLAYWRIGHT_VERSION}" sharp@0.35.5
-          node artifacts/web-test-deps/node_modules/playwright/cli.js install --with-deps chromium
+          npm install --prefix artifacts/web-test-deps --no-save --package-lock=false --ignore-scripts --fetch-timeout=60000 --fetch-retries=2 "playwright@${PLAYWRIGHT_VERSION}" sharp@0.35.5
 
-      - name: Verify the Web game in Chromium
+      - name: Verify the Web game in Chrome
         env:
           NODE_PATH: ${{ github.workspace }}/artifacts/web-test-deps/node_modules
-        run: node tools/verify-godot-web.cjs --browser chromium
+        run: |
+          google-chrome --version
+          node tools/verify-godot-web.cjs --browser chrome
 
       - name: Configure GitHub Pages
         if: github.ref == 'refs/heads/main'
