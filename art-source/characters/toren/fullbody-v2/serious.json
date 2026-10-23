@@ -1,0 +1,6 @@
+{
+  "mode": "built-in imagegen",
+  "prompt": "Use case: identity-preserve. Edit this production full-body game portrait ONLY in the facial expression area. Expression: composed serious and determined, subtly firmer eyebrows and mouth, not angry. Preserve the exact character identity, face proportions, age, hair, costume, pose, hands, props, embroidery, legs, boots, scale and canvas placement. Do not redraw or change the rest of the character. Keep full-body framing with head and both soles fully visible, portrait 2:3 canvas and actual transparent alpha background, no scenery or text. This is an expression variant of the same sprite, not a new pose.",
+  "reference": "E:\\360Downloads\\game\\desktop\\art-source\\characters\\toren\\fullbody-v2\\neutral.png",
+  "source": "C:\\Users\\23373\\.codex\\generated_images\\01a14309-bfc5-7c11-babb-12359d273b12\\exec-6ef2b405-623c-4c9d-9d11-14a4be69e73b.png"
+}

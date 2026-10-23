@@ -1,0 +1,14 @@
+{
+  "mode": "built-in imagegen",
+  "prompt": "Use case: identity-preserve. Asset: ONE transparent animation sprite sheet for the existing protagonist walking toward the top of the screen, back view, show the back of his cloak and hair rather than his face. Reference 1 is the exact small painterly game sprite style and proportions. Reference 2 defines his full costume and boots. Preserve the dark tousled hair, white tunic, navy gold-star cloak, brown belts, satchel, dark trousers, brown boots and star brooch. Create a precise 3-column by 2-row grid of SIX equal square cells, each 512x512, total landscape canvas 1536x1024. Cell order row-major: cell 1 neutral idle, cell 2 left foot forward, cell 3 passing stride, cell 4 right foot forward, cell 5 opposite passing stride, cell 6 EMPTY fully transparent. Exactly FIVE drawings, each FULL BODY, all facing toward the top of the screen, back view, show the back of his cloak and hair rather than his face, slight elevated RPG camera like reference 1, identical scale, centered in its cell, feet on the same near-bottom baseline, generous empty space between cells. Each drawing entirely inside its own cell. Walking legs and slight arm/cloak motion must actually change across frames, body height stable. Transparent alpha background, NO grid lines, NO text, no scenery, no ground shadows, no labels or borders. Clean readable silhouette at small sprite scale.",
+  "references": [
+    "E:\\360Downloads\\game\\desktop\\godot\\assets\\art-v2\\actors\\hero-0-0.webp",
+    "E:\\360Downloads\\game\\desktop\\art-source\\characters\\hero\\fullbody-v2\\neutral.png"
+  ],
+  "source": "C:\\Users\\23373\\.codex\\generated_images\\01a14309-bfc5-7c11-babb-12359d273b12\\exec-237b4dcb-2f91-4894-b877-a1f32fe20dd9.png",
+  "grid": [
+    3,
+    2
+  ],
+  "frames": 5
+}

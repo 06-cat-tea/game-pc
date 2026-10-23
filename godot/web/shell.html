@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#172235">
+  <title>灰烬边境：星陨纪事 · Godot 网页版</title>
+  $GODOT_HEAD_INCLUDE
+  <style>
+    html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#101925;color:#eee9dd;font:16px system-ui,sans-serif}
+    #canvas{display:block;width:100%;height:100%;outline:none}
+    #status{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:18px;background:#101925;z-index:1;text-align:center;padding:24px}
+    #status[hidden]{display:none}h1{font-size:clamp(28px,5vw,48px);font-weight:500;letter-spacing:.12em;margin:0;color:#dfc99b}
+    #progress{width:min(480px,80vw);accent-color:#ccb584}#detail{max-width:650px;line-height:1.6;color:#b8c4d1}
+    button{background:#dfc99b;color:#172235;border:0;padding:12px 30px;font:inherit;border-radius:4px;cursor:pointer}
+    a{color:#dfc99b}#licenses{position:absolute;right:12px;bottom:8px;font-size:12px;z-index:2;opacity:.7}
+  </style>
+</head>
+<body>
+  <canvas id="canvas" tabindex="0" aria-label="灰烬边境游戏画面">你的浏览器需要支持 WebAssembly 和 WebGL 2。</canvas>
+  <section id="status" role="status" aria-live="polite">
+    <h1>灰烬边境 · 星陨纪事</h1>
+    <p id="message">正在准备旅程资源…</p>
+    <progress id="progress" aria-label="下载进度"></progress>
+    <p id="detail">首次加载需要下载完整游戏资源。请使用电脑键盘与鼠标游玩。</p>
+    <button id="retry" hidden>重新加载</button>
+  </section>
+  <a id="licenses" href="licenses.html" target="_blank" rel="noopener">许可与署名</a>
+  <noscript>请启用 JavaScript 后刷新页面。</noscript>
+  <script src="$GODOT_URL"></script>
+  <script>
+    const GODOT_CONFIG = $GODOT_CONFIG;
+    const GODOT_THREADS_ENABLED = $GODOT_THREADS_ENABLED;
+    const engine = new Engine(GODOT_CONFIG);
+    const status = document.getElementById('status');
+    const message = document.getElementById('message');
+    const progress = document.getElementById('progress');
+    const detail = document.getElementById('detail');
+    const retry = document.getElementById('retry');
+    const canvas = document.getElementById('canvas');
+    retry.addEventListener('click', () => location.reload());
+    const fail = error => {
+      document.documentElement.dataset.gameState = 'error';
+      status.hidden = false;
+      message.textContent = '旅程暂时未能启动';
+      detail.textContent = String(error?.message || error) + '。请检查网络，并使用支持 WebGL 2 的电脑浏览器重试。';
+      progress.hidden = true;
+      retry.hidden = false;
+      console.error(error);
+    };
+    const missing = Engine.getMissingFeatures({threads: GODOT_THREADS_ENABLED});
+    if (missing.length) {
+      fail('浏览器缺少所需功能：' + missing.join('、'));
+    } else {
+      engine.startGame({
+        canvas,
+        onProgress(current,total) {
+          if (total > 0) {
+            progress.max = total;
+            progress.value = current;
+            message.textContent = current < total ? '正在下载旅程资源… ' + Math.floor(current / total * 100) + '%' : '正在初始化旅程…';
+          } else {
+            progress.removeAttribute('value');
+          }
+        },
+        onExit(code) { if (code) fail('游戏异常退出（' + code + '）'); },
+      }).then(() => {
+        status.hidden = true;
+        document.documentElement.dataset.gameState = 'ready';
+        canvas.focus();
+      }).catch(fail);
+    }
+  </script>
+</body>
+</html>

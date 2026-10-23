@@ -1,0 +1,38 @@
+Game-icons.net item and combat icons
+
+Icons by Lorc, Delapouite and sbed, available at https://game-icons.net
+License: Creative Commons Attribution 3.0 Unported
+https://creativecommons.org/licenses/by/3.0/
+
+Changes: recolored, transparent background. Original sources, per-icon links and attribution are recorded in data/item-icons.json; authoring originals are retained in art-source/item-icons/v1.
+
+potion (Lorc): https://game-icons.net/1x1/lorc/heart-bottle.html
+tonic (Lorc): https://game-icons.net/1x1/lorc/round-bottom-flask.html
+revive (Delapouite): https://game-icons.net/1x1/delapouite/magic-potion.html
+herb (Lorc): https://game-icons.net/1x1/lorc/three-leaves.html
+ore (Delapouite): https://game-icons.net/1x1/delapouite/stone-pile.html
+shard (Lorc): https://game-icons.net/1x1/lorc/crystal-shine.html
+gold (Delapouite): https://game-icons.net/1x1/delapouite/two-coins.html
+supply (Lorc): https://game-icons.net/1x1/lorc/knapsack.html
+physical (Lorc): https://game-icons.net/1x1/lorc/broadsword.html
+fire (sbed): https://game-icons.net/1x1/sbed/fire.html
+astral (Lorc): https://game-icons.net/1x1/lorc/star-swirl.html
+holy (Lorc): https://game-icons.net/1x1/lorc/holy-symbol.html
+poison (Lorc): https://game-icons.net/1x1/lorc/poison-bottle.html
+shield (sbed): https://game-icons.net/1x1/sbed/shield.html
+burn (sbed): https://game-icons.net/1x1/sbed/fire.html
+bleed (Lorc): https://game-icons.net/1x1/lorc/bleeding-wound.html
+regen (Delapouite): https://game-icons.net/1x1/delapouite/healing.html
+vulnerable (Lorc): https://game-icons.net/1x1/lorc/target-arrows.html
+armorBreak (Lorc): https://game-icons.net/1x1/lorc/cracked-shield.html
+silence (Delapouite): https://game-icons.net/1x1/delapouite/silenced.html
+blind (Lorc): https://game-icons.net/1x1/lorc/semi-closed-eye.html
+guard (Lorc): https://game-icons.net/1x1/lorc/shield-reflect.html
+taunt (Lorc): https://game-icons.net/1x1/lorc/screaming.html
+broken (Lorc): https://game-icons.net/1x1/lorc/cracked-shield.html
+stun (Delapouite): https://game-icons.net/1x1/delapouite/stars-stack.html
+weaken (Lorc): https://game-icons.net/1x1/lorc/despair.html
+riposte (Lorc): https://game-icons.net/1x1/lorc/shield-reflect.html
+balanced (Lorc): https://game-icons.net/1x1/lorc/scales.html
+assault (Lorc): https://game-icons.net/1x1/lorc/crossed-swords.html
+watch (sbed): https://game-icons.net/1x1/sbed/shield.html

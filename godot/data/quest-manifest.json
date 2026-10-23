@@ -1,0 +1,110 @@
+{
+  "revision": 1,
+  "maintenance": "Native quest and world interaction catalogs; original narrative wording is referenced, not duplicated.",
+  "files": {
+    "data/quest-catalog.json": {
+      "sha256": "480ca92039aa3380d4b67e92ef2d1d68e58f37f84ec4729586b3519ed2bdcdde",
+      "bytes": 12179
+    },
+    "data/world-interactions.json": {
+      "sha256": "2db4c10e2364ca3eb141d9c82108d9436b50c5fdaca780db251f24b59ef6d7e4",
+      "bytes": 9280
+    },
+    "assets/town-life/amo/0.webp": {
+      "sha256": "54ac9c8ee695dccab0c5b3c8e932f754accfb165f58ac2972a57a913aa9b352d",
+      "bytes": 30128
+    },
+    "assets/town-life/amo/1.webp": {
+      "sha256": "c37f5ed7ca9a95913fa38cee166cc5a49405c59efc157b382b96526d8e504367",
+      "bytes": 31584
+    },
+    "assets/town-life/amo/2.webp": {
+      "sha256": "ddaba72b8fe5cd0e4c993f229060555d76347b67f0fc1a18636010be039db567",
+      "bytes": 30558
+    },
+    "assets/town-life/diandian/0.webp": {
+      "sha256": "45b28bb34493dcfc17bf29f0a8939573f29243d6e7e2ca744ed9253994c61eee",
+      "bytes": 31902
+    },
+    "assets/town-life/diandian/1.webp": {
+      "sha256": "4eb80ceea198241ccef89f72430d62afd5ec8e1d6c798c57b5184b0f6eef07ba",
+      "bytes": 29498
+    },
+    "assets/town-life/diandian/2.webp": {
+      "sha256": "fadaf0cca65c56c85837edf3cbb86a6a531fffd6462a1c584b66567fce310bad",
+      "bytes": 27630
+    },
+    "assets/town-life/doudou/0.webp": {
+      "sha256": "e704c519b1418aea809f69a16a7c7c964fe9e2e4d209c13c201d13f13a94e29f",
+      "bytes": 21546
+    },
+    "assets/town-life/doudou/1.webp": {
+      "sha256": "f9885e2d24aae54ef3c6c6d7e420787431542b96b3d1343351db3a8a890764ca",
+      "bytes": 22222
+    },
+    "assets/town-life/doudou/2.webp": {
+      "sha256": "7ee18461bc05c47ede495b4c6ac4b40c13763a4ce0ee8a14e12358ec8b4a3460",
+      "bytes": 21570
+    },
+    "assets/town-life/gugu/0.webp": {
+      "sha256": "ad8c97d6d931444089857b0085d24c7463e0364c6f7d86a31f466e40a0b4ce6e",
+      "bytes": 27738
+    },
+    "assets/town-life/gugu/1.webp": {
+      "sha256": "b70af638fddf74e816619ac601137fa10188557f9734428d6477a68cbc722da7",
+      "bytes": 27894
+    },
+    "assets/town-life/gugu/2.webp": {
+      "sha256": "bf569f63b78f38c605a6e59957c82b6ef4bcf23bd1c36de1e76b8547eebcc68d",
+      "bytes": 27176
+    },
+    "assets/town-life/kid-aya/actor.webp": {
+      "sha256": "098a0130d9593838f66f444a5a6044e3bf97a12ce68c4daf9f97bb82780bc758",
+      "bytes": 33300
+    },
+    "assets/town-life/kid-aya/portrait.webp": {
+      "sha256": "15a35b3d8e17c284701093ba9d46d84834d512358eb1d15ba61794160060740d",
+      "bytes": 193460
+    },
+    "assets/town-life/kid-ling/actor.webp": {
+      "sha256": "12e3f662183a8448f1d87cc229d6fd50a0daba05e9062acd5e8e820b35464114",
+      "bytes": 33042
+    },
+    "assets/town-life/kid-ling/portrait.webp": {
+      "sha256": "fd082a476c1f05ee0a465a6a37cbb2550c4f0e791d9126331d5b2764579462db",
+      "bytes": 192580
+    },
+    "assets/town-life/kid-luo/actor.webp": {
+      "sha256": "766de6419dcc18135ae17b1232c4e5447fe5e3313be41c7aec27b231c6520bac",
+      "bytes": 28928
+    },
+    "assets/town-life/kid-luo/portrait.webp": {
+      "sha256": "14c3bf8ca47cfc443c67d411c018807803d24fc557c2cf1d7f5d533157f84c34",
+      "bytes": 165634
+    },
+    "assets/town-life/snowball/0.webp": {
+      "sha256": "becb96e3e80dfec902e57b316828df7b1eb2d4842a14507dd41f14d82411883d",
+      "bytes": 22008
+    },
+    "assets/town-life/snowball/1.webp": {
+      "sha256": "b96628563a882ed55631fa264a6cb8cc2713b296d1e92c665241e16d95c9dce2",
+      "bytes": 24224
+    },
+    "assets/town-life/snowball/2.webp": {
+      "sha256": "64d90ff25fdff702d56b6617cc197d84c1e2adfcb59a99c4e976ba272458eaab",
+      "bytes": 24956
+    },
+    "assets/town-life/tuantuan/0.webp": {
+      "sha256": "23e7098bd2b7b9546d60873610f72b370cc65cedeb115278e82c59052fd30d2f",
+      "bytes": 32018
+    },
+    "assets/town-life/tuantuan/1.webp": {
+      "sha256": "7966fe82ea8194a2adc8e3cac449d5f1818b0dc8fd15eaf0ef92edb94af011bc",
+      "bytes": 32858
+    },
+    "assets/town-life/tuantuan/2.webp": {
+      "sha256": "f41e9bee9ce00c7704cb10517cd8c0357a1994f2c08fae58c541c0640815ef40",
+      "bytes": 30472
+    }
+  }
+}

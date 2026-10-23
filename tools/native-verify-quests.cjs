@@ -1,0 +1,10 @@
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),{spawnSync}=require('node:child_process');
+const root=path.resolve(__dirname,'..'),out=path.join(root,'artifacts/godot'),source=path.resolve(process.argv[2]||path.join(out,'windows'));
+const report=path.join(out,'native-release-quests.json');
+const run=spawnSync(path.join(out,'engine/godot.exe'),['--main-pack',path.join(source,'灰烬边境.pck'),'--resolution','1280x720','--script',path.join(root,'godot/tests/check_quest_input.gd')],{cwd:source,encoding:'utf8',windowsHide:true,timeout:90000,env:{...process.env,APPDATA:path.join(out,'test-profile'),ASHEN_DEV_BRIDGE:'',ASHEN_QUEST_FLOW_SOURCE:path.join(root,'godot/tests/quest_acceptance.gd'),ASHEN_QUEST_INPUT_SOURCE:path.join(root,'godot/tests/quest_input_acceptance.gd'),ASHEN_QUEST_REPORT:report}});
+const log=(run.stdout||'')+(run.stderr||'');fs.writeFileSync(path.join(out,'native-release-quests.log'),log);
+if(run.error||run.status!==0||/SCRIPT ERROR:|^ERROR:/m.test(log)||!fs.existsSync(report))throw Error('Exported quest/input validation failed: '+log.slice(-9000));
+const result=JSON.parse(fs.readFileSync(report));if(!result.passed)throw Error(JSON.stringify(result));
+result.pckSha256=crypto.createHash('sha256').update(fs.readFileSync(path.join(source,'灰烬边境.pck'))).digest('hex');
+result.checkedWith='Matching Godot editor runtime loading the final exported PCK; external native input and flow drivers excluded from release.';
+fs.writeFileSync(report,JSON.stringify(result,null,2));console.log(JSON.stringify(result));

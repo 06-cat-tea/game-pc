@@ -1,0 +1,7 @@
+{
+  "mode": "built-in imagegen",
+  "prompt": "Use case: identity-preserve. Asset: full-body game standing portrait, neutral composed expression. Eira the priestess, young adult woman, soft ash-gray hair and blue eyes, white hooded priest robes with gold trim and blue stone accents, holding her recognizable golden four-point star staff with a blue gem. Expand this existing avatar into a matching detailed full-body painterly fantasy-anime standing portrait, using elegant long white-and-gold robes and visible cream boots. Remove the circular avatar medallion; preserve the character's face, hairstyle, hood, staff and colors. Reference image is the exact character identity and costume reference. Preserve face, hair, age, clothing, colors and props. Use the same refined painterly fantasy anime style as the existing Ashen Frontier portraits. Full body from hair to both soles, one centered figure in a portrait 2:3 composition with generous clear margins. Genuine transparent alpha background, no floor or scenery, no drop shadow, no text or watermark, anatomically correct hands, both feet fully in frame.",
+  "reference": "E:\\360Downloads\\game\\desktop\\godot\\assets\\world\\portraits\\priest-256.png",
+  "source": "C:\\Users\\23373\\.codex\\generated_images\\01a14309-bfc5-7c11-babb-12359d273b12\\exec-43dec2b9-1b8e-461e-8dad-0959bc43dfc9.png",
+  "referenceArchive": "art-source/characters/eira/web-reference/priest-256.png"
+}

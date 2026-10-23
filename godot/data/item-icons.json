@@ -1,0 +1,245 @@
+{
+  "version": 1,
+  "icons": {
+    "potion": {
+      "path": "res://assets/ui/items/potion.svg",
+      "author": "Lorc",
+      "license": "CC BY 3.0",
+      "source": "https://game-icons.net/icons/000000/transparent/1x1/lorc/heart-bottle.svg",
+      "page": "https://game-icons.net/1x1/lorc/heart-bottle.html",
+      "modifications": "Recolored for Ashen Frontier; transparent background."
+    },
+    "tonic": {
+      "path": "res://assets/ui/items/tonic.svg",
+      "author": "Lorc",
+      "license": "CC BY 3.0",
+      "source": "https://game-icons.net/icons/000000/transparent/1x1/lorc/round-bottom-flask.svg",
+      "page": "https://game-icons.net/1x1/lorc/round-bottom-flask.html",
+      "modifications": "Recolored for Ashen Frontier; transparent background."
+    },
+    "revive": {
+      "path": "res://assets/ui/items/revive.svg",
+      "author": "Delapouite",
+      "license": "CC BY 3.0",
+      "source": "https://game-icons.net/icons/000000/transparent/1x1/delapouite/magic-potion.svg",
+      "page": "https://game-icons.net/1x1/delapouite/magic-potion.html",
+      "modifications": "Recolored for Ashen Frontier; transparent background."
+    },
+    "herb": {
+      "path": "res://assets/ui/items/herb.svg",
+      "author": "Lorc",
+      "license": "CC BY 3.0",
+      "source": "https://game-icons.net/icons/000000/transparent/1x1/lorc/three-leaves.svg",
+      "page": "https://game-icons.net/1x1/lorc/three-leaves.html",
+      "modifications": "Recolored for Ashen Frontier; transparent background."
+    },
+    "ore": {
+      "path": "res://assets/ui/items/ore.svg",
+      "author": "Delapouite",
+      "license": "CC BY 3.0",
+      "source": "https://game-icons.net/icons/000000/transparent/1x1/delapouite/stone-pile.svg",
+      "page": "https://game-icons.net/1x1/delapouite/stone-pile.html",
+      "modifications": "Recolored for Ashen Frontier; transparent background."
+    },
+    "shard": {
+      "path": "res://assets/ui/items/shard.svg",
+      "author": "Lorc",
+      "license": "CC BY 3.0",
+      "source": "https://game-icons.net/icons/000000/transparent/1x1/lorc/crystal-shine.svg",
+      "page": "https://game-icons.net/1x1/lorc/crystal-shine.html",
+      "modifications": "Recolored for Ashen Frontier; transparent background."
+    },
+    "gold": {
+      "path": "res://assets/ui/items/gold.svg",
+      "author": "Delapouite",
+      "license": "CC BY 3.0",
+      "source": "https://game-icons.net/icons/000000/transparent/1x1/delapouite/two-coins.svg",
+      "page": "https://game-icons.net/1x1/delapouite/two-coins.html",
+      "modifications": "Recolored for Ashen Frontier; transparent background."
+    },
+    "supply": {
+      "path": "res://assets/ui/items/supply.svg",
+      "author": "Lorc",
+      "license": "CC BY 3.0",
+      "source": "https://game-icons.net/icons/000000/transparent/1x1/lorc/knapsack.svg",
+      "page": "https://game-icons.net/1x1/lorc/knapsack.html",
+      "modifications": "Recolored for Ashen Frontier; transparent background."
+    },
+    "physical": {
+      "path": "res://assets/ui/items/physical.svg",
+      "author": "Lorc",
+      "license": "CC BY 3.0",
+      "source": "https://game-icons.net/icons/000000/transparent/1x1/lorc/broadsword.svg",
+      "page": "https://game-icons.net/1x1/lorc/broadsword.html",
+      "modifications": "Recolored for Ashen Frontier; transparent background."
+    },
+    "fire": {
+      "path": "res://assets/ui/items/fire.svg",
+      "author": "sbed",
+      "license": "CC BY 3.0",
+      "source": "https://game-icons.net/icons/000000/transparent/1x1/sbed/fire.svg",
+      "page": "https://game-icons.net/1x1/sbed/fire.html",
+      "modifications": "Recolored for Ashen Frontier; transparent background."
+    },
+    "astral": {
+      "path": "res://assets/ui/items/astral.svg",
+      "author": "Lorc",
+      "license": "CC BY 3.0",
+      "source": "https://game-icons.net/icons/000000/transparent/1x1/lorc/star-swirl.svg",
+      "page": "https://game-icons.net/1x1/lorc/star-swirl.html",
+      "modifications": "Recolored for Ashen Frontier; transparent background."
+    },
+    "holy": {
+      "path": "res://assets/ui/items/holy.svg",
+      "author": "Lorc",
+      "license": "CC BY 3.0",
+      "source": "https://game-icons.net/icons/000000/transparent/1x1/lorc/holy-symbol.svg",
+      "page": "https://game-icons.net/1x1/lorc/holy-symbol.html",
+      "modifications": "Recolored for Ashen Frontier; transparent background."
+    },
+    "poison": {
+      "path": "res://assets/ui/items/poison.svg",
+      "author": "Lorc",
+      "license": "CC BY 3.0",
+      "source": "https://game-icons.net/icons/000000/transparent/1x1/lorc/poison-bottle.svg",
+      "page": "https://game-icons.net/1x1/lorc/poison-bottle.html",
+      "modifications": "Recolored for Ashen Frontier; transparent background."
+    },
+    "shield": {
+      "path": "res://assets/ui/items/shield.svg",
+      "author": "sbed",
+      "license": "CC BY 3.0",
+      "source": "https://game-icons.net/icons/000000/transparent/1x1/sbed/shield.svg",
+      "page": "https://game-icons.net/1x1/sbed/shield.html",
+      "modifications": "Recolored for Ashen Frontier; transparent background."
+    },
+    "burn": {
+      "path": "res://assets/ui/items/burn.svg",
+      "author": "sbed",
+      "license": "CC BY 3.0",
+      "source": "https://game-icons.net/icons/000000/transparent/1x1/sbed/fire.svg",
+      "page": "https://game-icons.net/1x1/sbed/fire.html",
+      "modifications": "Recolored for Ashen Frontier; transparent background."
+    },
+    "bleed": {
+      "path": "res://assets/ui/items/bleed.svg",
+      "author": "Lorc",
+      "license": "CC BY 3.0",
+      "source": "https://game-icons.net/icons/000000/transparent/1x1/lorc/bleeding-wound.svg",
+      "page": "https://game-icons.net/1x1/lorc/bleeding-wound.html",
+      "modifications": "Recolored for Ashen Frontier; transparent background."
+    },
+    "regen": {
+      "path": "res://assets/ui/items/regen.svg",
+      "author": "Delapouite",
+      "license": "CC BY 3.0",
+      "source": "https://game-icons.net/icons/000000/transparent/1x1/delapouite/healing.svg",
+      "page": "https://game-icons.net/1x1/delapouite/healing.html",
+      "modifications": "Recolored for Ashen Frontier; transparent background."
+    },
+    "vulnerable": {
+      "path": "res://assets/ui/items/vulnerable.svg",
+      "author": "Lorc",
+      "license": "CC BY 3.0",
+      "source": "https://game-icons.net/icons/000000/transparent/1x1/lorc/target-arrows.svg",
+      "page": "https://game-icons.net/1x1/lorc/target-arrows.html",
+      "modifications": "Recolored for Ashen Frontier; transparent background."
+    },
+    "armorBreak": {
+      "path": "res://assets/ui/items/armorBreak.svg",
+      "author": "Lorc",
+      "license": "CC BY 3.0",
+      "source": "https://game-icons.net/icons/000000/transparent/1x1/lorc/cracked-shield.svg",
+      "page": "https://game-icons.net/1x1/lorc/cracked-shield.html",
+      "modifications": "Recolored for Ashen Frontier; transparent background."
+    },
+    "silence": {
+      "path": "res://assets/ui/items/silence.svg",
+      "author": "Delapouite",
+      "license": "CC BY 3.0",
+      "source": "https://game-icons.net/icons/000000/transparent/1x1/delapouite/silenced.svg",
+      "page": "https://game-icons.net/1x1/delapouite/silenced.html",
+      "modifications": "Recolored for Ashen Frontier; transparent background."
+    },
+    "blind": {
+      "path": "res://assets/ui/items/blind.svg",
+      "author": "Lorc",
+      "license": "CC BY 3.0",
+      "source": "https://game-icons.net/icons/000000/transparent/1x1/lorc/semi-closed-eye.svg",
+      "page": "https://game-icons.net/1x1/lorc/semi-closed-eye.html",
+      "modifications": "Recolored for Ashen Frontier; transparent background."
+    },
+    "guard": {
+      "path": "res://assets/ui/items/guard.svg",
+      "author": "Lorc",
+      "license": "CC BY 3.0",
+      "source": "https://game-icons.net/icons/000000/transparent/1x1/lorc/shield-reflect.svg",
+      "page": "https://game-icons.net/1x1/lorc/shield-reflect.html",
+      "modifications": "Recolored for Ashen Frontier; transparent background."
+    },
+    "taunt": {
+      "path": "res://assets/ui/items/taunt.svg",
+      "author": "Lorc",
+      "license": "CC BY 3.0",
+      "source": "https://game-icons.net/icons/000000/transparent/1x1/lorc/screaming.svg",
+      "page": "https://game-icons.net/1x1/lorc/screaming.html",
+      "modifications": "Recolored for Ashen Frontier; transparent background."
+    },
+    "broken": {
+      "path": "res://assets/ui/items/broken.svg",
+      "author": "Lorc",
+      "license": "CC BY 3.0",
+      "source": "https://game-icons.net/icons/000000/transparent/1x1/lorc/cracked-shield.svg",
+      "page": "https://game-icons.net/1x1/lorc/cracked-shield.html",
+      "modifications": "Recolored for Ashen Frontier; transparent background."
+    },
+    "stun": {
+      "path": "res://assets/ui/items/stun.svg",
+      "author": "Delapouite",
+      "license": "CC BY 3.0",
+      "source": "https://game-icons.net/icons/000000/transparent/1x1/delapouite/stars-stack.svg",
+      "page": "https://game-icons.net/1x1/delapouite/stars-stack.html",
+      "modifications": "Recolored for Ashen Frontier; transparent background."
+    },
+    "weaken": {
+      "path": "res://assets/ui/items/weaken.svg",
+      "author": "Lorc",
+      "license": "CC BY 3.0",
+      "source": "https://game-icons.net/icons/000000/transparent/1x1/lorc/despair.svg",
+      "page": "https://game-icons.net/1x1/lorc/despair.html",
+      "modifications": "Recolored for Ashen Frontier; transparent background."
+    },
+    "riposte": {
+      "path": "res://assets/ui/items/riposte.svg",
+      "author": "Lorc",
+      "license": "CC BY 3.0",
+      "source": "https://game-icons.net/icons/000000/transparent/1x1/lorc/shield-reflect.svg",
+      "page": "https://game-icons.net/1x1/lorc/shield-reflect.html",
+      "modifications": "Recolored for Ashen Frontier; transparent background."
+    },
+    "balanced": {
+      "path": "res://assets/ui/items/balanced.svg",
+      "author": "Lorc",
+      "license": "CC BY 3.0",
+      "source": "https://game-icons.net/icons/000000/transparent/1x1/lorc/scales.svg",
+      "page": "https://game-icons.net/1x1/lorc/scales.html",
+      "modifications": "Recolored for Ashen Frontier; transparent background."
+    },
+    "assault": {
+      "path": "res://assets/ui/items/assault.svg",
+      "author": "Lorc",
+      "license": "CC BY 3.0",
+      "source": "https://game-icons.net/icons/000000/transparent/1x1/lorc/crossed-swords.svg",
+      "page": "https://game-icons.net/1x1/lorc/crossed-swords.html",
+      "modifications": "Recolored for Ashen Frontier; transparent background."
+    },
+    "watch": {
+      "path": "res://assets/ui/items/watch.svg",
+      "author": "sbed",
+      "license": "CC BY 3.0",
+      "source": "https://game-icons.net/icons/000000/transparent/1x1/sbed/shield.svg",
+      "page": "https://game-icons.net/1x1/sbed/shield.html",
+      "modifications": "Recolored for Ashen Frontier; transparent background."
+    }
+  }
+}

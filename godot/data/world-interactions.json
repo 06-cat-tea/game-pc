@@ -1,0 +1,439 @@
+{
+  "revision": 1,
+  "children": {
+    "kid-luo": {
+      "name": "小洛",
+      "type": "villager",
+      "place": "town",
+      "position": {
+        "x": 19.8,
+        "y": 21.6
+      },
+      "line": "团团最喜欢旅店的暖窗台。你愿意帮我找找它吗？",
+      "role": "晨星镇的孩子",
+      "portrait": "res://assets/town-life/kid-luo/portrait.webp",
+      "actor": "res://assets/town-life/kid-luo/actor.webp"
+    },
+    "kid-aya": {
+      "name": "阿芽",
+      "type": "villager",
+      "place": "town",
+      "position": {
+        "x": 39.4,
+        "y": 25.8
+      },
+      "line": "药草要认清叶子，照顾小动物也要慢慢来。",
+      "role": "晨星镇的孩子",
+      "portrait": "res://assets/town-life/kid-aya/portrait.webp",
+      "actor": "res://assets/town-life/kid-aya/actor.webp"
+    },
+    "kid-ling": {
+      "name": "小铃",
+      "type": "villager",
+      "place": "town",
+      "position": {
+        "x": 17.3,
+        "y": 10.8
+      },
+      "line": "礼拜堂每天都有新的信，也有等着吃饭的小伙伴。",
+      "role": "晨星镇的孩子",
+      "portrait": "res://assets/town-life/kid-ling/portrait.webp",
+      "actor": "res://assets/town-life/kid-ling/actor.webp"
+    }
+  },
+  "animals": [
+    {
+      "id": "tuantuan",
+      "name": "团团",
+      "species": "橘猫",
+      "scene": "town",
+      "point": [
+        24.5,
+        31
+      ],
+      "radius": 0.8,
+      "width": 48,
+      "frames": [
+        "res://assets/town-life/tuantuan/0.webp",
+        "res://assets/town-life/tuantuan/1.webp",
+        "res://assets/town-life/tuantuan/2.webp"
+      ]
+    },
+    {
+      "id": "amo",
+      "name": "阿墨",
+      "species": "黑白犬",
+      "scene": "town",
+      "point": [
+        39,
+        9.8
+      ],
+      "radius": 0.8,
+      "width": 62,
+      "frames": [
+        "res://assets/town-life/amo/0.webp",
+        "res://assets/town-life/amo/1.webp",
+        "res://assets/town-life/amo/2.webp"
+      ]
+    },
+    {
+      "id": "snowball",
+      "name": "雪球",
+      "species": "白兔",
+      "scene": "town",
+      "point": [
+        40,
+        34
+      ],
+      "radius": 0.8,
+      "width": 38,
+      "frames": [
+        "res://assets/town-life/snowball/0.webp",
+        "res://assets/town-life/snowball/1.webp",
+        "res://assets/town-life/snowball/2.webp"
+      ]
+    },
+    {
+      "id": "diandian",
+      "name": "点点",
+      "species": "灰猫",
+      "scene": "town",
+      "point": [
+        33,
+        26.4
+      ],
+      "radius": 0.8,
+      "width": 45,
+      "frames": [
+        "res://assets/town-life/diandian/0.webp",
+        "res://assets/town-life/diandian/1.webp",
+        "res://assets/town-life/diandian/2.webp"
+      ]
+    },
+    {
+      "id": "gugu",
+      "name": "咕咕",
+      "species": "母鸡",
+      "scene": "town",
+      "point": [
+        12.6,
+        10.4
+      ],
+      "radius": 0.8,
+      "width": 42,
+      "frames": [
+        "res://assets/town-life/gugu/0.webp",
+        "res://assets/town-life/gugu/1.webp",
+        "res://assets/town-life/gugu/2.webp"
+      ]
+    },
+    {
+      "id": "doudou",
+      "name": "豆豆",
+      "species": "麻雀",
+      "scene": "town",
+      "point": [
+        29.5,
+        16
+      ],
+      "radius": 0.8,
+      "width": 28,
+      "frames": [
+        "res://assets/town-life/doudou/0.webp",
+        "res://assets/town-life/doudou/1.webp",
+        "res://assets/town-life/doudou/2.webp"
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "id": "herb-1",
+      "scene": "town",
+      "point": [
+        12,
+        12
+      ],
+      "material": "herb",
+      "name": "晨露药草"
+    },
+    {
+      "id": "herb-2",
+      "scene": "town",
+      "point": [
+        10.5,
+        15
+      ],
+      "material": "herb",
+      "name": "晨露药草"
+    },
+    {
+      "id": "herb-3",
+      "scene": "town",
+      "point": [
+        14,
+        15
+      ],
+      "material": "herb",
+      "name": "晨露药草"
+    },
+    {
+      "id": "ore-1",
+      "scene": "town",
+      "point": [
+        33,
+        10.5
+      ],
+      "material": "ore",
+      "name": "浅层矿样"
+    },
+    {
+      "id": "ore-2",
+      "scene": "town",
+      "point": [
+        33,
+        7
+      ],
+      "material": "ore",
+      "name": "浅层矿样"
+    }
+  ],
+  "objects": [
+    {
+      "id": "pawprints",
+      "name": "旅店窗下的爪印",
+      "scene": "town",
+      "point": [
+        23,
+        30.5
+      ],
+      "text": "小小的梅花印一路通向暖窗台。"
+    },
+    {
+      "id": "medicine-bag",
+      "name": "点点身旁的小药包",
+      "scene": "town",
+      "point": [
+        33.5,
+        27
+      ],
+      "text": "封口绳还在，药包没有被雨淋湿。"
+    },
+    {
+      "id": "feeding-bowl",
+      "name": "礼拜堂食盆位置",
+      "scene": "town",
+      "point": [
+        12.6,
+        11.5
+      ],
+      "text": "这里背风，适合放一只稳稳的食盆。"
+    },
+    {
+      "id": "chapel-mail",
+      "name": "礼拜堂信箱",
+      "scene": "town",
+      "point": [
+        17.6,
+        10
+      ],
+      "text": "将信笺放回归灯纹章的信箱。"
+    }
+  ],
+  "entrances": [
+    {
+      "id": "entrance-town-wall",
+      "region": "town",
+      "scene": "town-wall",
+      "building": "north-gate",
+      "name": "城墙巡径入口",
+      "point": [
+        28,
+        5.9
+      ],
+      "index": 0,
+      "requires": ""
+    },
+    {
+      "id": "entrance-town-drain",
+      "region": "town",
+      "scene": "town-drain",
+      "building": "",
+      "name": "旧渠检修口",
+      "point": [
+        22.5,
+        14
+      ],
+      "index": 1,
+      "requires": "town-wall:survey"
+    },
+    {
+      "id": "entrance-town-trial",
+      "region": "town",
+      "scene": "town-trial",
+      "building": "guildhall",
+      "name": "公会试炼场入口",
+      "point": [
+        21.5,
+        19.4
+      ],
+      "index": 2,
+      "requires": "town-drain:survey"
+    },
+    {
+      "id": "entrance-wood-trail",
+      "region": "wood",
+      "scene": "wood-trail",
+      "building": "forest-hut",
+      "name": "银叶深径入口",
+      "point": [
+        14.5,
+        33.9
+      ],
+      "index": 0,
+      "requires": ""
+    },
+    {
+      "id": "entrance-wood-roots",
+      "region": "wood",
+      "scene": "wood-roots",
+      "building": "moss-shrine",
+      "name": "古根洞窟入口",
+      "point": [
+        40,
+        17.9
+      ],
+      "index": 1,
+      "requires": "wood-trail:survey"
+    },
+    {
+      "id": "entrance-wood-well",
+      "region": "wood",
+      "scene": "wood-well",
+      "building": "moon-well",
+      "name": "月井下层入口",
+      "point": [
+        51,
+        29.9
+      ],
+      "index": 2,
+      "requires": "wood-roots:survey"
+    },
+    {
+      "id": "entrance-pass-path",
+      "region": "pass",
+      "scene": "pass-path",
+      "building": "caravan-yard",
+      "name": "栈道岔路入口",
+      "point": [
+        27.5,
+        30.9
+      ],
+      "index": 0,
+      "requires": ""
+    },
+    {
+      "id": "entrance-pass-mine",
+      "region": "pass",
+      "scene": "pass-mine",
+      "building": "deep-mine",
+      "name": "灰炉旧矿层入口",
+      "point": [
+        52,
+        18.9
+      ],
+      "index": 1,
+      "requires": "pass-path:survey"
+    },
+    {
+      "id": "entrance-pass-core",
+      "region": "pass",
+      "scene": "pass-core",
+      "building": "ember-fortress",
+      "name": "熔核腹地入口",
+      "point": [
+        14.5,
+        9.9
+      ],
+      "index": 2,
+      "requires": "pass-mine:survey"
+    },
+    {
+      "id": "entrance-fen-temple",
+      "region": "fen",
+      "scene": "fen-temple",
+      "building": "sunken-temple",
+      "name": "沉没神殿内殿入口",
+      "point": [
+        28,
+        26.9
+      ],
+      "index": 0,
+      "requires": ""
+    },
+    {
+      "id": "entrance-fen-crypt",
+      "region": "fen",
+      "scene": "fen-crypt",
+      "building": "royal-crypt",
+      "name": "王陵深层入口",
+      "point": [
+        40.5,
+        15.9
+      ],
+      "index": 1,
+      "requires": "fen-temple:survey"
+    },
+    {
+      "id": "entrance-fen-seal",
+      "region": "fen",
+      "scene": "fen-seal",
+      "building": "moon-shrine",
+      "name": "黑水封印庭入口",
+      "point": [
+        15,
+        35.9
+      ],
+      "index": 2,
+      "requires": "fen-crypt:survey"
+    },
+    {
+      "id": "entrance-coast-reef",
+      "region": "coast",
+      "scene": "coast-reef",
+      "building": "tide-harbor",
+      "name": "潮间礁道入口",
+      "point": [
+        41,
+        29.9
+      ],
+      "index": 0,
+      "requires": ""
+    },
+    {
+      "id": "entrance-coast-hold",
+      "region": "coast",
+      "scene": "coast-hold",
+      "building": "wreck-shrine",
+      "name": "沉船货舱入口",
+      "point": [
+        52,
+        38.9
+      ],
+      "index": 1,
+      "requires": "coast-reef:survey"
+    },
+    {
+      "id": "entrance-coast-deck",
+      "region": "coast",
+      "scene": "coast-deck",
+      "building": "lighthouse",
+      "name": "无旗船甲板入口",
+      "point": [
+        12,
+        10.9
+      ],
+      "index": 2,
+      "requires": "coast-hold:survey"
+    }
+  ]
+}

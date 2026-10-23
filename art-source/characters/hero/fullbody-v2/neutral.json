@@ -1,0 +1,9 @@
+{
+  "mode": "built-in imagegen",
+  "references": [
+    "godot/assets/characters/hero/static-v1/neutral.webp",
+    "godot/assets/art-v2/actors/hero-0-0.webp"
+  ],
+  "prompt": "Use case: identity-preserve. Asset: production game full-body standing portrait for the existing protagonist, neutral expression. Image 1 is the exact face, costume and painterly anime reference. Image 2 is the reference for the complete legs and boots. Extend the character in image 1 to a FULL BODY view from hair to both boot soles with generous transparent margins, centered on a portrait 2:3 canvas, no cropping, no ground, no shadow background, genuine transparent alpha. Preserve his exact dark gray tousled hair, youthful male face, pale white tunic, navy cloak with gold star embroidery, star brooch, leather belts, satchel, dark trousers, brown boots and fingerless gloves. Relaxed standing pose with arms comfortably at sides, matching the reference upper body. Keep all costume design and painterly light consistent; only complete the lower body. High quality clean silhouette and distinct hands, neutral calm face. No text, watermark or extra accessories.",
+  "referenceArchive": "art-source/characters/hero/web-reference/static-v1/neutral.webp"
+}

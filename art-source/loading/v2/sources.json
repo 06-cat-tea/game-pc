@@ -1,0 +1,66 @@
+{
+  "style": "手绘风、日式西幻；水彩与水粉、可见线稿、单一焦点、留白、减少装饰和碎细节",
+  "tool": "Built-in image_gen",
+  "images": [
+    {
+      "id": "town",
+      "path": "art-source/loading/v2/town.png",
+      "prompt": "ONE 16:9 landscape loading illustration, 1920x1080. Art direction: unmistakably HAND-DRAWN JAPANESE JRPG WESTERN FANTASY background art. Delicate visible ink linework, hand-painted watercolor and gouache, matte paper grain, soft cel-painted shading, expressive brush strokes, restrained low-detail backgrounds, harmonious muted colors. NOT photorealistic, NOT 3D, NOT a realistic matte painting. Scene: Morningstar Town: one modest medieval clocktower beside a quiet lane, a few blue-roof houses clustered at its base, dawn sky and distant meadow. The town is a small frontier village, not a huge city. Composition: one dominant focal subject, strong readable silhouettes, a few intentional secondary shapes, generous breathing room and empty bottom 20 percent for UI. Calm orderly visual hierarchy; remove micro-detail and needless decoration. No characters, no lettering, no logos, no watermarks, no collage.",
+      "generation_output": "exec-57dfc874-ba62-4a4a-ae1a-364baff80d56.png"
+    },
+    {
+      "id": "wood",
+      "path": "art-source/loading/v2/wood.png",
+      "prompt": "ONE 16:9 landscape loading illustration, 1920x1080. Art direction: unmistakably HAND-DRAWN JAPANESE JRPG WESTERN FANTASY background art. Delicate visible ink linework, hand-painted watercolor and gouache, matte paper grain, soft cel-painted shading, expressive brush strokes, restrained low-detail backgrounds, harmonious muted colors. NOT photorealistic, NOT 3D, NOT a realistic matte painting. Scene: Whispering Forest: one large silver-leaf tree framing a mossy elven standing stone and a small clear stream. Empty soft forest distance. No castle, no buildings, no extra celestial symbols. Composition: one dominant focal subject, strong readable silhouettes, a few intentional secondary shapes, generous breathing room and empty bottom 20 percent for UI. Calm orderly visual hierarchy; remove micro-detail and needless decoration. No characters, no lettering, no logos, no watermarks, no collage.",
+      "generation_output": "exec-e7b84960-6fe7-48d3-be6f-1048b0a5516c.png"
+    },
+    {
+      "id": "pass",
+      "path": "art-source/loading/v2/pass.png",
+      "prompt": "ONE 16:9 landscape loading illustration, 1920x1080. Art direction: unmistakably HAND-DRAWN JAPANESE JRPG WESTERN FANTASY background art. Delicate visible ink linework, hand-painted watercolor and gouache, matte paper grain, soft cel-painted shading, expressive brush strokes, restrained low-detail backgrounds, harmonious muted colors. NOT photorealistic, NOT 3D, NOT a realistic matte painting. Scene: Ember Pass: one weathered stone bridge crossing a russet canyon, faint warm forge glow far away. Broad simple rock masses and clean sky. No sprawling city, no decorative props. Composition: one dominant focal subject, strong readable silhouettes, a few intentional secondary shapes, generous breathing room and empty bottom 20 percent for UI. Calm orderly visual hierarchy; remove micro-detail and needless decoration. No characters, no lettering, no logos, no watermarks, no collage.",
+      "generation_output": "exec-850189d2-a1e1-4d52-b23e-17980f9cdc4e.png"
+    },
+    {
+      "id": "fen",
+      "path": "art-source/loading/v2/fen.png",
+      "prompt": "ONE 16:9 landscape loading illustration, 1920x1080. Art direction: unmistakably HAND-DRAWN JAPANESE JRPG WESTERN FANTASY background art. Delicate visible ink linework, hand-painted watercolor and gouache, matte paper grain, soft cel-painted shading, expressive brush strokes, restrained low-detail backgrounds, harmonious muted colors. NOT photorealistic, NOT 3D, NOT a realistic matte painting. Scene: Moonfen Ruins: one broken temple arch reflected in calm moonlit marsh water, reeds and low mist. Simple blue lavender shapes, broad open water. No skyline of ruins. Composition: one dominant focal subject, strong readable silhouettes, a few intentional secondary shapes, generous breathing room and empty bottom 20 percent for UI. Calm orderly visual hierarchy; remove micro-detail and needless decoration. No characters, no lettering, no logos, no watermarks, no collage.",
+      "generation_output": "exec-d345f5e2-8020-4eef-8783-1629785a6efc.png"
+    },
+    {
+      "id": "coast",
+      "path": "art-source/loading/v2/coast.png",
+      "prompt": "ONE 16:9 landscape loading illustration, 1920x1080. Art direction: unmistakably HAND-DRAWN JAPANESE JRPG WESTERN FANTASY background art. Delicate visible ink linework, hand-painted watercolor and gouache, matte paper grain, soft cel-painted shading, expressive brush strokes, restrained low-detail backgrounds, harmonious muted colors. NOT photorealistic, NOT 3D, NOT a realistic matte painting. Scene: Windfall Sea Cliffs: one slender lighthouse on a grassy cliff overlooking a turquoise sea, a single tiny sail far away. Broad sky and sea, few simple shapes. No harbor city, no wreckage piles. Composition: one dominant focal subject, strong readable silhouettes, a few intentional secondary shapes, generous breathing room and empty bottom 20 percent for UI. Calm orderly visual hierarchy; remove micro-detail and needless decoration. No characters, no lettering, no logos, no watermarks, no collage.",
+      "generation_output": "exec-425c4160-cdc3-42bd-a26f-9d3906730014.png"
+    },
+    {
+      "id": "city",
+      "path": "art-source/loading/v2/city.png",
+      "prompt": "ONE 16:9 landscape loading illustration, 1920x1080. Art direction: unmistakably HAND-DRAWN JAPANESE JRPG WESTERN FANTASY background art. Delicate visible ink linework, hand-painted watercolor and gouache, matte paper grain, soft cel-painted shading, expressive brush strokes, restrained low-detail backgrounds, harmonious muted colors. NOT photorealistic, NOT 3D, NOT a realistic matte painting. Scene: Homeward Royal City: one elegant cathedral and a few quiet riverside roofs, a simple arched bridge and warm lantern light at dusk. Clearly grouped silhouettes, open river foreground. No sprawling skyline, no giant apparatus. Composition: one dominant focal subject, strong readable silhouettes, a few intentional secondary shapes, generous breathing room and empty bottom 20 percent for UI. Calm orderly visual hierarchy; remove micro-detail and needless decoration. No characters, no lettering, no logos, no watermarks, no collage.",
+      "generation_output": "exec-d9771136-2037-4467-817e-9ce3a8b7457e.png"
+    },
+    {
+      "id": "departure",
+      "path": "art-source/loading/v2/departure.png",
+      "prompt": "ONE 16:9 landscape loading illustration, 1920x1080. Art direction: unmistakably HAND-DRAWN JAPANESE JRPG WESTERN FANTASY background art. Delicate visible ink linework, hand-painted watercolor and gouache, matte paper grain, soft cel-painted shading, expressive brush strokes, restrained low-detail backgrounds, harmonious muted colors. NOT photorealistic, NOT 3D, NOT a realistic matte painting. Scene: Departure: a narrow country path winding through a pale golden meadow toward distant blue mountains. One small distant village silhouette. Broad uncluttered sky, hopeful morning. Composition: one dominant focal subject, strong readable silhouettes, a few intentional secondary shapes, generous breathing room and empty bottom 20 percent for UI. Calm orderly visual hierarchy; remove micro-detail and needless decoration. No characters, no lettering, no logos, no watermarks, no collage.",
+      "generation_output": "exec-37a869e1-4adf-4be6-9f21-951beb167fa0.png"
+    },
+    {
+      "id": "camp",
+      "path": "art-source/loading/v2/camp.png",
+      "prompt": "ONE 16:9 landscape loading illustration, 1920x1080. Art direction: unmistakably HAND-DRAWN JAPANESE JRPG WESTERN FANTASY background art. Delicate visible ink linework, hand-painted watercolor and gouache, matte paper grain, soft cel-painted shading, expressive brush strokes, restrained low-detail backgrounds, harmonious muted colors. NOT photorealistic, NOT 3D, NOT a realistic matte painting. Scene: Camp: one small canvas tent and a small warm campfire at a forest edge under the evening sky. Empty calm meadow and soft treeline. No city, no ornament, no piles of equipment. Composition: one dominant focal subject, strong readable silhouettes, a few intentional secondary shapes, generous breathing room and empty bottom 20 percent for UI. Calm orderly visual hierarchy; remove micro-detail and needless decoration. No characters, no lettering, no logos, no watermarks, no collage.",
+      "generation_output": "exec-22c160b6-418d-4c07-8a77-f8ba5cf9fa57.png"
+    },
+    {
+      "id": "ruins",
+      "path": "art-source/loading/v2/ruins.png",
+      "prompt": "ONE 16:9 landscape loading illustration, 1920x1080. Art direction: unmistakably HAND-DRAWN JAPANESE JRPG WESTERN FANTASY background art. Delicate visible ink linework, hand-painted watercolor and gouache, matte paper grain, soft cel-painted shading, expressive brush strokes, restrained low-detail backgrounds, harmonious muted colors. NOT photorealistic, NOT 3D, NOT a realistic matte painting. Scene: Ruins: one broken stone doorway inside an ancient hall, one faded star mosaic on the wall, a soft shaft of daylight. Large quiet stone surfaces, minimal debris. No cathedral skyline, no dense carvings. Composition: one dominant focal subject, strong readable silhouettes, a few intentional secondary shapes, generous breathing room and empty bottom 20 percent for UI. Calm orderly visual hierarchy; remove micro-detail and needless decoration. No characters, no lettering, no logos, no watermarks, no collage.",
+      "generation_output": "exec-0255c825-5bb7-4ea1-81d9-2c796cdbd70a.png"
+    },
+    {
+      "id": "battle",
+      "path": "art-source/loading/v2/battle.png",
+      "prompt": "ONE 16:9 landscape loading illustration, 1920x1080. Art direction: unmistakably HAND-DRAWN JAPANESE JRPG WESTERN FANTASY background art. Delicate visible ink linework, hand-painted watercolor and gouache, matte paper grain, soft cel-painted shading, expressive brush strokes, restrained low-detail backgrounds, harmonious muted colors. NOT photorealistic, NOT 3D, NOT a realistic matte painting. Scene: Battle preparation: one sword and a plain shield resting against a wooden bench in a quiet stone courtyard, a single blue banner, early morning. Sparse props, no weapon pile, no city skyline. Composition: one dominant focal subject, strong readable silhouettes, a few intentional secondary shapes, generous breathing room and empty bottom 20 percent for UI. Calm orderly visual hierarchy; remove micro-detail and needless decoration. No characters, no lettering, no logos, no watermarks, no collage.",
+      "generation_output": "exec-b4fbfcf4-ed07-4e8f-bf3e-657ab402b7ee.png"
+    }
+  ]
+}

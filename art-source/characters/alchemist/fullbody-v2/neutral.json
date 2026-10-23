@@ -1,0 +1,7 @@
+{
+  "mode": "built-in imagegen",
+  "prompt": "Use case: identity-preserve. Asset: full-body game standing portrait, neutral composed expression. Selene, teal-haired amber-eyed female alchemist, brass goggles, teal embroidered short cape, ivory blouse and skirt, brown corset belts with glass vials and tools. Hold the exact green potion bottle. Complete the legs with stockings and practical brown alchemy travelling boots. Reference image is the exact character identity and costume reference. Preserve face, hair, age, clothing, colors and props. Use the same refined painterly fantasy anime style as the existing Ashen Frontier portraits. Full body from hair to both soles, one centered figure in a portrait 2:3 composition with generous clear margins. Genuine transparent alpha background, no floor or scenery, no drop shadow, no text or watermark, anatomically correct hands, both feet fully in frame.",
+  "reference": "E:\\360Downloads\\game\\desktop\\godot\\assets\\characters\\alchemist\\static-v1\\neutral.webp",
+  "source": "C:\\Users\\23373\\.codex\\generated_images\\01a14309-bfc5-7c11-babb-12359d273b12\\exec-756c14fc-6535-46b1-9122-c1ddf8cf9dc2.png",
+  "referenceArchive": "art-source/characters/alchemist/web-reference/static-v1/neutral.webp"
+}

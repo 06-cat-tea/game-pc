@@ -8,4 +8,9 @@
 - 保持电脑版固定键鼠布局。存档与备份只使用本端命名空间，不读写手机版进度。
 - 首次读取旧统一存档属于一次迁移，后续分别保存；JSON 导入导出由玩家主动操作。
 - 版本切换只允许可配置的外部页面链接，不同步代码、资源或存档。设为 null 时可独立隐藏。
-- 使用本工程的 package.json、pnpm-lock.yaml 和测试命令；本地 HTML 直接运行不需要开发依赖。
+- 同一套 Godot 工程维护 Windows 电脑版与供电脑浏览器游玩的 Web 导出；两者使用相同剧情、规则、素材和键鼠布局，不恢复已退役的 JavaScript 网页游戏或 Live2D 运行依赖。
+- Web 使用 Compatibility 渲染与单线程导出，部署到 GitHub Pages。浏览器存档保存在本地 IndexedDB，与 Windows 用户目录及旧网页存档隔离；JSON 文件导入导出由玩家主动操作。
+- GitHub 主分支保留完整当前源工程、素材来源、制作工具与许可；移除退役网页文件，保留已有 Git 历史。导出包、引擎、缓存和测试产物不提交，由 GitHub Actions 构建并部署 Web 产物。
+- 原生内容以 godot/data 中的 JSON 为准；历史网页来源校验值只作为制作来源记录。
+- 使用本工程的 package.json、pnpm-lock.yaml 和测试命令；Node 仅用于本地制作与验收，发行包不依赖 Node。
+- 当前工程位于 godot/；角色原稿与生成提示词保留在 art-source/characters/，运行资源位于 godot/assets/。

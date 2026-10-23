@@ -1,0 +1,16 @@
+{
+  "version":1,
+  "style":"手绘风、日式西幻；可见笔触、柔和色彩、原创星轨意象",
+  "images": {
+    "town":{"title":"晨星镇","path":"res://assets/loading/town.webp","tip":"钟塔的第十三声，等待一个回答。","resources":["res://assets/refined-world/maps/town.png"]},
+    "wood":{"title":"低语森林","path":"res://assets/loading/wood.webp","tip":"弱点决定削韧；主属性决定伤害克制。","resources":["res://assets/refined-world/maps/wood.png"]},
+    "pass":{"title":"余烬峡道","path":"res://assets/loading/pass.webp","tip":"前排护卫可替指定队友承受单体攻击。","resources":["res://assets/refined-world/maps/pass.png"]},
+    "fen":{"title":"月沼遗境","path":"res://assets/loading/fen.webp","tip":"护盾吸收伤害，但不会自动净化负面状态。","resources":["res://assets/refined-world/maps/fen.png"]},
+    "coast":{"title":"风葬海崖","path":"res://assets/loading/coast.webp","tip":"观察远程敌人的目标，保护脆弱的后排。","resources":["res://assets/refined-world/maps/coast.png"]},
+    "city":{"title":"归灯王城","path":"res://assets/loading/city.webp","tip":"在敌人蓄力时击破韧性，可打断危险攻击。","resources":["res://assets/refined-world/maps/city.png"]},
+    "departure":{"title":"启程 · 星陨纪事","path":"res://assets/loading/departure.webp","tip":"每一次配合，都让归途更近一些。"},
+    "camp":{"title":"营地休整","path":"res://assets/loading/camp.webp","tip":"休整恢复生命和法力；觉醒后的 TP 会保留。"},
+    "ruins":{"title":"遗迹探索","path":"res://assets/loading/ruins.webp","tip":"寻找入口、调查线索，再向委托人交付。"},
+    "battle":{"title":"战前整备","path":"res://assets/loading/battle.webp","tip":"变阵消耗一次行动，全队每轮最多一次。"}
+  }
+}

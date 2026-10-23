@@ -1,0 +1,6 @@
+{
+  "mode": "built-in imagegen",
+  "prompt": "Use case: identity-preserve. Edit ONLY the facial expression of this full-body game character portrait: a gentle, subtle warm smile and friendly eyes. Preserve the exact face identity and proportions, hair, costume, every accessory, pose, hands, body, legs, feet, lighting, framing and exact placement. No change except the expression. Keep the entire character from head to both soles visible on the identical 2:3 canvas and preserve genuine transparent alpha background. Do not add a backdrop, ground, text, borders or objects. The whole body and costume must match the reference exactly.",
+  "reference": "E:\\360Downloads\\game\\desktop\\art-source\\characters\\eira\\fullbody-v2\\neutral.png",
+  "source": "C:\\Users\\23373\\.codex\\generated_images\\01a14309-bfc5-7c11-babb-12359d273b12\\exec-4a49be8e-7506-4d93-a6d5-a92bf9b93cfe.png"
+}

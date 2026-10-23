@@ -1,0 +1,6 @@
+{
+  "mode": "built-in imagegen",
+  "prompt": "Use case: identity-preserve. Edit the supplied full-body game portrait ONLY in the tiny facial expression area. Change the mouth and eyes to a gentle, natural warm smile, subtle and fitting his personality. All other pixels and the full-body composition must remain as close to the reference as possible: identical pose, face identity, hair, clothing, cloak, hands, belts, boots, accessories, lighting and exact character scale and placement. Keep the same 2:3 portrait canvas showing the entire head and both soles, keep generous clear margins, preserve the actual transparent alpha background. No text, scenery or extra objects.",
+  "reference": "E:\\360Downloads\\game\\desktop\\art-source\\characters\\hero\\fullbody-v2\\neutral.png",
+  "source": "C:\\Users\\23373\\.codex\\generated_images\\01a14309-bfc5-7c11-babb-12359d273b12\\exec-1c97d1ce-4ea7-47f1-94f9-0fa2ef63c662.png"
+}

@@ -1,0 +1,1805 @@
+{
+  "version": 1,
+  "coordinates": {
+    "town": {
+      "origin": [
+        0,
+        0
+      ],
+      "axisX": [
+        48,
+        24
+      ],
+      "axisY": [
+        -48,
+        24
+      ]
+    },
+    "scene": {
+      "origin": [
+        960,
+        170
+      ],
+      "axisX": [
+        82.8,
+        41.4
+      ],
+      "axisY": [
+        -82.8,
+        41.4
+      ]
+    }
+  },
+  "mapBounds": {
+    "town": [
+      -2352,
+      -384,
+      5472,
+      3168
+    ],
+    "scene": [
+      0,
+      0,
+      1920,
+      1080
+    ]
+  },
+  "decor": [
+    {
+      "point": [
+        13.4,
+        6.5
+      ],
+      "asset": "res://assets/refined-world/flowers.svg",
+      "width": 48,
+      "large": false,
+      "group": "chapel",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        16.6,
+        6.6
+      ],
+      "asset": "res://assets/refined-world/plant-7.png",
+      "width": 55,
+      "large": false,
+      "group": "chapel",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        13.3,
+        8.2
+      ],
+      "asset": "res://assets/refined-world/flowers.svg",
+      "width": 62,
+      "large": false,
+      "group": "chapel",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        14.6,
+        9.8
+      ],
+      "asset": "res://assets/refined-world/plant-1.png",
+      "width": 69,
+      "large": false,
+      "group": "chapel",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        19.4,
+        27.5
+      ],
+      "asset": "res://assets/refined-world/flowers.svg",
+      "width": 48,
+      "large": false,
+      "group": "inn",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        23.6,
+        27.6
+      ],
+      "asset": "res://assets/refined-world/plant-5.png",
+      "width": 55,
+      "large": false,
+      "group": "inn",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        19.3,
+        29.2
+      ],
+      "asset": "res://assets/refined-world/flowers.svg",
+      "width": 62,
+      "large": false,
+      "group": "inn",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        20.9,
+        30.8
+      ],
+      "asset": "res://assets/refined-world/plant-7.png",
+      "width": 69,
+      "large": false,
+      "group": "inn",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        19.4,
+        27.7
+      ],
+      "asset": "res://assets/art-v3/environment/town-forest-12-barrels.webp",
+      "width": 64,
+      "large": false,
+      "group": "inn",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        15.4,
+        17.5
+      ],
+      "asset": "res://assets/refined-world/plant-0.png",
+      "width": 48,
+      "large": false,
+      "group": "guildhall",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        19.6,
+        17.6
+      ],
+      "asset": "res://assets/refined-world/plant-1.png",
+      "width": 55,
+      "large": false,
+      "group": "guildhall",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        15.3,
+        19.2
+      ],
+      "asset": "res://assets/refined-world/plant-2.png",
+      "width": 62,
+      "large": false,
+      "group": "guildhall",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        16.9,
+        20.8
+      ],
+      "asset": "res://assets/refined-world/plant-3.png",
+      "width": 69,
+      "large": false,
+      "group": "guildhall",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        15.4,
+        17.7
+      ],
+      "asset": "res://assets/art-v3/environment/town-forest-12-barrels.webp",
+      "width": 64,
+      "large": false,
+      "group": "guildhall",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        26.6,
+        19.8
+      ],
+      "asset": "res://assets/refined-world/plant-5.png",
+      "width": 69,
+      "large": false,
+      "group": "clocktower",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        34.4,
+        22.5
+      ],
+      "asset": "res://assets/refined-world/plant-3.png",
+      "width": 48,
+      "large": false,
+      "group": "market",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        37.6,
+        22.6
+      ],
+      "asset": "res://assets/refined-world/plant-4.png",
+      "width": 55,
+      "large": false,
+      "group": "market",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        34.3,
+        24.2
+      ],
+      "asset": "res://assets/refined-world/plant-5.png",
+      "width": 62,
+      "large": false,
+      "group": "market",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        35.6,
+        25.8
+      ],
+      "asset": "res://assets/refined-world/plant-6.png",
+      "width": 69,
+      "large": false,
+      "group": "market",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        34.4,
+        22.7
+      ],
+      "asset": "res://assets/art-v3/environment/town-village-09-supplies.webp",
+      "width": 64,
+      "large": false,
+      "group": "market",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        43.4,
+        2.5
+      ],
+      "asset": "res://assets/refined-world/plant-4.png",
+      "width": 48,
+      "large": false,
+      "group": "royal-hall",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        48.6,
+        2.6
+      ],
+      "asset": "res://assets/refined-world/plant-5.png",
+      "width": 55,
+      "large": false,
+      "group": "royal-hall",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        40.4,
+        29.5
+      ],
+      "asset": "res://assets/refined-world/plant-1.png",
+      "width": 48,
+      "large": false,
+      "group": "artisan-quarter",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        44.6,
+        29.6
+      ],
+      "asset": "res://assets/refined-world/plant-2.png",
+      "width": 55,
+      "large": false,
+      "group": "artisan-quarter",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        40.3,
+        31.2
+      ],
+      "asset": "res://assets/refined-world/plant-3.png",
+      "width": 62,
+      "large": false,
+      "group": "artisan-quarter",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        41.9,
+        32.8
+      ],
+      "asset": "res://assets/refined-world/plant-4.png",
+      "width": 69,
+      "large": false,
+      "group": "artisan-quarter",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        44.4,
+        9.5
+      ],
+      "asset": "res://assets/refined-world/flowers.svg",
+      "width": 48,
+      "large": false,
+      "group": "star-academy",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        48.6,
+        9.6
+      ],
+      "asset": "res://assets/refined-world/plant-6.png",
+      "width": 55,
+      "large": false,
+      "group": "star-academy",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        44.3,
+        11.2
+      ],
+      "asset": "res://assets/refined-world/flowers.svg",
+      "width": 62,
+      "large": false,
+      "group": "star-academy",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        45.9,
+        12.8
+      ],
+      "asset": "res://assets/refined-world/plant-0.png",
+      "width": 69,
+      "large": false,
+      "group": "star-academy",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        34.4,
+        12.5
+      ],
+      "asset": "res://assets/refined-world/flowers.svg",
+      "width": 48,
+      "large": false,
+      "group": "alchemist-lab",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        38.6,
+        12.6
+      ],
+      "asset": "res://assets/refined-world/plant-4.png",
+      "width": 55,
+      "large": false,
+      "group": "alchemist-lab",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        34.3,
+        14.2
+      ],
+      "asset": "res://assets/refined-world/flowers.svg",
+      "width": 62,
+      "large": false,
+      "group": "alchemist-lab",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        35.9,
+        15.8
+      ],
+      "asset": "res://assets/refined-world/plant-6.png",
+      "width": 69,
+      "large": false,
+      "group": "alchemist-lab",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        34.4,
+        6.5
+      ],
+      "asset": "res://assets/refined-world/plant-3.png",
+      "width": 48,
+      "large": false,
+      "group": "town-stables",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        38.6,
+        6.6
+      ],
+      "asset": "res://assets/refined-world/plant-4.png",
+      "width": 55,
+      "large": false,
+      "group": "town-stables",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        34.3,
+        8.2
+      ],
+      "asset": "res://assets/refined-world/plant-5.png",
+      "width": 62,
+      "large": false,
+      "group": "town-stables",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        35.9,
+        9.8
+      ],
+      "asset": "res://assets/refined-world/plant-6.png",
+      "width": 69,
+      "large": false,
+      "group": "town-stables",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        34.4,
+        6.7
+      ],
+      "asset": "res://assets/art-v3/environment/town-forest-12-barrels.webp",
+      "width": 64,
+      "large": false,
+      "group": "town-stables",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        25.4,
+        2.5
+      ],
+      "asset": "res://assets/refined-world/plant-2.png",
+      "width": 48,
+      "large": false,
+      "group": "north-gate",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        28.6,
+        2.6
+      ],
+      "asset": "res://assets/refined-world/plant-3.png",
+      "width": 55,
+      "large": false,
+      "group": "north-gate",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        25.3,
+        3.6
+      ],
+      "asset": "res://assets/refined-world/plant-4.png",
+      "width": 62,
+      "large": false,
+      "group": "north-gate",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        3,
+        5
+      ],
+      "asset": "res://assets/art-v3/environment/town-forest-01-oak.webp",
+      "width": 145,
+      "large": true,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        4.6,
+        6
+      ],
+      "asset": "res://assets/refined-world/plant-0.png",
+      "width": 52,
+      "large": false,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        16,
+        4.2
+      ],
+      "asset": "res://assets/art-v3/environment/town-forest-01-oak.webp",
+      "width": 163,
+      "large": true,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        17.6,
+        5.2
+      ],
+      "asset": "res://assets/refined-world/plant-1.png",
+      "width": 52,
+      "large": false,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        7,
+        20
+      ],
+      "asset": "res://assets/refined-world/plant-2.png",
+      "width": 52,
+      "large": false,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        42,
+        3
+      ],
+      "asset": "res://assets/art-v3/environment/town-forest-01-oak.webp",
+      "width": 199,
+      "large": true,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        4.2,
+        33
+      ],
+      "asset": "res://assets/art-v3/environment/town-forest-01-oak.webp",
+      "width": 145,
+      "large": true,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        5.800000000000001,
+        34
+      ],
+      "asset": "res://assets/refined-world/plant-4.png",
+      "width": 52,
+      "large": false,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        11.6,
+        6.4
+      ],
+      "asset": "res://assets/refined-world/plant-5.png",
+      "width": 52,
+      "large": false,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        3,
+        9
+      ],
+      "asset": "res://assets/art-v3/environment/town-forest-01-oak.webp",
+      "width": 181,
+      "large": true,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        4.6,
+        10
+      ],
+      "asset": "res://assets/refined-world/plant-6.png",
+      "width": 52,
+      "large": false,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        7,
+        24
+      ],
+      "asset": "res://assets/refined-world/plant-8.png",
+      "width": 52,
+      "large": false,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        4,
+        3
+      ],
+      "asset": "res://assets/art-v3/environment/town-forest-01-oak.webp",
+      "width": 163,
+      "large": true,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        5.6,
+        4
+      ],
+      "asset": "res://assets/refined-world/plant-9.png",
+      "width": 52,
+      "large": false,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        4.2,
+        37
+      ],
+      "asset": "res://assets/art-v3/environment/town-forest-01-oak.webp",
+      "width": 181,
+      "large": true,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        5.800000000000001,
+        38
+      ],
+      "asset": "res://assets/refined-world/plant-10.png",
+      "width": 52,
+      "large": false,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        3,
+        13
+      ],
+      "asset": "res://assets/art-v3/environment/town-forest-01-oak.webp",
+      "width": 145,
+      "large": true,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        4.6,
+        14
+      ],
+      "asset": "res://assets/refined-world/plant-12.png",
+      "width": 52,
+      "large": false,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        56,
+        4.2
+      ],
+      "asset": "res://assets/art-v3/environment/town-forest-01-oak.webp",
+      "width": 163,
+      "large": true,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        57.6,
+        5.2
+      ],
+      "asset": "res://assets/refined-world/plant-13.png",
+      "width": 52,
+      "large": false,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        7,
+        28
+      ],
+      "asset": "res://assets/refined-world/plant-14.png",
+      "width": 52,
+      "large": false,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        24,
+        3
+      ],
+      "asset": "res://assets/art-v3/environment/town-forest-01-oak.webp",
+      "width": 199,
+      "large": true,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        25.6,
+        4
+      ],
+      "asset": "res://assets/refined-world/plant-15.png",
+      "width": 52,
+      "large": false,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        4.2,
+        41
+      ],
+      "asset": "res://assets/art-v3/environment/town-forest-01-oak.webp",
+      "width": 145,
+      "large": true,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        5.800000000000001,
+        42
+      ],
+      "asset": "res://assets/refined-world/plant-16.png",
+      "width": 52,
+      "large": false,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        3,
+        17
+      ],
+      "asset": "res://assets/art-v3/environment/town-forest-01-oak.webp",
+      "width": 181,
+      "large": true,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        4.6,
+        18
+      ],
+      "asset": "res://assets/refined-world/plant-0.png",
+      "width": 52,
+      "large": false,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        18,
+        4.2
+      ],
+      "asset": "res://assets/art-v3/environment/town-forest-01-oak.webp",
+      "width": 199,
+      "large": true,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        19.6,
+        5.2
+      ],
+      "asset": "res://assets/refined-world/plant-1.png",
+      "width": 52,
+      "large": false,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        7,
+        32
+      ],
+      "asset": "res://assets/refined-world/plant-2.png",
+      "width": 52,
+      "large": false,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        44,
+        3
+      ],
+      "asset": "res://assets/art-v3/environment/town-forest-01-oak.webp",
+      "width": 163,
+      "large": true,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        45.6,
+        4
+      ],
+      "asset": "res://assets/refined-world/plant-3.png",
+      "width": 52,
+      "large": false,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        4.2,
+        7
+      ],
+      "asset": "res://assets/art-v3/environment/town-forest-01-oak.webp",
+      "width": 181,
+      "large": true,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        5.800000000000001,
+        8
+      ],
+      "asset": "res://assets/refined-world/plant-4.png",
+      "width": 52,
+      "large": false,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        13.6,
+        6.4
+      ],
+      "asset": "res://assets/refined-world/plant-5.png",
+      "width": 52,
+      "large": false,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        3,
+        21
+      ],
+      "asset": "res://assets/art-v3/environment/town-forest-01-oak.webp",
+      "width": 145,
+      "large": true,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        4.6,
+        22
+      ],
+      "asset": "res://assets/refined-world/plant-6.png",
+      "width": 52,
+      "large": false,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        7,
+        36
+      ],
+      "asset": "res://assets/refined-world/plant-8.png",
+      "width": 52,
+      "large": false,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        6,
+        3
+      ],
+      "asset": "res://assets/art-v3/environment/town-forest-01-oak.webp",
+      "width": 199,
+      "large": true,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        7.6,
+        4
+      ],
+      "asset": "res://assets/refined-world/plant-9.png",
+      "width": 52,
+      "large": false,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        4.2,
+        11
+      ],
+      "asset": "res://assets/art-v3/environment/town-forest-01-oak.webp",
+      "width": 145,
+      "large": true,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        5.800000000000001,
+        12
+      ],
+      "asset": "res://assets/refined-world/plant-10.png",
+      "width": 52,
+      "large": false,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        33.6,
+        6.4
+      ],
+      "asset": "res://assets/refined-world/plant-11.png",
+      "width": 52,
+      "large": false,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        3,
+        25
+      ],
+      "asset": "res://assets/art-v3/environment/town-forest-01-oak.webp",
+      "width": 181,
+      "large": true,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        4.6,
+        26
+      ],
+      "asset": "res://assets/refined-world/plant-12.png",
+      "width": 52,
+      "large": false,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        58,
+        4.2
+      ],
+      "asset": "res://assets/art-v3/environment/town-forest-01-oak.webp",
+      "width": 199,
+      "large": true,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        59.6,
+        5.2
+      ],
+      "asset": "res://assets/refined-world/plant-13.png",
+      "width": 52,
+      "large": false,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        7,
+        40
+      ],
+      "asset": "res://assets/refined-world/plant-14.png",
+      "width": 52,
+      "large": false,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        4.2,
+        15
+      ],
+      "asset": "res://assets/art-v3/environment/town-forest-01-oak.webp",
+      "width": 181,
+      "large": true,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        5.800000000000001,
+        16
+      ],
+      "asset": "res://assets/refined-world/plant-16.png",
+      "width": 52,
+      "large": false,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        53.6,
+        6.4
+      ],
+      "asset": "res://assets/refined-world/plant-17.png",
+      "width": 52,
+      "large": false,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        3,
+        29
+      ],
+      "asset": "res://assets/art-v3/environment/town-forest-01-oak.webp",
+      "width": 145,
+      "large": true,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        4.6,
+        30
+      ],
+      "asset": "res://assets/refined-world/plant-0.png",
+      "width": 52,
+      "large": false,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        20,
+        4.2
+      ],
+      "asset": "res://assets/art-v3/environment/town-forest-01-oak.webp",
+      "width": 163,
+      "large": true,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        21.6,
+        5.2
+      ],
+      "asset": "res://assets/refined-world/plant-1.png",
+      "width": 52,
+      "large": false,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        5.4,
+        5
+      ],
+      "asset": "res://assets/art-v3/environment/town-forest-01-oak.webp",
+      "width": 181,
+      "large": true,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        7,
+        6
+      ],
+      "asset": "res://assets/refined-world/plant-2.png",
+      "width": 52,
+      "large": false,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        46,
+        3
+      ],
+      "asset": "res://assets/art-v3/environment/town-forest-01-oak.webp",
+      "width": 199,
+      "large": true,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        47.6,
+        4
+      ],
+      "asset": "res://assets/refined-world/plant-3.png",
+      "width": 52,
+      "large": false,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        4.2,
+        19
+      ],
+      "asset": "res://assets/art-v3/environment/town-forest-01-oak.webp",
+      "width": 145,
+      "large": true,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        5.800000000000001,
+        20
+      ],
+      "asset": "res://assets/refined-world/plant-4.png",
+      "width": 52,
+      "large": false,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        15.6,
+        6.4
+      ],
+      "asset": "res://assets/refined-world/plant-5.png",
+      "width": 52,
+      "large": false,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        3,
+        33
+      ],
+      "asset": "res://assets/art-v3/environment/town-forest-01-oak.webp",
+      "width": 181,
+      "large": true,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        4.6,
+        34
+      ],
+      "asset": "res://assets/refined-world/plant-6.png",
+      "width": 52,
+      "large": false,
+      "group": "green-belt",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        3,
+        3
+      ],
+      "asset": "res://assets/refined-world/rock-1.png",
+      "width": 57,
+      "large": false,
+      "group": "stone-garden",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        20,
+        14
+      ],
+      "asset": "res://assets/refined-world/rock-2.png",
+      "width": 57,
+      "large": false,
+      "group": "stone-garden",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        37,
+        25
+      ],
+      "asset": "res://assets/refined-world/rock-3.png",
+      "width": 57,
+      "large": false,
+      "group": "stone-garden",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        54,
+        36
+      ],
+      "asset": "res://assets/refined-world/rock-4.png",
+      "width": 57,
+      "large": false,
+      "group": "stone-garden",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        15,
+        7
+      ],
+      "asset": "res://assets/refined-world/rock-5.png",
+      "width": 57,
+      "large": false,
+      "group": "stone-garden",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        32,
+        18
+      ],
+      "asset": "res://assets/refined-world/rock-1.png",
+      "width": 57,
+      "large": false,
+      "group": "stone-garden",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        49,
+        29
+      ],
+      "asset": "res://assets/refined-world/rock-2.png",
+      "width": 57,
+      "large": false,
+      "group": "stone-garden",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        10,
+        40
+      ],
+      "asset": "res://assets/refined-world/rock-3.png",
+      "width": 57,
+      "large": false,
+      "group": "stone-garden",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        27,
+        11
+      ],
+      "asset": "res://assets/refined-world/rock-4.png",
+      "width": 57,
+      "large": false,
+      "group": "stone-garden",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    },
+    {
+      "point": [
+        44,
+        22
+      ],
+      "asset": "res://assets/refined-world/rock-5.png",
+      "width": 57,
+      "large": false,
+      "group": "stone-garden",
+      "anchor": [
+        0.5,
+        0.93
+      ]
+    }
+  ],
+  "ambience": {
+    "room-chapel": {
+      "overlay": "res://assets/refined-world/ambience.svg",
+      "tint": "fff0d6",
+      "opacity": 0.065,
+      "foreground": "retained painted frame",
+      "contactShadow": "res://assets/refined-world/contact-shadow.svg"
+    },
+    "room-inn": {
+      "overlay": "res://assets/refined-world/ambience.svg",
+      "tint": "fff0d6",
+      "opacity": 0.065,
+      "foreground": "retained painted frame",
+      "contactShadow": "res://assets/refined-world/contact-shadow.svg"
+    },
+    "room-guildhall": {
+      "overlay": "res://assets/refined-world/ambience.svg",
+      "tint": "fff0d6",
+      "opacity": 0.065,
+      "foreground": "retained painted frame",
+      "contactShadow": "res://assets/refined-world/contact-shadow.svg"
+    },
+    "room-clocktower": {
+      "overlay": "res://assets/refined-world/ambience.svg",
+      "tint": "fff0d6",
+      "opacity": 0.065,
+      "foreground": "retained painted frame",
+      "contactShadow": "res://assets/refined-world/contact-shadow.svg"
+    },
+    "room-market": {
+      "overlay": "res://assets/refined-world/ambience.svg",
+      "tint": "fff0d6",
+      "opacity": 0.065,
+      "foreground": "retained painted frame",
+      "contactShadow": "res://assets/refined-world/contact-shadow.svg"
+    },
+    "room-royal-hall": {
+      "overlay": "res://assets/refined-world/ambience.svg",
+      "tint": "fff0d6",
+      "opacity": 0.065,
+      "foreground": "retained painted frame",
+      "contactShadow": "res://assets/refined-world/contact-shadow.svg"
+    },
+    "room-artisan-quarter": {
+      "overlay": "res://assets/refined-world/ambience.svg",
+      "tint": "fff0d6",
+      "opacity": 0.065,
+      "foreground": "retained painted frame",
+      "contactShadow": "res://assets/refined-world/contact-shadow.svg"
+    },
+    "room-star-academy": {
+      "overlay": "res://assets/refined-world/ambience.svg",
+      "tint": "fff0d6",
+      "opacity": 0.065,
+      "foreground": "retained painted frame",
+      "contactShadow": "res://assets/refined-world/contact-shadow.svg"
+    },
+    "room-alchemist-lab": {
+      "overlay": "res://assets/refined-world/ambience.svg",
+      "tint": "fff0d6",
+      "opacity": 0.065,
+      "foreground": "retained painted frame",
+      "contactShadow": "res://assets/refined-world/contact-shadow.svg"
+    },
+    "room-town-stables": {
+      "overlay": "res://assets/refined-world/ambience.svg",
+      "tint": "fff0d6",
+      "opacity": 0.065,
+      "foreground": "retained painted frame",
+      "contactShadow": "res://assets/refined-world/contact-shadow.svg"
+    },
+    "room-north-gate": {
+      "overlay": "res://assets/refined-world/ambience.svg",
+      "tint": "fff0d6",
+      "opacity": 0.065,
+      "foreground": "retained painted frame",
+      "contactShadow": "res://assets/refined-world/contact-shadow.svg"
+    },
+    "town-wall": {
+      "overlay": "res://assets/refined-world/ambience.svg",
+      "tint": "fff0d6",
+      "opacity": 0.1,
+      "foreground": "retained painted frame",
+      "contactShadow": "res://assets/refined-world/contact-shadow.svg"
+    },
+    "town-drain": {
+      "overlay": "res://assets/refined-world/ambience.svg",
+      "tint": "e6edf6",
+      "opacity": 0.1,
+      "foreground": "retained painted frame",
+      "contactShadow": "res://assets/refined-world/contact-shadow.svg"
+    },
+    "town-trial": {
+      "overlay": "res://assets/refined-world/ambience.svg",
+      "tint": "fff0d6",
+      "opacity": 0.1,
+      "foreground": "retained painted frame",
+      "contactShadow": "res://assets/refined-world/contact-shadow.svg"
+    }
+  },
+  "plants": [
+    "bush01.png",
+    "bush02.png",
+    "bush03.png",
+    "bush04.png",
+    "bush05.png",
+    "grasses01.png",
+    "grasses02.png",
+    "grasses03.png",
+    "grasses04.png",
+    "grasses05.png",
+    "shrub1-01.png",
+    "shrub1-02.png",
+    "shrub1-03.png",
+    "shrub1-04.png",
+    "shrub1-05.png",
+    "shrub2-01.png",
+    "shrub2-02.png",
+    "shrub2-03.png"
+  ],
+  "landmarks": [
+    "arrowCrossing.png",
+    "castle.png",
+    "castleTall.png",
+    "castleWide.png",
+    "castleWideLow.png",
+    "elementCross.png",
+    "flag.png",
+    "house.png",
+    "houseChimney.png",
+    "houses.png"
+  ]
+}

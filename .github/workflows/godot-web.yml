@@ -1,0 +1,105 @@
+name: Godot Web
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+env:
+  GODOT_VERSION: "4.7.2"
+  PLAYWRIGHT_VERSION: "1.62.1"
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    permissions:
+      contents: read
+      pages: read
+    steps:
+      - name: Check out current source
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+          package-manager-cache: false
+
+      - name: Install official Godot engine and Web templates
+        shell: bash
+        run: |
+          set -euo pipefail
+          release="${GODOT_VERSION}-stable"
+          base="https://github.com/godotengine/godot-builds/releases/download/${release}"
+          engine_archive="Godot_v${release}_linux.x86_64.zip"
+          templates_archive="Godot_v${release}_export_templates.tpz"
+          download_dir="${RUNNER_TEMP}/godot-download"
+          engine_dir="${RUNNER_TEMP}/godot-engine"
+          templates_dir="${HOME}/.local/share/godot/export_templates/${GODOT_VERSION}.stable"
+          mkdir -p "$download_dir" "$engine_dir" "$templates_dir"
+          cd "$download_dir"
+          curl --fail --location --retry 3 --output "$engine_archive" "${base}/${engine_archive}"
+          curl --fail --location --retry 3 --output "$templates_archive" "${base}/${templates_archive}"
+          curl --fail --location --retry 3 --output SHA512-SUMS.txt "${base}/SHA512-SUMS.txt"
+          grep -F -e "$engine_archive" -e "$templates_archive" SHA512-SUMS.txt > selected.sha512
+          test "$(wc -l < selected.sha512)" -eq 2
+          sha512sum --check selected.sha512
+          unzip -q "$engine_archive" -d "$engine_dir"
+          unzip -q -j "$templates_archive" 'templates/web*' -d "$templates_dir"
+          godot_path="${engine_dir}/Godot_v${release}_linux.x86_64"
+          chmod +x "$godot_path"
+          "$godot_path" --version
+          printf 'GODOT_PATH=%s\n' "$godot_path" >> "$GITHUB_ENV"
+
+      - name: Import and run native regression tests
+        run: node tools/godot.cjs test
+
+      - name: Export the complete Web game
+        run: node tools/godot.cjs build-web
+
+      - name: Install pinned browser verification tools
+        shell: bash
+        run: |
+          npm install --prefix artifacts/web-test-deps --no-save --package-lock=false --ignore-scripts "playwright@${PLAYWRIGHT_VERSION}" sharp@0.35.5
+          node artifacts/web-test-deps/node_modules/playwright/cli.js install --with-deps chromium
+
+      - name: Verify the Web game in Chromium
+        env:
+          NODE_PATH: ${{ github.workspace }}/artifacts/web-test-deps/node_modules
+        run: node tools/verify-godot-web.cjs --browser chromium
+
+      - name: Configure GitHub Pages
+        if: github.ref == 'refs/heads/main'
+        uses: actions/configure-pages@v5
+
+      - name: Upload Web deployment artifact
+        if: github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: artifacts/godot/web
+
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

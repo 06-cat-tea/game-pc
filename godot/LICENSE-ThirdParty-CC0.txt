@@ -1,0 +1,17 @@
+CC0 1.0 Universal
+https://creativecommons.org/publicdomain/zero/1.0/
+
+ground — Drummyfish
+https://opengameart.org/content/4-hand-painted-ground-textures
+
+plants — Rubberduck / Yughues
+https://opengameart.org/content/free-isometric-plants-pack
+
+rocks — Rubberduck
+https://opengameart.org/content/handpainted-style-rocks
+
+cartography — Kenney
+https://kenney.nl/assets/cartography-pack
+
+Original archives, source pages and the full CC0 legal code: desktop/art-source/godot-cc0.
+Processing and runtime use: docs/Godot-浅色界面与场景优化.md.

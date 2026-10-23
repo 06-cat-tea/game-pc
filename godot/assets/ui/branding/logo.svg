@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <title>灰烬边境 · 星轨</title>
+  <g fill="none" stroke-linecap="round">
+    <ellipse cx="256" cy="256" rx="216" ry="108" transform="rotate(-32 256 256)" stroke="#27313b" stroke-width="22"/>
+    <ellipse cx="256" cy="256" rx="208" ry="100" transform="rotate(38 256 256)" stroke="#b69c6c" stroke-width="16"/>
+  </g>
+  <path d="M256 48 295 211 432 256 295 297 256 464 217 297 80 256 217 211Z" fill="#27313b" stroke="#27313b" stroke-width="16" stroke-linejoin="round"/>
+  <path d="M256 70 281 231 410 256 281 281 256 442 231 281 102 256 231 231Z" fill="#d3b880"/>
+  <path d="M256 70 256 256 231 231Z M256 442 256 256 281 281Z" fill="#f1dfb4"/>
+  <circle cx="438" cy="143" r="14" fill="#d3b880" stroke="#27313b" stroke-width="7"/>
+</svg>

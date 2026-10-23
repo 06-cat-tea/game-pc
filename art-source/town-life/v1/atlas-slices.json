@@ -1,0 +1,8 @@
+{
+  "source": "animals.png",
+  "width": 1774,
+  "height": 887,
+  "columns": [0, 340, 660, 910, 1230, 1500, 1774],
+  "rows": [0, 334, 604, 887],
+  "note": "Manually inspected empty gutters. Generated art is arranged in six columns and three rows, but cell spacing is not mathematically uniform; equal subdivision clips feet and tails. No generated pixels are painted over."
+}

@@ -1,0 +1,97 @@
+{
+  "packs": [
+    {
+      "id": "ground",
+      "author": "Drummyfish",
+      "url": "https://opengameart.org/content/4-hand-painted-ground-textures",
+      "license": "CC0-1.0",
+      "files": [
+        {
+          "file": "grass.png",
+          "sha256": "8ad5d6826e118af89fd6d262098fef3f6020e25d0db3bac065652571f660e473"
+        },
+        {
+          "file": "dirt.png",
+          "sha256": "356c83de281a5c51c710f50ea1321757bc60399b9695cd327b614d05e89f6bae"
+        },
+        {
+          "file": "sand.png",
+          "sha256": "868397afdd2e3ddcef2784d087482246c7d7f89ea517d8c818b984e9da74fc39"
+        },
+        {
+          "file": "pavement.png",
+          "sha256": "ba07712aed0a2e2116aa32bcccd4f4fbef9b52856888709d1dbdac33b04bff8f"
+        }
+      ]
+    },
+    {
+      "id": "plants",
+      "author": "Rubberduck / Yughues",
+      "url": "https://opengameart.org/content/free-isometric-plants-pack",
+      "license": "CC0-1.0",
+      "files": [
+        {
+          "file": "plants.zip",
+          "sha256": "f3650ab8eb6f149714c72f671e9485e3431f360686a180d40271a833c1604b8f"
+        }
+      ]
+    },
+    {
+      "id": "rocks",
+      "author": "Rubberduck",
+      "url": "https://opengameart.org/content/handpainted-style-rocks",
+      "license": "CC0-1.0",
+      "files": [
+        {
+          "file": "rocks.zip",
+          "sha256": "27444e96064e45f2bfdd0bed8ddaaf7696673684d09f337423f443832e2f309c"
+        }
+      ]
+    },
+    {
+      "id": "cartography",
+      "author": "Kenney",
+      "url": "https://kenney.nl/assets/cartography-pack",
+      "license": "CC0-1.0",
+      "files": [
+        {
+          "file": "cartography.zip",
+          "sha256": "5e0c41c70a4bf54fb7607520efda9a1d03a92082e258ec83c6f95c6730b27d85"
+        }
+      ]
+    }
+  ],
+  "plants": [
+    "bush01.png",
+    "bush02.png",
+    "bush03.png",
+    "bush04.png",
+    "bush05.png",
+    "grasses01.png",
+    "grasses02.png",
+    "grasses03.png",
+    "grasses04.png",
+    "grasses05.png",
+    "shrub1-01.png",
+    "shrub1-02.png",
+    "shrub1-03.png",
+    "shrub1-04.png",
+    "shrub1-05.png",
+    "shrub2-01.png",
+    "shrub2-02.png",
+    "shrub2-03.png"
+  ],
+  "landmarks": [
+    "arrowCrossing.png",
+    "castle.png",
+    "castleTall.png",
+    "castleWide.png",
+    "castleWideLow.png",
+    "elementCross.png",
+    "flag.png",
+    "house.png",
+    "houseChimney.png",
+    "houses.png"
+  ],
+  "decor": 116
+}

@@ -1,2 +1,0 @@
-Cubism SDK for Web 5-r.5
-Source: https://cubism.live2d.com/sdk-web/bin/CubismSdkForWeb-5-r.5.zip

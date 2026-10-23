@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "challenge_budget":{"boss_hp":6.0,"boss_attack":5.5,"elite_hp":6.0,"elite_attack":5.5},
+  "counter": {"fire":"physical","physical":"astral","astral":"holy","holy":"poison","poison":"fire"},
+  "counter_multiplier": 1.25,
+  "resisted_multiplier": 0.8,
+  "toughness": {"normal":30,"elite":60,"boss":90},
+  "reduction": {"attack":10,"single":20,"area":10,"ultimate":30,"bond":20,"pair":20},
+  "break": {"power":0.8,"damage_taken":1.25,"dot_fraction":0.12,"weaken":0.2},
+  "synergy": {"weak":8,"break":16,"cover":12,"follow":8,"command_cap":30},
+  "formations": {
+    "balanced":{"desc":"协同追击伤害 +25%；有效配合的协奏收益 +25%。","follow":1.25,"synergy":1.25,"shield":1.0},
+    "assault":{"desc":"伤害与承伤 +10%；前排每轮首次弱点攻击额外削韧 10；击破目标伤害再 +15%。","follow":1.0,"synergy":1.0,"shield":1.0},
+    "watch":{"desc":"伤害 -5%、承伤 -10%；治疗和护盾 +15%；前排护卫减伤加强并保护后排。","follow":1.0,"synergy":1.0,"shield":1.15}
+  },
+  "bonds": {
+    "mira":{"name":"星纹封印","desc":"星辉单体攻击、削韧 30；实际击破时封印目标。","element":"astral","target":"enemy"},
+    "toren":{"name":"同袍壁垒","desc":"为队友叠加护盾（自身来源上限为目标生命 60%），托伦代其承伤。","element":"physical","target":"ally"},
+    "sylvi":{"name":"林息净露","desc":"恢复队友 30% 生命，净化负面状态并附加再生。","element":"holy","target":"ally"},
+    "ridge-scout":{"name":"夜岚追猎","desc":"物理攻击并标记；对已标记或击破目标强化收割。","element":"physical","target":"enemy"},
+    "eira":{"name":"归灯救援","desc":"复活一名倒地队友至 30% 生命，或治疗存活队友并施加护盾。","element":"holy","target":"rescue"},
+    "alchemist":{"name":"蚀毒催化","desc":"毒素攻击并施毒，为全队恢复 10% 法力。","element":"poison","target":"enemy"}
+  }
+}

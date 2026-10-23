@@ -1,0 +1,7 @@
+{
+  "mode": "built-in imagegen",
+  "prompt": "Use case: identity-preserve. Production game FULL BODY standing portrait, neutral calm face. Reference image is the exact existing character identity and costume to preserve. Sylvi, young brown-haired green-eyed herbalist woman with long side braid, forest-green embroidered cloak and dress, ivory sleeves, herb bouquet and satchel. Complete matching leggings and practical forest walking boots. Keep her/his exact face, hair, upper body pose, costume, embroidery and all props from the reference. Extend the cropped lower body naturally and show the entire figure from hair to both boot soles. Single centered character on a portrait 2:3 canvas, full-body framing, generous transparent margins, true alpha background, no scenery or floor, no text or watermark. Match the fine painterly fantasy-anime rendering and warm light of the reference. Anatomically clear hands and feet. No changes to age, hair color, costume colors or character identity.",
+  "reference": "E:\\360Downloads\\game\\desktop\\godot\\assets\\characters\\sylvi\\static-v1\\neutral.webp",
+  "source": "C:\\Users\\23373\\.codex\\generated_images\\01a14309-bfc5-7c11-babb-12359d273b12\\exec-36551915-7c27-43e9-8735-c3bbe3f99eb9.png",
+  "referenceArchive": "art-source/characters/sylvi/web-reference/static-v1/neutral.webp"
+}

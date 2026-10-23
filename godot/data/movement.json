@@ -1,0 +1,95 @@
+{
+  "order": [
+    "n",
+    "ne",
+    "e",
+    "se",
+    "s",
+    "sw",
+    "w",
+    "nw"
+  ],
+  "fps": 9,
+  "frameSize": [
+    384,
+    384
+  ],
+  "anchor": [
+    0.5,
+    0.95
+  ],
+  "directions": {
+    "n": {
+      "idle": "res://assets/characters/hero/movement-v2/n-0.webp",
+      "walk": [
+        "res://assets/characters/hero/movement-v2/n-1.webp",
+        "res://assets/characters/hero/movement-v2/n-2.webp",
+        "res://assets/characters/hero/movement-v2/n-3.webp",
+        "res://assets/characters/hero/movement-v2/n-4.webp"
+      ]
+    },
+    "ne": {
+      "idle": "res://assets/characters/hero/movement-v2/ne-0.webp",
+      "walk": [
+        "res://assets/characters/hero/movement-v2/ne-1.webp",
+        "res://assets/characters/hero/movement-v2/ne-2.webp",
+        "res://assets/characters/hero/movement-v2/ne-3.webp",
+        "res://assets/characters/hero/movement-v2/ne-4.webp"
+      ]
+    },
+    "e": {
+      "idle": "res://assets/characters/hero/movement-v2/e-0.webp",
+      "walk": [
+        "res://assets/characters/hero/movement-v2/e-1.webp",
+        "res://assets/characters/hero/movement-v2/e-2.webp",
+        "res://assets/characters/hero/movement-v2/e-3.webp",
+        "res://assets/characters/hero/movement-v2/e-4.webp"
+      ]
+    },
+    "se": {
+      "idle": "res://assets/characters/hero/movement-v2/se-0.webp",
+      "walk": [
+        "res://assets/characters/hero/movement-v2/se-1.webp",
+        "res://assets/characters/hero/movement-v2/se-2.webp",
+        "res://assets/characters/hero/movement-v2/se-3.webp",
+        "res://assets/characters/hero/movement-v2/se-4.webp"
+      ]
+    },
+    "s": {
+      "idle": "res://assets/characters/hero/movement-v2/s-0.webp",
+      "walk": [
+        "res://assets/characters/hero/movement-v2/s-1.webp",
+        "res://assets/characters/hero/movement-v2/s-2.webp",
+        "res://assets/characters/hero/movement-v2/s-3.webp",
+        "res://assets/characters/hero/movement-v2/s-4.webp"
+      ]
+    },
+    "sw": {
+      "idle": "res://assets/characters/hero/movement-v2/sw-0.webp",
+      "walk": [
+        "res://assets/characters/hero/movement-v2/sw-1.webp",
+        "res://assets/characters/hero/movement-v2/sw-2.webp",
+        "res://assets/characters/hero/movement-v2/sw-3.webp",
+        "res://assets/characters/hero/movement-v2/sw-4.webp"
+      ]
+    },
+    "w": {
+      "idle": "res://assets/characters/hero/movement-v2/w-0.webp",
+      "walk": [
+        "res://assets/characters/hero/movement-v2/w-1.webp",
+        "res://assets/characters/hero/movement-v2/w-2.webp",
+        "res://assets/characters/hero/movement-v2/w-3.webp",
+        "res://assets/characters/hero/movement-v2/w-4.webp"
+      ]
+    },
+    "nw": {
+      "idle": "res://assets/characters/hero/movement-v2/nw-0.webp",
+      "walk": [
+        "res://assets/characters/hero/movement-v2/nw-1.webp",
+        "res://assets/characters/hero/movement-v2/nw-2.webp",
+        "res://assets/characters/hero/movement-v2/nw-3.webp",
+        "res://assets/characters/hero/movement-v2/nw-4.webp"
+      ]
+    }
+  }
+}

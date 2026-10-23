@@ -1,0 +1,2330 @@
+{
+  "revision": 1,
+  "maintenance": "Additive native progression baseline; original narrative baseline remains unchanged.",
+  "entries": [
+    {
+      "key": "revision",
+      "sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+    },
+    {
+      "key": "tp.maximum",
+      "sha256": "ad57366865126e55649ecb23ae1d48887544976efea46a48eb5d85a6eeb4d306"
+    },
+    {
+      "key": "tp.actionGain",
+      "sha256": "f5ca38f748a1d6eaf726b8a42fb575c3c71f1864a8143301782de13da2d9202b"
+    },
+    {
+      "key": "tp.hitGain",
+      "sha256": "4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5"
+    },
+    {
+      "key": "tp.hitRoundCap",
+      "sha256": "f5ca38f748a1d6eaf726b8a42fb575c3c71f1864a8143301782de13da2d9202b"
+    },
+    {
+      "key": "tp.breakGain",
+      "sha256": "4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5"
+    },
+    {
+      "key": "ultimates.hero.name",
+      "sha256": "ef237edd3d73a5d3a0da12bdee47d1e646f1e3fdaeaacb30ac4be0de4ea5cafb"
+    },
+    {
+      "key": "ultimates.hero.title",
+      "sha256": "3b30482d1f192cac7781ca13cd0ba6736ec0869ceddc2ce75b0ba9c2edd7c660"
+    },
+    {
+      "key": "ultimates.hero.building",
+      "sha256": "4de57e3406e2ca8ae10f30dc055e52e5c92e3ef50b559090550d43a5f94ea4fa"
+    },
+    {
+      "key": "ultimates.hero.color",
+      "sha256": "024707c44b2a37d03e8b0fdd910bdb427a8dcc12bf7b3e0aa8ca8ae8803fdbe5"
+    },
+    {
+      "key": "ultimates.hero.element",
+      "sha256": "d473a87570b0adbf5d60443054e8bf5d88877f46fe1073c7b0bfb8591ece06a1"
+    },
+    {
+      "key": "ultimates.hero.kind",
+      "sha256": "7c02d01adb97fb1ed1b7187b81b2d4f1ee275c691beea19fe8b535a6dd8372d8"
+    },
+    {
+      "key": "ultimates.hero.power",
+      "sha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35"
+    },
+    {
+      "key": "ultimates.hero.art",
+      "sha256": "f87c6ace57f0a0404122fd7607a5c9a53725464127e63ec29cb44db02319e0f1"
+    },
+    {
+      "key": "ultimates.hero.intro.0",
+      "sha256": "b0b7d8af88180cd8fab3fb97d072de48d7fd8dbe1311d999d276c7968842f520"
+    },
+    {
+      "key": "ultimates.hero.intro.1",
+      "sha256": "60086985211204e5789b722425ed30b79ec250456ff0409f4f983445efd27dfa"
+    },
+    {
+      "key": "ultimates.hero.clues.0.id",
+      "sha256": "5ca8febf948b7fd4e593b08dc0839e311a751c73d65c7570794088e6c68716ee"
+    },
+    {
+      "key": "ultimates.hero.clues.0.name",
+      "sha256": "7173fb4fc5edeb68afdc0b84d3ef05c325dfedca15ef226c596c3f7cfa982b25"
+    },
+    {
+      "key": "ultimates.hero.clues.0.detail",
+      "sha256": "f9804034acd8091f57fc56abf4bcc8588f574fb36f7a01b8f92ce2838d408078"
+    },
+    {
+      "key": "ultimates.hero.clues.0.x",
+      "sha256": "ad78cfa0ead35ff9d0d6de11ae996a470b257a7342d2a53073df0ce8cda04c4d"
+    },
+    {
+      "key": "ultimates.hero.clues.0.y",
+      "sha256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683"
+    },
+    {
+      "key": "ultimates.hero.clues.0.w",
+      "sha256": "1e9d7c27c8bbc8ddf0055c93e064a62fa995d177fee28cc8fa949bc8a4db06f4"
+    },
+    {
+      "key": "ultimates.hero.clues.0.d",
+      "sha256": "b4af4e0d40391d3a00179d935c63b7e15ba8cd3dfa29f218dedc270bd3eb3e79"
+    },
+    {
+      "key": "ultimates.hero.clues.0.action",
+      "sha256": "6f3658822a73dc4c1d09ba64a062d0d1ef89fb250f5f5923c3a1755c2f63b1db"
+    },
+    {
+      "key": "ultimates.hero.clues.0.awakening",
+      "sha256": "8b64cf0824e7738d44a6371ec9b4a24010b39615b41d73003e57d6658aae10d3"
+    },
+    {
+      "key": "ultimates.hero.clues.0.clue",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "key": "ultimates.hero.clues.1.id",
+      "sha256": "44ed1400020ef409c0f449713292cc1c0eb5ca50d3e63cd01370559ba03010a5"
+    },
+    {
+      "key": "ultimates.hero.clues.1.name",
+      "sha256": "0b229a69041d12416e42f56e9c3ef20875eea85899d6cad309d549f2b28d36af"
+    },
+    {
+      "key": "ultimates.hero.clues.1.detail",
+      "sha256": "208459f0ff484269329cbe16418ad15ae9dd3259c67fbaa75eaea6c5a0d25763"
+    },
+    {
+      "key": "ultimates.hero.clues.1.x",
+      "sha256": "66bc4f39340efdc0090ac8393855c5c5026d516251b581ffacd7bb3b5e5b6d79"
+    },
+    {
+      "key": "ultimates.hero.clues.1.y",
+      "sha256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683"
+    },
+    {
+      "key": "ultimates.hero.clues.1.w",
+      "sha256": "1e9d7c27c8bbc8ddf0055c93e064a62fa995d177fee28cc8fa949bc8a4db06f4"
+    },
+    {
+      "key": "ultimates.hero.clues.1.d",
+      "sha256": "b4af4e0d40391d3a00179d935c63b7e15ba8cd3dfa29f218dedc270bd3eb3e79"
+    },
+    {
+      "key": "ultimates.hero.clues.1.action",
+      "sha256": "6f3658822a73dc4c1d09ba64a062d0d1ef89fb250f5f5923c3a1755c2f63b1db"
+    },
+    {
+      "key": "ultimates.hero.clues.1.awakening",
+      "sha256": "8b64cf0824e7738d44a6371ec9b4a24010b39615b41d73003e57d6658aae10d3"
+    },
+    {
+      "key": "ultimates.hero.clues.1.clue",
+      "sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+    },
+    {
+      "key": "ultimates.hero.closing.0",
+      "sha256": "570b2602975ceb0c86a88087ca9f52a96b22e93c7f82d5f7f6982bb68b7e977a"
+    },
+    {
+      "key": "ultimates.hero.closing.1",
+      "sha256": "f3b86c80b748ca239113bf069a1179eeaa0571639ab0b32b74796d79a5200a08"
+    },
+    {
+      "key": "ultimates.hero.desc",
+      "sha256": "c34a67e9257b76ffcbab201ee2715555ed348b19c497fe578ed54f56fe21deab"
+    },
+    {
+      "key": "ultimates.hero.id",
+      "sha256": "8b64cf0824e7738d44a6371ec9b4a24010b39615b41d73003e57d6658aae10d3"
+    },
+    {
+      "key": "ultimates.hero.scene",
+      "sha256": "816146304a5b30ed7e789834df7be66f36b0619c3a79850114239dc758d2f4b0"
+    },
+    {
+      "key": "ultimates.mira.name",
+      "sha256": "e5f5bc72f3f92b48643fd53c7b12060a2e021bf164432687054f1e1bc5d24293"
+    },
+    {
+      "key": "ultimates.mira.title",
+      "sha256": "0069944c7a517c91bae54bd53b8725957586620a216396e47e2f96dd35aedd9f"
+    },
+    {
+      "key": "ultimates.mira.building",
+      "sha256": "4de57e3406e2ca8ae10f30dc055e52e5c92e3ef50b559090550d43a5f94ea4fa"
+    },
+    {
+      "key": "ultimates.mira.color",
+      "sha256": "9c2fb811cc9e418a0348ccab01018b37f2dffffc159dea503aae32afa118315d"
+    },
+    {
+      "key": "ultimates.mira.element",
+      "sha256": "d473a87570b0adbf5d60443054e8bf5d88877f46fe1073c7b0bfb8591ece06a1"
+    },
+    {
+      "key": "ultimates.mira.kind",
+      "sha256": "7df7186ffa7ae6b68dd82bef88bdf201c8ae44a9def0e24d59411f5886b4855c"
+    },
+    {
+      "key": "ultimates.mira.power",
+      "sha256": "914204c25f3f144ddec3469c61a6faea695c87590ab78a5eb25b0f3904cf84e0"
+    },
+    {
+      "key": "ultimates.mira.art",
+      "sha256": "5be344576029050ff47d72bc1b7ccf559711cbedc13f43efa1db92caeccd317f"
+    },
+    {
+      "key": "ultimates.mira.intro.0",
+      "sha256": "326658e89627044561f2b19292674916817428119713f39ce4ae10de9ac9d715"
+    },
+    {
+      "key": "ultimates.mira.intro.1",
+      "sha256": "3cb101efe44b8c7dfd87042b6eb8df806250f8b5acc1ed5f789f549f427e28bd"
+    },
+    {
+      "key": "ultimates.mira.clues.0.id",
+      "sha256": "c05d63c78b8165f6469ab1ef538059a3f22f266f3b693f5878aa0ac4089c684f"
+    },
+    {
+      "key": "ultimates.mira.clues.0.name",
+      "sha256": "ec24f7c56507f0d53dc35c80fc8c50c9614f0d0acc40c99e6ad5535f60b48168"
+    },
+    {
+      "key": "ultimates.mira.clues.0.detail",
+      "sha256": "a92fdfa4a8c3e252488083a778b1ca47bcad74ab5ad5010dd74a6d0bd2ea5c67"
+    },
+    {
+      "key": "ultimates.mira.clues.0.x",
+      "sha256": "ad78cfa0ead35ff9d0d6de11ae996a470b257a7342d2a53073df0ce8cda04c4d"
+    },
+    {
+      "key": "ultimates.mira.clues.0.y",
+      "sha256": "2912aa729c973b7d68a2deda6cb5595fdb1e0368cffffaf6a8c135cdea63c83d"
+    },
+    {
+      "key": "ultimates.mira.clues.0.w",
+      "sha256": "1e9d7c27c8bbc8ddf0055c93e064a62fa995d177fee28cc8fa949bc8a4db06f4"
+    },
+    {
+      "key": "ultimates.mira.clues.0.d",
+      "sha256": "b4af4e0d40391d3a00179d935c63b7e15ba8cd3dfa29f218dedc270bd3eb3e79"
+    },
+    {
+      "key": "ultimates.mira.clues.0.action",
+      "sha256": "6f3658822a73dc4c1d09ba64a062d0d1ef89fb250f5f5923c3a1755c2f63b1db"
+    },
+    {
+      "key": "ultimates.mira.clues.0.awakening",
+      "sha256": "6c62d310d65d6b4b873ac831e1156ba852130514e1afeab2c71e8c751e7dba17"
+    },
+    {
+      "key": "ultimates.mira.clues.0.clue",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "key": "ultimates.mira.clues.1.id",
+      "sha256": "4f440333c5a20a810409d42cb2d7028e448c012056d08ac06ca59ee9524e6943"
+    },
+    {
+      "key": "ultimates.mira.clues.1.name",
+      "sha256": "b0fe1b22cb94446700a438c321fef2ac3918bcb2642805bc837279b13a23bc3b"
+    },
+    {
+      "key": "ultimates.mira.clues.1.detail",
+      "sha256": "3f6a4828c5332914f37533dbfc5865a18f484abd2cdb2a58e34bd9c4bd1c1f8a"
+    },
+    {
+      "key": "ultimates.mira.clues.1.x",
+      "sha256": "66bc4f39340efdc0090ac8393855c5c5026d516251b581ffacd7bb3b5e5b6d79"
+    },
+    {
+      "key": "ultimates.mira.clues.1.y",
+      "sha256": "2912aa729c973b7d68a2deda6cb5595fdb1e0368cffffaf6a8c135cdea63c83d"
+    },
+    {
+      "key": "ultimates.mira.clues.1.w",
+      "sha256": "1e9d7c27c8bbc8ddf0055c93e064a62fa995d177fee28cc8fa949bc8a4db06f4"
+    },
+    {
+      "key": "ultimates.mira.clues.1.d",
+      "sha256": "b4af4e0d40391d3a00179d935c63b7e15ba8cd3dfa29f218dedc270bd3eb3e79"
+    },
+    {
+      "key": "ultimates.mira.clues.1.action",
+      "sha256": "6f3658822a73dc4c1d09ba64a062d0d1ef89fb250f5f5923c3a1755c2f63b1db"
+    },
+    {
+      "key": "ultimates.mira.clues.1.awakening",
+      "sha256": "6c62d310d65d6b4b873ac831e1156ba852130514e1afeab2c71e8c751e7dba17"
+    },
+    {
+      "key": "ultimates.mira.clues.1.clue",
+      "sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+    },
+    {
+      "key": "ultimates.mira.closing.0",
+      "sha256": "834a6952c838b0ba96180b1d776e1a8a31e8166062ef0305ac8ab3671f42f255"
+    },
+    {
+      "key": "ultimates.mira.closing.1",
+      "sha256": "73b67b458e76eeb4b0a46ba1a3cf296e009e2f3f90687c24fc4a5c9a810744a7"
+    },
+    {
+      "key": "ultimates.mira.desc",
+      "sha256": "e74e3af4ea20d1735dc3b28d97b83fd143d63c6606a887029b563f93528fe448"
+    },
+    {
+      "key": "ultimates.mira.id",
+      "sha256": "6c62d310d65d6b4b873ac831e1156ba852130514e1afeab2c71e8c751e7dba17"
+    },
+    {
+      "key": "ultimates.mira.scene",
+      "sha256": "816146304a5b30ed7e789834df7be66f36b0619c3a79850114239dc758d2f4b0"
+    },
+    {
+      "key": "ultimates.toren.name",
+      "sha256": "0b15a76aa946dcdc0664ffaba376f6eb3c571632312376705b8134cd9427cce4"
+    },
+    {
+      "key": "ultimates.toren.title",
+      "sha256": "41db9d7a7dd34c2d76ceef13a13000acfcb3f7b28aca7e70eddf06189c207bbe"
+    },
+    {
+      "key": "ultimates.toren.building",
+      "sha256": "3d7a2ebbffd26098c7b02921061ed4a805c39a26c95ff736f0d3a3777bcd6ab5"
+    },
+    {
+      "key": "ultimates.toren.color",
+      "sha256": "9dacd2046c6aefff665ac598ea668377f6b1186e2b4d5f234eb133f12cd778bb"
+    },
+    {
+      "key": "ultimates.toren.element",
+      "sha256": "d6bbe9193e8dfe2f58f0670a99b3f50c339b8e9ec4f62ccc23ba1c1232dee095"
+    },
+    {
+      "key": "ultimates.toren.kind",
+      "sha256": "9bfe5400979012ba1da09dd24402ffaaf205f122629f1addbb75f756b6a15b5a"
+    },
+    {
+      "key": "ultimates.toren.power",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "key": "ultimates.toren.art",
+      "sha256": "6122d0c915d8eb53f88640b06a3efa7d6a227f5ee26a2128d5c6142ba6e648a7"
+    },
+    {
+      "key": "ultimates.toren.intro.0",
+      "sha256": "70eaeff936b667e3b78e2a022739e8554f6727f2fe1b0c3104665ddf70afe2b6"
+    },
+    {
+      "key": "ultimates.toren.intro.1",
+      "sha256": "4b51bc215f3a6f34ea255d891f8f5ed5efb63c8d5c40e6adb4cc19a63ea55a46"
+    },
+    {
+      "key": "ultimates.toren.clues.0.id",
+      "sha256": "80175edc6e5534f00c44d436b1b9746653e2fc8fced1bf505ca6a7fd16d63495"
+    },
+    {
+      "key": "ultimates.toren.clues.0.name",
+      "sha256": "ea07494475584dc1baf7b2bf32505e67ad96fbd159887a18f9dd800c79f4c752"
+    },
+    {
+      "key": "ultimates.toren.clues.0.detail",
+      "sha256": "de058cdce17a8e192a4051ad45da7be56ffeecfcd7ca53d68b4c8ba628944ebc"
+    },
+    {
+      "key": "ultimates.toren.clues.0.x",
+      "sha256": "ad78cfa0ead35ff9d0d6de11ae996a470b257a7342d2a53073df0ce8cda04c4d"
+    },
+    {
+      "key": "ultimates.toren.clues.0.y",
+      "sha256": "2912aa729c973b7d68a2deda6cb5595fdb1e0368cffffaf6a8c135cdea63c83d"
+    },
+    {
+      "key": "ultimates.toren.clues.0.w",
+      "sha256": "1e9d7c27c8bbc8ddf0055c93e064a62fa995d177fee28cc8fa949bc8a4db06f4"
+    },
+    {
+      "key": "ultimates.toren.clues.0.d",
+      "sha256": "b4af4e0d40391d3a00179d935c63b7e15ba8cd3dfa29f218dedc270bd3eb3e79"
+    },
+    {
+      "key": "ultimates.toren.clues.0.action",
+      "sha256": "6f3658822a73dc4c1d09ba64a062d0d1ef89fb250f5f5923c3a1755c2f63b1db"
+    },
+    {
+      "key": "ultimates.toren.clues.0.awakening",
+      "sha256": "0a72671c5856357d65f7f56b847d1514fb706d76133c143c075daf63c4ee2ff9"
+    },
+    {
+      "key": "ultimates.toren.clues.0.clue",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "key": "ultimates.toren.clues.1.id",
+      "sha256": "16e833da904da60a54bc7319285bb6ca7620a85044c18c390d5b1c7165559e10"
+    },
+    {
+      "key": "ultimates.toren.clues.1.name",
+      "sha256": "669be6baaf2fe598a5280fbc185bea591bef7254615eeb7bb26fbf248462ddc0"
+    },
+    {
+      "key": "ultimates.toren.clues.1.detail",
+      "sha256": "7fecef4dd0af6e59cad398f605d60b170f2e741df3a4d0c02b872ffab25ec095"
+    },
+    {
+      "key": "ultimates.toren.clues.1.x",
+      "sha256": "66bc4f39340efdc0090ac8393855c5c5026d516251b581ffacd7bb3b5e5b6d79"
+    },
+    {
+      "key": "ultimates.toren.clues.1.y",
+      "sha256": "2912aa729c973b7d68a2deda6cb5595fdb1e0368cffffaf6a8c135cdea63c83d"
+    },
+    {
+      "key": "ultimates.toren.clues.1.w",
+      "sha256": "1e9d7c27c8bbc8ddf0055c93e064a62fa995d177fee28cc8fa949bc8a4db06f4"
+    },
+    {
+      "key": "ultimates.toren.clues.1.d",
+      "sha256": "b4af4e0d40391d3a00179d935c63b7e15ba8cd3dfa29f218dedc270bd3eb3e79"
+    },
+    {
+      "key": "ultimates.toren.clues.1.action",
+      "sha256": "6f3658822a73dc4c1d09ba64a062d0d1ef89fb250f5f5923c3a1755c2f63b1db"
+    },
+    {
+      "key": "ultimates.toren.clues.1.awakening",
+      "sha256": "0a72671c5856357d65f7f56b847d1514fb706d76133c143c075daf63c4ee2ff9"
+    },
+    {
+      "key": "ultimates.toren.clues.1.clue",
+      "sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+    },
+    {
+      "key": "ultimates.toren.closing.0",
+      "sha256": "755b87a7eddaba504fb9cbe44a20d0de70a945eacb7598c7e8549272edd945dc"
+    },
+    {
+      "key": "ultimates.toren.closing.1",
+      "sha256": "0574bef5faac486ec51fd08d2ff8f57c13f45bdd2d377732778fa89c871fc5d6"
+    },
+    {
+      "key": "ultimates.toren.desc",
+      "sha256": "8a9e5d4cfa11393cb8534547aac2198ffef1231a436cdbdb101475f0273fe950"
+    },
+    {
+      "key": "ultimates.toren.id",
+      "sha256": "0a72671c5856357d65f7f56b847d1514fb706d76133c143c075daf63c4ee2ff9"
+    },
+    {
+      "key": "ultimates.toren.scene",
+      "sha256": "f4acfcd53e19d63970da4841a1501f3a083e81e1aa0b5ab3aa476515a274b5f3"
+    },
+    {
+      "key": "ultimates.sylvi.name",
+      "sha256": "7f2c7abeef6829be1a5995d96abb3955c2fdd0ce201444101f0d57eaacdda165"
+    },
+    {
+      "key": "ultimates.sylvi.title",
+      "sha256": "7cb1021aa9051f16a695e3eab37a6f2655b5709ea7501106f16eb7f31da75a1a"
+    },
+    {
+      "key": "ultimates.sylvi.building",
+      "sha256": "256b807cb44ef46e710645ff8ca1d8d0e5223841a3f4c63a7b33910854ee3ff4"
+    },
+    {
+      "key": "ultimates.sylvi.color",
+      "sha256": "1b6cb6df338546d7d8cc54ad45b31536ed46e6532c46f679cbe42c30e39d9f7a"
+    },
+    {
+      "key": "ultimates.sylvi.element",
+      "sha256": "4fea5dafa3b8f238c665b178cc60e59c473f3dbaac1cba8f33e8164fa7476205"
+    },
+    {
+      "key": "ultimates.sylvi.kind",
+      "sha256": "cb098bc728c937ed95d80e6405561a0e6005d8d9c319ef883a0c32fc5012d5e9"
+    },
+    {
+      "key": "ultimates.sylvi.power",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "key": "ultimates.sylvi.art",
+      "sha256": "0a51c2782c78e222a011ddf74f9d587b2d6c8ea2d7d8e6e380a1d1b6d9bb287d"
+    },
+    {
+      "key": "ultimates.sylvi.intro.0",
+      "sha256": "2b9a79cc669f7f1edebf966044b02d69b1649be7b822a1e2eae4919c03526204"
+    },
+    {
+      "key": "ultimates.sylvi.intro.1",
+      "sha256": "6a0b06420b362fe7c9ee5ad40688e82e4d35e3f86c23491c1b3638df72d9af4e"
+    },
+    {
+      "key": "ultimates.sylvi.clues.0.id",
+      "sha256": "cde0343cd76a49ed5b60445e41bfd026da492f8be1e033c175a2c6da1fa2e269"
+    },
+    {
+      "key": "ultimates.sylvi.clues.0.name",
+      "sha256": "230f63d2903156abba062ba5c345c885d3d13ae74afbfcf0e7764c398c75ca07"
+    },
+    {
+      "key": "ultimates.sylvi.clues.0.detail",
+      "sha256": "58356f985cc3f96a62ef409f7fd22e0a169cb46792833f2f2ee927858f20493c"
+    },
+    {
+      "key": "ultimates.sylvi.clues.0.x",
+      "sha256": "ad78cfa0ead35ff9d0d6de11ae996a470b257a7342d2a53073df0ce8cda04c4d"
+    },
+    {
+      "key": "ultimates.sylvi.clues.0.y",
+      "sha256": "2912aa729c973b7d68a2deda6cb5595fdb1e0368cffffaf6a8c135cdea63c83d"
+    },
+    {
+      "key": "ultimates.sylvi.clues.0.w",
+      "sha256": "1e9d7c27c8bbc8ddf0055c93e064a62fa995d177fee28cc8fa949bc8a4db06f4"
+    },
+    {
+      "key": "ultimates.sylvi.clues.0.d",
+      "sha256": "b4af4e0d40391d3a00179d935c63b7e15ba8cd3dfa29f218dedc270bd3eb3e79"
+    },
+    {
+      "key": "ultimates.sylvi.clues.0.action",
+      "sha256": "6f3658822a73dc4c1d09ba64a062d0d1ef89fb250f5f5923c3a1755c2f63b1db"
+    },
+    {
+      "key": "ultimates.sylvi.clues.0.awakening",
+      "sha256": "23b1b37d3731a4f2e9294dc8714072a89414b4f7e177599606b16de5447ab396"
+    },
+    {
+      "key": "ultimates.sylvi.clues.0.clue",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "key": "ultimates.sylvi.clues.1.id",
+      "sha256": "332df884e6eae1611018f4f199f85eba328b8bbe750a181f84a4607765fc9a08"
+    },
+    {
+      "key": "ultimates.sylvi.clues.1.name",
+      "sha256": "6f364f78d5b3ef5c0e9a25046e1aa5b8a759aa2494e0ac5d2b5be1d37d8050e1"
+    },
+    {
+      "key": "ultimates.sylvi.clues.1.detail",
+      "sha256": "e8abea9185cb6565bebd9fbe799ce4101faf2b5fb976beee68642ab54c53ce19"
+    },
+    {
+      "key": "ultimates.sylvi.clues.1.x",
+      "sha256": "66bc4f39340efdc0090ac8393855c5c5026d516251b581ffacd7bb3b5e5b6d79"
+    },
+    {
+      "key": "ultimates.sylvi.clues.1.y",
+      "sha256": "2912aa729c973b7d68a2deda6cb5595fdb1e0368cffffaf6a8c135cdea63c83d"
+    },
+    {
+      "key": "ultimates.sylvi.clues.1.w",
+      "sha256": "1e9d7c27c8bbc8ddf0055c93e064a62fa995d177fee28cc8fa949bc8a4db06f4"
+    },
+    {
+      "key": "ultimates.sylvi.clues.1.d",
+      "sha256": "b4af4e0d40391d3a00179d935c63b7e15ba8cd3dfa29f218dedc270bd3eb3e79"
+    },
+    {
+      "key": "ultimates.sylvi.clues.1.action",
+      "sha256": "6f3658822a73dc4c1d09ba64a062d0d1ef89fb250f5f5923c3a1755c2f63b1db"
+    },
+    {
+      "key": "ultimates.sylvi.clues.1.awakening",
+      "sha256": "23b1b37d3731a4f2e9294dc8714072a89414b4f7e177599606b16de5447ab396"
+    },
+    {
+      "key": "ultimates.sylvi.clues.1.clue",
+      "sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+    },
+    {
+      "key": "ultimates.sylvi.closing.0",
+      "sha256": "aebf8deadccd52baadd8565dd7544067a9c53306738d0eb6083d61bf8228a93b"
+    },
+    {
+      "key": "ultimates.sylvi.closing.1",
+      "sha256": "ccab8df56581fb65fa4827c792ef9f8839fcdecea870cd3a77a07d93736475ac"
+    },
+    {
+      "key": "ultimates.sylvi.desc",
+      "sha256": "1c340c35dc0981239b5bcd1d92ee5cad2f7bb958133ac93c9b3f18e2a5930d83"
+    },
+    {
+      "key": "ultimates.sylvi.id",
+      "sha256": "23b1b37d3731a4f2e9294dc8714072a89414b4f7e177599606b16de5447ab396"
+    },
+    {
+      "key": "ultimates.sylvi.scene",
+      "sha256": "6b451115e01a76359aeac512d8ad3e1ee28fbcf873a7e4a336e44bd46baf8221"
+    },
+    {
+      "key": "ultimates.ridge-scout.name",
+      "sha256": "ee6e9ef167688d115dbbc262ae8f390ef1dad6b27d58fcad368f2908b982f347"
+    },
+    {
+      "key": "ultimates.ridge-scout.title",
+      "sha256": "3873af7de4a2fbd74f8998d82799e4be5adbb147adc464602223ce5cf5f9dae3"
+    },
+    {
+      "key": "ultimates.ridge-scout.building",
+      "sha256": "6b972097ead5d68436f56f680e13093dd697d796a8523131a3f344d51483aed0"
+    },
+    {
+      "key": "ultimates.ridge-scout.color",
+      "sha256": "f0e2e574267d77eb60d432c6dfa77c8aef555528075ea3d61ed40606370ceff2"
+    },
+    {
+      "key": "ultimates.ridge-scout.element",
+      "sha256": "d6bbe9193e8dfe2f58f0670a99b3f50c339b8e9ec4f62ccc23ba1c1232dee095"
+    },
+    {
+      "key": "ultimates.ridge-scout.kind",
+      "sha256": "c567c11479e70f7d9fe7ae931d7c8c7f3f349f1d7483e4f0897e20453d2c3dda"
+    },
+    {
+      "key": "ultimates.ridge-scout.power",
+      "sha256": "8a199b120cf400d69c300e1dd6eacdc8b0002353e3044bbab21e0125b32c9fd6"
+    },
+    {
+      "key": "ultimates.ridge-scout.art",
+      "sha256": "9f2089efd3069c5e0484de25343e3e8f49d59bc87244763c1bb649314bd37961"
+    },
+    {
+      "key": "ultimates.ridge-scout.intro.0",
+      "sha256": "975287c72f529e897dacb492f0054a5cbd76163feeaf6092a4f212f8a53b630f"
+    },
+    {
+      "key": "ultimates.ridge-scout.intro.1",
+      "sha256": "7922036b2c74fcd54dd5f46b1becd53e3e812b52c354bff0da7e8e0beac31c70"
+    },
+    {
+      "key": "ultimates.ridge-scout.clues.0.id",
+      "sha256": "9846d0a4628135c21c5c4f4c0156b67c59f499120f5588aaaea78b8dbae7fff0"
+    },
+    {
+      "key": "ultimates.ridge-scout.clues.0.name",
+      "sha256": "0b7b84109c58c4f91453f6b26c637fdbb61d43ba4e1f26c1863688ca9d4e065a"
+    },
+    {
+      "key": "ultimates.ridge-scout.clues.0.detail",
+      "sha256": "d9b0676ab8ce3a01ea6b3997fac0f77f0d27126b608c0987b36ddd6a161385b8"
+    },
+    {
+      "key": "ultimates.ridge-scout.clues.0.x",
+      "sha256": "ad78cfa0ead35ff9d0d6de11ae996a470b257a7342d2a53073df0ce8cda04c4d"
+    },
+    {
+      "key": "ultimates.ridge-scout.clues.0.y",
+      "sha256": "2912aa729c973b7d68a2deda6cb5595fdb1e0368cffffaf6a8c135cdea63c83d"
+    },
+    {
+      "key": "ultimates.ridge-scout.clues.0.w",
+      "sha256": "1e9d7c27c8bbc8ddf0055c93e064a62fa995d177fee28cc8fa949bc8a4db06f4"
+    },
+    {
+      "key": "ultimates.ridge-scout.clues.0.d",
+      "sha256": "b4af4e0d40391d3a00179d935c63b7e15ba8cd3dfa29f218dedc270bd3eb3e79"
+    },
+    {
+      "key": "ultimates.ridge-scout.clues.0.action",
+      "sha256": "6f3658822a73dc4c1d09ba64a062d0d1ef89fb250f5f5923c3a1755c2f63b1db"
+    },
+    {
+      "key": "ultimates.ridge-scout.clues.0.awakening",
+      "sha256": "7a5f80129db5913f797aa6c9e8e8fd77f8f72e9da0ef67891bf3d410f1974e49"
+    },
+    {
+      "key": "ultimates.ridge-scout.clues.0.clue",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "key": "ultimates.ridge-scout.clues.1.id",
+      "sha256": "a1d36b5bfff4872f02261b0769bab65a9bcc6008786125aa3e75d44099e0ff92"
+    },
+    {
+      "key": "ultimates.ridge-scout.clues.1.name",
+      "sha256": "551ad84e6e96b9e3e325790daba19ae356eeb609d299f806326ac5f5c3bb8fb2"
+    },
+    {
+      "key": "ultimates.ridge-scout.clues.1.detail",
+      "sha256": "5706fe20cae46204218bcb330126ff174a227566d16814280b9eaef3587ab8b7"
+    },
+    {
+      "key": "ultimates.ridge-scout.clues.1.x",
+      "sha256": "66bc4f39340efdc0090ac8393855c5c5026d516251b581ffacd7bb3b5e5b6d79"
+    },
+    {
+      "key": "ultimates.ridge-scout.clues.1.y",
+      "sha256": "2912aa729c973b7d68a2deda6cb5595fdb1e0368cffffaf6a8c135cdea63c83d"
+    },
+    {
+      "key": "ultimates.ridge-scout.clues.1.w",
+      "sha256": "1e9d7c27c8bbc8ddf0055c93e064a62fa995d177fee28cc8fa949bc8a4db06f4"
+    },
+    {
+      "key": "ultimates.ridge-scout.clues.1.d",
+      "sha256": "b4af4e0d40391d3a00179d935c63b7e15ba8cd3dfa29f218dedc270bd3eb3e79"
+    },
+    {
+      "key": "ultimates.ridge-scout.clues.1.action",
+      "sha256": "6f3658822a73dc4c1d09ba64a062d0d1ef89fb250f5f5923c3a1755c2f63b1db"
+    },
+    {
+      "key": "ultimates.ridge-scout.clues.1.awakening",
+      "sha256": "7a5f80129db5913f797aa6c9e8e8fd77f8f72e9da0ef67891bf3d410f1974e49"
+    },
+    {
+      "key": "ultimates.ridge-scout.clues.1.clue",
+      "sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+    },
+    {
+      "key": "ultimates.ridge-scout.closing.0",
+      "sha256": "9c7478ce58b8d5c8215d0460c0c3d4f4d9d016affcb8e8df7388a10c6da1c923"
+    },
+    {
+      "key": "ultimates.ridge-scout.closing.1",
+      "sha256": "353d5a8873f20d32ed9e012598122b9c637c9855e4f8060371f444bdc61cd9c4"
+    },
+    {
+      "key": "ultimates.ridge-scout.desc",
+      "sha256": "d65a3e0351361de2938be6974421770d055ddaa6a410d983229b75b3a9c26e60"
+    },
+    {
+      "key": "ultimates.ridge-scout.id",
+      "sha256": "7a5f80129db5913f797aa6c9e8e8fd77f8f72e9da0ef67891bf3d410f1974e49"
+    },
+    {
+      "key": "ultimates.ridge-scout.scene",
+      "sha256": "1826c034f7a24ac6dd84eef56ee0994191ed11e4fa9f314d2bdc84f6ce9bef64"
+    },
+    {
+      "key": "ultimates.eira.name",
+      "sha256": "e4700abb4e9749f452a59b949703a70a5af942f54d4f04595d1f2d67e381faa0"
+    },
+    {
+      "key": "ultimates.eira.title",
+      "sha256": "58c3a6304d0a2037650c0cdc7d72756389dbfb0bf9d71745573c8422e7833a24"
+    },
+    {
+      "key": "ultimates.eira.building",
+      "sha256": "e2733c4a5095cb86fbbda1dd71eb881c8388634782e5772fb7c3cc6f14567557"
+    },
+    {
+      "key": "ultimates.eira.color",
+      "sha256": "612f20494c244c82841ac986ce060ffe7a42ae75732bfcaff14b5008b63d8dee"
+    },
+    {
+      "key": "ultimates.eira.element",
+      "sha256": "4fea5dafa3b8f238c665b178cc60e59c473f3dbaac1cba8f33e8164fa7476205"
+    },
+    {
+      "key": "ultimates.eira.kind",
+      "sha256": "eaf48c82ec10515530910bbe35d9ad9b33ad27d765de62b30624a4e0685e3483"
+    },
+    {
+      "key": "ultimates.eira.power",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "key": "ultimates.eira.art",
+      "sha256": "580fdc48dc54cac4e4a52d918a3dc9da0a43b020f0fe86ea8858b87a5a587eb4"
+    },
+    {
+      "key": "ultimates.eira.intro.0",
+      "sha256": "bdc5b50939786dce04bd6e28e19ac8e5e41fdd8c42e96bf7d705425ddf4d5fe9"
+    },
+    {
+      "key": "ultimates.eira.intro.1",
+      "sha256": "5e4ff61eaa2b867eee542b3a3491406f834bd928aeb33610f6c3f058888e2a73"
+    },
+    {
+      "key": "ultimates.eira.clues.0.id",
+      "sha256": "a28f1ca2d5780607a876cc5ea4b93cfb8fc46d6addc3b3439fdce4462cd3bb3e"
+    },
+    {
+      "key": "ultimates.eira.clues.0.name",
+      "sha256": "45e9a709e1cddfe0d35ba482b74794419b91537f67f9d1c1da5fd4c29d0491ba"
+    },
+    {
+      "key": "ultimates.eira.clues.0.detail",
+      "sha256": "fe9c4d2a5f6039f5048ec37a995348ad8243fd8d2eeb675b14592f4868b52103"
+    },
+    {
+      "key": "ultimates.eira.clues.0.x",
+      "sha256": "ad78cfa0ead35ff9d0d6de11ae996a470b257a7342d2a53073df0ce8cda04c4d"
+    },
+    {
+      "key": "ultimates.eira.clues.0.y",
+      "sha256": "2912aa729c973b7d68a2deda6cb5595fdb1e0368cffffaf6a8c135cdea63c83d"
+    },
+    {
+      "key": "ultimates.eira.clues.0.w",
+      "sha256": "1e9d7c27c8bbc8ddf0055c93e064a62fa995d177fee28cc8fa949bc8a4db06f4"
+    },
+    {
+      "key": "ultimates.eira.clues.0.d",
+      "sha256": "b4af4e0d40391d3a00179d935c63b7e15ba8cd3dfa29f218dedc270bd3eb3e79"
+    },
+    {
+      "key": "ultimates.eira.clues.0.action",
+      "sha256": "6f3658822a73dc4c1d09ba64a062d0d1ef89fb250f5f5923c3a1755c2f63b1db"
+    },
+    {
+      "key": "ultimates.eira.clues.0.awakening",
+      "sha256": "c3b7f853af76c83b5c34cf3bee094002ce1b3529a74bc0ff2eab20357c2d1213"
+    },
+    {
+      "key": "ultimates.eira.clues.0.clue",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "key": "ultimates.eira.clues.1.id",
+      "sha256": "98c98a8fc46231a7a601ade1c852b0579b8532df3d947b4ca1261fd121ea4f93"
+    },
+    {
+      "key": "ultimates.eira.clues.1.name",
+      "sha256": "cf764d7f109ae498797dc2dad0f4e438f7136c9b3ca35f83b1fb681161d1f474"
+    },
+    {
+      "key": "ultimates.eira.clues.1.detail",
+      "sha256": "a37fa5a2702ffd7b73c5ae04d5fcb8b989bc7ce0d33c862531070c4ecf4ce90e"
+    },
+    {
+      "key": "ultimates.eira.clues.1.x",
+      "sha256": "66bc4f39340efdc0090ac8393855c5c5026d516251b581ffacd7bb3b5e5b6d79"
+    },
+    {
+      "key": "ultimates.eira.clues.1.y",
+      "sha256": "2912aa729c973b7d68a2deda6cb5595fdb1e0368cffffaf6a8c135cdea63c83d"
+    },
+    {
+      "key": "ultimates.eira.clues.1.w",
+      "sha256": "1e9d7c27c8bbc8ddf0055c93e064a62fa995d177fee28cc8fa949bc8a4db06f4"
+    },
+    {
+      "key": "ultimates.eira.clues.1.d",
+      "sha256": "b4af4e0d40391d3a00179d935c63b7e15ba8cd3dfa29f218dedc270bd3eb3e79"
+    },
+    {
+      "key": "ultimates.eira.clues.1.action",
+      "sha256": "6f3658822a73dc4c1d09ba64a062d0d1ef89fb250f5f5923c3a1755c2f63b1db"
+    },
+    {
+      "key": "ultimates.eira.clues.1.awakening",
+      "sha256": "c3b7f853af76c83b5c34cf3bee094002ce1b3529a74bc0ff2eab20357c2d1213"
+    },
+    {
+      "key": "ultimates.eira.clues.1.clue",
+      "sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+    },
+    {
+      "key": "ultimates.eira.closing.0",
+      "sha256": "b382b487d84243ec6c6f2c75623b629d49e1a6735a1dd046418bfeb1e4324460"
+    },
+    {
+      "key": "ultimates.eira.closing.1",
+      "sha256": "df49e4f3d1ec28dfbde4eb4251c89e8bcf739eed35aee5c7de81466921050986"
+    },
+    {
+      "key": "ultimates.eira.desc",
+      "sha256": "63b166ded9e026ec964a97a0e93b79658d2cb0a8e92f4ac4edeebef03d1802ed"
+    },
+    {
+      "key": "ultimates.eira.id",
+      "sha256": "c3b7f853af76c83b5c34cf3bee094002ce1b3529a74bc0ff2eab20357c2d1213"
+    },
+    {
+      "key": "ultimates.eira.scene",
+      "sha256": "37c9da3175e46f4bb68f852544c96cbfacf5b676bdae4699ee868a8f0c78662c"
+    },
+    {
+      "key": "ultimates.alchemist.name",
+      "sha256": "b82a41e6836b72341a941290c3d8ac01904197cf7da42867d5b8dbe2c107530e"
+    },
+    {
+      "key": "ultimates.alchemist.title",
+      "sha256": "a454840435abeee1936ca8eba4e024c82fc24dca42fbd265b5ac34efceec77d4"
+    },
+    {
+      "key": "ultimates.alchemist.building",
+      "sha256": "df27dcd53565da60b681a7a914f38f60ab86898a87ed40fd7a73e6eea9192962"
+    },
+    {
+      "key": "ultimates.alchemist.color",
+      "sha256": "60f58c89accaec8f64511f4025bd0c0ed6e80772eea074779747b10c72082fa5"
+    },
+    {
+      "key": "ultimates.alchemist.element",
+      "sha256": "58ee80b90c286cf2c0af403ef455bf2ddcbdf9d3cb61e4dbef4282fb121d6da7"
+    },
+    {
+      "key": "ultimates.alchemist.kind",
+      "sha256": "c484608a576e00298b5e40b946f5804582ac62dbfbff4f655741f4de3bf90672"
+    },
+    {
+      "key": "ultimates.alchemist.power",
+      "sha256": "ec6c168f4411ec8fa9ab8d47dd25954ce53728404fed0e7a9bc7f29dab38c30d"
+    },
+    {
+      "key": "ultimates.alchemist.art",
+      "sha256": "fa30e4326ec21e1eda3c917c1c6a47a4a03e9f2e1d26908c1d8aa1ba2beb518b"
+    },
+    {
+      "key": "ultimates.alchemist.intro.0",
+      "sha256": "2f8516c592c230bc74783e53340bdaac05168798caa3cd5c895c4e1636b1d3ec"
+    },
+    {
+      "key": "ultimates.alchemist.intro.1",
+      "sha256": "40ab37561989b6d5f2db5e3a7c4131958fdeddb7f15b04f2e4479b809bc34d44"
+    },
+    {
+      "key": "ultimates.alchemist.clues.0.id",
+      "sha256": "950ea1ecd7a912d620e18651f2c653307d953e59364ccc9f2fcba26763e9c79a"
+    },
+    {
+      "key": "ultimates.alchemist.clues.0.name",
+      "sha256": "26d3cb40e0c35fc82c620ca22f00b7ba0db6b4ddb71954a32209d6d784dfd3e4"
+    },
+    {
+      "key": "ultimates.alchemist.clues.0.detail",
+      "sha256": "c52eff6a6315c7d9dc6968c9859bf005027b6fe423abbc9c40bf5347acdd1319"
+    },
+    {
+      "key": "ultimates.alchemist.clues.0.x",
+      "sha256": "ad78cfa0ead35ff9d0d6de11ae996a470b257a7342d2a53073df0ce8cda04c4d"
+    },
+    {
+      "key": "ultimates.alchemist.clues.0.y",
+      "sha256": "2912aa729c973b7d68a2deda6cb5595fdb1e0368cffffaf6a8c135cdea63c83d"
+    },
+    {
+      "key": "ultimates.alchemist.clues.0.w",
+      "sha256": "1e9d7c27c8bbc8ddf0055c93e064a62fa995d177fee28cc8fa949bc8a4db06f4"
+    },
+    {
+      "key": "ultimates.alchemist.clues.0.d",
+      "sha256": "b4af4e0d40391d3a00179d935c63b7e15ba8cd3dfa29f218dedc270bd3eb3e79"
+    },
+    {
+      "key": "ultimates.alchemist.clues.0.action",
+      "sha256": "6f3658822a73dc4c1d09ba64a062d0d1ef89fb250f5f5923c3a1755c2f63b1db"
+    },
+    {
+      "key": "ultimates.alchemist.clues.0.awakening",
+      "sha256": "74a1be218d099897b793f18a8a843935dc006d021e853284577e8650c6410b88"
+    },
+    {
+      "key": "ultimates.alchemist.clues.0.clue",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "key": "ultimates.alchemist.clues.1.id",
+      "sha256": "710a65672bbc257636721876395999ea0fd0c86d60c320af89ba08e19ecdd27d"
+    },
+    {
+      "key": "ultimates.alchemist.clues.1.name",
+      "sha256": "9eccaf3f5581cff267851b6189822710b39c14b2e8337c6cb56656126479f65c"
+    },
+    {
+      "key": "ultimates.alchemist.clues.1.detail",
+      "sha256": "66c50ab241728ba3316f4f180005789fc7075f07dea8d1fca754f23ab8d7deff"
+    },
+    {
+      "key": "ultimates.alchemist.clues.1.x",
+      "sha256": "66bc4f39340efdc0090ac8393855c5c5026d516251b581ffacd7bb3b5e5b6d79"
+    },
+    {
+      "key": "ultimates.alchemist.clues.1.y",
+      "sha256": "2912aa729c973b7d68a2deda6cb5595fdb1e0368cffffaf6a8c135cdea63c83d"
+    },
+    {
+      "key": "ultimates.alchemist.clues.1.w",
+      "sha256": "1e9d7c27c8bbc8ddf0055c93e064a62fa995d177fee28cc8fa949bc8a4db06f4"
+    },
+    {
+      "key": "ultimates.alchemist.clues.1.d",
+      "sha256": "b4af4e0d40391d3a00179d935c63b7e15ba8cd3dfa29f218dedc270bd3eb3e79"
+    },
+    {
+      "key": "ultimates.alchemist.clues.1.action",
+      "sha256": "6f3658822a73dc4c1d09ba64a062d0d1ef89fb250f5f5923c3a1755c2f63b1db"
+    },
+    {
+      "key": "ultimates.alchemist.clues.1.awakening",
+      "sha256": "74a1be218d099897b793f18a8a843935dc006d021e853284577e8650c6410b88"
+    },
+    {
+      "key": "ultimates.alchemist.clues.1.clue",
+      "sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+    },
+    {
+      "key": "ultimates.alchemist.closing.0",
+      "sha256": "3ffdb4fc96fdbda51c3a712f17509c662339053f01c88881e4b269236012ff37"
+    },
+    {
+      "key": "ultimates.alchemist.closing.1",
+      "sha256": "7f92af364450a9fcb2d57d781ea9db720b10941cd8f53272a732b09492018d68"
+    },
+    {
+      "key": "ultimates.alchemist.desc",
+      "sha256": "9c51163905abe3b154ef5ef4fe3de48b8244c0c4b640b43bea254a2de9261b45"
+    },
+    {
+      "key": "ultimates.alchemist.id",
+      "sha256": "74a1be218d099897b793f18a8a843935dc006d021e853284577e8650c6410b88"
+    },
+    {
+      "key": "ultimates.alchemist.scene",
+      "sha256": "f45dfba5e5a5174e4ccd80d53fa4b854eadfe74fdb631b08216d2e7572747ab4"
+    },
+    {
+      "key": "buildings.guildhall.type",
+      "sha256": "1d28ada5833239513119f428fe62bb6c117745e9ee71a3335c5683dccf337d4f"
+    },
+    {
+      "key": "buildings.guildhall.name",
+      "sha256": "41b1444267d169eac13f1b5432126bcb397de359ac97e7664c5a176d3e1bf54a"
+    },
+    {
+      "key": "buildings.guildhall.scene",
+      "sha256": "2dd3a22455f0f65f0a9f7c1a48704bcad8b3bd177bcfa44def78176cc18c7159"
+    },
+    {
+      "key": "buildings.guildhall.material",
+      "sha256": "a5251224fb9fc9945790c896a2272c4a28c1b2645c1cecb12dfeeb131161b58e"
+    },
+    {
+      "key": "buildings.guildhall.amount",
+      "sha256": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce"
+    },
+    {
+      "key": "buildings.guildhall.gold",
+      "sha256": "4ec9599fc203d176a301536c2e091a19bc852759b255bd6818810a42c5fed14a"
+    },
+    {
+      "key": "buildings.guildhall.xp",
+      "sha256": "f5ca38f748a1d6eaf726b8a42fb575c3c71f1864a8143301782de13da2d9202b"
+    },
+    {
+      "key": "buildings.guildhall.building",
+      "sha256": "0ffe882c71db8c1779647041d17a5c7d55a9f82e7c417c5b7b7d3527feff3790"
+    },
+    {
+      "key": "buildings.guildhall.place",
+      "sha256": "0e6b69c17e6620e62b7a64f25d80ec1aa3fbb144ba99420da5d8e5ac3fb3bb41"
+    },
+    {
+      "key": "buildings.guildhall.details.0.id",
+      "sha256": "fdcb0ad558e439b176bf94210699df384bd71ed4976cbcb087415c8a4bd16cc7"
+    },
+    {
+      "key": "buildings.guildhall.details.0.name",
+      "sha256": "fe099596ae75133917031834718c3f90718767812c960b80902f47ea0e7fdc50"
+    },
+    {
+      "key": "buildings.guildhall.details.0.detail",
+      "sha256": "5b554108d19547d178b3edeeb09744de0269aafdaf777e66842f6bc5f8e42445"
+    },
+    {
+      "key": "buildings.guildhall.details.0.x",
+      "sha256": "ad78cfa0ead35ff9d0d6de11ae996a470b257a7342d2a53073df0ce8cda04c4d"
+    },
+    {
+      "key": "buildings.guildhall.details.0.y",
+      "sha256": "18ed019486eb7ba1b2425746065deabe63e79e59d907ff99c5e82f1ee6ef3d58"
+    },
+    {
+      "key": "buildings.guildhall.details.0.w",
+      "sha256": "1e9d7c27c8bbc8ddf0055c93e064a62fa995d177fee28cc8fa949bc8a4db06f4"
+    },
+    {
+      "key": "buildings.guildhall.details.0.d",
+      "sha256": "b4af4e0d40391d3a00179d935c63b7e15ba8cd3dfa29f218dedc270bd3eb3e79"
+    },
+    {
+      "key": "buildings.guildhall.details.0.action",
+      "sha256": "6f3658822a73dc4c1d09ba64a062d0d1ef89fb250f5f5923c3a1755c2f63b1db"
+    },
+    {
+      "key": "buildings.guildhall.details.0.building",
+      "sha256": "0ffe882c71db8c1779647041d17a5c7d55a9f82e7c417c5b7b7d3527feff3790"
+    },
+    {
+      "key": "buildings.guildhall.details.1.id",
+      "sha256": "a8a614c9596a42349c52b7f1b49998d307e850c612346b49d3ea70af6f593f6c"
+    },
+    {
+      "key": "buildings.guildhall.details.1.name",
+      "sha256": "fef8ed10cfd5d350d2709529b7010c0a46f503f094f3ac9724b94c825a77e416"
+    },
+    {
+      "key": "buildings.guildhall.details.1.detail",
+      "sha256": "b0a32001c3aa369b2da08c18c48073ad4c7b6711d4a821bc6377270c73a24019"
+    },
+    {
+      "key": "buildings.guildhall.details.1.x",
+      "sha256": "66bc4f39340efdc0090ac8393855c5c5026d516251b581ffacd7bb3b5e5b6d79"
+    },
+    {
+      "key": "buildings.guildhall.details.1.y",
+      "sha256": "18ed019486eb7ba1b2425746065deabe63e79e59d907ff99c5e82f1ee6ef3d58"
+    },
+    {
+      "key": "buildings.guildhall.details.1.w",
+      "sha256": "1e9d7c27c8bbc8ddf0055c93e064a62fa995d177fee28cc8fa949bc8a4db06f4"
+    },
+    {
+      "key": "buildings.guildhall.details.1.d",
+      "sha256": "b4af4e0d40391d3a00179d935c63b7e15ba8cd3dfa29f218dedc270bd3eb3e79"
+    },
+    {
+      "key": "buildings.guildhall.details.1.action",
+      "sha256": "6f3658822a73dc4c1d09ba64a062d0d1ef89fb250f5f5923c3a1755c2f63b1db"
+    },
+    {
+      "key": "buildings.guildhall.details.1.building",
+      "sha256": "0ffe882c71db8c1779647041d17a5c7d55a9f82e7c417c5b7b7d3527feff3790"
+    },
+    {
+      "key": "buildings.clocktower.type",
+      "sha256": "3f8ecd1d14463a188c829f4db7ede4aa477c971c6bb618ce78f56bb626527361"
+    },
+    {
+      "key": "buildings.clocktower.name",
+      "sha256": "73ef0f8a713c158c86b345b0618deabc0c768ac93ae19566d4e0be779461886c"
+    },
+    {
+      "key": "buildings.clocktower.scene",
+      "sha256": "816146304a5b30ed7e789834df7be66f36b0619c3a79850114239dc758d2f4b0"
+    },
+    {
+      "key": "buildings.clocktower.building",
+      "sha256": "4de57e3406e2ca8ae10f30dc055e52e5c92e3ef50b559090550d43a5f94ea4fa"
+    },
+    {
+      "key": "buildings.clocktower.place",
+      "sha256": "0e6b69c17e6620e62b7a64f25d80ec1aa3fbb144ba99420da5d8e5ac3fb3bb41"
+    },
+    {
+      "key": "buildings.clocktower.details.0.id",
+      "sha256": "5ddb019b6017e65cac55ef1e45b53e122dfa3b049605e1654e92476a1ea49280"
+    },
+    {
+      "key": "buildings.clocktower.details.0.name",
+      "sha256": "98165d6d534b01e9ab381826ac0065a1fc050f0f4802c919c4cf054d5bc2f716"
+    },
+    {
+      "key": "buildings.clocktower.details.0.detail",
+      "sha256": "3b263e5d9e4b52a53ffe6d82f48e8839e208eed2ff6b22a908361d1341cc4ec5"
+    },
+    {
+      "key": "buildings.clocktower.details.0.x",
+      "sha256": "ad78cfa0ead35ff9d0d6de11ae996a470b257a7342d2a53073df0ce8cda04c4d"
+    },
+    {
+      "key": "buildings.clocktower.details.0.y",
+      "sha256": "18ed019486eb7ba1b2425746065deabe63e79e59d907ff99c5e82f1ee6ef3d58"
+    },
+    {
+      "key": "buildings.clocktower.details.0.w",
+      "sha256": "1e9d7c27c8bbc8ddf0055c93e064a62fa995d177fee28cc8fa949bc8a4db06f4"
+    },
+    {
+      "key": "buildings.clocktower.details.0.d",
+      "sha256": "b4af4e0d40391d3a00179d935c63b7e15ba8cd3dfa29f218dedc270bd3eb3e79"
+    },
+    {
+      "key": "buildings.clocktower.details.0.action",
+      "sha256": "6f3658822a73dc4c1d09ba64a062d0d1ef89fb250f5f5923c3a1755c2f63b1db"
+    },
+    {
+      "key": "buildings.clocktower.details.0.building",
+      "sha256": "4de57e3406e2ca8ae10f30dc055e52e5c92e3ef50b559090550d43a5f94ea4fa"
+    },
+    {
+      "key": "buildings.clocktower.details.1.id",
+      "sha256": "b1825f5efcc6d9f6d01f26936d4f41a9ed628a044b7ccd084d73aa2a095d8ba5"
+    },
+    {
+      "key": "buildings.clocktower.details.1.name",
+      "sha256": "9b3d70d928ee3aeb3621309c7f6a7216f05be94770ceb73f966574cdf3d40d86"
+    },
+    {
+      "key": "buildings.clocktower.details.1.detail",
+      "sha256": "96ec34a5eb5f48afdba8ede194b0f41d19b75cfe280bc7a88af4f8689291591d"
+    },
+    {
+      "key": "buildings.clocktower.details.1.x",
+      "sha256": "66bc4f39340efdc0090ac8393855c5c5026d516251b581ffacd7bb3b5e5b6d79"
+    },
+    {
+      "key": "buildings.clocktower.details.1.y",
+      "sha256": "18ed019486eb7ba1b2425746065deabe63e79e59d907ff99c5e82f1ee6ef3d58"
+    },
+    {
+      "key": "buildings.clocktower.details.1.w",
+      "sha256": "1e9d7c27c8bbc8ddf0055c93e064a62fa995d177fee28cc8fa949bc8a4db06f4"
+    },
+    {
+      "key": "buildings.clocktower.details.1.d",
+      "sha256": "b4af4e0d40391d3a00179d935c63b7e15ba8cd3dfa29f218dedc270bd3eb3e79"
+    },
+    {
+      "key": "buildings.clocktower.details.1.action",
+      "sha256": "6f3658822a73dc4c1d09ba64a062d0d1ef89fb250f5f5923c3a1755c2f63b1db"
+    },
+    {
+      "key": "buildings.clocktower.details.1.building",
+      "sha256": "4de57e3406e2ca8ae10f30dc055e52e5c92e3ef50b559090550d43a5f94ea4fa"
+    },
+    {
+      "key": "buildings.forest-hut.type",
+      "sha256": "5f8368d643022c015855422d0a88d1968b456809d58389653f8fc970701b8870"
+    },
+    {
+      "key": "buildings.forest-hut.name",
+      "sha256": "b2e85f4c0c9adb7d34ff2d13da5c9d1ff175e74119afbb75d1b5d79e8561fdff"
+    },
+    {
+      "key": "buildings.forest-hut.scene",
+      "sha256": "6b451115e01a76359aeac512d8ad3e1ee28fbcf873a7e4a336e44bd46baf8221"
+    },
+    {
+      "key": "buildings.forest-hut.xp",
+      "sha256": "e629fa6598d732768f7c726b4b621285f9c3b85303900aa912017db7617d8bdb"
+    },
+    {
+      "key": "buildings.forest-hut.building",
+      "sha256": "256b807cb44ef46e710645ff8ca1d8d0e5223841a3f4c63a7b33910854ee3ff4"
+    },
+    {
+      "key": "buildings.forest-hut.place",
+      "sha256": "0f1b2711698266f3294ff32ddff91dc623ab8071d115ad3ad72f867c2ce9dea8"
+    },
+    {
+      "key": "buildings.forest-hut.details.0.id",
+      "sha256": "70d6eec952fe794d0a04334fdab722fb4821b4b5e9148bb1a0aeb500a2924708"
+    },
+    {
+      "key": "buildings.forest-hut.details.0.name",
+      "sha256": "e035f453a58b29d37e0c38bc44f1818ccad3faa0b93b4eafd3c031a19df582d6"
+    },
+    {
+      "key": "buildings.forest-hut.details.0.detail",
+      "sha256": "37486d1179dd34900ab017d2c5391bb2deceacb8c8fd8e2565904427899551b5"
+    },
+    {
+      "key": "buildings.forest-hut.details.0.x",
+      "sha256": "ad78cfa0ead35ff9d0d6de11ae996a470b257a7342d2a53073df0ce8cda04c4d"
+    },
+    {
+      "key": "buildings.forest-hut.details.0.y",
+      "sha256": "18ed019486eb7ba1b2425746065deabe63e79e59d907ff99c5e82f1ee6ef3d58"
+    },
+    {
+      "key": "buildings.forest-hut.details.0.w",
+      "sha256": "1e9d7c27c8bbc8ddf0055c93e064a62fa995d177fee28cc8fa949bc8a4db06f4"
+    },
+    {
+      "key": "buildings.forest-hut.details.0.d",
+      "sha256": "b4af4e0d40391d3a00179d935c63b7e15ba8cd3dfa29f218dedc270bd3eb3e79"
+    },
+    {
+      "key": "buildings.forest-hut.details.0.action",
+      "sha256": "6f3658822a73dc4c1d09ba64a062d0d1ef89fb250f5f5923c3a1755c2f63b1db"
+    },
+    {
+      "key": "buildings.forest-hut.details.0.building",
+      "sha256": "256b807cb44ef46e710645ff8ca1d8d0e5223841a3f4c63a7b33910854ee3ff4"
+    },
+    {
+      "key": "buildings.forest-hut.details.1.id",
+      "sha256": "a58c92d64e832f8b9c950b201506b56695630163ea33783cbd520d169e45a54b"
+    },
+    {
+      "key": "buildings.forest-hut.details.1.name",
+      "sha256": "43aabccf164f4f26c9980b4c1e88bfcae5f8d0356a891d6fc8c72c0313348cae"
+    },
+    {
+      "key": "buildings.forest-hut.details.1.detail",
+      "sha256": "8cb8319517a4a4292b579b2f9414040fa41dfe414cd1393e064dd6cee0890829"
+    },
+    {
+      "key": "buildings.forest-hut.details.1.x",
+      "sha256": "66bc4f39340efdc0090ac8393855c5c5026d516251b581ffacd7bb3b5e5b6d79"
+    },
+    {
+      "key": "buildings.forest-hut.details.1.y",
+      "sha256": "18ed019486eb7ba1b2425746065deabe63e79e59d907ff99c5e82f1ee6ef3d58"
+    },
+    {
+      "key": "buildings.forest-hut.details.1.w",
+      "sha256": "1e9d7c27c8bbc8ddf0055c93e064a62fa995d177fee28cc8fa949bc8a4db06f4"
+    },
+    {
+      "key": "buildings.forest-hut.details.1.d",
+      "sha256": "b4af4e0d40391d3a00179d935c63b7e15ba8cd3dfa29f218dedc270bd3eb3e79"
+    },
+    {
+      "key": "buildings.forest-hut.details.1.action",
+      "sha256": "6f3658822a73dc4c1d09ba64a062d0d1ef89fb250f5f5923c3a1755c2f63b1db"
+    },
+    {
+      "key": "buildings.forest-hut.details.1.building",
+      "sha256": "256b807cb44ef46e710645ff8ca1d8d0e5223841a3f4c63a7b33910854ee3ff4"
+    },
+    {
+      "key": "buildings.moss-shrine.type",
+      "sha256": "b39e4576c352349b382745e5bf41134ec5af6fab06a89fb47c67fef7e3de8c96"
+    },
+    {
+      "key": "buildings.moss-shrine.name",
+      "sha256": "35a3608a73f6f9aaf0c7f07ad70d1db0c4cebea9e70312bd29ba1fc12dfb10a8"
+    },
+    {
+      "key": "buildings.moss-shrine.scene",
+      "sha256": "1537065f5b2ec15e53ffb76940fc8f9e944b43ca122e0e5bb9b2cc15aa4f4709"
+    },
+    {
+      "key": "buildings.moss-shrine.building",
+      "sha256": "1630b0a05acbb2daf3d9274530269d680e61b18488c8246a8847ececa4fcc8ff"
+    },
+    {
+      "key": "buildings.moss-shrine.place",
+      "sha256": "0f1b2711698266f3294ff32ddff91dc623ab8071d115ad3ad72f867c2ce9dea8"
+    },
+    {
+      "key": "buildings.moss-shrine.details.0.id",
+      "sha256": "89957e376c121f554988370ee81e062872bfdebac70b8a2da2741953635983f2"
+    },
+    {
+      "key": "buildings.moss-shrine.details.0.name",
+      "sha256": "a185d5ee054ee231f5320f196b81400bb516c7ab50cd9041d325c527e9e2d489"
+    },
+    {
+      "key": "buildings.moss-shrine.details.0.detail",
+      "sha256": "24cdd02eca2adc63bf124109635629c3e5636e867ea47c1a2c3c192d076919e0"
+    },
+    {
+      "key": "buildings.moss-shrine.details.0.x",
+      "sha256": "ad78cfa0ead35ff9d0d6de11ae996a470b257a7342d2a53073df0ce8cda04c4d"
+    },
+    {
+      "key": "buildings.moss-shrine.details.0.y",
+      "sha256": "18ed019486eb7ba1b2425746065deabe63e79e59d907ff99c5e82f1ee6ef3d58"
+    },
+    {
+      "key": "buildings.moss-shrine.details.0.w",
+      "sha256": "1e9d7c27c8bbc8ddf0055c93e064a62fa995d177fee28cc8fa949bc8a4db06f4"
+    },
+    {
+      "key": "buildings.moss-shrine.details.0.d",
+      "sha256": "b4af4e0d40391d3a00179d935c63b7e15ba8cd3dfa29f218dedc270bd3eb3e79"
+    },
+    {
+      "key": "buildings.moss-shrine.details.0.action",
+      "sha256": "6f3658822a73dc4c1d09ba64a062d0d1ef89fb250f5f5923c3a1755c2f63b1db"
+    },
+    {
+      "key": "buildings.moss-shrine.details.0.building",
+      "sha256": "1630b0a05acbb2daf3d9274530269d680e61b18488c8246a8847ececa4fcc8ff"
+    },
+    {
+      "key": "buildings.moss-shrine.details.1.id",
+      "sha256": "2a41a328b68dc2a2afdb4f36983b54a2727ef3b570a917c4198e774c6bcdcdc6"
+    },
+    {
+      "key": "buildings.moss-shrine.details.1.name",
+      "sha256": "a673751ed0488a4bb1f738103fb45b339ef4ea1c791bde5243f61cff368e40b8"
+    },
+    {
+      "key": "buildings.moss-shrine.details.1.detail",
+      "sha256": "893c673e900f0a2df95daab10ca7d61ad08faa5f138919f3a1bf515ed88d8afa"
+    },
+    {
+      "key": "buildings.moss-shrine.details.1.x",
+      "sha256": "66bc4f39340efdc0090ac8393855c5c5026d516251b581ffacd7bb3b5e5b6d79"
+    },
+    {
+      "key": "buildings.moss-shrine.details.1.y",
+      "sha256": "18ed019486eb7ba1b2425746065deabe63e79e59d907ff99c5e82f1ee6ef3d58"
+    },
+    {
+      "key": "buildings.moss-shrine.details.1.w",
+      "sha256": "1e9d7c27c8bbc8ddf0055c93e064a62fa995d177fee28cc8fa949bc8a4db06f4"
+    },
+    {
+      "key": "buildings.moss-shrine.details.1.d",
+      "sha256": "b4af4e0d40391d3a00179d935c63b7e15ba8cd3dfa29f218dedc270bd3eb3e79"
+    },
+    {
+      "key": "buildings.moss-shrine.details.1.action",
+      "sha256": "6f3658822a73dc4c1d09ba64a062d0d1ef89fb250f5f5923c3a1755c2f63b1db"
+    },
+    {
+      "key": "buildings.moss-shrine.details.1.building",
+      "sha256": "1630b0a05acbb2daf3d9274530269d680e61b18488c8246a8847ececa4fcc8ff"
+    },
+    {
+      "key": "buildings.grayforge.type",
+      "sha256": "78000f9390ebddc1e3b0f86185c1d8cd13af4d44854b6927f8f360492cfd4607"
+    },
+    {
+      "key": "buildings.grayforge.name",
+      "sha256": "566c1f48b741740db797bc4a27e6f24db04019ea3e2ac0ab192ff3d7eaa35e73"
+    },
+    {
+      "key": "buildings.grayforge.scene",
+      "sha256": "f4acfcd53e19d63970da4841a1501f3a083e81e1aa0b5ab3aa476515a274b5f3"
+    },
+    {
+      "key": "buildings.grayforge.recipe",
+      "sha256": "0808aff73bbf2964726db09ceab0641053a0c166c31232fea73f8a110fc0b460"
+    },
+    {
+      "key": "buildings.grayforge.xp",
+      "sha256": "4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5"
+    },
+    {
+      "key": "buildings.grayforge.building",
+      "sha256": "3d7a2ebbffd26098c7b02921061ed4a805c39a26c95ff736f0d3a3777bcd6ab5"
+    },
+    {
+      "key": "buildings.grayforge.place",
+      "sha256": "fedce8e8af485c2586f54c43a9b656dc70b41eb9be8c64b69c98391847dd4baf"
+    },
+    {
+      "key": "buildings.grayforge.details.0.id",
+      "sha256": "68c3bc643272265c8e54013257c06417060f2e51fdb6bf15bc11616afb9f2748"
+    },
+    {
+      "key": "buildings.grayforge.details.0.name",
+      "sha256": "12df872ee64213ac08c50b9f3e0e48aae8b074384b7c90872c31110d7c1b5e10"
+    },
+    {
+      "key": "buildings.grayforge.details.0.detail",
+      "sha256": "43c0f3673dd3eb40ba172f5d91fcc4beea66fb17cfff5e51636a02654a5b6475"
+    },
+    {
+      "key": "buildings.grayforge.details.0.x",
+      "sha256": "ad78cfa0ead35ff9d0d6de11ae996a470b257a7342d2a53073df0ce8cda04c4d"
+    },
+    {
+      "key": "buildings.grayforge.details.0.y",
+      "sha256": "18ed019486eb7ba1b2425746065deabe63e79e59d907ff99c5e82f1ee6ef3d58"
+    },
+    {
+      "key": "buildings.grayforge.details.0.w",
+      "sha256": "1e9d7c27c8bbc8ddf0055c93e064a62fa995d177fee28cc8fa949bc8a4db06f4"
+    },
+    {
+      "key": "buildings.grayforge.details.0.d",
+      "sha256": "b4af4e0d40391d3a00179d935c63b7e15ba8cd3dfa29f218dedc270bd3eb3e79"
+    },
+    {
+      "key": "buildings.grayforge.details.0.action",
+      "sha256": "6f3658822a73dc4c1d09ba64a062d0d1ef89fb250f5f5923c3a1755c2f63b1db"
+    },
+    {
+      "key": "buildings.grayforge.details.0.building",
+      "sha256": "3d7a2ebbffd26098c7b02921061ed4a805c39a26c95ff736f0d3a3777bcd6ab5"
+    },
+    {
+      "key": "buildings.grayforge.details.1.id",
+      "sha256": "4bf5f25233a6eb38df7af1c7ae46525ce766a5269a24989d11137068fd26be35"
+    },
+    {
+      "key": "buildings.grayforge.details.1.name",
+      "sha256": "59107ccdd92e36233cb6845da191e1ed871276388ddaae323bb4e3ec819126ee"
+    },
+    {
+      "key": "buildings.grayforge.details.1.detail",
+      "sha256": "f0acfe20bd025dcf057a957895f26955e2c7f8f1e9963ca21d9c504082b5d035"
+    },
+    {
+      "key": "buildings.grayforge.details.1.x",
+      "sha256": "66bc4f39340efdc0090ac8393855c5c5026d516251b581ffacd7bb3b5e5b6d79"
+    },
+    {
+      "key": "buildings.grayforge.details.1.y",
+      "sha256": "18ed019486eb7ba1b2425746065deabe63e79e59d907ff99c5e82f1ee6ef3d58"
+    },
+    {
+      "key": "buildings.grayforge.details.1.w",
+      "sha256": "1e9d7c27c8bbc8ddf0055c93e064a62fa995d177fee28cc8fa949bc8a4db06f4"
+    },
+    {
+      "key": "buildings.grayforge.details.1.d",
+      "sha256": "b4af4e0d40391d3a00179d935c63b7e15ba8cd3dfa29f218dedc270bd3eb3e79"
+    },
+    {
+      "key": "buildings.grayforge.details.1.action",
+      "sha256": "6f3658822a73dc4c1d09ba64a062d0d1ef89fb250f5f5923c3a1755c2f63b1db"
+    },
+    {
+      "key": "buildings.grayforge.details.1.building",
+      "sha256": "3d7a2ebbffd26098c7b02921061ed4a805c39a26c95ff736f0d3a3777bcd6ab5"
+    },
+    {
+      "key": "buildings.ridge-barracks.type",
+      "sha256": "32df171b27ef9f252263c5bc5a11105f3cb6a28251fb76126e27258fe81f08cb"
+    },
+    {
+      "key": "buildings.ridge-barracks.name",
+      "sha256": "57477b7f125ca8ab754e535f38cc222dbbbba33ce62ce46954a52182f4081dfe"
+    },
+    {
+      "key": "buildings.ridge-barracks.scene",
+      "sha256": "1826c034f7a24ac6dd84eef56ee0994191ed11e4fa9f314d2bdc84f6ce9bef64"
+    },
+    {
+      "key": "buildings.ridge-barracks.building",
+      "sha256": "6b972097ead5d68436f56f680e13093dd697d796a8523131a3f344d51483aed0"
+    },
+    {
+      "key": "buildings.ridge-barracks.place",
+      "sha256": "fedce8e8af485c2586f54c43a9b656dc70b41eb9be8c64b69c98391847dd4baf"
+    },
+    {
+      "key": "buildings.ridge-barracks.details.0.id",
+      "sha256": "1c9b0fc9b7e3ee6280ca16e4371105eb99581d8408aa33d5b65e5e99eedc61e0"
+    },
+    {
+      "key": "buildings.ridge-barracks.details.0.name",
+      "sha256": "632ed44ca7bd6809b2acd57651d858793c589e49871badc279fa741046e775c3"
+    },
+    {
+      "key": "buildings.ridge-barracks.details.0.detail",
+      "sha256": "f1c0c1f1bfb02884b1d73453eebc8968b05db1461bab58d6a23b1b0402a34bd4"
+    },
+    {
+      "key": "buildings.ridge-barracks.details.0.x",
+      "sha256": "ad78cfa0ead35ff9d0d6de11ae996a470b257a7342d2a53073df0ce8cda04c4d"
+    },
+    {
+      "key": "buildings.ridge-barracks.details.0.y",
+      "sha256": "18ed019486eb7ba1b2425746065deabe63e79e59d907ff99c5e82f1ee6ef3d58"
+    },
+    {
+      "key": "buildings.ridge-barracks.details.0.w",
+      "sha256": "1e9d7c27c8bbc8ddf0055c93e064a62fa995d177fee28cc8fa949bc8a4db06f4"
+    },
+    {
+      "key": "buildings.ridge-barracks.details.0.d",
+      "sha256": "b4af4e0d40391d3a00179d935c63b7e15ba8cd3dfa29f218dedc270bd3eb3e79"
+    },
+    {
+      "key": "buildings.ridge-barracks.details.0.action",
+      "sha256": "6f3658822a73dc4c1d09ba64a062d0d1ef89fb250f5f5923c3a1755c2f63b1db"
+    },
+    {
+      "key": "buildings.ridge-barracks.details.0.building",
+      "sha256": "6b972097ead5d68436f56f680e13093dd697d796a8523131a3f344d51483aed0"
+    },
+    {
+      "key": "buildings.ridge-barracks.details.1.id",
+      "sha256": "036063e7682d32e1d16987cbcaaa0e651741756642b39526bdbc317f2334c080"
+    },
+    {
+      "key": "buildings.ridge-barracks.details.1.name",
+      "sha256": "e0eda8bea3566d2989360d5f9d2658e0a59063c9ec1d94a8bdea1c6327181ac3"
+    },
+    {
+      "key": "buildings.ridge-barracks.details.1.detail",
+      "sha256": "d29f61f2a316e83c4feb3888bdc4dc0d781086582ea5c3da2ba6a86562092bcb"
+    },
+    {
+      "key": "buildings.ridge-barracks.details.1.x",
+      "sha256": "66bc4f39340efdc0090ac8393855c5c5026d516251b581ffacd7bb3b5e5b6d79"
+    },
+    {
+      "key": "buildings.ridge-barracks.details.1.y",
+      "sha256": "18ed019486eb7ba1b2425746065deabe63e79e59d907ff99c5e82f1ee6ef3d58"
+    },
+    {
+      "key": "buildings.ridge-barracks.details.1.w",
+      "sha256": "1e9d7c27c8bbc8ddf0055c93e064a62fa995d177fee28cc8fa949bc8a4db06f4"
+    },
+    {
+      "key": "buildings.ridge-barracks.details.1.d",
+      "sha256": "b4af4e0d40391d3a00179d935c63b7e15ba8cd3dfa29f218dedc270bd3eb3e79"
+    },
+    {
+      "key": "buildings.ridge-barracks.details.1.action",
+      "sha256": "6f3658822a73dc4c1d09ba64a062d0d1ef89fb250f5f5923c3a1755c2f63b1db"
+    },
+    {
+      "key": "buildings.ridge-barracks.details.1.building",
+      "sha256": "6b972097ead5d68436f56f680e13093dd697d796a8523131a3f344d51483aed0"
+    },
+    {
+      "key": "buildings.moon-shrine.type",
+      "sha256": "3f8ecd1d14463a188c829f4db7ede4aa477c971c6bb618ce78f56bb626527361"
+    },
+    {
+      "key": "buildings.moon-shrine.name",
+      "sha256": "3481885fa3e9bc3a31e8a6a0deb9338771608bc21deeb2f4d55f914ea2951b0e"
+    },
+    {
+      "key": "buildings.moon-shrine.scene",
+      "sha256": "37c9da3175e46f4bb68f852544c96cbfacf5b676bdae4699ee868a8f0c78662c"
+    },
+    {
+      "key": "buildings.moon-shrine.building",
+      "sha256": "e2733c4a5095cb86fbbda1dd71eb881c8388634782e5772fb7c3cc6f14567557"
+    },
+    {
+      "key": "buildings.moon-shrine.place",
+      "sha256": "3be5ec9acac39cdb11190fd18775b85bdcc5531935c9505326aa9e9b952207e8"
+    },
+    {
+      "key": "buildings.moon-shrine.details.0.id",
+      "sha256": "e45d76dd2099eafba2674c9ed5ed9e76b8f1a11c3012214af2e5949660c06c05"
+    },
+    {
+      "key": "buildings.moon-shrine.details.0.name",
+      "sha256": "874ba7592e6c9ba5837cb5e1dcba90f2d958d1c705dae9af15abfee744c6f3d1"
+    },
+    {
+      "key": "buildings.moon-shrine.details.0.detail",
+      "sha256": "d5d9c7741da82a0e0b3e275d8250ed89fbae6f2b59afcb7373884f8eadadb923"
+    },
+    {
+      "key": "buildings.moon-shrine.details.0.x",
+      "sha256": "ad78cfa0ead35ff9d0d6de11ae996a470b257a7342d2a53073df0ce8cda04c4d"
+    },
+    {
+      "key": "buildings.moon-shrine.details.0.y",
+      "sha256": "18ed019486eb7ba1b2425746065deabe63e79e59d907ff99c5e82f1ee6ef3d58"
+    },
+    {
+      "key": "buildings.moon-shrine.details.0.w",
+      "sha256": "1e9d7c27c8bbc8ddf0055c93e064a62fa995d177fee28cc8fa949bc8a4db06f4"
+    },
+    {
+      "key": "buildings.moon-shrine.details.0.d",
+      "sha256": "b4af4e0d40391d3a00179d935c63b7e15ba8cd3dfa29f218dedc270bd3eb3e79"
+    },
+    {
+      "key": "buildings.moon-shrine.details.0.action",
+      "sha256": "6f3658822a73dc4c1d09ba64a062d0d1ef89fb250f5f5923c3a1755c2f63b1db"
+    },
+    {
+      "key": "buildings.moon-shrine.details.0.building",
+      "sha256": "e2733c4a5095cb86fbbda1dd71eb881c8388634782e5772fb7c3cc6f14567557"
+    },
+    {
+      "key": "buildings.moon-shrine.details.1.id",
+      "sha256": "18584d4fe295a5c5c4f9375f82fab3b25597517f432a1e434f617373a8dfd78f"
+    },
+    {
+      "key": "buildings.moon-shrine.details.1.name",
+      "sha256": "4aa589cb9ab8da5384acaadee62e50c0e145d687445422274c69aba40af18ebd"
+    },
+    {
+      "key": "buildings.moon-shrine.details.1.detail",
+      "sha256": "7bd11c90795987a3cdbcefa115036d7bdc2de76dea16b34fe80c850e413e4b7b"
+    },
+    {
+      "key": "buildings.moon-shrine.details.1.x",
+      "sha256": "66bc4f39340efdc0090ac8393855c5c5026d516251b581ffacd7bb3b5e5b6d79"
+    },
+    {
+      "key": "buildings.moon-shrine.details.1.y",
+      "sha256": "18ed019486eb7ba1b2425746065deabe63e79e59d907ff99c5e82f1ee6ef3d58"
+    },
+    {
+      "key": "buildings.moon-shrine.details.1.w",
+      "sha256": "1e9d7c27c8bbc8ddf0055c93e064a62fa995d177fee28cc8fa949bc8a4db06f4"
+    },
+    {
+      "key": "buildings.moon-shrine.details.1.d",
+      "sha256": "b4af4e0d40391d3a00179d935c63b7e15ba8cd3dfa29f218dedc270bd3eb3e79"
+    },
+    {
+      "key": "buildings.moon-shrine.details.1.action",
+      "sha256": "6f3658822a73dc4c1d09ba64a062d0d1ef89fb250f5f5923c3a1755c2f63b1db"
+    },
+    {
+      "key": "buildings.moon-shrine.details.1.building",
+      "sha256": "e2733c4a5095cb86fbbda1dd71eb881c8388634782e5772fb7c3cc6f14567557"
+    },
+    {
+      "key": "buildings.cloud-observatory.type",
+      "sha256": "5f8368d643022c015855422d0a88d1968b456809d58389653f8fc970701b8870"
+    },
+    {
+      "key": "buildings.cloud-observatory.name",
+      "sha256": "3e8c3faeb9c1f900d51939edc6e00b9ee3f846b18f8c18b48c71149d57986c03"
+    },
+    {
+      "key": "buildings.cloud-observatory.scene",
+      "sha256": "f45dfba5e5a5174e4ccd80d53fa4b854eadfe74fdb631b08216d2e7572747ab4"
+    },
+    {
+      "key": "buildings.cloud-observatory.xp",
+      "sha256": "e629fa6598d732768f7c726b4b621285f9c3b85303900aa912017db7617d8bdb"
+    },
+    {
+      "key": "buildings.cloud-observatory.building",
+      "sha256": "df27dcd53565da60b681a7a914f38f60ab86898a87ed40fd7a73e6eea9192962"
+    },
+    {
+      "key": "buildings.cloud-observatory.place",
+      "sha256": "3be5ec9acac39cdb11190fd18775b85bdcc5531935c9505326aa9e9b952207e8"
+    },
+    {
+      "key": "buildings.cloud-observatory.details.0.id",
+      "sha256": "27e154cd4531b820813bb73c017fdde9d4c374457fd5d7e29024866e2606bd7e"
+    },
+    {
+      "key": "buildings.cloud-observatory.details.0.name",
+      "sha256": "aa162063516b3fa9f4d02fab4f7e5e2cb9d4ca84743665acbc74fae657285713"
+    },
+    {
+      "key": "buildings.cloud-observatory.details.0.detail",
+      "sha256": "f5d60b770d0211909c40581bd79a60636aab5edf9ff45b66abfcf91583cc4c6a"
+    },
+    {
+      "key": "buildings.cloud-observatory.details.0.x",
+      "sha256": "ad78cfa0ead35ff9d0d6de11ae996a470b257a7342d2a53073df0ce8cda04c4d"
+    },
+    {
+      "key": "buildings.cloud-observatory.details.0.y",
+      "sha256": "18ed019486eb7ba1b2425746065deabe63e79e59d907ff99c5e82f1ee6ef3d58"
+    },
+    {
+      "key": "buildings.cloud-observatory.details.0.w",
+      "sha256": "1e9d7c27c8bbc8ddf0055c93e064a62fa995d177fee28cc8fa949bc8a4db06f4"
+    },
+    {
+      "key": "buildings.cloud-observatory.details.0.d",
+      "sha256": "b4af4e0d40391d3a00179d935c63b7e15ba8cd3dfa29f218dedc270bd3eb3e79"
+    },
+    {
+      "key": "buildings.cloud-observatory.details.0.action",
+      "sha256": "6f3658822a73dc4c1d09ba64a062d0d1ef89fb250f5f5923c3a1755c2f63b1db"
+    },
+    {
+      "key": "buildings.cloud-observatory.details.0.building",
+      "sha256": "df27dcd53565da60b681a7a914f38f60ab86898a87ed40fd7a73e6eea9192962"
+    },
+    {
+      "key": "buildings.cloud-observatory.details.1.id",
+      "sha256": "14454a38a54ac8fa9d0d9411d233b32bc4821c58c5f0cbfc251bda71dee22d08"
+    },
+    {
+      "key": "buildings.cloud-observatory.details.1.name",
+      "sha256": "e664de50f3d436697399e21039e1941d230249040d729c14e19c5c76042bddb6"
+    },
+    {
+      "key": "buildings.cloud-observatory.details.1.detail",
+      "sha256": "48404af0f03c2f41343bfbddafadc12dbda3c02a98fae2cbbc519e304b9e217d"
+    },
+    {
+      "key": "buildings.cloud-observatory.details.1.x",
+      "sha256": "66bc4f39340efdc0090ac8393855c5c5026d516251b581ffacd7bb3b5e5b6d79"
+    },
+    {
+      "key": "buildings.cloud-observatory.details.1.y",
+      "sha256": "18ed019486eb7ba1b2425746065deabe63e79e59d907ff99c5e82f1ee6ef3d58"
+    },
+    {
+      "key": "buildings.cloud-observatory.details.1.w",
+      "sha256": "1e9d7c27c8bbc8ddf0055c93e064a62fa995d177fee28cc8fa949bc8a4db06f4"
+    },
+    {
+      "key": "buildings.cloud-observatory.details.1.d",
+      "sha256": "b4af4e0d40391d3a00179d935c63b7e15ba8cd3dfa29f218dedc270bd3eb3e79"
+    },
+    {
+      "key": "buildings.cloud-observatory.details.1.action",
+      "sha256": "6f3658822a73dc4c1d09ba64a062d0d1ef89fb250f5f5923c3a1755c2f63b1db"
+    },
+    {
+      "key": "buildings.cloud-observatory.details.1.building",
+      "sha256": "df27dcd53565da60b681a7a914f38f60ab86898a87ed40fd7a73e6eea9192962"
+    },
+    {
+      "key": "buildings.lighthouse.type",
+      "sha256": "b39e4576c352349b382745e5bf41134ec5af6fab06a89fb47c67fef7e3de8c96"
+    },
+    {
+      "key": "buildings.lighthouse.name",
+      "sha256": "853ca28a47e34506874ef8c8b404f8cdc38fb832d620adbefcc3cef97cc787a3"
+    },
+    {
+      "key": "buildings.lighthouse.scene",
+      "sha256": "87770692b314233ed25e322eda84f11fa905dd927690e350cbe0932af3e70b2c"
+    },
+    {
+      "key": "buildings.lighthouse.building",
+      "sha256": "696d2df693f5e30f6d7e124c101ba0795f8c085f7e4d02f5b6eb00a3fae2680e"
+    },
+    {
+      "key": "buildings.lighthouse.place",
+      "sha256": "9989fc0840c28b29de5b829805af518610b1b45fd257c563e8d7760441b13bb2"
+    },
+    {
+      "key": "buildings.lighthouse.details.0.id",
+      "sha256": "1192ba5a5ba065427d82f8943480761432ba9bdd71cb40c1ba1e3b047949ff01"
+    },
+    {
+      "key": "buildings.lighthouse.details.0.name",
+      "sha256": "c3711cef0c0f7322954f2b30cc64542feb1407739d3ad480ff6c46f17bac352b"
+    },
+    {
+      "key": "buildings.lighthouse.details.0.detail",
+      "sha256": "806cec04929affbcb51c8a65999aace5dc21cc6a622ea60e244cfdc7b3fdad1f"
+    },
+    {
+      "key": "buildings.lighthouse.details.0.x",
+      "sha256": "ad78cfa0ead35ff9d0d6de11ae996a470b257a7342d2a53073df0ce8cda04c4d"
+    },
+    {
+      "key": "buildings.lighthouse.details.0.y",
+      "sha256": "18ed019486eb7ba1b2425746065deabe63e79e59d907ff99c5e82f1ee6ef3d58"
+    },
+    {
+      "key": "buildings.lighthouse.details.0.w",
+      "sha256": "1e9d7c27c8bbc8ddf0055c93e064a62fa995d177fee28cc8fa949bc8a4db06f4"
+    },
+    {
+      "key": "buildings.lighthouse.details.0.d",
+      "sha256": "b4af4e0d40391d3a00179d935c63b7e15ba8cd3dfa29f218dedc270bd3eb3e79"
+    },
+    {
+      "key": "buildings.lighthouse.details.0.action",
+      "sha256": "6f3658822a73dc4c1d09ba64a062d0d1ef89fb250f5f5923c3a1755c2f63b1db"
+    },
+    {
+      "key": "buildings.lighthouse.details.0.building",
+      "sha256": "696d2df693f5e30f6d7e124c101ba0795f8c085f7e4d02f5b6eb00a3fae2680e"
+    },
+    {
+      "key": "buildings.lighthouse.details.1.id",
+      "sha256": "96f5b428cf3e29f307ce84ef7e995756a4fd4daa210cc7a65b5cb00b148b9aaa"
+    },
+    {
+      "key": "buildings.lighthouse.details.1.name",
+      "sha256": "161441f9207284a0bc825a6b7e5512b998d5cacccfd2954f796a27d971045fc4"
+    },
+    {
+      "key": "buildings.lighthouse.details.1.detail",
+      "sha256": "395e0c3a171cf7a922104398c2a5479e0820ab2768c92298c88a58daa9d734b0"
+    },
+    {
+      "key": "buildings.lighthouse.details.1.x",
+      "sha256": "66bc4f39340efdc0090ac8393855c5c5026d516251b581ffacd7bb3b5e5b6d79"
+    },
+    {
+      "key": "buildings.lighthouse.details.1.y",
+      "sha256": "18ed019486eb7ba1b2425746065deabe63e79e59d907ff99c5e82f1ee6ef3d58"
+    },
+    {
+      "key": "buildings.lighthouse.details.1.w",
+      "sha256": "1e9d7c27c8bbc8ddf0055c93e064a62fa995d177fee28cc8fa949bc8a4db06f4"
+    },
+    {
+      "key": "buildings.lighthouse.details.1.d",
+      "sha256": "b4af4e0d40391d3a00179d935c63b7e15ba8cd3dfa29f218dedc270bd3eb3e79"
+    },
+    {
+      "key": "buildings.lighthouse.details.1.action",
+      "sha256": "6f3658822a73dc4c1d09ba64a062d0d1ef89fb250f5f5923c3a1755c2f63b1db"
+    },
+    {
+      "key": "buildings.lighthouse.details.1.building",
+      "sha256": "696d2df693f5e30f6d7e124c101ba0795f8c085f7e4d02f5b6eb00a3fae2680e"
+    },
+    {
+      "key": "buildings.tide-harbor.type",
+      "sha256": "1d28ada5833239513119f428fe62bb6c117745e9ee71a3335c5683dccf337d4f"
+    },
+    {
+      "key": "buildings.tide-harbor.name",
+      "sha256": "23537440d3d4ec3ee5baf66f9b37c6ecd15626c3106f27cd61c48fb650056d5e"
+    },
+    {
+      "key": "buildings.tide-harbor.scene",
+      "sha256": "59da1159ee410d53d8051926207334962c7b393a5774191bb6fd9a458093a07b"
+    },
+    {
+      "key": "buildings.tide-harbor.material",
+      "sha256": "31d55c5390249bf7ace15469316a26c122088656799a798d35b7a20b790b1e94"
+    },
+    {
+      "key": "buildings.tide-harbor.amount",
+      "sha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35"
+    },
+    {
+      "key": "buildings.tide-harbor.gold",
+      "sha256": "8527a891e224136950ff32ca212b45bc93f69fbb801c3b1ebedac52775f99e61"
+    },
+    {
+      "key": "buildings.tide-harbor.xp",
+      "sha256": "f5ca38f748a1d6eaf726b8a42fb575c3c71f1864a8143301782de13da2d9202b"
+    },
+    {
+      "key": "buildings.tide-harbor.building",
+      "sha256": "4f752ecdff2f316233cd6ed26115717905ab899682c57a9e88d7626b914d989f"
+    },
+    {
+      "key": "buildings.tide-harbor.place",
+      "sha256": "9989fc0840c28b29de5b829805af518610b1b45fd257c563e8d7760441b13bb2"
+    },
+    {
+      "key": "buildings.tide-harbor.details.0.id",
+      "sha256": "03c09289c2d1272a04fe9dea7abbcee99967eb4c02a983d1a71bd696e408092c"
+    },
+    {
+      "key": "buildings.tide-harbor.details.0.name",
+      "sha256": "af20e928681dca8ca10043c13e7394131b0695747db28f129cccc97b04420ebf"
+    },
+    {
+      "key": "buildings.tide-harbor.details.0.detail",
+      "sha256": "82f0247494003ba6e73183a6b995399cb0a9ab7a7807262c5a32f99ce150d663"
+    },
+    {
+      "key": "buildings.tide-harbor.details.0.x",
+      "sha256": "ad78cfa0ead35ff9d0d6de11ae996a470b257a7342d2a53073df0ce8cda04c4d"
+    },
+    {
+      "key": "buildings.tide-harbor.details.0.y",
+      "sha256": "18ed019486eb7ba1b2425746065deabe63e79e59d907ff99c5e82f1ee6ef3d58"
+    },
+    {
+      "key": "buildings.tide-harbor.details.0.w",
+      "sha256": "1e9d7c27c8bbc8ddf0055c93e064a62fa995d177fee28cc8fa949bc8a4db06f4"
+    },
+    {
+      "key": "buildings.tide-harbor.details.0.d",
+      "sha256": "b4af4e0d40391d3a00179d935c63b7e15ba8cd3dfa29f218dedc270bd3eb3e79"
+    },
+    {
+      "key": "buildings.tide-harbor.details.0.action",
+      "sha256": "6f3658822a73dc4c1d09ba64a062d0d1ef89fb250f5f5923c3a1755c2f63b1db"
+    },
+    {
+      "key": "buildings.tide-harbor.details.0.building",
+      "sha256": "4f752ecdff2f316233cd6ed26115717905ab899682c57a9e88d7626b914d989f"
+    },
+    {
+      "key": "buildings.tide-harbor.details.1.id",
+      "sha256": "cc0342ea23fa35a60367b34f82e6fcad2356c702ac6d9d393e4cedb7e2dec946"
+    },
+    {
+      "key": "buildings.tide-harbor.details.1.name",
+      "sha256": "a28cba35c00fe3060cd1e3e2628a7e8cb49ee51f0cc18f4dafd534c14b76d828"
+    },
+    {
+      "key": "buildings.tide-harbor.details.1.detail",
+      "sha256": "23cbe3aeddae239fb994750c25336dbbd495fc1e067d5bbb8faf86384c14b308"
+    },
+    {
+      "key": "buildings.tide-harbor.details.1.x",
+      "sha256": "66bc4f39340efdc0090ac8393855c5c5026d516251b581ffacd7bb3b5e5b6d79"
+    },
+    {
+      "key": "buildings.tide-harbor.details.1.y",
+      "sha256": "18ed019486eb7ba1b2425746065deabe63e79e59d907ff99c5e82f1ee6ef3d58"
+    },
+    {
+      "key": "buildings.tide-harbor.details.1.w",
+      "sha256": "1e9d7c27c8bbc8ddf0055c93e064a62fa995d177fee28cc8fa949bc8a4db06f4"
+    },
+    {
+      "key": "buildings.tide-harbor.details.1.d",
+      "sha256": "b4af4e0d40391d3a00179d935c63b7e15ba8cd3dfa29f218dedc270bd3eb3e79"
+    },
+    {
+      "key": "buildings.tide-harbor.details.1.action",
+      "sha256": "6f3658822a73dc4c1d09ba64a062d0d1ef89fb250f5f5923c3a1755c2f63b1db"
+    },
+    {
+      "key": "buildings.tide-harbor.details.1.building",
+      "sha256": "4f752ecdff2f316233cd6ed26115717905ab899682c57a9e88d7626b914d989f"
+    },
+    {
+      "key": "buildings.city-academy-3.type",
+      "sha256": "32df171b27ef9f252263c5bc5a11105f3cb6a28251fb76126e27258fe81f08cb"
+    },
+    {
+      "key": "buildings.city-academy-3.name",
+      "sha256": "10993348442fe65123cefdcf4f5c276c74deaa7e65cefc820e5b5c5bdd785b49"
+    },
+    {
+      "key": "buildings.city-academy-3.scene",
+      "sha256": "ed3a3dcd08df73bc3ec0f971846515c5479412090e38e19af79a840adbdc2fba"
+    },
+    {
+      "key": "buildings.city-academy-3.building",
+      "sha256": "100c7c6bf4cea34cae4e1d2595c612959124571c89c09fc12b9592eae5941dc8"
+    },
+    {
+      "key": "buildings.city-academy-3.place",
+      "sha256": "b295162ccd7483bcf4f715b22b84d053efb490c5fd1beb6799751456d37c1ad1"
+    },
+    {
+      "key": "buildings.city-academy-3.details.0.id",
+      "sha256": "a235d8faa5241a1f411466e2ed21ca57a4203dc6489682fde196c32f3de786e2"
+    },
+    {
+      "key": "buildings.city-academy-3.details.0.name",
+      "sha256": "0f86ab91fb9b3d43e60be03fd211686c32a723fc59a8949aa0c40a876bacf43d"
+    },
+    {
+      "key": "buildings.city-academy-3.details.0.detail",
+      "sha256": "589c58c47a378620dca88ba82f491ee0623004a7b292e24b5c9a2dff2d58c4b4"
+    },
+    {
+      "key": "buildings.city-academy-3.details.0.x",
+      "sha256": "ad78cfa0ead35ff9d0d6de11ae996a470b257a7342d2a53073df0ce8cda04c4d"
+    },
+    {
+      "key": "buildings.city-academy-3.details.0.y",
+      "sha256": "18ed019486eb7ba1b2425746065deabe63e79e59d907ff99c5e82f1ee6ef3d58"
+    },
+    {
+      "key": "buildings.city-academy-3.details.0.w",
+      "sha256": "1e9d7c27c8bbc8ddf0055c93e064a62fa995d177fee28cc8fa949bc8a4db06f4"
+    },
+    {
+      "key": "buildings.city-academy-3.details.0.d",
+      "sha256": "b4af4e0d40391d3a00179d935c63b7e15ba8cd3dfa29f218dedc270bd3eb3e79"
+    },
+    {
+      "key": "buildings.city-academy-3.details.0.action",
+      "sha256": "6f3658822a73dc4c1d09ba64a062d0d1ef89fb250f5f5923c3a1755c2f63b1db"
+    },
+    {
+      "key": "buildings.city-academy-3.details.0.building",
+      "sha256": "100c7c6bf4cea34cae4e1d2595c612959124571c89c09fc12b9592eae5941dc8"
+    },
+    {
+      "key": "buildings.city-academy-3.details.1.id",
+      "sha256": "2a573f122f066d624fab435f4bcdfff79f769e9db02ec5b422301df4f11397a6"
+    },
+    {
+      "key": "buildings.city-academy-3.details.1.name",
+      "sha256": "c51063c5eceb89a8497b7435a137ed5f47e2a7cba95605f369a40393964fb2b4"
+    },
+    {
+      "key": "buildings.city-academy-3.details.1.detail",
+      "sha256": "3a99149153f30c80f2bfbec8e1e13c0d0b64c467f4d6369ffa53fd3f5258a9f0"
+    },
+    {
+      "key": "buildings.city-academy-3.details.1.x",
+      "sha256": "66bc4f39340efdc0090ac8393855c5c5026d516251b581ffacd7bb3b5e5b6d79"
+    },
+    {
+      "key": "buildings.city-academy-3.details.1.y",
+      "sha256": "18ed019486eb7ba1b2425746065deabe63e79e59d907ff99c5e82f1ee6ef3d58"
+    },
+    {
+      "key": "buildings.city-academy-3.details.1.w",
+      "sha256": "1e9d7c27c8bbc8ddf0055c93e064a62fa995d177fee28cc8fa949bc8a4db06f4"
+    },
+    {
+      "key": "buildings.city-academy-3.details.1.d",
+      "sha256": "b4af4e0d40391d3a00179d935c63b7e15ba8cd3dfa29f218dedc270bd3eb3e79"
+    },
+    {
+      "key": "buildings.city-academy-3.details.1.action",
+      "sha256": "6f3658822a73dc4c1d09ba64a062d0d1ef89fb250f5f5923c3a1755c2f63b1db"
+    },
+    {
+      "key": "buildings.city-academy-3.details.1.building",
+      "sha256": "100c7c6bf4cea34cae4e1d2595c612959124571c89c09fc12b9592eae5941dc8"
+    },
+    {
+      "key": "buildings.city-faith-3.type",
+      "sha256": "d32d6d5eeb28879723113a09a04aac8ec79466cce4e534ee3cf9a29cbf43da24"
+    },
+    {
+      "key": "buildings.city-faith-3.name",
+      "sha256": "8fa9f6d3f7ed5f02e643aa5af00ea9f7813100901a1fbc20a5fb554894b405d4"
+    },
+    {
+      "key": "buildings.city-faith-3.scene",
+      "sha256": "e834944797b3c1159013e126b693f5a5b4e1ac349648b035239b9c618e05a606"
+    },
+    {
+      "key": "buildings.city-faith-3.building",
+      "sha256": "5d5e39c9c89474a1ae7422596d06b1394c7a9f4d71e9928b5c3a01658a62cd04"
+    },
+    {
+      "key": "buildings.city-faith-3.place",
+      "sha256": "b295162ccd7483bcf4f715b22b84d053efb490c5fd1beb6799751456d37c1ad1"
+    },
+    {
+      "key": "buildings.city-faith-3.details.0.id",
+      "sha256": "0e14779a5d04e70b8522a8f170bef888fb37a005e9e5ae840c30c7f3d0524445"
+    },
+    {
+      "key": "buildings.city-faith-3.details.0.name",
+      "sha256": "21fb9a208a676afbaf6fedf5818ff686dbce053929a5766992ca880adc0e3bc7"
+    },
+    {
+      "key": "buildings.city-faith-3.details.0.detail",
+      "sha256": "c4f52778508837a4d3d4b6082add42f9f61686bb16aebd63e2d867d43d4f2e62"
+    },
+    {
+      "key": "buildings.city-faith-3.details.0.x",
+      "sha256": "ad78cfa0ead35ff9d0d6de11ae996a470b257a7342d2a53073df0ce8cda04c4d"
+    },
+    {
+      "key": "buildings.city-faith-3.details.0.y",
+      "sha256": "18ed019486eb7ba1b2425746065deabe63e79e59d907ff99c5e82f1ee6ef3d58"
+    },
+    {
+      "key": "buildings.city-faith-3.details.0.w",
+      "sha256": "1e9d7c27c8bbc8ddf0055c93e064a62fa995d177fee28cc8fa949bc8a4db06f4"
+    },
+    {
+      "key": "buildings.city-faith-3.details.0.d",
+      "sha256": "b4af4e0d40391d3a00179d935c63b7e15ba8cd3dfa29f218dedc270bd3eb3e79"
+    },
+    {
+      "key": "buildings.city-faith-3.details.0.action",
+      "sha256": "6f3658822a73dc4c1d09ba64a062d0d1ef89fb250f5f5923c3a1755c2f63b1db"
+    },
+    {
+      "key": "buildings.city-faith-3.details.0.building",
+      "sha256": "5d5e39c9c89474a1ae7422596d06b1394c7a9f4d71e9928b5c3a01658a62cd04"
+    },
+    {
+      "key": "buildings.city-faith-3.details.1.id",
+      "sha256": "23b01084c89eea46131c198b21732da085276792458b3922737f3092a1663603"
+    },
+    {
+      "key": "buildings.city-faith-3.details.1.name",
+      "sha256": "466f7fa9d5e3bb9e0cebf5b92ca26e7b1300249bf2d883598db904bebe8a401c"
+    },
+    {
+      "key": "buildings.city-faith-3.details.1.detail",
+      "sha256": "68340a23f84e29b662a14553441cc5d86b568d5771319e72b74e34f27b6c2df5"
+    },
+    {
+      "key": "buildings.city-faith-3.details.1.x",
+      "sha256": "66bc4f39340efdc0090ac8393855c5c5026d516251b581ffacd7bb3b5e5b6d79"
+    },
+    {
+      "key": "buildings.city-faith-3.details.1.y",
+      "sha256": "18ed019486eb7ba1b2425746065deabe63e79e59d907ff99c5e82f1ee6ef3d58"
+    },
+    {
+      "key": "buildings.city-faith-3.details.1.w",
+      "sha256": "1e9d7c27c8bbc8ddf0055c93e064a62fa995d177fee28cc8fa949bc8a4db06f4"
+    },
+    {
+      "key": "buildings.city-faith-3.details.1.d",
+      "sha256": "b4af4e0d40391d3a00179d935c63b7e15ba8cd3dfa29f218dedc270bd3eb3e79"
+    },
+    {
+      "key": "buildings.city-faith-3.details.1.action",
+      "sha256": "6f3658822a73dc4c1d09ba64a062d0d1ef89fb250f5f5923c3a1755c2f63b1db"
+    },
+    {
+      "key": "buildings.city-faith-3.details.1.building",
+      "sha256": "5d5e39c9c89474a1ae7422596d06b1394c7a9f4d71e9928b5c3a01658a62cd04"
+    },
+    {
+      "key": "rooms.room-city-academy-3.id",
+      "sha256": "ed3a3dcd08df73bc3ec0f971846515c5479412090e38e19af79a840adbdc2fba"
+    },
+    {
+      "key": "rooms.room-city-academy-3.sceneId",
+      "sha256": "2f6c384691c8431b060bd8d2c67d280c21dfb65df7fed9d8028fc0b58da629ba"
+    },
+    {
+      "key": "rooms.room-city-academy-3.buildingId",
+      "sha256": "100c7c6bf4cea34cae4e1d2595c612959124571c89c09fc12b9592eae5941dc8"
+    },
+    {
+      "key": "rooms.room-city-academy-3.occupantKey",
+      "sha256": "100c7c6bf4cea34cae4e1d2595c612959124571c89c09fc12b9592eae5941dc8"
+    },
+    {
+      "key": "rooms.room-city-academy-3.place",
+      "sha256": "b295162ccd7483bcf4f715b22b84d053efb490c5fd1beb6799751456d37c1ad1"
+    },
+    {
+      "key": "rooms.room-city-academy-3.kind",
+      "sha256": "e4f5b5dca363074d7100c367a9952e3eef97bc98176164b3626b58108eb6fb2e"
+    },
+    {
+      "key": "rooms.room-city-academy-3.procedural",
+      "sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+    },
+    {
+      "key": "rooms.room-city-academy-3.style",
+      "sha256": "7b29b232972c238fbdbd57a184a518ed0152994721e19cc898a305d3d2e313ac"
+    },
+    {
+      "key": "rooms.room-city-academy-3.variant",
+      "sha256": "8527a891e224136950ff32ca212b45bc93f69fbb801c3b1ebedac52775f99e61"
+    },
+    {
+      "key": "rooms.room-city-academy-3.title",
+      "sha256": "31807e44a34778a1123fe97e93c4a743f4a0a1daec148d8799514d8bacdfee80"
+    },
+    {
+      "key": "rooms.room-city-academy-3.description",
+      "sha256": "f3c4c3c81713c905a42f91971810a07f8eecd1300fb1c36d427bc67e837a2d26"
+    },
+    {
+      "key": "rooms.room-city-academy-3.columns",
+      "sha256": "4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5"
+    },
+    {
+      "key": "rooms.room-city-academy-3.rows",
+      "sha256": "4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5"
+    },
+    {
+      "key": "rooms.room-city-academy-3.walkArea.minX",
+      "sha256": "d2cbad71ff333de67d07ec676e352ab7f38248eb69c942950157220607c55e84"
+    },
+    {
+      "key": "rooms.room-city-academy-3.walkArea.minY",
+      "sha256": "d2cbad71ff333de67d07ec676e352ab7f38248eb69c942950157220607c55e84"
+    },
+    {
+      "key": "rooms.room-city-academy-3.walkArea.maxX",
+      "sha256": "e0b04046fbfbc96f3437e4718a8a15e7eb5936298a36a8c2039226d1c5f41845"
+    },
+    {
+      "key": "rooms.room-city-academy-3.walkArea.maxY",
+      "sha256": "e0b04046fbfbc96f3437e4718a8a15e7eb5936298a36a8c2039226d1c5f41845"
+    },
+    {
+      "key": "rooms.room-city-academy-3.exit.x",
+      "sha256": "19581e27de7ced00ff1ce50b2047e7a567c76b1cbaebabe5ef03f7c3017bb5b7"
+    },
+    {
+      "key": "rooms.room-city-academy-3.exit.y",
+      "sha256": "19581e27de7ced00ff1ce50b2047e7a567c76b1cbaebabe5ef03f7c3017bb5b7"
+    },
+    {
+      "key": "rooms.room-city-academy-3.service",
+      "sha256": "468cec2f2d45c12a9d220f1ab6f8876946fde1fc5250d542db5a1915e182f412"
+    },
+    {
+      "key": "rooms.room-city-academy-3.background",
+      "sha256": "370c7866ce072943511ec5cf90aa84ce59278e1ff93c8694ca5f2052406fe026"
+    },
+    {
+      "key": "rooms.room-city-faith-3.id",
+      "sha256": "e834944797b3c1159013e126b693f5a5b4e1ac349648b035239b9c618e05a606"
+    },
+    {
+      "key": "rooms.room-city-faith-3.sceneId",
+      "sha256": "c566cb8f854e64f8a6078e23173ec38269ad18c3d289b3301f69cdb7720498c8"
+    },
+    {
+      "key": "rooms.room-city-faith-3.buildingId",
+      "sha256": "5d5e39c9c89474a1ae7422596d06b1394c7a9f4d71e9928b5c3a01658a62cd04"
+    },
+    {
+      "key": "rooms.room-city-faith-3.occupantKey",
+      "sha256": "5d5e39c9c89474a1ae7422596d06b1394c7a9f4d71e9928b5c3a01658a62cd04"
+    },
+    {
+      "key": "rooms.room-city-faith-3.place",
+      "sha256": "b295162ccd7483bcf4f715b22b84d053efb490c5fd1beb6799751456d37c1ad1"
+    },
+    {
+      "key": "rooms.room-city-faith-3.kind",
+      "sha256": "e4f5b5dca363074d7100c367a9952e3eef97bc98176164b3626b58108eb6fb2e"
+    },
+    {
+      "key": "rooms.room-city-faith-3.procedural",
+      "sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+    },
+    {
+      "key": "rooms.room-city-faith-3.style",
+      "sha256": "bf78c1a760d5ca8f968e9065e346cefc25c382d7ce0469bace755b3b8b57e536"
+    },
+    {
+      "key": "rooms.room-city-faith-3.variant",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "key": "rooms.room-city-faith-3.title",
+      "sha256": "a636f6ebb099b4beb61027ac319efcf4ecbe299ad27c11af4fccf4a04e655646"
+    },
+    {
+      "key": "rooms.room-city-faith-3.description",
+      "sha256": "994ca73f155048aa85c250f30c8e7fbc7ec4d6fd46522578fcc7c0d86ed04ee1"
+    },
+    {
+      "key": "rooms.room-city-faith-3.columns",
+      "sha256": "4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5"
+    },
+    {
+      "key": "rooms.room-city-faith-3.rows",
+      "sha256": "4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5"
+    },
+    {
+      "key": "rooms.room-city-faith-3.walkArea.minX",
+      "sha256": "d2cbad71ff333de67d07ec676e352ab7f38248eb69c942950157220607c55e84"
+    },
+    {
+      "key": "rooms.room-city-faith-3.walkArea.minY",
+      "sha256": "d2cbad71ff333de67d07ec676e352ab7f38248eb69c942950157220607c55e84"
+    },
+    {
+      "key": "rooms.room-city-faith-3.walkArea.maxX",
+      "sha256": "e0b04046fbfbc96f3437e4718a8a15e7eb5936298a36a8c2039226d1c5f41845"
+    },
+    {
+      "key": "rooms.room-city-faith-3.walkArea.maxY",
+      "sha256": "e0b04046fbfbc96f3437e4718a8a15e7eb5936298a36a8c2039226d1c5f41845"
+    },
+    {
+      "key": "rooms.room-city-faith-3.exit.x",
+      "sha256": "19581e27de7ced00ff1ce50b2047e7a567c76b1cbaebabe5ef03f7c3017bb5b7"
+    },
+    {
+      "key": "rooms.room-city-faith-3.exit.y",
+      "sha256": "19581e27de7ced00ff1ce50b2047e7a567c76b1cbaebabe5ef03f7c3017bb5b7"
+    },
+    {
+      "key": "rooms.room-city-faith-3.service",
+      "sha256": "468cec2f2d45c12a9d220f1ab6f8876946fde1fc5250d542db5a1915e182f412"
+    },
+    {
+      "key": "rooms.room-city-faith-3.background",
+      "sha256": "dea7f3309172d1d8b09a1af0f6cbaa770d078343d4d5449d1e7694025b2a870b"
+    }
+  ]
+}

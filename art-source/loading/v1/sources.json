@@ -1,0 +1,76 @@
+{
+  "style": "手绘风、日式西幻；单一视觉焦点，留白，避免无关元素堆叠",
+  "tool": "Built-in image_gen",
+  "images": [
+    {
+      "id": "town",
+      "path": "art-source/loading/v1/town.png",
+      "prompt": "Morningstar Town: luminous hand-painted anime Western fantasy, blue roofs, celestial clocktower, warm dawn. No text.",
+      "hint": "Generated images are saved to C:\\Users\\23373\\.code",
+      "generation_output": "exec-e3940947-0e2c-4b74-8909-51bc17bbebfd.png"
+    },
+    {
+      "id": "wood",
+      "path": "art-source/loading/v1/wood.png",
+      "prompt": "Whispering Forest: ancient silver-leaf woodland, mossy elven standing stones, luminous forest creek, distant pale stag silhouette, emerald and silver mist.",
+      "hint": "Generated images are saved to C:\\Users\\23373\\.code",
+      "generation_output": "exec-1a999391-3544-486b-b538-736b03fcab60.png"
+    },
+    {
+      "id": "pass",
+      "path": "art-source/loading/v1/pass.png",
+      "prompt": "Ember Pass: dramatic volcanic canyon, basalt cliffs, a medieval caravan bridge, distant dwarf forge glowing amber, soot and golden evening rays.",
+      "hint": "Generated images are saved to C:\\Users\\23373\\.code",
+      "generation_output": "exec-84f9d8fd-288a-4a6c-93b8-bebbd2e48881.png"
+    },
+    {
+      "id": "fen",
+      "path": "art-source/loading/v1/fen.png",
+      "prompt": "Moonfen Ruins: moonlit misty wetland, half-submerged ancient temple, broken pale columns reflected in silver water, blue violet ghostlights.",
+      "hint": "Generated images are saved to C:\\Users\\23373\\.code",
+      "generation_output": "exec-b1610c29-21e5-4ed5-90b5-c3531a62aa11.png"
+    },
+    {
+      "id": "coast",
+      "path": "art-source/loading/v1/coast.png",
+      "prompt": "Windfall Sea Cliffs: windswept coastal cliffs, a medieval stone lighthouse and small harbor, wrecked ship silhouettes, turquoise ocean and sunset clouds.",
+      "hint": "Generated images are saved to C:\\Users\\23373\\.code",
+      "generation_output": "exec-4548db3f-0e98-475a-9037-f324d6c7af03.png"
+    },
+    {
+      "id": "city",
+      "path": "art-source/loading/v1/city.png",
+      "prompt": "Homeward Royal City: grand old Western fantasy capital at twilight, cathedral spires and brass celestial observatory, river bridges and thousands of warm lanterns, hopeful blue and gold.",
+      "hint": "Generated images are saved to C:\\Users\\23373\\.code",
+      "generation_output": "exec-6ff902c2-d18e-48a5-97d0-81c3826c0409.png"
+    },
+    {
+      "id": "departure",
+      "path": "art-source/loading/v1/departure.png",
+      "prompt": "Departure: an old stone road winding through golden meadow toward distant blue mountains and a small medieval town, morning sun, hopeful travel atmosphere, no characters.",
+      "hint": "Generated images are saved to C:\\Users\\23373\\.code",
+      "generation_output": "exec-e4e5bb43-eb93-4d95-8de2-c4ac9c9bfa36.png"
+    },
+    {
+      "id": "camp",
+      "path": "art-source/loading/v1/camp.png",
+      "prompt": "Camp: a quiet adventurers campsite at dusk under ancient trees, canvas tents, cooking pot and warm campfire, distant stars, soft amber and blue, no characters.",
+      "hint": "Generated images are saved to C:\\Users\\23373\\.code",
+      "generation_output": "exec-36164b45-5d58-46ff-b09f-418d4340336a.png"
+    },
+    {
+      "id": "ruins",
+      "path": "art-source/loading/v1/ruins.png",
+      "prompt": "Ruins: an ancient subterranean Western fantasy hall, eroded astronomical carvings, broken arches, luminous celestial mosaic, shafts of light and quiet mystery, no characters.",
+      "hint": "Generated images are saved to C:\\Users\\23373\\.code",
+      "generation_output": "exec-bccc5c28-12e7-4428-a639-dd37100b0194.png"
+    },
+    {
+      "id": "battle",
+      "path": "art-source/loading/v1/battle.png",
+      "prompt": "Battle preparation: a medieval border fortress armory courtyard before dawn, wooden rack with sword shield bow and ornate staff, banners, stone walls, warm lanterns, no characters.",
+      "hint": "Generated images are saved to C:\\Users\\23373\\.code",
+      "generation_output": "exec-fd2c2af6-9d12-4ac9-af5d-5669a6f55d94.png"
+    }
+  ]
+}

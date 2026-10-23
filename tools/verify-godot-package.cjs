@@ -1,0 +1,30 @@
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),{spawnSync}=require('node:child_process');
+const root=path.resolve(__dirname,'..'),source=process.argv[2]?path.resolve(process.argv[2]):path.join(root,'artifacts/godot/windows');
+const expected=new Set(['灰烬边境.exe','灰烬边境.pck','README.txt','LICENSE-Game-CC0.txt','LICENSE-Godot.txt','LICENSE-ThirdParty-CC0.txt','LICENSE-Font-OFL.txt']);
+const unexpected=fs.readdirSync(source).filter(name=>!expected.has(name));if(unexpected.length)throw Error('Unexpected files in Windows delivery: '+unexpected.join(', '));
+const checks=path.join(root,'artifacts/godot/isolated-checks');fs.mkdirSync(checks,{recursive:true});
+const temp=fs.mkdtempSync(path.join(checks,'灰烬边境 Windows 验收 '));fs.cpSync(source,temp,{recursive:true});
+const binary=path.join(temp,'灰烬边境.exe'),report=path.join(temp,'runtime-smoke.json');
+const profile=path.join(temp,'isolated-user-data');fs.mkdirSync(profile,{recursive:true});
+const env={...process.env,APPDATA:profile,PATH:process.env.SystemRoot?path.join(process.env.SystemRoot,'System32'):'',GODOT_PATH:'',NODE_PATH:'',ASHEN_DEV_BRIDGE:''};
+const result=spawnSync(binary,['--headless','--','--view=battle','--smoke='+report],{cwd:temp,encoding:'utf8',windowsHide:true,env,timeout:45000});
+const log=(result.stdout||'')+(result.stderr||'');fs.writeFileSync(path.join(root,'artifacts/godot/windows-smoke.log'),log);
+if(result.status!==0||/SCRIPT ERROR:|^ERROR:/m.test(log)||!fs.existsSync(report))throw Error('Standalone Windows package failed: '+log.slice(-5000));
+const details=JSON.parse(fs.readFileSync(report,'utf8'));
+const screenshot=path.join(root,'artifacts/godot/windows-release-1280x720.png');
+const graphical=spawnSync(binary,['--resolution','1280x720','--','--view=battle-six','--capture='+screenshot],{cwd:temp,encoding:'utf8',windowsHide:true,env,timeout:45000});
+const graphicalLog=(graphical.stdout||'')+(graphical.stderr||'');fs.writeFileSync(path.join(root,'artifacts/godot/windows-graphics.log'),graphicalLog);
+const graphicalPassed=graphical.status===0&&!/SCRIPT ERROR:|^ERROR:/m.test(graphicalLog)&&fs.existsSync(screenshot)&&fs.statSync(screenshot).size>10000&&JSON.parse(fs.readFileSync(screenshot+'.json','utf8')).passed;
+const scenes=[];
+for(const view of ['title','wheel','wheel-selected','town','map','room','region-wood','region-pass','region-fen','region-coast','region-city','atlas-city','content-npc','content-journal','content-lore','content-city-room','content-battle','content-ending','awakening-eira','awakening-log','building-log','room-observatory','room-archive','effect-hero','effect-mira','effect-toren','effect-sylvi','effect-ridge-scout','effect-eira','effect-alchemist','quest-board','quest-journal','quest-archive','quest-entrance','town-life','town-life-night','child-luo','child-aya','child-ling']){
+ const output=path.join(root,`artifacts/godot/windows-release-${view}-1280x720.png`);
+ const result=spawnSync(binary,['--resolution','1280x720','--','--view='+view,'--capture='+output],{cwd:temp,encoding:'utf8',windowsHide:true,env,timeout:45000});
+ const log=(result.stdout||'')+(result.stderr||'');fs.writeFileSync(output+'.log',log);
+ const passed=result.status===0&&!/SCRIPT ERROR:|^ERROR:/m.test(log)&&fs.existsSync(output)&&fs.statSync(output).size>10000&&JSON.parse(fs.readFileSync(output+'.json','utf8')).passed;
+ scenes.push({view,passed,screenshot:output});
+}
+const passed=details.passed&&details.mode==='battle'&&!details.editor_binary&&!details.dev_plugin_included&&!details.test_sources_included&&!details.authoring_included&&details.refined_map_included&&details.cc0_notice_included&&details.region_count===5&&details.regional_maps_included&&details.content_counts?.npcs===69&&details.quests?.entrances===15&&details.quests?.children===3&&details.quests?.animals===6&&details.quests?.resources===5&&details.content_counts?.scenes===66&&details.content_counts?.lore===15&&details.progression?.ultimates===7&&details.progression?.buildings===12&&details.progression?.rooms===2&&details.progression?.emblems&&details.content_maps&&details.brand_logo_included&&details.native_icon_included&&fs.existsSync(path.join(temp,'LICENSE-ThirdParty-CC0.txt'))&&graphicalPassed&&scenes.every(s=>s.passed);
+const acceptance={passed,directory:temp,pckSha256:crypto.createHash('sha256').update(fs.readFileSync(path.join(temp,'灰烬边境.pck'))).digest('hex'),environment:'Only Windows System32 in PATH; no Godot editor or Node.js dependencies in game directory',details,graphical:{passed:graphicalPassed,screenshot,scenes}};
+fs.writeFileSync(path.join(root,'artifacts/godot/windows-acceptance.json'),JSON.stringify(acceptance,null,2));
+if(!passed)throw Error(JSON.stringify(acceptance));
+console.log(JSON.stringify(acceptance,null,2));

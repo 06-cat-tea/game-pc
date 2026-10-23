@@ -1,0 +1,513 @@
+{
+  "revision": 1,
+  "tasks": {
+    "first": {
+      "id": "first",
+      "ref": "quests:first",
+      "category": "探索",
+      "giver": "guild-clerk",
+      "turnin": "board",
+      "board": true
+    },
+    "quest:pages": {
+      "id": "quest:pages",
+      "ref": "quests:pages",
+      "category": "居民",
+      "giver": "sylvi",
+      "turnin": "sylvi",
+      "board": false
+    },
+    "quest:caravan": {
+      "id": "quest:caravan",
+      "ref": "quests:caravan",
+      "category": "居民",
+      "giver": "toren",
+      "turnin": "toren",
+      "board": false
+    },
+    "quest:candle": {
+      "id": "quest:candle",
+      "ref": "quests:candle",
+      "category": "居民",
+      "giver": "eira",
+      "turnin": "eira",
+      "board": false
+    },
+    "quest:moon": {
+      "id": "quest:moon",
+      "ref": "quests:moon",
+      "category": "居民",
+      "giver": "eira",
+      "turnin": "eira",
+      "board": false
+    },
+    "quest:wreck": {
+      "id": "quest:wreck",
+      "ref": "quests:wreck",
+      "category": "居民",
+      "giver": "lian",
+      "turnin": "lian",
+      "board": false
+    },
+    "quest:pact": {
+      "id": "quest:pact",
+      "ref": "quests:pact",
+      "category": "居民",
+      "giver": "eira",
+      "turnin": "eira",
+      "board": false
+    },
+    "quest:herbs": {
+      "id": "quest:herbs",
+      "ref": "quests:herbs",
+      "category": "居民",
+      "giver": "pella",
+      "turnin": "pella",
+      "board": false,
+      "materials": {
+        "herb": 3
+      }
+    },
+    "quest:roots": {
+      "id": "quest:roots",
+      "ref": "quests:roots",
+      "category": "居民",
+      "giver": "sylvi",
+      "turnin": "sylvi",
+      "board": false
+    },
+    "quest:names": {
+      "id": "quest:names",
+      "ref": "quests:names",
+      "category": "居民",
+      "giver": "eira",
+      "turnin": "eira",
+      "board": false
+    },
+    "quest:letters": {
+      "id": "quest:letters",
+      "ref": "quests:letters",
+      "category": "居民",
+      "giver": "lian",
+      "turnin": "lian",
+      "board": false
+    },
+    "regional:town": {
+      "id": "regional:town",
+      "ref": "regional:town",
+      "category": "探索",
+      "giver": "pella",
+      "turnin": "pella",
+      "region": "town",
+      "board": false,
+      "discover": ""
+    },
+    "expeditions:town": {
+      "id": "expeditions:town",
+      "ref": "expeditions:town",
+      "category": "探索",
+      "giver": "mira",
+      "turnin": "mira",
+      "region": "town",
+      "board": true,
+      "discover": "entrance-town-wall"
+    },
+    "regional:wood": {
+      "id": "regional:wood",
+      "ref": "regional:wood",
+      "category": "探索",
+      "giver": "sylvi",
+      "turnin": "sylvi",
+      "region": "wood",
+      "board": false,
+      "discover": ""
+    },
+    "expeditions:wood": {
+      "id": "expeditions:wood",
+      "ref": "expeditions:wood",
+      "category": "探索",
+      "giver": "sylvi",
+      "turnin": "sylvi",
+      "region": "wood",
+      "board": true,
+      "discover": "entrance-wood-trail"
+    },
+    "regional:pass": {
+      "id": "regional:pass",
+      "ref": "regional:pass",
+      "category": "探索",
+      "giver": "toren",
+      "turnin": "toren",
+      "region": "pass",
+      "board": false,
+      "discover": ""
+    },
+    "expeditions:pass": {
+      "id": "expeditions:pass",
+      "ref": "expeditions:pass",
+      "category": "探索",
+      "giver": "toren",
+      "turnin": "toren",
+      "region": "pass",
+      "board": true,
+      "discover": "entrance-pass-path"
+    },
+    "regional:fen": {
+      "id": "regional:fen",
+      "ref": "regional:fen",
+      "category": "探索",
+      "giver": "eira",
+      "turnin": "eira",
+      "region": "fen",
+      "board": false,
+      "discover": ""
+    },
+    "expeditions:fen": {
+      "id": "expeditions:fen",
+      "ref": "expeditions:fen",
+      "category": "探索",
+      "giver": "eira",
+      "turnin": "eira",
+      "region": "fen",
+      "board": true,
+      "discover": "entrance-fen-temple"
+    },
+    "regional:coast": {
+      "id": "regional:coast",
+      "ref": "regional:coast",
+      "category": "探索",
+      "giver": "lian",
+      "turnin": "lian",
+      "region": "coast",
+      "board": false,
+      "discover": ""
+    },
+    "expeditions:coast": {
+      "id": "expeditions:coast",
+      "ref": "expeditions:coast",
+      "category": "探索",
+      "giver": "lian",
+      "turnin": "lian",
+      "region": "coast",
+      "board": true,
+      "discover": "entrance-coast-reef"
+    },
+    "personal:mira": {
+      "id": "personal:mira",
+      "ref": "personal:mira",
+      "category": "个人",
+      "giver": "mira",
+      "turnin": "mira",
+      "materials": {},
+      "board": false
+    },
+    "personal:toren": {
+      "id": "personal:toren",
+      "ref": "personal:toren",
+      "category": "个人",
+      "giver": "toren",
+      "turnin": "toren",
+      "materials": {},
+      "board": false
+    },
+    "personal:sylvi": {
+      "id": "personal:sylvi",
+      "ref": "personal:sylvi",
+      "category": "个人",
+      "giver": "sylvi",
+      "turnin": "sylvi",
+      "materials": {},
+      "board": false
+    },
+    "personal:ridge-scout": {
+      "id": "personal:ridge-scout",
+      "ref": "personal:ridge-scout",
+      "category": "个人",
+      "giver": "ridge-scout",
+      "turnin": "ridge-scout",
+      "materials": {},
+      "board": false
+    },
+    "personal:eira": {
+      "id": "personal:eira",
+      "ref": "personal:eira",
+      "category": "个人",
+      "giver": "eira",
+      "turnin": "eira",
+      "materials": {
+        "herb": 1
+      },
+      "board": false
+    },
+    "personal:alchemist": {
+      "id": "personal:alchemist",
+      "ref": "personal:alchemist",
+      "category": "个人",
+      "giver": "alchemist",
+      "turnin": "alchemist",
+      "materials": {
+        "herb": 3
+      },
+      "board": false
+    },
+    "service:guildhall": {
+      "id": "service:guildhall",
+      "ref": "service:guildhall",
+      "category": "采集",
+      "giver": "guildhall",
+      "turnin": "board",
+      "board": true,
+      "materials": {
+        "herb": 3
+      }
+    },
+    "service:forest-hut": {
+      "id": "service:forest-hut",
+      "ref": "service:forest-hut",
+      "category": "研究",
+      "giver": "forest-hut",
+      "turnin": "service:forest-hut",
+      "board": false,
+      "materials": {}
+    },
+    "service:grayforge": {
+      "id": "service:grayforge",
+      "ref": "service:grayforge",
+      "category": "研究",
+      "giver": "grayforge",
+      "turnin": "service:grayforge",
+      "board": false,
+      "materials": {}
+    },
+    "service:cloud-observatory": {
+      "id": "service:cloud-observatory",
+      "ref": "service:cloud-observatory",
+      "category": "研究",
+      "giver": "cloud-observatory",
+      "turnin": "service:cloud-observatory",
+      "board": false,
+      "materials": {}
+    },
+    "service:tide-harbor": {
+      "id": "service:tide-harbor",
+      "ref": "service:tide-harbor",
+      "category": "采集",
+      "giver": "tide-harbor",
+      "turnin": "service:tide-harbor",
+      "board": false,
+      "materials": {
+        "ore": 2
+      }
+    },
+    "guild-ore": {
+      "id": "guild-ore",
+      "name": "公会矿样征集",
+      "desc": "为公会带回两份矿石样本，已有库存也可以使用。",
+      "category": "采集",
+      "giver": "guild-clerk",
+      "turnin": "board",
+      "board": true,
+      "materials": {
+        "ore": 2
+      },
+      "reward": {
+        "xp": 20,
+        "gold": 14
+      }
+    },
+    "battle:patrol": {
+      "id": "battle:patrol",
+      "name": "巡径清剿",
+      "desc": "接取后在城墙巡径取得一次普通战斗胜利。",
+      "category": "战斗",
+      "giver": "guild-clerk",
+      "turnin": "board",
+      "board": true,
+      "discover": "entrance-town-wall",
+      "unlocked": "town-wall",
+      "steps": [
+        {
+          "event": "battle",
+          "scene": "town-wall"
+        }
+      ],
+      "reward": {
+        "xp": 25,
+        "gold": 15
+      }
+    },
+    "battle:drain": {
+      "id": "battle:drain",
+      "name": "旧渠清理",
+      "desc": "接取后在旧城地下渠取得一次普通战斗胜利。",
+      "category": "战斗",
+      "giver": "guild-clerk",
+      "turnin": "board",
+      "board": true,
+      "discover": "entrance-town-drain",
+      "unlocked": "town-drain",
+      "steps": [
+        {
+          "event": "battle",
+          "scene": "town-drain"
+        }
+      ],
+      "reward": {
+        "xp": 35,
+        "gold": 20
+      }
+    },
+    "resident:cat": {
+      "id": "resident:cat",
+      "name": "团团躲哪了",
+      "desc": "调查旅店爪印，再找到橘猫团团。完成后返回委托人交付。",
+      "category": "居民",
+      "giver": "kid-luo",
+      "turnin": "kid-luo",
+      "board": true,
+      "requires": "",
+      "steps": [
+        {
+          "event": "inspect",
+          "target": "pawprints",
+          "scene": "town"
+        },
+        {
+          "event": "animal",
+          "target": "tuantuan",
+          "scene": "town"
+        }
+      ],
+      "reward": {
+        "xp": 20,
+        "gold": 10
+      },
+      "grants": {}
+    },
+    "resident:dog": {
+      "id": "resident:dog",
+      "name": "安静的马厩",
+      "desc": "去马厩附近安抚黑白犬阿墨。完成后返回委托人交付。",
+      "category": "居民",
+      "giver": "kid-luo",
+      "turnin": "kid-luo",
+      "board": true,
+      "requires": "resident:cat",
+      "steps": [
+        {
+          "event": "animal",
+          "target": "amo",
+          "scene": "town"
+        }
+      ],
+      "reward": {
+        "xp": 20,
+        "gold": 12
+      },
+      "grants": {}
+    },
+    "resident:rabbit": {
+      "id": "resident:rabbit",
+      "name": "雪球的午餐",
+      "desc": "用阿芽准备的嫩叶喂白兔雪球。完成后返回委托人交付。",
+      "category": "居民",
+      "giver": "kid-aya",
+      "turnin": "kid-aya",
+      "board": true,
+      "requires": "",
+      "steps": [
+        {
+          "event": "feed",
+          "target": "snowball",
+          "scene": "town"
+        }
+      ],
+      "reward": {
+        "xp": 15,
+        "gold": 8
+      },
+      "grants": {
+        "leaf": 1
+      }
+    },
+    "resident:bag": {
+      "id": "resident:bag",
+      "name": "丢失的小药包",
+      "desc": "取回灰猫点点身边的小药包。完成后返回委托人交付。",
+      "category": "居民",
+      "giver": "kid-aya",
+      "turnin": "kid-aya",
+      "board": true,
+      "requires": "resident:rabbit",
+      "steps": [
+        {
+          "event": "inspect",
+          "target": "medicine-bag",
+          "scene": "town"
+        }
+      ],
+      "reward": {
+        "xp": 25,
+        "gold": 12
+      },
+      "grants": {}
+    },
+    "resident:hen": {
+      "id": "resident:hen",
+      "name": "咕咕的新食盆",
+      "desc": "安置食盆，再喂母鸡咕咕。完成后返回委托人交付。",
+      "category": "居民",
+      "giver": "kid-ling",
+      "turnin": "kid-ling",
+      "board": true,
+      "requires": "",
+      "steps": [
+        {
+          "event": "place",
+          "target": "feeding-bowl",
+          "scene": "town"
+        },
+        {
+          "event": "feed",
+          "target": "gugu",
+          "scene": "town"
+        }
+      ],
+      "reward": {
+        "xp": 15,
+        "gold": 8
+      },
+      "grants": {
+        "bowl": 1,
+        "feed": 1
+      }
+    },
+    "resident:letter": {
+      "id": "resident:letter",
+      "name": "飞回来的信",
+      "desc": "从麻雀豆豆处取得信笺，放入礼拜堂信箱。完成后返回委托人交付。",
+      "category": "居民",
+      "giver": "kid-ling",
+      "turnin": "kid-ling",
+      "board": true,
+      "requires": "resident:hen",
+      "steps": [
+        {
+          "event": "animal",
+          "target": "doudou",
+          "scene": "town"
+        },
+        {
+          "event": "deliver",
+          "target": "chapel-mail",
+          "scene": "town"
+        }
+      ],
+      "reward": {
+        "xp": 25,
+        "gold": 12
+      },
+      "grants": {}
+    }
+  }
+}

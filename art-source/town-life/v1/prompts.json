@@ -1,0 +1,30 @@
+[
+  {
+    "id": "kid-luo",
+    "source": "exec-eaee3587-b7f7-4c31-a4b3-3fd01f887045.png",
+    "reference": "godot/assets/characters/hero/static-v2/neutral.webp",
+    "transparent": true,
+    "brief": "Full body wholesome village child, fully clothed, delicate painterly anime; chestnut hair, teal waistcoat, canvas satchel"
+  },
+  {
+    "id": "kid-aya",
+    "source": "exec-a2555183-32d8-4ae1-87e9-d336105242f9.png",
+    "reference": "godot/assets/characters/hero/static-v2/neutral.webp",
+    "transparent": true,
+    "brief": "Full body wholesome village child, fully clothed, delicate painterly anime; braids, green dress, herb pouch"
+  },
+  {
+    "id": "kid-ling",
+    "source": "exec-c06bf645-0293-4e84-8603-8baa261f6887.png",
+    "reference": "godot/assets/characters/hero/static-v2/neutral.webp",
+    "transparent": true,
+    "brief": "Full body wholesome village child, fully clothed, delicate painterly anime; dark bob, blue dress, ivory scarf, mail satchel"
+  },
+  {
+    "id": "animals",
+    "source": "exec-983f308c-932c-4ae3-bd07-cd8a67a8ef84.png",
+    "reference": "godot/assets/characters/hero/static-v2/neutral.webp",
+    "transparent": true,
+    "brief": "Six columns: orange tabby cat, black-white dog, white rabbit, gray cat, brown hen, brown sparrow. Three rows idle, walk1, walk2; isometric painterly anime style."
+  }
+]
