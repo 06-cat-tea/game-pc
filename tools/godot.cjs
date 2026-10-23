@@ -1,4 +1,4 @@
-const fs=require('node:fs'),path=require('node:path'),{spawnSync}=require('node:child_process');
+const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),{spawnSync}=require('node:child_process');
 const root=path.resolve(__dirname,'..'),project=path.join(root,'godot');
 const verificationEnv={...process.env,APPDATA:path.join(root,'artifacts/godot/test-profile'),XDG_DATA_HOME:path.join(root,'artifacts/godot/test-profile')};
 const webBuildEnv={...process.env,APPDATA:path.join(root,'artifacts/godot/web-build-profile'),XDG_DATA_HOME:path.join(root,'artifacts/godot/web-build-profile')};
@@ -23,6 +23,20 @@ else if(command==='test'){run(['--headless','--editor','--import','--recovery-mo
 else if(command==='build-web'){
  const version=spawnSync(engine(),['--version'],{encoding:'utf8',windowsHide:true});
  if(version.status!==0||!/^4\.7\.2\.stable\./.test(version.stdout.trim()))throw Error('Web release requires Godot 4.7.2 stable and matching export templates.');
+ // Isolating user:// also changes Godot's template lookup on non-portable engines.
+ // Copy the installed Web templates into that build profile, never player saves.
+ const engineDirectory=path.dirname(engine());
+ const portable=['._sc_','_sc_'].some(name=>fs.existsSync(path.join(engineDirectory,name)));
+ if(!portable&&process.platform!=='darwin'){
+  const installedRoot=process.platform==='win32'?path.join(process.env.APPDATA||path.join(os.homedir(),'AppData/Roaming'),'Godot'):path.join(process.env.XDG_DATA_HOME||path.join(os.homedir(),'.local/share'),'godot');
+  const isolatedRoot=process.platform==='win32'?path.join(webBuildEnv.APPDATA,'Godot'):path.join(webBuildEnv.XDG_DATA_HOME,'godot');
+  const templates=path.join(isolatedRoot,'export_templates','4.7.2.stable');fs.mkdirSync(templates,{recursive:true});
+  for(const name of ['web_nothreads_debug.zip','web_nothreads_release.zip']){
+   const from=path.join(installedRoot,'export_templates','4.7.2.stable',name),to=path.join(templates,name);
+   if(fs.existsSync(from)&&path.resolve(from)!==path.resolve(to))fs.copyFileSync(from,to);
+   if(!fs.existsSync(to))throw Error('Install the official Godot 4.7.2 Web templates first: '+from);
+  }
+ }
  const destination=path.join(root,'artifacts/godot/web');fs.mkdirSync(destination,{recursive:true});
  run(['--headless','--editor','--import','--recovery-mode','--path',project],{verifyOutput:true,env:webBuildEnv});
  run(['--headless','--recovery-mode','--path',project,'--export-release','Web',path.join(destination,'index.html')],{verifyOutput:true,env:webBuildEnv});
