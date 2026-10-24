@@ -87,7 +87,9 @@ async function move(x, y) {
 }
 async function shot(name) {
   const filename = path.join(directory, name + '.png');
-  const buffer = await page.locator('#canvas').screenshot({path: filename, timeout: 30000});
+  // Canvas fills the viewport. Capture directly instead of waiting for two
+  // stable DOM animation frames while software WebGL is rendering a dark scene.
+  const buffer = await page.screenshot({path: filename, timeout: 90000});
   screenshots.push(filename);
   return buffer;
 }

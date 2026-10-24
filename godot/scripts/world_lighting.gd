@@ -83,8 +83,9 @@ func update_lights():
 		var visible_now=source.pool.position.distance_to(center)<1700 and strength>.01
 		source.pool.visible=visible_now; source.flare.visible=visible_now
 		source.pool.modulate=Color(source.color,strength*.22); source.flare.modulate=Color(source.color,strength*.80)
-	# Seven scene lights plus the small hero fill never exceed eight active lights.
-	for source in nearest.slice(0,7):
+	# Native: seven scene lights plus hero. Web: three plus hero to keep software WebGL responsive.
+	var budget=3 if BrowserFileBridge.is_browser() else 7
+	for source in nearest.slice(0,budget):
 		source.light.enabled=strength>.01 and source.light.position.distance_to(center)<1300
 		source.light.energy=source.energy*strength
 	if view.region_layer!=null:
