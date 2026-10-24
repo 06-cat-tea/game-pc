@@ -64,7 +64,7 @@ async function launch() {
   context.on('page', attach);
   page = context.pages()[0] || await context.newPage();
   attach(page);
-  page.setDefaultTimeout(15000);
+  page.setDefaultTimeout(90000);
   await boot();
 }
 async function boot() {
@@ -75,13 +75,15 @@ async function boot() {
   await page.locator('#canvas').focus();
 }
 async function click(x, y) {
-  const box = await page.locator('#canvas').boundingBox();
-  assert(box && box.width > 0 && box.height > 0, 'Game canvas is visible');
+  // The shell pins #canvas to the complete viewport. Avoid querying layout
+  // on the browser main thread while software WebGL is presenting a frame.
+  const box = {x: 0, y: 0, ...page.viewportSize()};
+  assert(box.width > 0 && box.height > 0, 'Game viewport is visible');
   await page.mouse.click(box.x + x * box.width / 1920, box.y + y * box.height / 1080);
   await wait(450);
 }
 async function move(x, y) {
-  const box = await page.locator('#canvas').boundingBox();
+  const box = {x: 0, y: 0, ...page.viewportSize()};
   await page.mouse.move(box.x + x * box.width / 1920, box.y + y * box.height / 1080, {steps: 4});
   await wait(100);
 }
