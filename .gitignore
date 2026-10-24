@@ -1,4 +1,5 @@
 artifacts/
+output/
 .icon-source.json
 .publish-index
 node_modules/

@@ -2,6 +2,7 @@ class_name UIkit
 extends RefCounted
 
 static var image_cache: Dictionary = {}
+static var hud_typeface: FontVariation
 
 const GOLD = Color("856c40")
 const ACCENT = Color("b69c6c")
@@ -13,7 +14,25 @@ const SELECTED = Color("eee5d1")
 const HP = Color("41795e")
 const MP = Color("4a759a")
 
-static func style(color: Color = Color.TRANSPARENT, border: Color = Color.TRANSPARENT, radius: int = 3) -> StyleBoxFlat:
+const NIGHT = Color("202c42")
+const IVORY = Color("f4eddf")
+const PALE_GOLD = Color("dbc494")
+
+static func is_dark(parent: Node) -> bool:
+	var current=parent
+	while current!=null:
+		if current.has_meta("starlit_dark"): return current.get_meta("starlit_dark")
+		current=current.get_parent()
+	return false
+
+static func ink(parent: Node, color: Color) -> Color:
+	if not is_dark(parent): return color
+	if color==INK: return IVORY
+	if color==MUTED: return Color("b8c4d2")
+	if color==GOLD: return PALE_GOLD
+	return color
+
+static func style(color: Color = Color.TRANSPARENT, border: Color = Color.TRANSPARENT, radius: int = 12) -> StyleBoxFlat:
 	var box = StyleBoxFlat.new(); box.bg_color = color; box.border_color = border
 	box.set_border_width_all(1); box.set_corner_radius_all(radius)
 	box.content_margin_left = 18; box.content_margin_right = 18; box.content_margin_top = 12; box.content_margin_bottom = 12
@@ -60,9 +79,16 @@ static func theme() -> Theme:
 static func font() -> FontVariation:
 	var result = FontVariation.new()
 	result.base_font = load("res://assets/fonts/NotoSansSC.ttf")
-	result.variation_opentype = {TextServerManager.get_primary_interface().name_to_tag("wght"):500.0}
-	result.variation_embolden = 0.25
+	result.variation_opentype = {TextServerManager.get_primary_interface().name_to_tag("wght"):400.0}
+	result.variation_embolden = 0.0
 	return result
+
+static func hud_font() -> FontVariation:
+	if hud_typeface==null:
+		hud_typeface=FontVariation.new()
+		hud_typeface.base_font=load("res://assets/fonts/NotoSerifSC.ttf")
+		hud_typeface.variation_opentype={TextServerManager.get_primary_interface().name_to_tag("wght"):600.0}
+	return hud_typeface
 
 static func fill(node: Control): node.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 
@@ -73,10 +99,16 @@ static func h(parent: Node) -> HBoxContainer:
 	var box = HBoxContainer.new(); box.size_flags_horizontal = Control.SIZE_EXPAND_FILL; parent.add_child(box); return box
 
 static func label(parent: Node, value: String, size: int = 23, color: Color = INK) -> Label:
-	var text = Label.new(); text.text = value; text.add_theme_font_size_override("font_size",size); text.add_theme_color_override("font_color",color); text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART; text.size_flags_horizontal = Control.SIZE_EXPAND_FILL; text.mouse_filter = Control.MOUSE_FILTER_IGNORE; parent.add_child(text); return text
+	var text = Label.new(); text.text = value; text.add_theme_font_size_override("font_size",size); text.add_theme_color_override("font_color",ink(parent,color)); text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART; text.size_flags_horizontal = Control.SIZE_EXPAND_FILL; text.mouse_filter = Control.MOUSE_FILTER_IGNORE; parent.add_child(text); return text
 
 static func button(parent: Node, value: String, callback: Callable, disabled: bool = false) -> Button:
-	var control = Button.new(); control.text = value; control.custom_minimum_size.y = 52; control.disabled = disabled; control.size_flags_horizontal = Control.SIZE_EXPAND_FILL; parent.add_child(control); control.pressed.connect(callback); return control
+	var control = Button.new(); control.text = value; control.custom_minimum_size.y = 52; control.disabled = disabled; control.size_flags_horizontal = Control.SIZE_EXPAND_FILL; parent.add_child(control); control.pressed.connect(callback)
+	if is_dark(parent):
+		for state in ["normal","hover","pressed","focus","disabled"]:
+			control.add_theme_stylebox_override(state,button_style(Color(NIGHT,.5 if state=="normal" else .82),Color(PALE_GOLD,.4) if state in ["hover","focus"] else Color.TRANSPARENT))
+		for state in ["font_color","font_hover_color","font_pressed_color","font_focus_color"]: control.add_theme_color_override(state,IVORY)
+		control.add_theme_color_override("font_disabled_color",Color("7d8c9f"))
+	return control
 
 static func panel(parent: Node) -> PanelContainer:
 	var box = PanelContainer.new(); box.size_flags_horizontal = Control.SIZE_EXPAND_FILL; parent.add_child(box); return box
@@ -112,7 +144,7 @@ static func canvas(parent: Node, position_value: Vector2, dimensions: Vector2) -
 	var node=Control.new(); node.position=position_value; node.size=dimensions; node.mouse_filter=Control.MOUSE_FILTER_IGNORE; parent.add_child(node); return node
 
 static func card(parent: Node, position_value: Vector2, dimensions: Vector2, color: Color = Color.TRANSPARENT, border: Color = Color.TRANSPARENT) -> Panel:
-	var node=Panel.new(); node.position=position_value; node.size=dimensions; node.add_theme_stylebox_override("panel",style(color,border)); node.mouse_filter=Control.MOUSE_FILTER_IGNORE; parent.add_child(node); return node
+	var node=Panel.new(); node.position=position_value; node.size=dimensions; node.add_theme_stylebox_override("panel",style(Color(NIGHT,.65) if is_dark(parent) and color.a>0.5 else color,Color(PALE_GOLD,.18) if is_dark(parent) and border.a>0 else border)); node.mouse_filter=Control.MOUSE_FILTER_IGNORE; parent.add_child(node); return node
 
 static func text(parent: Node, value: String, position_value: Vector2, dimensions: Vector2, font_size: int = 23, color: Color = INK) -> Label:
 	var node=label(parent,value,font_size,color); node.position=position_value; node.size=dimensions; return node
@@ -120,6 +152,13 @@ static func text(parent: Node, value: String, position_value: Vector2, dimension
 static func art(parent: Node, path: String, position_value: Vector2, dimensions: Vector2, cover: bool = false) -> TextureRect:
 	var node=image(parent,path,Vector2.ZERO); node.position=position_value; node.size=dimensions
 	if cover: node.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_COVERED; node.clip_contents=true
+	return node
+
+static func portrait(parent: Node, path: String, point: Vector2, diameter: float) -> TextureRect:
+	var ring=card(parent,point-Vector2.ONE*2,Vector2.ONE*(diameter+4),Color(NIGHT,.7),PALE_GOLD)
+	ring.add_theme_stylebox_override("panel",style(Color(NIGHT,.7),PALE_GOLD,int(diameter/2)+2))
+	var node=art(parent,path,point,Vector2.ONE*diameter)
+	var material_value=ShaderMaterial.new(); material_value.shader=load("res://shaders/portrait_circle.gdshader"); node.material=material_value
 	return node
 
 static func action(parent: Node, value: String, position_value: Vector2, dimensions: Vector2, callback: Callable, primary: bool = false, disabled: bool = false) -> Button:
@@ -135,39 +174,48 @@ static func action(parent: Node, value: String, position_value: Vector2, dimensi
 		node.add_theme_stylebox_override("hover",button_style(Color("f1e3c8"),ACCENT,4))
 		node.add_theme_stylebox_override("pressed",button_style(Color("d7c4a2"),ACCENT,4))
 		node.add_theme_color_override("font_color",INK); node.add_theme_color_override("font_hover_color",INK); node.add_theme_color_override("font_pressed_color",INK)
+	if is_dark(parent) and not primary:
+		for state in ["normal","hover","pressed","focus"]: node.add_theme_stylebox_override(state,button_style(Color(NIGHT,.3 if state=="normal" else .85),PALE_GOLD if state=="focus" else Color(PALE_GOLD,.5) if state=="hover" else Color.TRANSPARENT))
+	if primary:
+		for state in ["normal","hover","pressed"]: node.add_theme_stylebox_override(state,button_style(IVORY if state=="normal" else Color("e7d7b7"),PALE_GOLD,30))
+		node.add_theme_color_override("font_focus_color",INK)
 	node.size=dimensions
 	node.set_deferred("size",dimensions)
 	return node
 
-static func button_style(color: Color, border: Color, radius: int = 3) -> StyleBoxFlat:
+static func button_style(color: Color, border: Color, radius: int = 28) -> StyleBoxFlat:
 	var box=style(color,border,radius); box.content_margin_top=6; box.content_margin_bottom=6; box.content_margin_left=12; box.content_margin_right=12; return box
 
-static func icon(id: String) -> Texture2D:
+static func icon(id: String, light: bool = false) -> Texture2D:
 	var path="res://assets/ui/icons/"+id+".svg"
-	return texture(path)
+	if not light: return texture(path)
+	var key=path+":ivory"
+	if not image_cache.has(key) and FileAccess.file_exists(path):
+		var source=FileAccess.get_file_as_string(path).replace("#27313b","#f4eddf").replace("#856c40","#dbc494")
+		var pixels=Image.new()
+		if pixels.load_svg_from_string(source)==OK: image_cache[key]=ImageTexture.create_from_image(pixels)
+	return image_cache.get(key,texture(path))
 
 static func icon_button(parent: Node, id: String, caption: String, position_value: Vector2, callback: Callable, dimensions: Vector2 = Vector2(68,64)) -> Button:
 	var node=action(parent,"",position_value,dimensions,callback)
-	node.icon=icon(id); node.expand_icon=true; node.add_theme_constant_override("icon_max_width",30); node.tooltip_text=caption; node.accessibility_name=caption
+	node.icon=icon(id,is_dark(parent)); node.expand_icon=true; node.add_theme_constant_override("icon_max_width",30); node.tooltip_text=caption; node.accessibility_name=caption
 	return node
 
 static func rule(parent: Node, position_value: Vector2, width: float, color: Color = LINE):
-	var node=ColorRect.new(); node.position=position_value; node.size=Vector2(width,1); node.color=color; node.mouse_filter=Control.MOUSE_FILTER_IGNORE; parent.add_child(node)
+	var node=ColorRect.new(); node.position=position_value; node.size=Vector2(width,1); node.color=Color(PALE_GOLD,.25) if is_dark(parent) else color; node.mouse_filter=Control.MOUSE_FILTER_IGNORE; parent.add_child(node)
 
 static func selected(button_node: Button, active: bool):
 	if not button_node.has_meta("selection_base"):
 		button_node.set_meta("selection_base",button_node.get_theme_stylebox("normal"))
 	button_node.set_meta("selected",active)
 	if active:
-		var box=button_style(Color("f0e9d9"),Color.TRANSPARENT,3)
-		box.border_width_left=3; box.border_color=GOLD
-		if button_node.size.y<=66 and button_node.size.x<=230 and button_node.icon==null and button_node.text.length()<10:
-			box.bg_color=Color.TRANSPARENT; box.border_width_left=0; box.border_width_bottom=2
+		var box=button_style(IVORY,GOLD,8 if button_node.get_meta("grid_tile",false) else 28)
+		box.border_width_left=1; box.set_border_width_all(1); box.border_color=GOLD
 		button_node.add_theme_stylebox_override("normal",box)
-		button_node.add_theme_color_override("font_color",INK)
+		for state in ["font_color","font_hover_color","font_pressed_color","font_focus_color"]: button_node.add_theme_color_override(state,INK)
 	else:
 		button_node.add_theme_stylebox_override("normal",button_node.get_meta("selection_base"))
-		button_node.remove_theme_color_override("font_color")
+		for state in ["font_color","font_hover_color","font_pressed_color","font_focus_color"]: button_node.add_theme_color_override(state,IVORY if is_dark(button_node) else INK)
 
 static func enter(node: Control, reduced: bool):
 	var previous=node.get_meta("entry_tween") if node.has_meta("entry_tween") else null

@@ -19,7 +19,7 @@ func run(tree: SceneTree, verify: Callable):
 	var button=UIkit.action(game.main_view,"主题测试",Vector2.ZERO,Vector2(200,60),func(): pass)
 	UIkit.selected(button,true)
 	verify.call(button.get_meta("selected") and button.get_theme_stylebox("normal").border_color==UIkit.GOLD,"选中项采用金色定位标")
-	verify.call(button.get_theme_stylebox("focus").border_color==UIkit.GOLD,"键盘焦点具有独立边框")
+	verify.call(button.get_theme_stylebox("focus").border_color==(UIkit.PALE_GOLD if UIkit.is_dark(button) else UIkit.GOLD),"键盘焦点具有独立边框")
 	verify.call(button.get_theme_color("font_disabled_color")!=UIkit.INK,"禁用文字与正常状态可区分")
 	button.queue_free()
 	var ground: WorldGround

@@ -54,7 +54,7 @@ func run(tree: SceneTree, verify: Callable):
 	for i in 8: game.world._process(0.02)
 	Input.action_release("move_down")
 	verify.call(hud==game.main_view.get_children(),"移动和小地图更新不重建 HUD")
-	game.open_menu("map"); await tree.process_frame
+	game.menus.pages.state("map").category="region"; game.open_menu("map"); await tree.process_frame
 	var map: RailMap
 	for node in _nodes(game.overlay_root):
 		if node is RailMap: map=node

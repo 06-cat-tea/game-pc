@@ -53,6 +53,14 @@ async function main(){
  // OBJ is imported solely by the authoring bake, never exported into the game.
  const bake=path.join(root,'godot/authoring/rocks');fs.mkdirSync(bake,{recursive:true});fs.writeFileSync(path.join(root,'godot/authoring/.gdignore'),'');
  for(let i=1;i<=5;i++)for(const ext of ['obj','png'])fs.copyFileSync(path.join(source,`rocks/rock${i}/rock${i}.${ext}`),path.join(bake,`rock${i}.${ext}`));
+ // Reapply the maintained town redesign after legacy CC0 preparation.
+ if(fs.existsSync(path.join(root,'godot/data/town-design.json'))){
+  const {spawnSync}=require('node:child_process');
+  for(const script of ['design-starlit-town.cjs','package-starlit-art.cjs']){
+   const result=spawnSync(process.execPath,[path.join(root,'tools',script)],{cwd:root,stdio:'inherit',windowsHide:true});
+   if(result.status!==0)throw Error('Town authoring failed: '+script);
+  }
+ }
  console.log(`Prepared ${chosen.length} plants, ${icons.length} legends, ${decor.length} curated placements.`);
 }
 main().catch(e=>{console.error(e);process.exitCode=1;});

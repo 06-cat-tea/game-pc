@@ -1,6 +1,6 @@
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),{spawnSync}=require('node:child_process');
 const root=path.resolve(__dirname,'..'),source=process.argv[2]?path.resolve(process.argv[2]):path.join(root,'artifacts/godot/windows');
-const expected=new Set(['灰烬边境.exe','灰烬边境.pck','README.txt','LICENSE-Game-CC0.txt','LICENSE-Godot.txt','LICENSE-ThirdParty-CC0.txt','LICENSE-Font-OFL.txt']);
+const expected=new Set(['灰烬边境.exe','灰烬边境.pck','README.txt','LICENSE-Game-CC0.txt','LICENSE-Godot.txt','LICENSE-ThirdParty-CC0.txt','LICENSE-Icons-CC-BY-3.0.txt','LICENSE-Font-OFL.txt','LICENSE-Font-Serif-OFL.txt']);
 const unexpected=fs.readdirSync(source).filter(name=>!expected.has(name));if(unexpected.length)throw Error('Unexpected files in Windows delivery: '+unexpected.join(', '));
 const checks=path.join(root,'artifacts/godot/isolated-checks');fs.mkdirSync(checks,{recursive:true});
 const temp=fs.mkdtempSync(path.join(checks,'灰烬边境 Windows 验收 '));fs.cpSync(source,temp,{recursive:true});

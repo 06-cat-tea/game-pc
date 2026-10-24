@@ -5,11 +5,12 @@ var game
 func _init(owner): game=owner
 
 func build(parent: Control):
+	parent.set_meta("starlit_dark",true)
 	var engine=game.session.engine; var battle=engine.battle; var actor=engine.current()
 	var route=game.db.encounters[battle.encounter].route
 	if game.db.is_outdoor(route): route=game.db.route_ids(route)[0]
-	game.background(parent,game.db.raw.scenes[route].background,0.0)
-	UIkit.gradient(parent,Vector2.ZERO,Vector2(1920,170),false,true)
+	game.background(parent,game.db.raw.scenes[route].background,0.14)
+	UIkit.card(parent,Vector2.ZERO,Vector2(1920,165),Color(UIkit.NIGHT,.5),Color.TRANSPARENT)
 	UIkit.text(parent,battle.title,Vector2(234,39),Vector2(1000,55),33)
 	UIkit.text(parent,"第 %d 回合  /  %s阵型  /  协奏 %d" % [battle.round,game.db.raw.formations[battle.formation].name,battle.synergy],Vector2(235,104),Vector2(1140,40),21,UIkit.GOLD)
 	UIkit.icon_button(parent,"log","战斗记录",Vector2(1650,40),func(): game.open_menu("battle_log"))
@@ -117,7 +118,7 @@ func _enemy(parent: Node, unit: Dictionary, actor: Dictionary, point: Vector2, d
 	var next=unit.get("intent",{}); var target=game.session.engine.unit(next.get("target",""))
 	var intent=str(next.get("label","等待行动"))
 	if next.get("kind","") not in ["charge","summon"]: intent+=" → "+str(target.get("name",""))
-	UIkit.text(root,intent,Vector2(0,81),Vector2(dimensions.x,28),16,Color("854e37")).horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
+	UIkit.text(root,intent,Vector2(0,81),Vector2(dimensions.x,28),16,Color("efb4a0")).horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
 	var hit=UIkit.action(root,"",Vector2.ZERO,root.size,func():
 		if legal: _select(unit)
 		else: game.toast("近战优先攻击前排；这个目标不适合当前行动。"))

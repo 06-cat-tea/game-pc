@@ -25,18 +25,18 @@ func collection(kind: String,title: String,entries: Array,categories: Array):
 	if state.category=="all": state.category="全部"
 	for i in categories.size():
 		var category=categories[i]
-		var button=UIkit.action(root,category,Vector2(i*146,0),Vector2(138,46),func(): state.category=category; game.replace_menu(kind))
+		var button=UIkit.action(root,category,Vector2(0,i*66),Vector2(220,56),func(): state.category=category; game.replace_menu(kind))
 		button.set_meta("ui_key","category:"+category); UIkit.selected(button,state.category==category)
 	var filtered=entries.filter(func(e): return (state.category in ["all","全部"] and not (kind=="journal" and e.tag=="记录")) or e.tag==state.category)
 	var archived=filtered.filter(func(e): return e.get("completed",false))
 	var grouped=kind in ["journal","commission-board"]
 	if grouped and not state.get("show_completed",false): filtered=filtered.filter(func(e): return not e.get("completed",false))
 	if filtered.is_empty() and not archived.is_empty():
-		UIkit.action(root,"已完成（%d）  ▸" % archived.size(),Vector2(0,100),Vector2(560,54),func(): state.show_completed=true; game.refresh_menu())
+		UIkit.action(root,"已完成（%d）  ▸" % archived.size(),Vector2(260,100),Vector2(500,54),func(): state.show_completed=true; game.refresh_menu())
 		return
-	if filtered.is_empty(): UIkit.text(root,"这里还没有记录。",Vector2(20,100),Vector2(1600,100),28); return
+	if filtered.is_empty(): UIkit.text(root,"这里还没有记录。",Vector2(260,100),Vector2(1500,100),28); return
 	if not filtered.any(func(e): return e.id==state.selection): state.selection=filtered[0].id
-	var list=UIkit.scroll_at(root,Vector2(0,66),Vector2(560,720)); var selected=filtered[0]
+	var list=UIkit.scroll_at(root,Vector2(260,0),Vector2(500,788)); var selected=filtered[0]
 	var archive_header=false
 	for e in filtered:
 		if grouped and e.get("completed",false) and not archive_header:
@@ -45,17 +45,17 @@ func collection(kind: String,title: String,entries: Array,categories: Array):
 		var button=UIkit.button(list,("✧  " if e.id==state.selection else "    ")+e.tag+" / "+e.name,func(): state.selection=e.id; game.replace_menu(kind)); button.custom_minimum_size.y=74; button.alignment=HORIZONTAL_ALIGNMENT_LEFT; button.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART; button.set_meta("ui_key","entry:"+e.id); UIkit.selected(button,e.id==state.selection)
 		if e.id==state.selection: selected=e
 	if grouped and not archived.is_empty() and not state.get("show_completed",false): UIkit.button(list,"已完成（%d）  ▸" % archived.size(),func(): state.show_completed=true; game.refresh_menu())
-	var detail=UIkit.card(root,Vector2(600,66),Vector2(1192,720))
-	UIkit.text(detail,selected.tag,Vector2(36,26),Vector2(1110,36),22,UIkit.GOLD)
-	UIkit.text(detail,selected.name,Vector2(36,80),Vector2(1110,64),36)
-	var body=UIkit.scroll_at(detail,Vector2(36,172),Vector2(1110,360)); UIkit.label(body,selected.desc,25)
+	var detail=UIkit.card(root,Vector2(800,0),Vector2(992,788),Color(UIkit.NIGHT,.62) if UIkit.is_dark(root) else Color(UIkit.PAPER,.7))
+	UIkit.text(detail,selected.tag,Vector2(36,26),Vector2(920,36),22,UIkit.GOLD)
+	UIkit.text(detail,selected.name,Vector2(36,80),Vector2(920,88),36)
+	var body=UIkit.scroll_at(detail,Vector2(36,172),Vector2(920,390)); UIkit.label(body,selected.desc,25)
 	var reward_icons={}
 	for key in selected.get("reward",{}):
 		if key in ["gold","herb","ore","shard"]: reward_icons[key]=selected.reward[key]
 	if not reward_icons.is_empty(): ItemIcons.strip(detail,game.db,reward_icons,Vector2(36,566),190)
 	var callback=selected.callback
 	if callback.is_valid() or selected.scene!="":
-		UIkit.action(detail,selected.label,Vector2(36,626),Vector2(1120,58),func():
+		UIkit.action(detail,selected.label,Vector2(36,690),Vector2(920,58),func():
 			if callback.is_valid(): callback.call()
 			else: await game.travel_to(selected.scene),true,game.session.state.battle!=null or game.session.state.training)
 

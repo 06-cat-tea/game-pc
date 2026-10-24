@@ -48,7 +48,7 @@ func _ready():
 	db = GameContent.new(); session = GameSession.new(db); store = SaveStore.new(session)
 	world = WorldView.new(); add_child(world); world.setup(db,session); world.visible = false
 	world.interacted.connect(_interact); world.position_changed.connect(func(x,y): session.state.location.x=x; session.state.location.y=y)
-	world.hint_changed.connect(func(text): hint=text; if is_instance_valid(hud_hint): hud_hint.text=text)
+	world.hint_changed.connect(func(text): hint=text; if is_instance_valid(hud_hint): hud_hint.text="" if text.begins_with("WASD") else text)
 	var layer = CanvasLayer.new(); add_child(layer)
 	ui = Control.new(); ui.theme = UIkit.theme(); UIkit.fill(ui); ui.mouse_filter = Control.MOUSE_FILTER_IGNORE; layer.add_child(ui)
 	main_view = Control.new(); UIkit.fill(main_view); main_view.mouse_filter = Control.MOUSE_FILTER_IGNORE; ui.add_child(main_view)
@@ -89,7 +89,7 @@ func refresh():
 	if battle_end_pending: mode="battle"
 	if mode=="battle" and rendered_mode!="battle": combat_effects.reset()
 	var retain_battle=mode=="battle" and rendered_mode=="battle" and main_view.get_child_count()>0
-	if not retain_battle: clear(main_view); hud_hint=null
+	if not retain_battle: clear(main_view); main_view.set_meta("starlit_dark",false); hud_hint=null
 	world.visible = mode == "world"
 	world.blocked = mode != "world" or overlay != "" or paused or not focused or (loading!=null and loading.busy)
 	if mode == "title": _title()
@@ -118,7 +118,7 @@ func continue_game(slot: int = 0):
 func _sync_region_map():
 	var scene_id=session.state.location.scene
 	menus.pages.state("map").region=db.place_of(scene_id)
-	menus.pages.state("map").category="region" if db.is_outdoor(scene_id) else "current"
+	menus.pages.state("map").category="world" if db.is_outdoor(scene_id) else "current"
 	menus.pages.state("map").selection=""
 
 func _world_hud():
@@ -146,6 +146,7 @@ func push_current_menu():
 	if overlay!="" and overlay not in ["wheel","message","confirm"]: navigation.append({"kind":overlay,"subject":menu_subject})
 
 func replace_menu(kind: String, subject: String = "hero"):
+	overlay_root.set_meta("starlit_dark",false)
 	if overlay==kind and kind!="wheel": refresh_menu(kind,subject); return
 	remember_scroll()
 	if not navigation.is_empty() and navigation[-1].kind==kind and navigation[-1].subject==subject: navigation.pop_back()
@@ -171,6 +172,7 @@ func refresh_menu(kind: String = "", subject: String = "hero"):
 	menu_subject=subject; overlay_root=staging
 	menus.open(kind,subject)
 	overlay_root=live
+	live.set_meta("starlit_dark",staging.get_meta("starlit_dark",false))
 	UIReconciler.update_children(live,staging); staging.queue_free()
 	UIkit.enter(live,true)
 	_restore_scroll.call_deferred(kind+"|"+subject)
@@ -495,6 +497,7 @@ func _capture_demo():
 			session.visit({"route-wall":"town-wall","route-drain":"town-drain","route-trial":"town-trial","map-route":"town-wall"}[view])
 		elif view.begins_with("region-") or view.begins_with("landmark-") or view.begins_with("atlas-"):
 			var id=str(view).get_slice("-",1); session.visit(id)
+			if str(view).ends_with("-night"): session.state.phase=3
 			if view.begins_with("landmark-"):
 				for building in db.regions[id].buildings:
 					if building.id==db.regions[id].landmark: session.state.location.x=building.entry[0]; session.state.location.y=building.entry[1]; break
@@ -576,6 +579,8 @@ func _capture_demo():
 				child.advance()
 	if capture_args.has("smoke"):
 		var report={"mode":mode,"scene":session.state.get("location",{}).get("scene","title"),"ui_nodes":ui.get_child_count(),"editor_binary":OS.has_feature("editor"),"dev_plugin_included":ResourceLoader.exists("res://addons/godot-mcp/plugin.gd"),"test_sources_included":ResourceLoader.exists("res://tests/test_suite.gd"),"authoring_included":FileAccess.file_exists("res://authoring/rocks/rock1.obj"),"refined_map_included":ResourceLoader.exists("res://assets/refined-world/maps/town.png"),"cc0_notice_included":FileAccess.file_exists("res://LICENSE-ThirdParty-CC0.txt"),"passed":true}
+		if world.lighting!=null:
+			report.daylight={"phase":int(session.state.phase),"outdoor":db.is_outdoor(world.scene_id),"ambient":world.lighting.ambient.color.to_html(),"active_lights":world.lighting.sources.filter(func(source): return source.light.enabled).size()+(1 if world.lighting.hero_light!=null and world.lighting.hero_light.enabled else 0),"city_buildings":db.regions.city.buildings.size(),"design_version":db.regions.city.designVersion}
 		report.region_count=db.regions.size(); report.regional_maps_included=db.regions.keys().all(func(id): return ResourceLoader.exists("res://assets/refined-world/maps/"+id+".png"))
 		report.content_counts={"npcs":db.raw.npcs.size(),"scenes":db.raw.scenes.size(),"lore":db.narrative.lore.size()}; report.content_maps=db.raw.scenes.keys().all(func(id): return ResourceLoader.exists("res://assets/refined-world/maps/"+id+".png"))
 		report.brand_logo_included=ResourceLoader.exists("res://assets/ui/branding/logo.svg")

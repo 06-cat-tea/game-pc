@@ -1,0 +1,5 @@
+Noto Serif SC (variable font), from Google Fonts official repository:
+https://github.com/google/fonts/tree/main/ofl/notoserifsc
+Original filename: NotoSerifSC[wght].ttf
+License: SIL Open Font License 1.1, see NotoSerifSC-OFL.txt.
+Used for the exploration HUD to match the approved serif typography.

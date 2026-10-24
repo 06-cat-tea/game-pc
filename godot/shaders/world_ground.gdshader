@@ -1,5 +1,4 @@
 shader_type canvas_item;
-render_mode unshaded;
 uniform sampler2D grass : source_color, repeat_enable, filter_linear_mipmap;
 uniform sampler2D dirt : source_color, repeat_enable, filter_linear_mipmap;
 uniform sampler2D sand : source_color, repeat_enable, filter_linear_mipmap;

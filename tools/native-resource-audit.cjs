@@ -15,16 +15,17 @@ for(const f of files(path.join(native,'data')).filter(f=>f.endsWith('.json')&&!/
 for(const f of [...files(path.join(native,'scripts')),...files(path.join(native,'scenes'))]){
  const text=fs.readFileSync(f,'utf8');for(const m of text.matchAll(/res:\/\/assets\/[^"'\s)]+/g))add(m[0]);
 }
-prefixes.add('assets/ui/icons/');prefixes.add('assets/ui/branding/');
+prefixes.add('assets/ui/hud-filled/');prefixes.add('assets/ui/icons/');prefixes.add('assets/ui/branding/');
 const all=files(path.join(native,'assets')).filter(f=>!f.endsWith('.import'));
 const unused=all.filter(file=>{const p=slash(path.relative(native,file));return !roots.has(p)&&![...prefixes].some(prefix=>p.startsWith(prefix))&&!p.endsWith('/OFL.txt');});
 const deletions=[];
 function remove(candidate,reason){const full=path.join(root,candidate);if(fs.existsSync(full))deletions.push({path:full,relative:slash(candidate),bytes:fs.statSync(full).isDirectory()?size(full):fs.statSync(full).size,reason});}
 for(const p of ['js','assets','tests','index.html','frontier.html','client.json','tools/live2d-build'])remove(p,'retired desktop browser project');
 const keepTools=new Set(['godot.cjs','prepare-godot-world.cjs','bake-godot-world.cjs','bake-godot-regions.cjs','create-godot-brand.cjs','verify-godot-brand.cjs','verify-godot-package.cjs','verify-godot-visuals.cjs','verify-godot-windows-brand.ps1','verify-godot-content.cjs','setup-godot-mcp.ps1']);
+for(const name of ['build-loading-web.cjs','verify-loading-web.cjs','design-royal-city.cjs','design-starlit-town.cjs','package-starlit-art.cjs','create-hud-reference-assets.cjs','verify-starlit-delivery.cjs'])keepTools.add(name);
 for(const name of fs.readdirSync(path.join(root,'tools'))){if(!keepTools.has(name)&&!name.startsWith('native-')&&fs.statSync(path.join(root,'tools',name)).isFile())remove('tools/'+name,'retired web, migration or historical review tool');}
 for(const name of fs.readdirSync(root))if(name.endsWith('.md')&&!['AGENTS.md','README.md'].includes(name))remove(name,'retired browser delivery document');
-for(const name of fs.readdirSync(path.join(root,'docs')))if(!['Godot-原生角色与工程整理.md','Godot-角色觉醒与星轨交互.md','Godot-任务委托与探索入口.md'].includes(name))remove('docs/'+name,'superseded delivery document; preserved in backup');
+for(const name of fs.readdirSync(path.join(root,'docs')))if(!['Godot-原生角色与工程整理.md','Godot-角色觉醒与星轨交互.md','Godot-任务委托与探索入口.md','Godot-晨星镇与界面升级.md','Godot-王城布局与昼夜光照.md','Godot-加载画面轮播.md'].includes(name))remove('docs/'+name,'superseded delivery document; preserved in backup');
 for(const name of fs.readdirSync(path.join(root,'artifacts')))if(!['backups','godot'].includes(name))remove('artifacts/'+name,'retired web preview and generation intermediates');
 const keepArtifactDirs=new Set(['engine','windows','test-profile','upgrade-review']);
 const keepArtifactFiles=new Set(['native-acceptance.json','native-upgrade-progress.log','brand-preview.png','native-cleanup-plan.json','native-cleanup-result.json','content-parity.json','content-flow.json','standalone-acceptance.json','standalone-build.json','windows-acceptance.json','brand-acceptance.json','windows-brand-acceptance.json','windows-runtime-icon.png','windows-smoke.log','windows-graphics.log']);

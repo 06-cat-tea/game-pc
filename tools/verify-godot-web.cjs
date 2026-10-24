@@ -87,7 +87,9 @@ async function move(x, y) {
 }
 async function shot(name) {
   const filename = path.join(directory, name + '.png');
-  const buffer = await page.locator('#canvas').screenshot({path: filename, timeout: 30000});
+  // Canvas fills the viewport. Capture directly instead of waiting for two
+  // stable DOM animation frames while software WebGL is rendering a dark scene.
+  const buffer = await page.screenshot({path: filename, timeout: 90000});
   screenshots.push(filename);
   return buffer;
 }
@@ -298,6 +300,8 @@ async function main() {
   await page.keyboard.press('m');
   await wait(400);
   await shot('12-map');
+  await click(1553, 834); // Six-region overview: open the selected town's local map.
+  await wait(350);
   await click(1553, 765); // Default town landmark: clocktower, enter interior.
   await sceneWait(1300);
   await shot('13-clocktower');
@@ -313,7 +317,7 @@ async function main() {
   await closeMenu();
 
   stage = 'training-and-battle';
-  await click(1710, 914); // Nearby actions.
+  await click(1690, 978); // Nearby actions in the redesigned bottom-right HUD.
   await click(700, 460); // 公会战术训练.
   await shot('14-training-options');
   // Every menu starts on its back button. Shift+Tab selects its final action.
@@ -368,6 +372,24 @@ async function main() {
   await openSaves();
   assert.deepEqual((await saveJSON('after-title-continue')).state, beforeTraining.state);
   check(true, '返回标题后可继续原旅程');
+
+  stage = 'royal-city-daylight';
+  const cityFixture=structuredClone(beforeTraining.state);
+  cityFixture.location={scene:'city',x:48,y:42};cityFixture.phase=1;cityFixture.settings.reduce_motion=true;cityFixture.story.returns=[];
+  await importJSON({name:'city-day.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(cityFixture))},'complete');
+  await sceneWait(2000);const cityDay=await shot('23-city-day');
+  await openSaves();const cityDaySave=await saveJSON('city-day-check');
+  check(cityDaySave.state.location.scene==='city'&&cityDaySave.state.phase===1,'Web可加载重排后的王城与真实正午时段');
+  cityFixture.phase=3;
+  await importJSON({name:'city-night.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(cityFixture))},'complete');
+  await sceneWait(2000);const cityNight=await shot('24-city-night');
+  const luminance=async buffer=>{const stats=await sharp(buffer).resize(960,540).extract({left:180,top:130,width:600,height:300}).removeAlpha().stats();return stats.channels[0].mean*.2126+stats.channels[1].mean*.7152+stats.channels[2].mean*.0722;};
+  const dayLuma=await luminance(cityDay),nightLuma=await luminance(cityNight);
+  check(nightLuma<dayLuma*.5&&await difference(cityDay,cityNight)>.3,'Web深夜夜景明显暗于正午，灯火与新地图正常渲染',{dayLuma,nightLuma});
+  await openSaves();const cityNightSave=await saveJSON('city-night-check');
+  assert.deepEqual(cityNightSave.state.members,cityDaySave.state.members);assert.deepEqual(cityNightSave.state.quests,cityDaySave.state.quests);
+  check(cityNightSave.state.phase===3&&cityNightSave.state.location.scene==='city','昼夜表现不改变角色与任务进度');
+  await importJSON({name:'restore-before-city-check.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(beforeTraining.state))},'complete');
 
   stage = 'legacy-url';
   const legacy = new URL('frontier.html', url).href;

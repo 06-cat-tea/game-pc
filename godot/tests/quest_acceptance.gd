@@ -85,7 +85,7 @@ func run(tree: SceneTree, check: Callable):
 		scene.session.visit(e.region)
 		check.call(Vector2(scene.session.state.location.x,scene.session.state.location.y).distance_to(Vector2(e.point[0],e.point[1]))<.01,"返回落点绑定对应入口："+e.id)
 	var drain=scene.session.tasks.entrance_for("town-drain")
-	check.call(drain.region=="town" and drain.point==[22.5,14.0] and drain.building=="","旧渠检修口与月沼紫晶地牢完全分离")
+	check.call(drain.region=="town" and drain.point==scene.db.town_design.points[drain.id] and drain.building=="","旧渠检修口与月沼紫晶地牢完全分离")
 	scene.session.state.location={"scene":"town","x":30.0,"y":27.0}; world.scene_id=""; world.show_location(); world.blocked=false
 	var animal=world.town_life.animals[0]; var initial=animal.target.point
 	world.town_life.process(3); world.town_life.process(.5)

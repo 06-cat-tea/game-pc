@@ -1,7 +1,7 @@
 const fs=require('node:fs'),path=require('node:path'),{spawnSync}=require('node:child_process');
 const root=path.resolve(__dirname,'..');
 function run(file,args){const r=spawnSync(process.execPath,[path.join(root,file),...args],{cwd:root,stdio:'inherit',windowsHide:true});if(r.status!==0)throw Error(file+' failed');}
-run('tools/import-godot-regions.cjs',[]);
+run('tools/design-royal-city.cjs',[]);
 run('tools/godot.cjs',['import']);
 // Terrain minification needs mipmaps for stable fine details at every display resolution.
 for(const file of fs.readdirSync(path.join(root,'godot/assets/regions/terrain')))if(file.endsWith('.import')){
