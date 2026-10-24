@@ -66,10 +66,10 @@ func run(tree: SceneTree, verify: Callable):
 		game._interact("landmark",db.regions[id].buildings[0].id)
 		verify.call(game.overlay=="map" and game.menus.pages.state("map").region==id,"场景 E 交互打开对应地标介绍："+id)
 		game.close_menu()
-	game.navigate("city"); game.world.player=Vector2(90,63); game.session.state.location.x=90.0; game.session.state.location.y=63.0
+	game.navigate("city"); game.world.player=Vector2(90,66); game.session.state.location.x=90.0; game.session.state.location.y=66.0
 	verify.call(game.world._can_walk(game.world.player),"王城超过 64×48 范围的落点可通行")
 	var store=SaveStore.new(game.session,"user://tests/regions"); var saved=store.save(1); game.navigate("town"); var loaded=store.load_slot(1); game.refresh()
-	verify.call(saved=="" and loaded=="" and game.world.player==Vector2(90,63) and game.world.scene_id=="city","王城大坐标按原生 v1 格式完整存读")
+	verify.call(saved=="" and loaded=="" and game.world.player==Vector2(90,66) and game.world.scene_id=="city","王城大坐标按原生 v1 格式完整存读")
 	game._interact("travel","town")
 	while game.loading.busy: await tree.process_frame
 	verify.call(game.world.scene_id=="town","区域旅行点返回晨星镇")

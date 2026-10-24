@@ -1,16 +1,281 @@
 {
-  "version":1,
-  "style":"手绘风、日式西幻；可见笔触、柔和色彩、原创星轨意象",
+  "version": 2,
+  "style": "手绘风、日式西幻；可见笔触、柔和色彩、原创星轨意象",
   "images": {
-    "town":{"title":"晨星镇","path":"res://assets/loading/town.webp","tip":"钟塔的第十三声，等待一个回答。","resources":["res://assets/refined-world/maps/town.png"]},
-    "wood":{"title":"低语森林","path":"res://assets/loading/wood.webp","tip":"弱点决定削韧；主属性决定伤害克制。","resources":["res://assets/refined-world/maps/wood.png"]},
-    "pass":{"title":"余烬峡道","path":"res://assets/loading/pass.webp","tip":"前排护卫可替指定队友承受单体攻击。","resources":["res://assets/refined-world/maps/pass.png"]},
-    "fen":{"title":"月沼遗境","path":"res://assets/loading/fen.webp","tip":"护盾吸收伤害，但不会自动净化负面状态。","resources":["res://assets/refined-world/maps/fen.png"]},
-    "coast":{"title":"风葬海崖","path":"res://assets/loading/coast.webp","tip":"观察远程敌人的目标，保护脆弱的后排。","resources":["res://assets/refined-world/maps/coast.png"]},
-    "city":{"title":"归灯王城","path":"res://assets/loading/city.webp","tip":"在敌人蓄力时击破韧性，可打断危险攻击。","resources":["res://assets/refined-world/maps/city.png"]},
-    "departure":{"title":"启程 · 星陨纪事","path":"res://assets/loading/departure.webp","tip":"每一次配合，都让归途更近一些。"},
-    "camp":{"title":"营地休整","path":"res://assets/loading/camp.webp","tip":"休整恢复生命和法力；觉醒后的 TP 会保留。"},
-    "ruins":{"title":"遗迹探索","path":"res://assets/loading/ruins.webp","tip":"寻找入口、调查线索，再向委托人交付。"},
-    "battle":{"title":"战前整备","path":"res://assets/loading/battle.webp","tip":"变阵消耗一次行动，全队每轮最多一次。"}
-  }
+    "town": {
+      "title": "晨星镇",
+      "path": "res://assets/loading/town.webp",
+      "tip": "钟塔的第十三声，等待一个回答。",
+      "resources": [
+        "res://assets/refined-world/maps/town.png"
+      ],
+      "tip_categories": [
+        "exploration",
+        "controls",
+        "rest"
+      ]
+    },
+    "wood": {
+      "title": "低语森林",
+      "path": "res://assets/loading/wood.webp",
+      "tip": "弱点决定削韧；主属性决定伤害克制。",
+      "resources": [
+        "res://assets/refined-world/maps/wood.png"
+      ],
+      "tip_categories": [
+        "exploration",
+        "combat"
+      ]
+    },
+    "pass": {
+      "title": "余烬峡道",
+      "path": "res://assets/loading/pass.webp",
+      "tip": "前排护卫可替指定队友承受单体攻击。",
+      "resources": [
+        "res://assets/refined-world/maps/pass.png"
+      ],
+      "tip_categories": [
+        "combat",
+        "party"
+      ]
+    },
+    "fen": {
+      "title": "月沼遗境",
+      "path": "res://assets/loading/fen.webp",
+      "tip": "护盾吸收伤害，但不会自动净化负面状态。",
+      "resources": [
+        "res://assets/refined-world/maps/fen.png"
+      ],
+      "tip_categories": [
+        "combat",
+        "exploration"
+      ]
+    },
+    "coast": {
+      "title": "风葬海崖",
+      "path": "res://assets/loading/coast.webp",
+      "tip": "观察远程敌人的目标，保护脆弱的后排。",
+      "resources": [
+        "res://assets/refined-world/maps/coast.png"
+      ],
+      "tip_categories": [
+        "exploration",
+        "party"
+      ]
+    },
+    "city": {
+      "title": "归灯王城",
+      "path": "res://assets/loading/city.webp",
+      "tip": "在敌人蓄力时击破韧性，可打断危险攻击。",
+      "resources": [
+        "res://assets/refined-world/maps/city.png"
+      ],
+      "tip_categories": [
+        "exploration",
+        "saves"
+      ]
+    },
+    "departure": {
+      "title": "启程 · 星陨纪事",
+      "path": "res://assets/loading/departure.webp",
+      "tip": "每一次配合，都让归途更近一些。",
+      "tip_categories": [
+        "controls",
+        "saves",
+        "party"
+      ]
+    },
+    "camp": {
+      "title": "营地休整",
+      "path": "res://assets/loading/camp.webp",
+      "tip": "休整恢复生命和法力；觉醒后的 TP 会保留。",
+      "tip_categories": [
+        "rest",
+        "party"
+      ]
+    },
+    "ruins": {
+      "title": "遗迹探索",
+      "path": "res://assets/loading/ruins.webp",
+      "tip": "寻找入口、调查线索，再向委托人交付。",
+      "tip_categories": [
+        "exploration",
+        "combat"
+      ]
+    },
+    "battle": {
+      "title": "战前整备",
+      "path": "res://assets/loading/battle.webp",
+      "tip": "变阵消耗一次行动，全队每轮最多一次。",
+      "tip_categories": [
+        "combat",
+        "party"
+      ]
+    }
+  },
+  "rotation": {
+    "image_seconds": 8,
+    "tip_seconds": 6,
+    "fade_seconds": 0.6
+  },
+  "categories": {
+    "controls": "操作指引",
+    "exploration": "探索与任务",
+    "party": "角色与队伍",
+    "combat": "战斗技巧",
+    "rest": "休整与补给",
+    "saves": "存档与备份"
+  },
+  "tips": [
+    {
+      "id": "controls-move",
+      "category": "controls",
+      "text": "使用 WASD 或方向键移动，点击地面也能规划行走路线。"
+    },
+    {
+      "id": "controls-run",
+      "category": "controls",
+      "text": "按住 Shift 奔跑，赶路时也要留意沿途的互动提示。"
+    },
+    {
+      "id": "controls-interact",
+      "category": "controls",
+      "text": "靠近人物、建筑或物件后，按 F 查看附近行动。"
+    },
+    {
+      "id": "controls-wheel",
+      "category": "controls",
+      "text": "按住 Tab 打开快捷轮盘，移动鼠标选择，松开执行；中央松开可取消。"
+    },
+    {
+      "id": "controls-menus",
+      "category": "controls",
+      "text": "B 打开背包，C 查看角色，J 查看任务，M 打开地图，L 调整队伍。"
+    },
+    {
+      "id": "exploration-accept",
+      "category": "exploration",
+      "text": "支线任务需要明确接取；调查到线索不代表已经接下委托。"
+    },
+    {
+      "id": "exploration-deliver",
+      "category": "exploration",
+      "text": "完成目标后，记得返回委托人或公会公告板交付。"
+    },
+    {
+      "id": "exploration-journal",
+      "category": "exploration",
+      "text": "J 任务日志会显示目标；已完成的记录仍可在日志中查阅。"
+    },
+    {
+      "id": "exploration-entrance",
+      "category": "exploration",
+      "text": "靠近并看见探索入口，才能将它记入旅途记录。"
+    },
+    {
+      "id": "exploration-map",
+      "category": "exploration",
+      "text": "地图标记对应实际地点，可先查看地标，再安排探索路线。"
+    },
+    {
+      "id": "party-attributes",
+      "category": "party",
+      "text": "角色界面可以查看属性与已学技能，出发前先确认成员状态。"
+    },
+    {
+      "id": "party-formation",
+      "category": "party",
+      "text": "队伍界面可调整出战成员和站位，搭配适合敌人的阵容。"
+    },
+    {
+      "id": "party-jobs",
+      "category": "party",
+      "text": "切换职业后，检查该职业的技能配置，再进入下一场战斗。"
+    },
+    {
+      "id": "party-gear",
+      "category": "party",
+      "text": "背包中选中装备，可以在详情栏比较属性并安排使用者。"
+    },
+    {
+      "id": "party-tp",
+      "category": "party",
+      "text": "角色觉醒后积累的 TP 会保留到后续战斗，留意大招的使用时机。"
+    },
+    {
+      "id": "combat-weakness",
+      "category": "combat",
+      "text": "弱点影响削韧，敌人的主属性影响伤害克制；两者需要分别观察。"
+    },
+    {
+      "id": "combat-intent",
+      "category": "combat",
+      "text": "先看敌方行动意图与目标，再决定治疗、防护或集中攻击。"
+    },
+    {
+      "id": "combat-shield",
+      "category": "combat",
+      "text": "护盾能够吸收伤害，但不会自动净化负面状态。"
+    },
+    {
+      "id": "combat-break",
+      "category": "combat",
+      "text": "在敌人蓄力时击破韧性，可以打断危险攻击。"
+    },
+    {
+      "id": "combat-change",
+      "category": "combat",
+      "text": "战斗中变阵消耗一次行动，全队每轮最多变阵一次。"
+    },
+    {
+      "id": "rest-camp",
+      "category": "rest",
+      "text": "可在晨星镇或旅店休息，每次消耗一份旅行补给。"
+    },
+    {
+      "id": "rest-recover",
+      "category": "rest",
+      "text": "休息恢复全队生命与法力，也会让倒地成员重新站起。"
+    },
+    {
+      "id": "rest-time",
+      "category": "rest",
+      "text": "休息会推进游戏时段，清晨、正午、黄昏和深夜各有不同景色。"
+    },
+    {
+      "id": "rest-potions",
+      "category": "rest",
+      "text": "出发前检查生命与法力恢复道具，关键时刻及时补充。"
+    },
+    {
+      "id": "rest-night",
+      "category": "rest",
+      "text": "夜晚沿路灯寻找道路，靠近目标时留意右下角的互动提示。"
+    },
+    {
+      "id": "saves-manual",
+      "category": "saves",
+      "text": "可以保留三个手动存档，在重要决定或远行前留下一份记录。"
+    },
+    {
+      "id": "saves-export",
+      "category": "saves",
+      "text": "在存档界面导出 JSON，可将当前旅程另存为备份文件。"
+    },
+    {
+      "id": "saves-browser",
+      "category": "saves",
+      "text": "网页版进度保存在当前浏览器中，清理站点数据可能移除本地存档。"
+    },
+    {
+      "id": "saves-separate",
+      "category": "saves",
+      "text": "Windows 与网页版各自保存进度；需要转移时可使用 JSON 导入导出。"
+    },
+    {
+      "id": "saves-training",
+      "category": "saves",
+      "text": "退出战术训练后，会恢复进入训练前的剧情状态与物资。"
+    }
+  ]
 }

@@ -13,6 +13,7 @@ var hovered=""
 var zoom=1.0
 var pan=Vector2.ZERO
 var dragging=false
+const COMPACT_SCALE=.13
 
 func setup(owner, small: bool = false):
 	game=owner; compact=small; mouse_filter=Control.MOUSE_FILTER_STOP
@@ -35,9 +36,10 @@ func _process(delta: float):
 func _update_image():
 	if not compact: return
 	var id=map_scene(); var bounds=WorldPresentation.bounds(id)
-	if id!=last_scene: image.texture=WorldPresentation.overview(id); last_scene=id
+	if id!=last_scene:
+		image.texture=WorldPresentation.overview(id); last_scene=id
 	var center=WorldPresentation.iso(game.world.player,id) if game.db.is_outdoor(id) else bounds.get_center()
-	var visible_size=Vector2.ONE*size.x/0.15 if game.db.is_outdoor(id) else Vector2.ONE*bounds.size.y
+	var visible_size=Vector2.ONE*size.x/COMPACT_SCALE if game.db.is_outdoor(id) else Vector2.ONE*bounds.size.y
 	image.material.set_shader_parameter("map_center",(center-bounds.position)/bounds.size)
 	image.material.set_shader_parameter("map_span",visible_size/bounds.size)
 
@@ -50,7 +52,7 @@ func map_rect() -> Rect2:
 func project(point: Vector2) -> Vector2:
 	var id=map_scene(); var world=WorldPresentation.iso(point,id)
 	if compact:
-		if game.db.is_outdoor(id): return size/2+(world-WorldPresentation.iso(game.world.player,id))*0.15
+		if game.db.is_outdoor(id): return size/2+(world-WorldPresentation.iso(game.world.player,id))*COMPACT_SCALE
 		return size/2+(world-WorldPresentation.bounds(id).get_center())*size.x/1080.0
 	var bounds=WorldPresentation.bounds(id); var rect=map_rect()
 	return rect.position+(world-bounds.position)/bounds.size*rect.size
@@ -70,6 +72,7 @@ func _draw():
 	_draw_markers(self)
 
 func _draw_markers(surface: Control):
+	if compact: _compact_markers(surface); return
 	var id=map_scene()
 	for e in game.db.world_interactions.entrances:
 		if e.region!=id: continue
@@ -132,6 +135,32 @@ func _draw_markers(surface: Control):
 	if compact:
 		surface.draw_arc(size/2,size.x/2-2,0,TAU,80,UIkit.ACCENT,2,true)
 		surface.draw_string(UIkit.font(),Vector2(size.x/2-7,21),"N",HORIZONTAL_ALIGNMENT_LEFT,30,16,UIkit.INK)
+
+func _compact_markers(surface: Control):
+	var center=size/2; var radius=size.x/2
+	surface.draw_arc(center,radius-1,0,TAU,100,Color("28352d"),4,true)
+	surface.draw_arc(center,radius-3,0,TAU,100,Color("d6c395"),1.5,true)
+	surface.draw_arc(center,radius-8,0,TAU,100,Color(.94,.88,.70,.35),1,true)
+	var icons={"clocktower":"clock","chapel":"chapel","inn":"inn","market":"market"}
+	for b in candidates():
+		if not icons.has(b.id): continue
+		var p=project(Vector2(b.x+b.w/2,b.y+b.d/2))
+		if p.distance_to(center)>radius-24: continue
+		surface.draw_circle(p,14,Color(.08,.14,.11,.8)); surface.draw_arc(p,14,0,TAU,32,Color("d6c395"),1,true)
+		var symbol=UIkit.texture("res://assets/ui/hud-filled/"+icons[b.id]+".svg")
+		surface.draw_texture_rect(symbol,Rect2(p-Vector2(12,12),Vector2(24,24)),false)
+	var targets=task_markers()
+	if targets.is_empty() and map_scene()=="town" and not game.session.state.chapter_complete:
+		targets.append(Vector2(game.db.town_design.points["entrance-town-wall"][0],game.db.town_design.points["entrance-town-wall"][1]))
+	if not targets.is_empty():
+		var p=project(targets[0]); var delta=p-center
+		if delta.length()>radius-22: p=center+delta.normalized()*(radius-22)
+		var symbol=UIkit.texture("res://assets/ui/hud-filled/diamond.svg")
+		surface.draw_texture_rect(symbol,Rect2(p-Vector2(12,15),Vector2(24,30)),false)
+	surface.draw_circle(center,13,Color(.94,.94,.86,.8))
+	surface.draw_colored_polygon(PackedVector2Array([center+Vector2(0,-12),center+Vector2(-9,9),center+Vector2(0,4),center+Vector2(9,9)]),Color("64a9c4"))
+	surface.draw_circle(Vector2(center.x,12),15,Color(.08,.13,.10,.72))
+	surface.draw_string(UIkit.hud_font(),Vector2(center.x-8,21),"N",HORIZONTAL_ALIGNMENT_LEFT,30,22,Color("f6eed8"))
 
 func _gui_input(event: InputEvent):
 	if event is InputEventMouseMotion and dragging:

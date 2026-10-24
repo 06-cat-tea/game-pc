@@ -7,6 +7,8 @@ uniform vec4 water_color : source_color=vec4(.3,.5,.6,1.0);
 uniform int layer_kind=0;
 uniform int biome=0;
 uniform float scene_clock=0.0;
+uniform float night_strength=0.0;
+uniform vec2 lamp_positions[8];
 varying vec2 world;
 void vertex(){world=(MODEL_MATRIX*vec4(VERTEX,0.0,1.0)).xy;}
 void fragment(){
@@ -30,6 +32,12 @@ void fragment(){
 		float crest=pow(max(0.0,sin(grid.x*1.6-grid.y*.8+scene_clock*.8)),14.0);
 		color+=vec3(.28,.30,.26)*shore*(.55+crest*.4);
 		color+=vec3(.10,.14,.15)*pow(max(0.0,ripple),6.0)*.32;
+		for(int i=0;i<8;i++){
+		 vec2 delta=grid-lamp_positions[i];
+		 float pool=exp(-dot(delta,delta)/17.0);
+		 float stripe=pow(max(0.0,sin(grid.y*11.0+sin(grid.x*2.0)+scene_clock*.6)),4.0);
+		 color+=vec3(1.0,.60,.21)*pool*stripe*night_strength*1.6;
+		}
 		alpha=smoothstep(.10,.86,mask.g);
 	}
 	COLOR=vec4(color,alpha);

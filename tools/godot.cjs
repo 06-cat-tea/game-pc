@@ -40,12 +40,14 @@ else if(command==='build-web'){
  const destination=path.join(root,'artifacts/godot/web');fs.mkdirSync(destination,{recursive:true});
  run(['--headless','--editor','--import','--recovery-mode','--path',project],{verifyOutput:true,env:webBuildEnv});
  run(['--headless','--recovery-mode','--path',project,'--export-release','Web',path.join(destination,'index.html')],{verifyOutput:true,env:webBuildEnv});
- const licenses=[['LICENSE-Game-CC0.txt','游戏 · CC0'],['LICENSE-Godot.txt','Godot 引擎 · MIT'],['LICENSE-Icons-CC-BY-3.0.txt','图标 · CC BY 3.0 及作者署名'],['LICENSE-ThirdParty-CC0.txt','第三方素材 · CC0'],['assets/fonts/OFL.txt','字体 · OFL']];
+ const prepared=spawnSync(process.execPath,[path.join(root,'tools/build-loading-web.cjs'),destination],{cwd:root,env:process.env,stdio:'inherit',windowsHide:true});if(prepared.status!==0)throw Error('Cannot build Web loading carousel');
+ const licenses=[['LICENSE-Game-CC0.txt','游戏 · CC0'],['LICENSE-Godot.txt','Godot 引擎 · MIT'],['LICENSE-Icons-CC-BY-3.0.txt','图标 · CC BY 3.0 及作者署名'],['LICENSE-ThirdParty-CC0.txt','第三方素材 · CC0'],['assets/fonts/OFL.txt','字体 · OFL'],['assets/fonts/NotoSerifSC-OFL.txt','HUD 宋体 · OFL']];
  const links=licenses.map(([from,title])=>{const to=path.basename(from)==='OFL.txt'?'LICENSE-Font-OFL.txt':path.basename(from);fs.copyFileSync(path.join(project,from),path.join(destination,to));return '<li><a href="'+to+'">'+title+'</a></li>';}).join('');
  fs.writeFileSync(path.join(destination,'licenses.html'),'<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>许可与署名</title><link rel="icon" href="index.icon.png"><style>body{max-width:800px;margin:60px auto;padding:24px;font:18px/1.8 system-ui;background:#101925;color:#eee9dd}a{color:#dfc99b}</style><h1>灰烬边境：星陨纪事</h1><h2>许可与署名</h2><ul>'+links+'</ul><p><a href="./">返回游戏</a></p></html>');
  fs.writeFileSync(path.join(destination,'frontier.html'),'<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=./"><title>灰烬边境</title><a href="./">进入 Godot 网页版</a></html>');
  fs.writeFileSync(path.join(destination,'.nojekyll'),'');
- const files=fs.readdirSync(destination).map(name=>({name,bytes:fs.statSync(path.join(destination,name)).size}));
+ const listing=directory=>fs.readdirSync(directory,{withFileTypes:true}).flatMap(entry=>entry.isDirectory()?listing(path.join(directory,entry.name)):[{name:path.relative(destination,path.join(directory,entry.name)).replaceAll('\\','/'),bytes:fs.statSync(path.join(directory,entry.name)).size}]);
+ const files=listing(destination);
  if(files.reduce((sum,file)=>sum+file.bytes,0)>=1024**3)throw Error('Web release exceeds the GitHub Pages 1 GB limit.');
  for(const name of ['index.html','index.js','index.wasm','index.pck'])if(!files.some(file=>file.name===name&&file.bytes>0))throw Error('Missing Web export: '+name);
  const html=fs.readFileSync(path.join(destination,'index.html'),'utf8');if(/\$GODOT_/.test(html))throw Error('Unresolved HTML export placeholders.');
@@ -60,7 +62,7 @@ else if(command==='build'){
   if(checked.error||checked.status!==0)throw Error('Cannot check whether the release is running: '+(checked.stderr||checked.error));
  }
  const destination=path.join(root,'artifacts/godot/windows');fs.mkdirSync(destination,{recursive:true});run(['--headless','--editor','--import','--recovery-mode','--path',project]);run(['--headless','--recovery-mode','--path',project,'--export-release','Windows Desktop',path.join(destination,'灰烬边境.exe')]);
- for(const [from,to] of [['WINDOWS-README.txt','README.txt'],['LICENSE-Game-CC0.txt','LICENSE-Game-CC0.txt'],['LICENSE-Godot.txt','LICENSE-Godot.txt'],['LICENSE-Icons-CC-BY-3.0.txt','LICENSE-Icons-CC-BY-3.0.txt'],['LICENSE-ThirdParty-CC0.txt','LICENSE-ThirdParty-CC0.txt'],['assets/fonts/OFL.txt','LICENSE-Font-OFL.txt']])fs.copyFileSync(path.join(project,from),path.join(destination,to));
+ for(const [from,to] of [['WINDOWS-README.txt','README.txt'],['LICENSE-Game-CC0.txt','LICENSE-Game-CC0.txt'],['LICENSE-Godot.txt','LICENSE-Godot.txt'],['LICENSE-Icons-CC-BY-3.0.txt','LICENSE-Icons-CC-BY-3.0.txt'],['LICENSE-ThirdParty-CC0.txt','LICENSE-ThirdParty-CC0.txt'],['assets/fonts/OFL.txt','LICENSE-Font-OFL.txt'],['assets/fonts/NotoSerifSC-OFL.txt','LICENSE-Font-Serif-OFL.txt']])fs.copyFileSync(path.join(project,from),path.join(destination,to));
  for(const name of fs.readdirSync(destination))if(/^灰烬边境\.exe~RF[\da-f]+\.TMP$/i.test(name)){
   const temporary=path.join(destination,name);
   try{fs.rmSync(temporary);}catch(error){if(!['EPERM','EACCES','EBUSY'].includes(error.code))throw error;const holding=path.join(root,'artifacts/backups/export-residue');fs.mkdirSync(holding,{recursive:true});fs.renameSync(temporary,path.join(holding,Date.now()+'-'+name));}

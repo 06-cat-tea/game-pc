@@ -9,66 +9,82 @@
   <style>
     html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#101925;color:#eee9dd;font:16px system-ui,sans-serif}
     #canvas{display:block;width:100%;height:100%;outline:none}
-    #status{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:18px;background:#101925;z-index:1;text-align:center;padding:24px}
-    #status[hidden]{display:none}h1{font-size:clamp(28px,5vw,48px);font-weight:500;letter-spacing:.12em;margin:0;color:#dfc99b}
-    #progress{width:min(480px,80vw);accent-color:#ccb584}#detail{max-width:650px;line-height:1.6;color:#b8c4d1}
+    #status{position:absolute;inset:0;isolation:isolate;background:#101925;z-index:1;overflow:hidden}
+    #status[hidden]{display:none}
+    .loading-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity var(--fade-seconds,.6s) ease}
+    .loading-art.visible{opacity:1}
+    .loading-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,16,29,.22),transparent 45%,rgba(8,16,29,.76) 78%,#0b1423)}
+    .brand{position:absolute;top:5vh;left:5.2vw;right:5.2vw;color:#f1dfb7;text-shadow:0 2px 5px #17202a}
+    h1{font:500 clamp(26px,3vw,58px)/1.35 "Noto Serif SC","Songti SC","SimSun",serif;letter-spacing:.08em;margin:0}
+    .brand p{font-size:clamp(12px,1.1vw,19px);letter-spacing:.18em;opacity:.86;margin:10px 0}
+    .loading-content{position:absolute;left:5.2vw;right:5.2vw;bottom:5vh;text-shadow:0 1px 3px #101925}
+    #picture-title{font:500 clamp(24px,2.2vw,42px)/1.3 "Noto Serif SC","SimSun",serif;color:#ead7ad;margin:0 0 15px}
+    #message{font-size:clamp(15px,1.2vw,23px);margin:0 0 12px}
+    #progress{display:block;width:100%;height:7px;appearance:none;border:0;border-radius:8px;overflow:hidden;background:#536073;accent-color:#dbc494}
+    #progress::-webkit-progress-bar{background:rgba(210,214,221,.2)}
+    #progress::-webkit-progress-value{background:#dbc494;border-radius:8px}
+    #progress::-moz-progress-bar{background:#dbc494}
+    #detail{font-size:clamp(12px,1vw,18px);line-height:1.6;color:#bdc9d8;margin:13px 0 20px}
+    .tip-line{display:flex;gap:24px;align-items:baseline;border-top:1px solid #dbc49455;padding-top:18px;min-height:2.8em;font-size:clamp(14px,1.1vw,21px);line-height:1.7}
+    #tip-category{color:#dbc494;white-space:nowrap}
+    #tip{margin:0;max-width:1400px;color:#eee7da}
     button{background:#dfc99b;color:#172235;border:0;padding:12px 30px;font:inherit;border-radius:4px;cursor:pointer}
+    #retry{margin-bottom:18px}
     a{color:#dfc99b}#licenses{position:absolute;right:12px;bottom:8px;font-size:12px;z-index:2;opacity:.7}
+    @media(max-height:600px){.brand{top:4vh}.loading-content{bottom:5vh}.brand p{margin:6px 0}#picture-title{margin-bottom:8px}#detail{margin:8px 0 12px}.tip-line{padding-top:10px}}
+    @media(prefers-reduced-motion:reduce){.loading-art{transition:none}}
   </style>
 </head>
 <body>
   <canvas id="canvas" tabindex="0" aria-label="灰烬边境游戏画面">你的浏览器需要支持 WebAssembly 和 WebGL 2。</canvas>
-  <section id="status" role="status" aria-live="polite">
-    <h1>灰烬边境 · 星陨纪事</h1>
-    <p id="message">正在准备旅程资源…</p>
-    <progress id="progress" aria-label="下载进度"></progress>
-    <p id="detail">首次加载需要下载完整游戏资源。请使用电脑键盘与鼠标游玩。</p>
-    <button id="retry" hidden>重新加载</button>
+  <section id="status" aria-label="游戏加载">
+    <img class="loading-art" alt="" aria-hidden="true"><img class="loading-art" alt="" aria-hidden="true">
+    <div class="loading-shade"></div>
+    <div class="brand"><h1>灰烬边境 · 星陨纪事</h1><p>六地归途 · 星钟之旅</p></div>
+    <div class="loading-content">
+      <h2 id="picture-title">旅程即将展开</h2>
+      <p id="message" role="status" aria-live="polite">正在准备旅程资源…</p>
+      <progress id="progress" aria-label="下载进度"></progress>
+      <p id="detail">首次加载需要下载完整游戏资源。请使用电脑键盘与鼠标游玩。</p>
+      <button id="retry" hidden>重新加载</button>
+      <div class="tip-line"><span id="tip-category">旅途提示</span><p id="tip"></p></div>
+    </div>
   </section>
   <a id="licenses" href="licenses.html" target="_blank" rel="noopener">许可与署名</a>
   <noscript>请启用 JavaScript 后刷新页面。</noscript>
+  <script id="loading-catalog" type="application/json">__ASHEN_LOADING_CATALOG__</script>
+  <script src="loading-carousel.js"></script>
   <script src="$GODOT_URL"></script>
   <script>
     const GODOT_CONFIG = $GODOT_CONFIG;
     const GODOT_THREADS_ENABLED = $GODOT_THREADS_ENABLED;
-    const engine = new Engine(GODOT_CONFIG);
     const status = document.getElementById('status');
     const message = document.getElementById('message');
     const progress = document.getElementById('progress');
-    const detail = document.getElementById('detail');
-    const retry = document.getElementById('retry');
     const canvas = document.getElementById('canvas');
-    retry.addEventListener('click', () => location.reload());
-    const fail = error => {
-      document.documentElement.dataset.gameState = 'error';
-      status.hidden = false;
-      message.textContent = '旅程暂时未能启动';
-      detail.textContent = String(error?.message || error) + '。请检查网络，并使用支持 WebGL 2 的电脑浏览器重试。';
-      progress.hidden = true;
-      retry.hidden = false;
-      console.error(error);
-    };
-    const missing = Engine.getMissingFeatures({threads: GODOT_THREADS_ENABLED});
-    if (missing.length) {
-      fail('浏览器缺少所需功能：' + missing.join('、'));
-    } else {
-      engine.startGame({
-        canvas,
-        onProgress(current,total) {
-          if (total > 0) {
-            progress.max = total;
-            progress.value = current;
-            message.textContent = current < total ? '正在下载旅程资源… ' + Math.floor(current / total * 100) + '%' : '正在初始化旅程…';
-          } else {
-            progress.removeAttribute('value');
-          }
-        },
-        onExit(code) { if (code) fail('游戏异常退出（' + code + '）'); },
-      }).then(() => {
-        status.hidden = true;
-        document.documentElement.dataset.gameState = 'ready';
-        canvas.focus();
-      }).catch(fail);
+    const fail = error => {loadingCarousel.showError(error);console.error(error);};
+    if(typeof Engine==='undefined'){
+      fail('无法下载游戏启动程序');
+    }else{
+      const engine = new Engine(GODOT_CONFIG);
+      const missing = Engine.getMissingFeatures({threads: GODOT_THREADS_ENABLED});
+      if (missing.length) {
+        fail('浏览器缺少所需功能：' + missing.join('、'));
+      } else {
+        engine.startGame({
+          canvas,
+          onProgress(current,total) {
+            if (total > 0) {
+              progress.max = total; progress.value = current;
+              message.textContent = current < total ? '正在下载旅程资源… ' + Math.floor(current / total * 100) + '%' : '下载完成，正在初始化旅程…';
+            } else {progress.removeAttribute('value');message.textContent='正在下载旅程资源…';}
+          },
+          onExit(code) { if (code) fail('游戏异常退出（' + code + '）'); },
+        }).then(() => {
+          loadingCarousel.stop();status.hidden = true;
+          document.documentElement.dataset.gameState = 'ready';canvas.focus();
+        }).catch(fail);
+      }
     }
   </script>
 </body>

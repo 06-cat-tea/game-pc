@@ -33,6 +33,8 @@ var caption_clock=0.0
 var region_layer: RegionScene
 var town_life: TownLife
 var presentation_revision=-1
+var town_visuals=[]
+var lighting: WorldLighting
 
 func texture(path: String) -> Texture2D:
 	if path == "": return null
@@ -60,26 +62,29 @@ func show_location():
 	var location = session.state.location
 	if scene_id == location.scene and presentation_revision==session.presentation_revision: return
 	presentation_revision=session.presentation_revision
-	scene_id = location.scene; walking_path = []; pending_target = {}; targets = []
+	scene_id = location.scene; walking_path = []; pending_target = {}; targets = []; town_visuals=[]
 	if map_root != null: remove_child(map_root); map_root.queue_free()
 	map_root = Node2D.new(); add_child(map_root)
 	region_layer=null
 	var ground = WorldGround.new(); map_root.add_child(ground); ground.setup(db,scene_id)
+	lighting=WorldLighting.new(); map_root.add_child(lighting); lighting.setup(self)
 	var depth = Node2D.new(); depth.y_sort_enabled = true; map_root.add_child(depth)
 	if scene_id == "town":
 		for building in db.raw.buildings:
 			var art = db.raw.art.buildings[building.id]
 			_shadow(depth,iso(Vector2(building.x+building.w/2.0,building.y+building.d/2.0)),float(building.w+building.d)*48)
-			var sprite = _sprite(depth, str(art.path), iso(Vector2(building.x+building.w/2.0,building.y+building.d/2.0)), float(building.w+building.d)*58, art.get("anchor",[0.5,0.88]))
-			var item = {"kind":"building","id":building.id,"label":building.name,"point":entry(building),"node":sprite,"width":float(building.w+building.d)*58}
-			targets.append(item); _caption(sprite,building.name)
+			var sprite = _sprite(depth, str(art.path), iso(Vector2(building.x+building.w/2.0,building.y+building.d/2.0)), float(art.get("display_width",float(building.w+building.d)*58)), art.get("anchor",[0.5,0.88]))
+			var item = {"kind":"building","id":building.id,"label":building.name,"point":entry(building),"node":sprite,"width":float(art.get("display_width",float(building.w+building.d)*58))}
+			targets.append(item); town_visuals.append(sprite); _caption(sprite,building.name); lighting.add_emission(sprite)
 		for id in db.raw.npcs:
 			var npc = db.raw.npcs[id]
 			if not npc.has("position") or npc.get("place", "town") != "town": continue
 			_add_npc(depth,id,Vector2(npc.position.x,npc.position.y))
 		for decor in WorldPresentation.config().decor:
 			var p=Vector2(decor.point[0],decor.point[1]); _shadow(depth,iso(p),decor.width*.7)
-			_sprite(depth,decor.asset,iso(p),decor.width,decor.anchor)
+			var ornament=_sprite(depth,decor.asset,iso(p),decor.width,decor.anchor)
+			if decor.large: town_visuals.append(ornament)
+			if "lamp" in str(decor.asset): lighting.add_source(p,Color("ffd08b"),220,1.0,ornament.texture.get_height()*ornament.scale.y*.82)
 	elif db.regions.has(scene_id):
 		region_layer=RegionScene.new(); map_root.add_child(region_layer); region_layer.setup(self,depth)
 	else:
@@ -108,7 +113,10 @@ func show_location():
 	town_life=TownLife.new(self); town_life.setup(depth)
 	hero_shadow=_shadow(depth,Vector2.ZERO,56 if db.is_outdoor(scene_id) else 80)
 	player = Vector2(location.x,location.y)
-	if not _can_walk(player): player = _safe_point(player)
+	if not _can_walk(player):
+		player = _safe_point(player)
+		session.state.location.x=player.x; session.state.location.y=player.y
+	lighting.update_lights()
 	_update_actor(Vector2.ZERO,0)
 	_setup_grid()
 	_update_camera()
@@ -164,6 +172,11 @@ func _can_walk(point: Vector2) -> bool:
 
 func _safe_point(requested: Vector2) -> Vector2:
 	if _can_walk(requested): return requested
+	if scene_id=="city":
+		for radius in range(1,41):
+			for i in 32:
+				var candidate=requested+Vector2.from_angle(float(i)*TAU/32.0)*radius*.25
+				if _can_walk(candidate) and db.regions.city.terrain[int(candidate.y)][int(candidate.x)]=="road": return candidate
 	for radius in range(1,20):
 		for i in 16:
 			var p = requested+Vector2.from_angle(float(i)*TAU/16.0)*radius*0.3
@@ -265,6 +278,11 @@ func _process(delta: float):
 	if hint != last_hint: last_hint = hint; hint_changed.emit(hint)
 
 func _update_captions():
+	var hero_point=iso(player)-Vector2(0,35)
+	for sprite in town_visuals:
+		if sprite.texture==null: continue
+		var rect=Rect2(sprite.position+sprite.offset*sprite.scale,sprite.texture.get_size()*sprite.scale)
+		sprite.modulate.a=.38 if hero_point.y<sprite.position.y and rect.grow(-18).has_point(hero_point) else 1.0
 	var mouse=get_global_mouse_position()
 	for target in targets:
 		var near=player.distance_to(target.point)<3.4
@@ -286,7 +304,14 @@ func _update_actor(movement: Vector2, delta: float):
 	hero.texture = texture(path); hero.position = iso(player)
 	if is_instance_valid(hero_shadow): hero_shadow.position=hero.position+Vector2(7,5)
 
-func _update_camera(): camera.position = iso(player)+Vector2(0,-65) if db.is_outdoor(scene_id) else Vector2(960,540)
+func _update_camera():
+	camera.zoom=Vector2.ONE
+	if scene_id=="town":
+		var desired=iso(player)+Vector2(0,-125)
+		# The meadow extends outside the playable town so all edge views remain continuous.
+		camera.position=desired
+	elif db.is_outdoor(scene_id): camera.position=iso(player)+Vector2(0,-65)
+	else: camera.position=Vector2(960,540)
 
 func _nearest() -> Dictionary:
 	var found = {}; var distance = 2.6

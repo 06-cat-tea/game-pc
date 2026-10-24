@@ -27,17 +27,27 @@ func _ready():
 	focus_mode = Control.FOCUS_NONE
 	for entry in ENTRIES:
 		var icon = TextureRect.new()
-		icon.texture = UIkit.icon(entry.icon)
+		var pictogram={"backpack":"backpack","main-quest":"quest","affinity":"party","skills":"skills","crafting":"craft","map":"map","rest":"rest","settings":"settings"}[entry.icon]
+		icon.texture = load("res://assets/ui/hud-filled/"+pictogram+".svg")
 		icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 		icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-		icon.size = Vector2(38,38)
+		icon.size = Vector2(48,48)
 		icon.pivot_offset = icon.size*0.5
 		icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		add_child(icon); icons.append(icon)
 	caption = UIkit.text(self,"移动鼠标选择",Vector2.ZERO,Vector2(260,46),26)
 	instruction = UIkit.text(self,"快捷轮盘",Vector2.ZERO,Vector2(260,32),18,UIkit.MUTED)
 	cancel_hint = UIkit.text(self,"中央松开取消   ·   Esc 返回",Vector2.ZERO,Vector2(500,34),18,Color("eee9dd"))
-	for label in [caption,instruction,cancel_hint]: label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	for label in [caption,instruction,cancel_hint]:
+		label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		label.add_theme_font_override("font",UIkit.hud_font())
+		label.add_theme_color_override("font_color",Color("f4eddf"))
+		label.add_theme_color_override("font_shadow_color",Color(0,0,0,.6))
+		label.add_theme_constant_override("shadow_offset_y",2)
+		label.autowrap_mode=TextServer.AUTOWRAP_OFF
+		label.clip_text=true
+	caption.add_theme_font_size_override("font_size",28)
+	caption.size=Vector2(260,46); instruction.size=Vector2(260,32); cancel_hint.size=Vector2(500,34)
 	resized.connect(_layout)
 	_layout()
 
@@ -71,7 +81,7 @@ func select_at(point: Vector2):
 	caption.text = "移动鼠标选择" if index < 0 else ENTRIES[index].name
 	instruction.text = "快捷轮盘" if index < 0 else "松开 Tab 执行"
 	for i in icons.size():
-		icons[i].modulate = Color.WHITE if i == index else Color(1,1,1,0.75)
+		icons[i].modulate = Color("ffe0a0") if i == index else Color(1,1,1,0.9)
 		icons[i].scale = Vector2.ONE*(1.12 if i == index else 1.0)
 	queue_redraw()
 
@@ -90,17 +100,23 @@ func _gui_input(_event: InputEvent):
 
 func _draw():
 	var c = center()
-	draw_rect(Rect2(Vector2.ZERO,size),Color(0.055,0.07,0.085,0.24))
-	draw_circle(c+Vector2(0,5),OUTER_RADIUS,Color(0.06,0.08,0.10,0.12))
-	draw_arc(c,RING_RADIUS,0,TAU,128,Color(UIkit.PAPER,0.97),96,true)
-	draw_arc(c,249,0,TAU,128,Color(UIkit.ACCENT,0.6),1.5,true)
-	draw_arc(c,151,0,TAU,128,Color(UIkit.LINE,0.75),1,true)
-	draw_circle(c,109,Color(UIkit.PAPER,0.98))
-	draw_arc(c,109,0,TAU,96,Color(UIkit.ACCENT,0.6),1,true)
+	draw_rect(Rect2(Vector2.ZERO,size),Color(.035,.055,.09,.40))
+	draw_circle(c,OUTER_RADIUS+18,Color(.06,.10,.16,.12))
+	draw_arc(c,RING_RADIUS,0,TAU,160,Color(.10,.15,.22,.67),94,true)
+	draw_arc(c,249,0,TAU,160,Color("dbc494",.48),1.2,true)
+	draw_arc(c,151,0,TAU,160,Color("dbc494",.28),1,true)
+	draw_circle(c,106,Color(.09,.13,.20,.68))
+	draw_arc(c,106,0,TAU,96,Color("dbc494",.5),1,true)
 	if selected_index >= 0:
 		var angle = selected_index*TAU/8.0-PI/2
-		draw_arc(c,RING_RADIUS,angle-PI/8+0.035,angle+PI/8-0.035,24,Color("e8dbc1"),94,true)
-		draw_arc(c,249,angle-PI/8+0.035,angle+PI/8-0.035,24,UIkit.GOLD,3,true)
+		draw_arc(c,RING_RADIUS,angle-PI/8+.028,angle+PI/8-.028,32,Color(.73,.61,.39,.46),92,true)
+		draw_arc(c,250,angle-PI/8+.025,angle+PI/8-.025,32,Color("ffe1a5"),3,true)
+		var direction_value=Vector2.from_angle(angle)
+		var tangent=Vector2(-direction_value.y,direction_value.x)
+		draw_colored_polygon(PackedVector2Array([c+direction_value*266,c+direction_value*279+tangent*5,c+direction_value*287,c+direction_value*279-tangent*5]),Color("f5db9f"))
 	for i in 8:
-		var angle = i*TAU/8.0-PI/2+PI/8
-		draw_line(c+Vector2.from_angle(angle)*179,c+Vector2.from_angle(angle)*221,Color(UIkit.LINE,0.65),1,true)
+		var angle=i*TAU/8.0-PI/2+PI/8
+		draw_line(c+Vector2.from_angle(angle)*163,c+Vector2.from_angle(angle)*237,Color("dbc494",.24),1,true)
+	for x in [-1,1]:
+		var p=c+Vector2(x*174,0)
+		draw_colored_polygon(PackedVector2Array([p-Vector2(0,5),p+Vector2(3,0),p+Vector2(0,5),p-Vector2(3,0)]),Color("dbc494",.7))

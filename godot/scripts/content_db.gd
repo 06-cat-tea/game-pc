@@ -13,6 +13,7 @@ var movement = {}
 var progression = {}
 var quest_catalog = {}
 var world_interactions = {}
+var town_design = {}
 const OUTDOORS = ["town","wood","pass","fen","coast","city"]
 const JOB_ORDER = ["ranger", "arcanist", "warden", "assassin", "priest", "alchemist"]
 const ROUTES = ["town-wall", "town-drain", "town-trial"]
@@ -55,6 +56,8 @@ func _init():
 	# Legacy building route tables are retired; all consumers use the entrance catalog.
 	raw.entrances={}; narrative.entrances={}
 	regions=RegionCatalog.all()
+	for id in regions.city.get("npcPositions",{}):
+		if raw.npcs.has(id): raw.npcs[id].position={"x":regions.city.npcPositions[id][0],"y":regions.city.npcPositions[id][1]}
 	for id in raw.formations:
 		raw.formations[id].desc=BattleRules.config().formations[id].desc
 	for id in raw.skills: skills[id] = SkillDefinition.from_data(id, raw.skills[id])
@@ -70,6 +73,25 @@ func _init():
 		var d=progression.ultimates[id]
 		var enemy={"name":d.title+" · 回响","art":d.art,"hp":320,"atk":18,"def":5,"speed":10,"slot":0,"elite":true,"weakness":[d.element],"role":"caster" if id in ["mira","alchemist"] else "guard" if id=="toren" else "fighter"}
 		encounters["awakening-"+id]=EncounterDefinition.from_data("awakening-"+id,{"title":d.title+" · 觉醒试炼","route":"town-trial","enemies":[enemy],"xp":0,"gold":0})
+
+	_install_town_design()
+
+func _install_town_design():
+	town_design=JSON.parse_string(FileAccess.get_file_as_string("res://data/town-design.json"))
+	for geometry in town_design.buildings:
+		for building in raw.buildings:
+			if building.id!=geometry.id: continue
+			for key in ["x","y","w","d","entry"]: building[key]=geometry[key]
+			var art=raw.art.buildings[building.id]
+			art.path=geometry.art; art.anchor=geometry.anchor
+			art.display_width=310.0 if building.id=="clocktower" else float(building.w+building.d)*58.0
+	for id in town_design.npcs:
+		if raw.npcs.has(id): raw.npcs[id].position={"x":town_design.npcs[id][0],"y":town_design.npcs[id][1]}
+	for group in ["animals","resources","objects","entrances"]:
+		for item in world_interactions[group]:
+			if town_design.points.has(item.id): item.point=town_design.points[item.id].duplicate()
+	raw.terrain=town_design.terrain
+	raw.layout.water=[]
 
 func building(id: String) -> Dictionary:
 	for b in narrative.buildings:

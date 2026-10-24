@@ -4,6 +4,7 @@ extends RefCounted
 static var catalog: Dictionary={}
 
 static func path(db: GameContent, id: String) -> String:
+	if id in ["potion","tonic","revive","supply"]: return "res://assets/starlit-town/"+id+".webp"
 	var equipment=db.art("equipment",id)
 	if equipment!="" and ResourceLoader.exists(equipment): return equipment
 	if catalog.is_empty(): catalog=JSON.parse_string(FileAccess.get_file_as_string("res://data/item-icons.json"))

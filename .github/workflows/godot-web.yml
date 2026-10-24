@@ -3,6 +3,8 @@ name: Godot Web
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -64,14 +66,16 @@ jobs:
       - name: Import and run native regression tests
         run: node tools/godot.cjs test
 
-      - name: Export the complete Web game
-        run: node tools/godot.cjs build-web
-
       - name: Install pinned browser verification tools
         timeout-minutes: 5
         shell: bash
         run: |
           npm install --prefix artifacts/web-test-deps --no-save --package-lock=false --ignore-scripts --fetch-timeout=60000 --fetch-retries=2 "playwright@${PLAYWRIGHT_VERSION}" sharp@0.35.5
+
+      - name: Export the complete Web game
+        env:
+          NODE_PATH: ${{ github.workspace }}/artifacts/web-test-deps/node_modules
+        run: node tools/godot.cjs build-web
 
       - name: Verify the Web game in Chrome
         env:
@@ -79,6 +83,7 @@ jobs:
         run: |
           google-chrome --version
           node tools/verify-godot-web.cjs --browser chrome
+          node tools/verify-loading-web.cjs
 
       - name: Configure GitHub Pages
         if: github.ref == 'refs/heads/main'

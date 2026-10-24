@@ -8,7 +8,11 @@ static var terrain_cells=PackedByteArray()
 static var region_cells: Dictionary = {}
 
 static func config() -> Dictionary:
-	if data.is_empty(): data=JSON.parse_string(FileAccess.get_file_as_string("res://data/presentation.json"))
+	if data.is_empty():
+		data=JSON.parse_string(FileAccess.get_file_as_string("res://data/presentation.json"))
+		var town=JSON.parse_string(FileAccess.get_file_as_string("res://data/town-design.json"))
+		data.decor=town.decor
+		data.mapBounds.town=town.bounds
 	return data
 
 static func texture(path: String) -> Texture2D:

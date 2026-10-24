@@ -1,0 +1,4772 @@
+{
+  "buildings": [
+    {
+      "id": "city-gate-0",
+      "name": "城门署",
+      "description": "门楼下的驿铃与旅人的脚步声交织。 城门署的门牌与沿街陈设记录着这里的生活。",
+      "x": 5,
+      "y": 50,
+      "w": 4,
+      "d": 3,
+      "district": "gate",
+      "entry": [
+        7,
+        54.4
+      ],
+      "art": "res://assets/regions/buildings/gate.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-gate-1",
+      "name": "归灯驿站",
+      "description": "门楼下的驿铃与旅人的脚步声交织。 归灯驿站的门牌与沿街陈设记录着这里的生活。",
+      "x": 23,
+      "y": 50,
+      "w": 4,
+      "d": 3,
+      "district": "gate",
+      "entry": [
+        25,
+        54.4
+      ],
+      "art": "res://assets/regions/buildings/guild.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-gate-2",
+      "name": "夜铃旅店",
+      "description": "门楼下的驿铃与旅人的脚步声交织。 夜铃旅店的门牌与沿街陈设记录着这里的生活。",
+      "x": 5,
+      "y": 56,
+      "w": 4,
+      "d": 3,
+      "district": "gate",
+      "entry": [
+        10.4,
+        58.7
+      ],
+      "art": "res://assets/regions/buildings/inn.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-gate-3",
+      "name": "南门马厩",
+      "description": "门楼下的驿铃与旅人的脚步声交织。 南门马厩的门牌与沿街陈设记录着这里的生活。",
+      "x": 23,
+      "y": 56,
+      "w": 4,
+      "d": 3,
+      "district": "gate",
+      "entry": [
+        21.6,
+        58.7
+      ],
+      "art": "res://assets/regions/buildings/stable.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-gate-4",
+      "name": "邮递所",
+      "description": "门楼下的驿铃与旅人的脚步声交织。 邮递所的门牌与沿街陈设记录着这里的生活。",
+      "x": 5,
+      "y": 60.5,
+      "w": 4,
+      "d": 3,
+      "district": "gate",
+      "entry": [
+        7,
+        64.9
+      ],
+      "art": "res://assets/regions/buildings/shop.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-gate-5",
+      "name": "路灯工房",
+      "description": "门楼下的驿铃与旅人的脚步声交织。 路灯工房的门牌与沿街陈设记录着这里的生活。",
+      "x": 25,
+      "y": 60.5,
+      "w": 4,
+      "d": 3,
+      "district": "gate",
+      "entry": [
+        27,
+        64.9
+      ],
+      "art": "res://assets/regions/buildings/forge.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-market-0",
+      "name": "金穗商行",
+      "description": "彩篷、货架与喷泉围绕着每日开市的广场。 金穗商行的门牌与沿街陈设记录着这里的生活。",
+      "x": 35,
+      "y": 50,
+      "w": 4,
+      "d": 3,
+      "district": "market",
+      "entry": [
+        37,
+        54.4
+      ],
+      "art": "res://assets/regions/buildings/shop.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-market-1",
+      "name": "香料铺",
+      "description": "彩篷、货架与喷泉围绕着每日开市的广场。 香料铺的门牌与沿街陈设记录着这里的生活。",
+      "x": 53,
+      "y": 50,
+      "w": 4,
+      "d": 3,
+      "district": "market",
+      "entry": [
+        55,
+        54.4
+      ],
+      "art": "res://assets/regions/buildings/shop.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-market-2",
+      "name": "晴窗药房",
+      "description": "彩篷、货架与喷泉围绕着每日开市的广场。 晴窗药房的门牌与沿街陈设记录着这里的生活。",
+      "x": 35,
+      "y": 56,
+      "w": 4,
+      "d": 3,
+      "district": "market",
+      "entry": [
+        40.4,
+        58.7
+      ],
+      "art": "res://assets/regions/buildings/alchemy.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-market-3",
+      "name": "灯鱼杂货",
+      "description": "彩篷、货架与喷泉围绕着每日开市的广场。 灯鱼杂货的门牌与沿街陈设记录着这里的生活。",
+      "x": 53,
+      "y": 56,
+      "w": 4,
+      "d": 3,
+      "district": "market",
+      "entry": [
+        51.6,
+        58.7
+      ],
+      "art": "res://assets/regions/buildings/shop.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-market-4",
+      "name": "铜秤会馆",
+      "description": "彩篷、货架与喷泉围绕着每日开市的广场。 铜秤会馆的门牌与沿街陈设记录着这里的生活。",
+      "x": 35,
+      "y": 60.5,
+      "w": 4,
+      "d": 3,
+      "district": "market",
+      "entry": [
+        37,
+        64.9
+      ],
+      "art": "res://assets/regions/buildings/guild.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-market-5",
+      "name": "织彩布庄",
+      "description": "彩篷、货架与喷泉围绕着每日开市的广场。 织彩布庄的门牌与沿街陈设记录着这里的生活。",
+      "x": 53,
+      "y": 60.5,
+      "w": 4,
+      "d": 3,
+      "district": "market",
+      "entry": [
+        55,
+        64.9
+      ],
+      "art": "res://assets/regions/buildings/town.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-market-6",
+      "name": "晨露花店",
+      "description": "彩篷、货架与喷泉围绕着每日开市的广场。 晨露花店的门牌与沿街陈设记录着这里的生活。",
+      "x": 40.5,
+      "y": 50,
+      "w": 4,
+      "d": 3,
+      "district": "market",
+      "entry": [
+        42.5,
+        54.4
+      ],
+      "art": "res://assets/regions/buildings/farm.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-craft-0",
+      "name": "蓝火锻坊",
+      "description": "炉烟越过蓝瓦，巷口传来织机与刻刀的声音。 蓝火锻坊的门牌与沿街陈设记录着这里的生活。",
+      "x": 5,
+      "y": 26,
+      "w": 4,
+      "d": 3,
+      "district": "craft",
+      "entry": [
+        10.4,
+        28.7
+      ],
+      "art": "res://assets/regions/buildings/forge.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-craft-1",
+      "name": "经纬织坊",
+      "description": "炉烟越过蓝瓦，巷口传来织机与刻刀的声音。 经纬织坊的门牌与沿街陈设记录着这里的生活。",
+      "x": 23,
+      "y": 26,
+      "w": 4,
+      "d": 3,
+      "district": "craft",
+      "entry": [
+        21.6,
+        28.7
+      ],
+      "art": "res://assets/regions/buildings/town.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-craft-2",
+      "name": "白泥陶坊",
+      "description": "炉烟越过蓝瓦，巷口传来织机与刻刀的声音。 白泥陶坊的门牌与沿街陈设记录着这里的生活。",
+      "x": 5,
+      "y": 31,
+      "w": 4,
+      "d": 3,
+      "district": "craft",
+      "entry": [
+        10.4,
+        33.7
+      ],
+      "art": "res://assets/regions/buildings/shop.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-craft-3",
+      "name": "香杉木工铺",
+      "description": "炉烟越过蓝瓦，巷口传来织机与刻刀的声音。 香杉木工铺的门牌与沿街陈设记录着这里的生活。",
+      "x": 23,
+      "y": 31,
+      "w": 4,
+      "d": 3,
+      "district": "craft",
+      "entry": [
+        21.6,
+        33.7
+      ],
+      "art": "res://assets/regions/buildings/town.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-craft-4",
+      "name": "钟匠小楼",
+      "description": "炉烟越过蓝瓦，巷口传来织机与刻刀的声音。 钟匠小楼的门牌与沿街陈设记录着这里的生活。",
+      "x": 5,
+      "y": 35.5,
+      "w": 4,
+      "d": 3,
+      "district": "craft",
+      "entry": [
+        7,
+        39.9
+      ],
+      "art": "res://assets/regions/buildings/academy.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-craft-5",
+      "name": "修伞铺",
+      "description": "炉烟越过蓝瓦，巷口传来织机与刻刀的声音。 修伞铺的门牌与沿街陈设记录着这里的生活。",
+      "x": 25,
+      "y": 35.5,
+      "w": 4,
+      "d": 3,
+      "district": "craft",
+      "entry": [
+        27,
+        39.9
+      ],
+      "art": "res://assets/regions/buildings/shop.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-academy-0",
+      "name": "归灯书院",
+      "description": "长廊连接书院与星台，读书声随窗影移动。 归灯书院的门牌与沿街陈设记录着这里的生活。",
+      "x": 70,
+      "y": 3,
+      "w": 4,
+      "d": 3,
+      "district": "academy",
+      "entry": [
+        75.4,
+        5.7
+      ],
+      "art": "res://assets/regions/buildings/academy.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-academy-1",
+      "name": "星路图书馆",
+      "description": "长廊连接书院与星台，读书声随窗影移动。 星路图书馆的门牌与沿街陈设记录着这里的生活。",
+      "x": 86,
+      "y": 3,
+      "w": 4,
+      "d": 3,
+      "district": "academy",
+      "entry": [
+        84.6,
+        5.7
+      ],
+      "art": "res://assets/regions/buildings/academy.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-academy-2",
+      "name": "青墨书店",
+      "description": "长廊连接书院与星台，读书声随窗影移动。 青墨书店的门牌与沿街陈设记录着这里的生活。",
+      "x": 70,
+      "y": 8.7,
+      "w": 4,
+      "d": 3,
+      "district": "academy",
+      "entry": [
+        75.4,
+        11.399999999999999
+      ],
+      "art": "res://assets/regions/buildings/shop.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-academy-3",
+      "name": "天球塔",
+      "description": "长廊连接书院与星台，读书声随窗影移动。 天球塔的门牌与沿街陈设记录着这里的生活。",
+      "x": 86,
+      "y": 8.7,
+      "w": 4,
+      "d": 3,
+      "district": "academy",
+      "entry": [
+        84.6,
+        11.399999999999999
+      ],
+      "art": "res://assets/regions/buildings/sky-city.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-academy-4",
+      "name": "译文馆",
+      "description": "长廊连接书院与星台，读书声随窗影移动。 译文馆的门牌与沿街陈设记录着这里的生活。",
+      "x": 70,
+      "y": 12.5,
+      "w": 4,
+      "d": 3,
+      "district": "academy",
+      "entry": [
+        72,
+        16.9
+      ],
+      "art": "res://assets/regions/buildings/guild.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-academy-5",
+      "name": "学舍",
+      "description": "长廊连接书院与星台，读书声随窗影移动。 学舍的门牌与沿街陈设记录着这里的生活。",
+      "x": 86,
+      "y": 12.5,
+      "w": 4,
+      "d": 3,
+      "district": "academy",
+      "entry": [
+        88,
+        16.9
+      ],
+      "art": "res://assets/regions/buildings/inn.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-palace-0",
+      "name": "归灯宫",
+      "description": "王宫的公共庭院重新开放，旧王朝的名字留在廊柱间。 归灯宫的门牌与沿街陈设记录着这里的生活。",
+      "x": 35,
+      "y": 3,
+      "w": 6,
+      "d": 4,
+      "district": "palace",
+      "entry": [
+        38,
+        8.4
+      ],
+      "art": "res://assets/regions/buildings/castle.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 520
+    },
+    {
+      "id": "city-palace-1",
+      "name": "议事长厅",
+      "description": "王宫的公共庭院重新开放，旧王朝的名字留在廊柱间。 议事长厅的门牌与沿街陈设记录着这里的生活。",
+      "x": 51.6,
+      "y": 3,
+      "w": 6,
+      "d": 4,
+      "district": "palace",
+      "entry": [
+        54.6,
+        8.4
+      ],
+      "art": "res://assets/regions/buildings/castle.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 520
+    },
+    {
+      "id": "city-palace-2",
+      "name": "王室档案馆",
+      "description": "王宫的公共庭院重新开放，旧王朝的名字留在廊柱间。 王室档案馆的门牌与沿街陈设记录着这里的生活。",
+      "x": 35,
+      "y": 10,
+      "w": 4,
+      "d": 3,
+      "district": "palace",
+      "entry": [
+        37,
+        14.4
+      ],
+      "art": "res://assets/regions/buildings/academy.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-palace-3",
+      "name": "近卫馆",
+      "description": "王宫的公共庭院重新开放，旧王朝的名字留在廊柱间。 近卫馆的门牌与沿街陈设记录着这里的生活。",
+      "x": 53,
+      "y": 10,
+      "w": 4,
+      "d": 3,
+      "district": "palace",
+      "entry": [
+        55,
+        14.4
+      ],
+      "art": "res://assets/regions/buildings/barracks.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-palace-4",
+      "name": "银印礼宾馆",
+      "description": "王宫的公共庭院重新开放，旧王朝的名字留在廊柱间。 银印礼宾馆的门牌与沿街陈设记录着这里的生活。",
+      "x": 39,
+      "y": 23,
+      "w": 4,
+      "d": 3,
+      "district": "palace",
+      "entry": [
+        41,
+        27.4
+      ],
+      "art": "res://assets/regions/buildings/guild.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-harbor-0",
+      "name": "石帆船务所",
+      "description": "河渠沿仓栈流过，桥边船夫给旅人指认每一处码头。 石帆船务所的门牌与沿街陈设记录着这里的生活。",
+      "x": 70,
+      "y": 50,
+      "w": 4,
+      "d": 3,
+      "district": "harbor",
+      "entry": [
+        72,
+        54.4
+      ],
+      "art": "res://assets/regions/buildings/harbor.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-harbor-1",
+      "name": "河岸商馆",
+      "description": "河渠沿仓栈流过，桥边船夫给旅人指认每一处码头。 河岸商馆的门牌与沿街陈设记录着这里的生活。",
+      "x": 86,
+      "y": 50,
+      "w": 4,
+      "d": 3,
+      "district": "harbor",
+      "entry": [
+        88,
+        54.4
+      ],
+      "art": "res://assets/regions/buildings/shop.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-harbor-2",
+      "name": "北流货栈",
+      "description": "河渠沿仓栈流过，桥边船夫给旅人指认每一处码头。 北流货栈的门牌与沿街陈设记录着这里的生活。",
+      "x": 70,
+      "y": 56,
+      "w": 4,
+      "d": 3,
+      "district": "harbor",
+      "entry": [
+        75.4,
+        58.7
+      ],
+      "art": "res://assets/regions/buildings/harbor.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-harbor-3",
+      "name": "帆绳作坊",
+      "description": "河渠沿仓栈流过，桥边船夫给旅人指认每一处码头。 帆绳作坊的门牌与沿街陈设记录着这里的生活。",
+      "x": 86,
+      "y": 56,
+      "w": 4,
+      "d": 3,
+      "district": "harbor",
+      "entry": [
+        84.6,
+        58.7
+      ],
+      "art": "res://assets/regions/buildings/town.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-harbor-4",
+      "name": "渡口茶棚",
+      "description": "河渠沿仓栈流过，桥边船夫给旅人指认每一处码头。 渡口茶棚的门牌与沿街陈设记录着这里的生活。",
+      "x": 70,
+      "y": 60.5,
+      "w": 4,
+      "d": 3,
+      "district": "harbor",
+      "entry": [
+        72,
+        64.9
+      ],
+      "art": "res://assets/regions/buildings/inn.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-harbor-5",
+      "name": "水闸值房",
+      "description": "河渠沿仓栈流过，桥边船夫给旅人指认每一处码头。 水闸值房的门牌与沿街陈设记录着这里的生活。",
+      "x": 86,
+      "y": 60.5,
+      "w": 4,
+      "d": 3,
+      "district": "harbor",
+      "entry": [
+        88,
+        64.9
+      ],
+      "art": "res://assets/regions/buildings/gate.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-faith-0",
+      "name": "灯誓礼拜堂",
+      "description": "礼拜堂的长窗映着金光，施药院不问来者的身份。 灯誓礼拜堂的门牌与沿街陈设记录着这里的生活。",
+      "x": 5,
+      "y": 3,
+      "w": 4,
+      "d": 3,
+      "district": "faith",
+      "entry": [
+        10.4,
+        5.7
+      ],
+      "art": "res://assets/regions/buildings/church.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-faith-1",
+      "name": "施药院",
+      "description": "礼拜堂的长窗映着金光，施药院不问来者的身份。 施药院的门牌与沿街陈设记录着这里的生活。",
+      "x": 23,
+      "y": 3,
+      "w": 4,
+      "d": 3,
+      "district": "faith",
+      "entry": [
+        21.6,
+        5.7
+      ],
+      "art": "res://assets/regions/buildings/alchemy.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-faith-2",
+      "name": "静钟楼",
+      "description": "礼拜堂的长窗映着金光，施药院不问来者的身份。 静钟楼的门牌与沿街陈设记录着这里的生活。",
+      "x": 5,
+      "y": 8.7,
+      "w": 4,
+      "d": 3,
+      "district": "faith",
+      "entry": [
+        10.4,
+        11.399999999999999
+      ],
+      "art": "res://assets/regions/buildings/church.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-faith-3",
+      "name": "守灯会馆",
+      "description": "礼拜堂的长窗映着金光，施药院不问来者的身份。 守灯会馆的门牌与沿街陈设记录着这里的生活。",
+      "x": 23,
+      "y": 8.7,
+      "w": 4,
+      "d": 3,
+      "district": "faith",
+      "entry": [
+        25,
+        13.1
+      ],
+      "art": "res://assets/regions/buildings/guild.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-faith-4",
+      "name": "白烛工房",
+      "description": "礼拜堂的长窗映着金光，施药院不问来者的身份。 白烛工房的门牌与沿街陈设记录着这里的生活。",
+      "x": 5,
+      "y": 12.5,
+      "w": 4,
+      "d": 3,
+      "district": "faith",
+      "entry": [
+        7,
+        16.9
+      ],
+      "art": "res://assets/regions/buildings/shop.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-oldtown-0",
+      "name": "巷尾面包房",
+      "description": "晾衣绳横过石巷，邻居在井台和烤炉旁分享日常。 巷尾面包房的门牌与沿街陈设记录着这里的生活。",
+      "x": 35,
+      "y": 27,
+      "w": 4,
+      "d": 3,
+      "district": "oldtown",
+      "entry": [
+        40.4,
+        29.7
+      ],
+      "art": "res://assets/regions/buildings/shop.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-oldtown-1",
+      "name": "旧城会馆",
+      "description": "晾衣绳横过石巷，邻居在井台和烤炉旁分享日常。 旧城会馆的门牌与沿街陈设记录着这里的生活。",
+      "x": 53,
+      "y": 27,
+      "w": 4,
+      "d": 3,
+      "district": "oldtown",
+      "entry": [
+        51.6,
+        29.7
+      ],
+      "art": "res://assets/regions/buildings/town.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-oldtown-2",
+      "name": "青石洗衣院",
+      "description": "晾衣绳横过石巷，邻居在井台和烤炉旁分享日常。 青石洗衣院的门牌与沿街陈设记录着这里的生活。",
+      "x": 35,
+      "y": 31.5,
+      "w": 4,
+      "d": 3,
+      "district": "oldtown",
+      "entry": [
+        40.4,
+        34.2
+      ],
+      "art": "res://assets/regions/buildings/town.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-oldtown-3",
+      "name": "柳窗民居",
+      "description": "晾衣绳横过石巷，邻居在井台和烤炉旁分享日常。 柳窗民居的门牌与沿街陈设记录着这里的生活。",
+      "x": 53,
+      "y": 31.5,
+      "w": 4,
+      "d": 3,
+      "district": "oldtown",
+      "entry": [
+        51.6,
+        34.2
+      ],
+      "art": "res://assets/regions/buildings/town.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-oldtown-4",
+      "name": "桥影民居",
+      "description": "晾衣绳横过石巷，邻居在井台和烤炉旁分享日常。 桥影民居的门牌与沿街陈设记录着这里的生活。",
+      "x": 35,
+      "y": 35.5,
+      "w": 4,
+      "d": 3,
+      "district": "oldtown",
+      "entry": [
+        37,
+        39.9
+      ],
+      "art": "res://assets/regions/buildings/town.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-oldtown-5",
+      "name": "针线小铺",
+      "description": "晾衣绳横过石巷，邻居在井台和烤炉旁分享日常。 针线小铺的门牌与沿街陈设记录着这里的生活。",
+      "x": 53,
+      "y": 35.5,
+      "w": 4,
+      "d": 3,
+      "district": "oldtown",
+      "entry": [
+        55,
+        39.9
+      ],
+      "art": "res://assets/regions/buildings/shop.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-garden-0",
+      "name": "玻璃温室",
+      "description": "水榭、温室与茶屋之间，园丁照看着每一段安静的路。 玻璃温室的门牌与沿街陈设记录着这里的生活。",
+      "x": 70,
+      "y": 27,
+      "w": 4,
+      "d": 3,
+      "district": "garden",
+      "entry": [
+        75.4,
+        29.7
+      ],
+      "art": "res://assets/regions/buildings/farm.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-garden-1",
+      "name": "翠庭茶屋",
+      "description": "水榭、温室与茶屋之间，园丁照看着每一段安静的路。 翠庭茶屋的门牌与沿街陈设记录着这里的生活。",
+      "x": 86,
+      "y": 26,
+      "w": 4,
+      "d": 3,
+      "district": "garden",
+      "entry": [
+        88,
+        30.4
+      ],
+      "art": "res://assets/regions/buildings/inn.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-garden-2",
+      "name": "园丁屋",
+      "description": "水榭、温室与茶屋之间，园丁照看着每一段安静的路。 园丁屋的门牌与沿街陈设记录着这里的生活。",
+      "x": 70,
+      "y": 31,
+      "w": 4,
+      "d": 3,
+      "district": "garden",
+      "entry": [
+        75.4,
+        33.7
+      ],
+      "art": "res://assets/regions/buildings/farm.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-garden-3",
+      "name": "水镜亭",
+      "description": "水榭、温室与茶屋之间，园丁照看着每一段安静的路。 水镜亭的门牌与沿街陈设记录着这里的生活。",
+      "x": 86,
+      "y": 32,
+      "w": 4,
+      "d": 3,
+      "district": "garden",
+      "entry": [
+        88,
+        36.4
+      ],
+      "art": "res://assets/regions/buildings/academy.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    },
+    {
+      "id": "city-garden-4",
+      "name": "花谱馆",
+      "description": "水榭、温室与茶屋之间，园丁照看着每一段安静的路。 花谱馆的门牌与沿街陈设记录着这里的生活。",
+      "x": 70,
+      "y": 35.5,
+      "w": 4,
+      "d": 3,
+      "district": "garden",
+      "entry": [
+        72,
+        39.9
+      ],
+      "art": "res://assets/regions/buildings/academy.webp",
+      "anchor": [
+        0.5,
+        0.95
+      ],
+      "display_width": 364
+    }
+  ],
+  "roads": [
+    {
+      "points": [
+        [
+          48,
+          4
+        ],
+        [
+          48,
+          69
+        ]
+      ],
+      "width": 6,
+      "kind": "main"
+    },
+    {
+      "points": [
+        [
+          3,
+          42
+        ],
+        [
+          92,
+          42
+        ]
+      ],
+      "width": 6,
+      "kind": "main"
+    },
+    {
+      "points": [
+        [
+          16,
+          3
+        ],
+        [
+          16,
+          69
+        ]
+      ],
+      "width": 4,
+      "kind": "street"
+    },
+    {
+      "points": [
+        [
+          80,
+          3
+        ],
+        [
+          80,
+          69
+        ]
+      ],
+      "width": 4,
+      "kind": "street"
+    },
+    {
+      "points": [
+        [
+          3,
+          18
+        ],
+        [
+          92,
+          18
+        ]
+      ],
+      "width": 4,
+      "kind": "street"
+    },
+    {
+      "points": [
+        [
+          3,
+          66
+        ],
+        [
+          92,
+          66
+        ]
+      ],
+      "width": 4,
+      "kind": "street"
+    },
+    {
+      "points": [
+        [
+          59,
+          3
+        ],
+        [
+          59,
+          69
+        ]
+      ],
+      "width": 2,
+      "kind": "riverside"
+    },
+    {
+      "points": [
+        [
+          67,
+          3
+        ],
+        [
+          67,
+          69
+        ]
+      ],
+      "width": 2,
+      "kind": "riverside"
+    },
+    {
+      "points": [
+        [
+          58,
+          18
+        ],
+        [
+          68,
+          18
+        ]
+      ],
+      "width": 4,
+      "kind": "bridge"
+    },
+    {
+      "points": [
+        [
+          58,
+          42
+        ],
+        [
+          68,
+          42
+        ]
+      ],
+      "width": 6,
+      "kind": "bridge"
+    },
+    {
+      "points": [
+        [
+          58,
+          66
+        ],
+        [
+          68,
+          66
+        ]
+      ],
+      "width": 4,
+      "kind": "bridge"
+    },
+    {
+      "points": [
+        [
+          7,
+          54.4
+        ],
+        [
+          16,
+          54.4
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          25,
+          54.4
+        ],
+        [
+          16,
+          54.4
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          10.4,
+          58.7
+        ],
+        [
+          16,
+          58.7
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          21.6,
+          58.7
+        ],
+        [
+          16,
+          58.7
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          7,
+          64.9
+        ],
+        [
+          7,
+          66
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          27,
+          64.9
+        ],
+        [
+          27,
+          66
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          37,
+          54.4
+        ],
+        [
+          48,
+          54.4
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          55,
+          54.4
+        ],
+        [
+          59,
+          54.4
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          40.4,
+          58.7
+        ],
+        [
+          40.4,
+          66
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          51.6,
+          58.7
+        ],
+        [
+          48,
+          58.7
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          37,
+          64.9
+        ],
+        [
+          37,
+          66
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          55,
+          64.9
+        ],
+        [
+          55,
+          66
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          42.5,
+          54.4
+        ],
+        [
+          48,
+          54.4
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          10.4,
+          28.7
+        ],
+        [
+          16,
+          28.7
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          21.6,
+          28.7
+        ],
+        [
+          16,
+          28.7
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          10.4,
+          33.7
+        ],
+        [
+          16,
+          33.7
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          21.6,
+          33.7
+        ],
+        [
+          16,
+          33.7
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          7,
+          39.9
+        ],
+        [
+          7,
+          42
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          27,
+          39.9
+        ],
+        [
+          27,
+          42
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          75.4,
+          5.7
+        ],
+        [
+          80,
+          5.7
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          84.6,
+          5.7
+        ],
+        [
+          80,
+          5.7
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          75.4,
+          11.399999999999999
+        ],
+        [
+          80,
+          11.399999999999999
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          84.6,
+          11.399999999999999
+        ],
+        [
+          80,
+          11.399999999999999
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          72,
+          16.9
+        ],
+        [
+          72,
+          18
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          88,
+          16.9
+        ],
+        [
+          88,
+          18
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          38,
+          8.4
+        ],
+        [
+          48,
+          8.4
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          54.6,
+          8.4
+        ],
+        [
+          59,
+          8.4
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          37,
+          14.4
+        ],
+        [
+          37,
+          18
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          55,
+          14.4
+        ],
+        [
+          55,
+          18
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          41,
+          27.4
+        ],
+        [
+          48,
+          27.4
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          72,
+          54.4
+        ],
+        [
+          67,
+          54.4
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          88,
+          54.4
+        ],
+        [
+          80,
+          54.4
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          75.4,
+          58.7
+        ],
+        [
+          80,
+          58.7
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          84.6,
+          58.7
+        ],
+        [
+          80,
+          58.7
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          72,
+          64.9
+        ],
+        [
+          72,
+          66
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          88,
+          64.9
+        ],
+        [
+          88,
+          66
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          10.4,
+          5.7
+        ],
+        [
+          16,
+          5.7
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          21.6,
+          5.7
+        ],
+        [
+          16,
+          5.7
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          10.4,
+          11.399999999999999
+        ],
+        [
+          16,
+          11.399999999999999
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          25,
+          13.1
+        ],
+        [
+          25,
+          18
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          7,
+          16.9
+        ],
+        [
+          7,
+          18
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          40.4,
+          29.7
+        ],
+        [
+          48,
+          29.7
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          51.6,
+          29.7
+        ],
+        [
+          48,
+          29.7
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          40.4,
+          34.2
+        ],
+        [
+          48,
+          34.2
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          51.6,
+          34.2
+        ],
+        [
+          48,
+          34.2
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          37,
+          39.9
+        ],
+        [
+          37,
+          42
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          55,
+          39.9
+        ],
+        [
+          55,
+          42
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          75.4,
+          29.7
+        ],
+        [
+          80,
+          29.7
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          88,
+          30.4
+        ],
+        [
+          80,
+          30.4
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          75.4,
+          33.7
+        ],
+        [
+          80,
+          33.7
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          88,
+          36.4
+        ],
+        [
+          88,
+          42
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    },
+    {
+      "points": [
+        [
+          72,
+          39.9
+        ],
+        [
+          72,
+          42
+        ]
+      ],
+      "width": 2,
+      "kind": "alley"
+    }
+  ],
+  "plazas": [
+    {
+      "x": 48,
+      "y": 42,
+      "w": 14,
+      "d": 6
+    },
+    {
+      "x": 48,
+      "y": 18,
+      "w": 10,
+      "d": 7
+    },
+    {
+      "x": 16,
+      "y": 66,
+      "w": 9,
+      "d": 6
+    },
+    {
+      "x": 80,
+      "y": 42,
+      "w": 10,
+      "d": 8
+    }
+  ],
+  "decor": [
+    {
+      "point": [
+        4.1,
+        53.3
+      ],
+      "asset": "res://assets/regions/environment/royal-09-flower-urn.webp",
+      "width": 30,
+      "tall": false,
+      "style": "flowers",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        9.9,
+        50.7
+      ],
+      "asset": "res://assets/regions/environment/royal-11-banner.webp",
+      "width": 36,
+      "tall": true,
+      "style": "banner",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        28,
+        53.3
+      ],
+      "asset": "res://assets/regions/environment/royal-10-lamp.webp",
+      "width": 29,
+      "tall": true,
+      "style": "lamp",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.3,
+        0.3
+      ]
+    },
+    {
+      "point": [
+        27.9,
+        50.7
+      ],
+      "asset": "res://assets/regions/environment/royal-11-banner.webp",
+      "width": 36,
+      "tall": true,
+      "style": "banner",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        4.1,
+        59.3
+      ],
+      "asset": "res://assets/regions/environment/royal-09-flower-urn.webp",
+      "width": 30,
+      "tall": false,
+      "style": "flowers",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        9.9,
+        56.7
+      ],
+      "asset": "res://assets/regions/environment/royal-11-banner.webp",
+      "width": 36,
+      "tall": true,
+      "style": "banner",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        28,
+        59.3
+      ],
+      "asset": "res://assets/regions/environment/royal-10-lamp.webp",
+      "width": 29,
+      "tall": true,
+      "style": "lamp",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.3,
+        0.3
+      ]
+    },
+    {
+      "point": [
+        27.9,
+        56.7
+      ],
+      "asset": "res://assets/regions/environment/royal-11-banner.webp",
+      "width": 36,
+      "tall": true,
+      "style": "banner",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        9.9,
+        61.2
+      ],
+      "asset": "res://assets/regions/environment/royal-11-banner.webp",
+      "width": 36,
+      "tall": true,
+      "style": "banner",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        29.9,
+        61.2
+      ],
+      "asset": "res://assets/regions/environment/royal-11-banner.webp",
+      "width": 36,
+      "tall": true,
+      "style": "banner",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        12,
+        62
+      ],
+      "asset": "res://assets/regions/environment/royal-07-tree.webp",
+      "width": 135,
+      "tall": true,
+      "style": "tree",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "point": [
+        20,
+        61
+      ],
+      "asset": "res://assets/regions/environment/royal-07-tree.webp",
+      "width": 135,
+      "tall": true,
+      "style": "tree",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "point": [
+        34.1,
+        53.3
+      ],
+      "asset": "res://assets/regions/environment/royal-09-flower-urn.webp",
+      "width": 30,
+      "tall": false,
+      "style": "flowers",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        33.8,
+        51.5
+      ],
+      "asset": "res://assets/regions/environment/forest-12-barrels.webp",
+      "width": 62,
+      "tall": false,
+      "style": "supplies",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.45,
+        0.35
+      ]
+    },
+    {
+      "point": [
+        52.1,
+        53.3
+      ],
+      "asset": "res://assets/regions/environment/royal-09-flower-urn.webp",
+      "width": 30,
+      "tall": false,
+      "style": "flowers",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        51.8,
+        51.5
+      ],
+      "asset": "res://assets/regions/environment/forest-12-barrels.webp",
+      "width": 62,
+      "tall": false,
+      "style": "supplies",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.45,
+        0.35
+      ]
+    },
+    {
+      "point": [
+        34.1,
+        59.3
+      ],
+      "asset": "res://assets/regions/environment/royal-09-flower-urn.webp",
+      "width": 30,
+      "tall": false,
+      "style": "flowers",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        39.9,
+        56.7
+      ],
+      "asset": "res://assets/regions/environment/royal-11-banner.webp",
+      "width": 36,
+      "tall": true,
+      "style": "banner",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        33.8,
+        57.5
+      ],
+      "asset": "res://assets/regions/environment/forest-12-barrels.webp",
+      "width": 62,
+      "tall": false,
+      "style": "supplies",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.45,
+        0.35
+      ]
+    },
+    {
+      "point": [
+        33.8,
+        62
+      ],
+      "asset": "res://assets/regions/environment/forest-12-barrels.webp",
+      "width": 62,
+      "tall": false,
+      "style": "supplies",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.45,
+        0.35
+      ]
+    },
+    {
+      "point": [
+        51.8,
+        62
+      ],
+      "asset": "res://assets/regions/environment/forest-12-barrels.webp",
+      "width": 62,
+      "tall": false,
+      "style": "supplies",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.45,
+        0.35
+      ]
+    },
+    {
+      "point": [
+        44,
+        62
+      ],
+      "asset": "res://assets/regions/environment/royal-07-tree.webp",
+      "width": 135,
+      "tall": true,
+      "style": "tree",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "point": [
+        4.1,
+        29.3
+      ],
+      "asset": "res://assets/regions/environment/royal-09-flower-urn.webp",
+      "width": 30,
+      "tall": false,
+      "style": "flowers",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        9.9,
+        26.7
+      ],
+      "asset": "res://assets/regions/environment/royal-11-banner.webp",
+      "width": 36,
+      "tall": true,
+      "style": "banner",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        3.8,
+        27.5
+      ],
+      "asset": "res://assets/regions/environment/forest-12-barrels.webp",
+      "width": 62,
+      "tall": false,
+      "style": "supplies",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.45,
+        0.35
+      ]
+    },
+    {
+      "point": [
+        28,
+        29.3
+      ],
+      "asset": "res://assets/regions/environment/royal-10-lamp.webp",
+      "width": 29,
+      "tall": true,
+      "style": "lamp",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.3,
+        0.3
+      ]
+    },
+    {
+      "point": [
+        28.5,
+        27
+      ],
+      "asset": "res://assets/starlit-town/stall.webp",
+      "width": 100,
+      "tall": false,
+      "style": "stall",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.65,
+        0.55
+      ]
+    },
+    {
+      "point": [
+        4.1,
+        34.3
+      ],
+      "asset": "res://assets/regions/environment/royal-09-flower-urn.webp",
+      "width": 30,
+      "tall": false,
+      "style": "flowers",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        9.9,
+        31.7
+      ],
+      "asset": "res://assets/regions/environment/royal-11-banner.webp",
+      "width": 36,
+      "tall": true,
+      "style": "banner",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        3.8,
+        32.5
+      ],
+      "asset": "res://assets/regions/environment/forest-12-barrels.webp",
+      "width": 62,
+      "tall": false,
+      "style": "supplies",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.45,
+        0.35
+      ]
+    },
+    {
+      "point": [
+        28,
+        34.3
+      ],
+      "asset": "res://assets/regions/environment/royal-10-lamp.webp",
+      "width": 29,
+      "tall": true,
+      "style": "lamp",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.3,
+        0.3
+      ]
+    },
+    {
+      "point": [
+        28.5,
+        32
+      ],
+      "asset": "res://assets/starlit-town/stall.webp",
+      "width": 100,
+      "tall": false,
+      "style": "stall",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.65,
+        0.55
+      ]
+    },
+    {
+      "point": [
+        10.5,
+        36.5
+      ],
+      "asset": "res://assets/starlit-town/stall.webp",
+      "width": 100,
+      "tall": false,
+      "style": "stall",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.65,
+        0.55
+      ]
+    },
+    {
+      "point": [
+        3.8,
+        37
+      ],
+      "asset": "res://assets/regions/environment/forest-12-barrels.webp",
+      "width": 62,
+      "tall": false,
+      "style": "supplies",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.45,
+        0.35
+      ]
+    },
+    {
+      "point": [
+        30.5,
+        36.5
+      ],
+      "asset": "res://assets/starlit-town/stall.webp",
+      "width": 100,
+      "tall": false,
+      "style": "stall",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.65,
+        0.55
+      ]
+    },
+    {
+      "point": [
+        23.8,
+        37
+      ],
+      "asset": "res://assets/regions/environment/forest-12-barrels.webp",
+      "width": 62,
+      "tall": false,
+      "style": "supplies",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.45,
+        0.35
+      ]
+    },
+    {
+      "point": [
+        12,
+        38
+      ],
+      "asset": "res://assets/regions/environment/royal-07-tree.webp",
+      "width": 135,
+      "tall": true,
+      "style": "tree",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "point": [
+        20,
+        37
+      ],
+      "asset": "res://assets/regions/environment/royal-07-tree.webp",
+      "width": 135,
+      "tall": true,
+      "style": "tree",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "point": [
+        69.1,
+        6.3
+      ],
+      "asset": "res://assets/regions/environment/royal-09-flower-urn.webp",
+      "width": 30,
+      "tall": false,
+      "style": "flowers",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        74.9,
+        3.7
+      ],
+      "asset": "res://assets/regions/environment/royal-11-banner.webp",
+      "width": 36,
+      "tall": true,
+      "style": "banner",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        69,
+        3.7
+      ],
+      "asset": "res://assets/regions/environment/royal-08-cypress.webp",
+      "width": 82,
+      "tall": true,
+      "style": "tree",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.4,
+        0.4
+      ]
+    },
+    {
+      "point": [
+        91,
+        6.3
+      ],
+      "asset": "res://assets/regions/environment/royal-10-lamp.webp",
+      "width": 29,
+      "tall": true,
+      "style": "lamp",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.3,
+        0.3
+      ]
+    },
+    {
+      "point": [
+        90.9,
+        3.7
+      ],
+      "asset": "res://assets/regions/environment/royal-11-banner.webp",
+      "width": 36,
+      "tall": true,
+      "style": "banner",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        85,
+        3.7
+      ],
+      "asset": "res://assets/regions/environment/royal-08-cypress.webp",
+      "width": 82,
+      "tall": true,
+      "style": "tree",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.4,
+        0.4
+      ]
+    },
+    {
+      "point": [
+        69.1,
+        12
+      ],
+      "asset": "res://assets/regions/environment/royal-09-flower-urn.webp",
+      "width": 30,
+      "tall": false,
+      "style": "flowers",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        74.9,
+        9.399999999999999
+      ],
+      "asset": "res://assets/regions/environment/royal-11-banner.webp",
+      "width": 36,
+      "tall": true,
+      "style": "banner",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        69,
+        9.399999999999999
+      ],
+      "asset": "res://assets/regions/environment/royal-08-cypress.webp",
+      "width": 82,
+      "tall": true,
+      "style": "tree",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.4,
+        0.4
+      ]
+    },
+    {
+      "point": [
+        72,
+        7.6
+      ],
+      "asset": "res://assets/regions/environment/royal-17-wall.webp",
+      "width": 105,
+      "tall": false,
+      "style": "wall",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        1.1,
+        0.28
+      ]
+    },
+    {
+      "point": [
+        91,
+        12
+      ],
+      "asset": "res://assets/regions/environment/royal-10-lamp.webp",
+      "width": 29,
+      "tall": true,
+      "style": "lamp",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.3,
+        0.3
+      ]
+    },
+    {
+      "point": [
+        90.9,
+        9.399999999999999
+      ],
+      "asset": "res://assets/regions/environment/royal-11-banner.webp",
+      "width": 36,
+      "tall": true,
+      "style": "banner",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        85,
+        9.399999999999999
+      ],
+      "asset": "res://assets/regions/environment/royal-08-cypress.webp",
+      "width": 82,
+      "tall": true,
+      "style": "tree",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.4,
+        0.4
+      ]
+    },
+    {
+      "point": [
+        88,
+        7.6
+      ],
+      "asset": "res://assets/regions/environment/royal-17-wall.webp",
+      "width": 105,
+      "tall": false,
+      "style": "wall",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        1.1,
+        0.28
+      ]
+    },
+    {
+      "point": [
+        74.9,
+        13.2
+      ],
+      "asset": "res://assets/regions/environment/royal-11-banner.webp",
+      "width": 36,
+      "tall": true,
+      "style": "banner",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        69,
+        13.2
+      ],
+      "asset": "res://assets/regions/environment/royal-08-cypress.webp",
+      "width": 82,
+      "tall": true,
+      "style": "tree",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.4,
+        0.4
+      ]
+    },
+    {
+      "point": [
+        90.9,
+        13.2
+      ],
+      "asset": "res://assets/regions/environment/royal-11-banner.webp",
+      "width": 36,
+      "tall": true,
+      "style": "banner",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        85,
+        13.2
+      ],
+      "asset": "res://assets/regions/environment/royal-08-cypress.webp",
+      "width": 82,
+      "tall": true,
+      "style": "tree",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.4,
+        0.4
+      ]
+    },
+    {
+      "point": [
+        76,
+        14
+      ],
+      "asset": "res://assets/regions/environment/royal-07-tree.webp",
+      "width": 135,
+      "tall": true,
+      "style": "tree",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "point": [
+        75,
+        21
+      ],
+      "asset": "res://assets/regions/environment/royal-07-tree.webp",
+      "width": 135,
+      "tall": true,
+      "style": "tree",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "point": [
+        34.1,
+        7.3
+      ],
+      "asset": "res://assets/regions/environment/royal-09-flower-urn.webp",
+      "width": 30,
+      "tall": false,
+      "style": "flowers",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        41.9,
+        3.7
+      ],
+      "asset": "res://assets/regions/environment/royal-11-banner.webp",
+      "width": 36,
+      "tall": true,
+      "style": "banner",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        34,
+        3.7
+      ],
+      "asset": "res://assets/regions/environment/royal-08-cypress.webp",
+      "width": 82,
+      "tall": true,
+      "style": "tree",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.4,
+        0.4
+      ]
+    },
+    {
+      "point": [
+        34.1,
+        13.3
+      ],
+      "asset": "res://assets/regions/environment/royal-09-flower-urn.webp",
+      "width": 30,
+      "tall": false,
+      "style": "flowers",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        40,
+        13.3
+      ],
+      "asset": "res://assets/regions/environment/royal-10-lamp.webp",
+      "width": 29,
+      "tall": true,
+      "style": "lamp",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.3,
+        0.3
+      ]
+    },
+    {
+      "point": [
+        39.9,
+        10.7
+      ],
+      "asset": "res://assets/regions/environment/royal-11-banner.webp",
+      "width": 36,
+      "tall": true,
+      "style": "banner",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        34,
+        10.7
+      ],
+      "asset": "res://assets/regions/environment/royal-08-cypress.webp",
+      "width": 82,
+      "tall": true,
+      "style": "tree",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.4,
+        0.4
+      ]
+    },
+    {
+      "point": [
+        52.1,
+        13.3
+      ],
+      "asset": "res://assets/regions/environment/royal-09-flower-urn.webp",
+      "width": 30,
+      "tall": false,
+      "style": "flowers",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        52,
+        10.7
+      ],
+      "asset": "res://assets/regions/environment/royal-08-cypress.webp",
+      "width": 82,
+      "tall": true,
+      "style": "tree",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.4,
+        0.4
+      ]
+    },
+    {
+      "point": [
+        43.9,
+        23.7
+      ],
+      "asset": "res://assets/regions/environment/royal-11-banner.webp",
+      "width": 36,
+      "tall": true,
+      "style": "banner",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        38,
+        23.7
+      ],
+      "asset": "res://assets/regions/environment/royal-08-cypress.webp",
+      "width": 82,
+      "tall": true,
+      "style": "tree",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.4,
+        0.4
+      ]
+    },
+    {
+      "point": [
+        41,
+        21.9
+      ],
+      "asset": "res://assets/regions/environment/royal-17-wall.webp",
+      "width": 105,
+      "tall": false,
+      "style": "wall",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        1.1,
+        0.28
+      ]
+    },
+    {
+      "point": [
+        44,
+        14
+      ],
+      "asset": "res://assets/regions/environment/royal-07-tree.webp",
+      "width": 135,
+      "tall": true,
+      "style": "tree",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "point": [
+        43,
+        21
+      ],
+      "asset": "res://assets/regions/environment/royal-07-tree.webp",
+      "width": 135,
+      "tall": true,
+      "style": "tree",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "point": [
+        75,
+        53.3
+      ],
+      "asset": "res://assets/regions/environment/royal-10-lamp.webp",
+      "width": 29,
+      "tall": true,
+      "style": "lamp",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.3,
+        0.3
+      ]
+    },
+    {
+      "point": [
+        75.5,
+        51
+      ],
+      "asset": "res://assets/starlit-town/stall.webp",
+      "width": 100,
+      "tall": false,
+      "style": "stall",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.65,
+        0.55
+      ]
+    },
+    {
+      "point": [
+        68.8,
+        51.5
+      ],
+      "asset": "res://assets/regions/environment/forest-12-barrels.webp",
+      "width": 62,
+      "tall": false,
+      "style": "supplies",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.45,
+        0.35
+      ]
+    },
+    {
+      "point": [
+        91,
+        53.3
+      ],
+      "asset": "res://assets/regions/environment/royal-10-lamp.webp",
+      "width": 29,
+      "tall": true,
+      "style": "lamp",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.3,
+        0.3
+      ]
+    },
+    {
+      "point": [
+        91.5,
+        51
+      ],
+      "asset": "res://assets/starlit-town/stall.webp",
+      "width": 100,
+      "tall": false,
+      "style": "stall",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.65,
+        0.55
+      ]
+    },
+    {
+      "point": [
+        84.8,
+        51.5
+      ],
+      "asset": "res://assets/regions/environment/forest-12-barrels.webp",
+      "width": 62,
+      "tall": false,
+      "style": "supplies",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.45,
+        0.35
+      ]
+    },
+    {
+      "point": [
+        69.1,
+        59.3
+      ],
+      "asset": "res://assets/regions/environment/royal-09-flower-urn.webp",
+      "width": 30,
+      "tall": false,
+      "style": "flowers",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        74.9,
+        56.7
+      ],
+      "asset": "res://assets/regions/environment/royal-11-banner.webp",
+      "width": 36,
+      "tall": true,
+      "style": "banner",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        68.8,
+        57.5
+      ],
+      "asset": "res://assets/regions/environment/forest-12-barrels.webp",
+      "width": 62,
+      "tall": false,
+      "style": "supplies",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.45,
+        0.35
+      ]
+    },
+    {
+      "point": [
+        91,
+        59.3
+      ],
+      "asset": "res://assets/regions/environment/royal-10-lamp.webp",
+      "width": 29,
+      "tall": true,
+      "style": "lamp",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.3,
+        0.3
+      ]
+    },
+    {
+      "point": [
+        91.5,
+        57
+      ],
+      "asset": "res://assets/starlit-town/stall.webp",
+      "width": 100,
+      "tall": false,
+      "style": "stall",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.65,
+        0.55
+      ]
+    },
+    {
+      "point": [
+        75.5,
+        61.5
+      ],
+      "asset": "res://assets/starlit-town/stall.webp",
+      "width": 100,
+      "tall": false,
+      "style": "stall",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.65,
+        0.55
+      ]
+    },
+    {
+      "point": [
+        68.8,
+        62
+      ],
+      "asset": "res://assets/regions/environment/forest-12-barrels.webp",
+      "width": 62,
+      "tall": false,
+      "style": "supplies",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.45,
+        0.35
+      ]
+    },
+    {
+      "point": [
+        91.5,
+        61.5
+      ],
+      "asset": "res://assets/starlit-town/stall.webp",
+      "width": 100,
+      "tall": false,
+      "style": "stall",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.65,
+        0.55
+      ]
+    },
+    {
+      "point": [
+        84.8,
+        62
+      ],
+      "asset": "res://assets/regions/environment/forest-12-barrels.webp",
+      "width": 62,
+      "tall": false,
+      "style": "supplies",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.45,
+        0.35
+      ]
+    },
+    {
+      "point": [
+        84,
+        61
+      ],
+      "asset": "res://assets/regions/environment/royal-07-tree.webp",
+      "width": 135,
+      "tall": true,
+      "style": "tree",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "point": [
+        4.1,
+        6.3
+      ],
+      "asset": "res://assets/regions/environment/royal-09-flower-urn.webp",
+      "width": 30,
+      "tall": false,
+      "style": "flowers",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        9.9,
+        3.7
+      ],
+      "asset": "res://assets/regions/environment/royal-11-banner.webp",
+      "width": 36,
+      "tall": true,
+      "style": "banner",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        4,
+        3.7
+      ],
+      "asset": "res://assets/regions/environment/royal-08-cypress.webp",
+      "width": 82,
+      "tall": true,
+      "style": "tree",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.4,
+        0.4
+      ]
+    },
+    {
+      "point": [
+        28,
+        6.3
+      ],
+      "asset": "res://assets/regions/environment/royal-10-lamp.webp",
+      "width": 29,
+      "tall": true,
+      "style": "lamp",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.3,
+        0.3
+      ]
+    },
+    {
+      "point": [
+        27.9,
+        3.7
+      ],
+      "asset": "res://assets/regions/environment/royal-11-banner.webp",
+      "width": 36,
+      "tall": true,
+      "style": "banner",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        22,
+        3.7
+      ],
+      "asset": "res://assets/regions/environment/royal-08-cypress.webp",
+      "width": 82,
+      "tall": true,
+      "style": "tree",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.4,
+        0.4
+      ]
+    },
+    {
+      "point": [
+        4.1,
+        12
+      ],
+      "asset": "res://assets/regions/environment/royal-09-flower-urn.webp",
+      "width": 30,
+      "tall": false,
+      "style": "flowers",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        9.9,
+        9.399999999999999
+      ],
+      "asset": "res://assets/regions/environment/royal-11-banner.webp",
+      "width": 36,
+      "tall": true,
+      "style": "banner",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        4,
+        9.399999999999999
+      ],
+      "asset": "res://assets/regions/environment/royal-08-cypress.webp",
+      "width": 82,
+      "tall": true,
+      "style": "tree",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.4,
+        0.4
+      ]
+    },
+    {
+      "point": [
+        7,
+        7.6
+      ],
+      "asset": "res://assets/regions/environment/royal-17-wall.webp",
+      "width": 105,
+      "tall": false,
+      "style": "wall",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        1.1,
+        0.28
+      ]
+    },
+    {
+      "point": [
+        22.1,
+        12
+      ],
+      "asset": "res://assets/regions/environment/royal-09-flower-urn.webp",
+      "width": 30,
+      "tall": false,
+      "style": "flowers",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        28,
+        12
+      ],
+      "asset": "res://assets/regions/environment/royal-10-lamp.webp",
+      "width": 29,
+      "tall": true,
+      "style": "lamp",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.3,
+        0.3
+      ]
+    },
+    {
+      "point": [
+        27.9,
+        9.399999999999999
+      ],
+      "asset": "res://assets/regions/environment/royal-11-banner.webp",
+      "width": 36,
+      "tall": true,
+      "style": "banner",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        22,
+        9.399999999999999
+      ],
+      "asset": "res://assets/regions/environment/royal-08-cypress.webp",
+      "width": 82,
+      "tall": true,
+      "style": "tree",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.4,
+        0.4
+      ]
+    },
+    {
+      "point": [
+        25,
+        7.6
+      ],
+      "asset": "res://assets/regions/environment/royal-17-wall.webp",
+      "width": 105,
+      "tall": false,
+      "style": "wall",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        1.1,
+        0.28
+      ]
+    },
+    {
+      "point": [
+        9.9,
+        13.2
+      ],
+      "asset": "res://assets/regions/environment/royal-11-banner.webp",
+      "width": 36,
+      "tall": true,
+      "style": "banner",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        4,
+        13.2
+      ],
+      "asset": "res://assets/regions/environment/royal-08-cypress.webp",
+      "width": 82,
+      "tall": true,
+      "style": "tree",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.4,
+        0.4
+      ]
+    },
+    {
+      "point": [
+        12,
+        14
+      ],
+      "asset": "res://assets/regions/environment/royal-07-tree.webp",
+      "width": 135,
+      "tall": true,
+      "style": "tree",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "point": [
+        20,
+        13
+      ],
+      "asset": "res://assets/regions/environment/royal-07-tree.webp",
+      "width": 135,
+      "tall": true,
+      "style": "tree",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "point": [
+        11,
+        21
+      ],
+      "asset": "res://assets/regions/environment/royal-07-tree.webp",
+      "width": 135,
+      "tall": true,
+      "style": "tree",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "point": [
+        34.1,
+        30.3
+      ],
+      "asset": "res://assets/regions/environment/royal-09-flower-urn.webp",
+      "width": 30,
+      "tall": false,
+      "style": "flowers",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        37,
+        26.2
+      ],
+      "asset": "res://assets/regions/environment/royal-06-hedge.webp",
+      "width": 88,
+      "tall": false,
+      "style": "hedge",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        1,
+        0.35
+      ]
+    },
+    {
+      "point": [
+        55,
+        26.2
+      ],
+      "asset": "res://assets/regions/environment/royal-06-hedge.webp",
+      "width": 88,
+      "tall": false,
+      "style": "hedge",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        1,
+        0.35
+      ]
+    },
+    {
+      "point": [
+        34.1,
+        34.8
+      ],
+      "asset": "res://assets/regions/environment/royal-09-flower-urn.webp",
+      "width": 30,
+      "tall": false,
+      "style": "flowers",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        39.9,
+        32.2
+      ],
+      "asset": "res://assets/regions/environment/royal-11-banner.webp",
+      "width": 36,
+      "tall": true,
+      "style": "banner",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        39.9,
+        36.2
+      ],
+      "asset": "res://assets/regions/environment/royal-11-banner.webp",
+      "width": 36,
+      "tall": true,
+      "style": "banner",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        44,
+        38
+      ],
+      "asset": "res://assets/regions/environment/royal-07-tree.webp",
+      "width": 135,
+      "tall": true,
+      "style": "tree",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "point": [
+        52,
+        37
+      ],
+      "asset": "res://assets/regions/environment/royal-07-tree.webp",
+      "width": 135,
+      "tall": true,
+      "style": "tree",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "point": [
+        69.1,
+        30.3
+      ],
+      "asset": "res://assets/regions/environment/royal-09-flower-urn.webp",
+      "width": 30,
+      "tall": false,
+      "style": "flowers",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        74.9,
+        27.7
+      ],
+      "asset": "res://assets/regions/environment/royal-11-banner.webp",
+      "width": 36,
+      "tall": true,
+      "style": "banner",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        69,
+        27.7
+      ],
+      "asset": "res://assets/regions/environment/royal-08-cypress.webp",
+      "width": 82,
+      "tall": true,
+      "style": "tree",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.4,
+        0.4
+      ]
+    },
+    {
+      "point": [
+        72,
+        25.9
+      ],
+      "asset": "res://assets/regions/environment/royal-17-wall.webp",
+      "width": 105,
+      "tall": false,
+      "style": "wall",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        1.1,
+        0.28
+      ]
+    },
+    {
+      "point": [
+        91,
+        29.3
+      ],
+      "asset": "res://assets/regions/environment/royal-10-lamp.webp",
+      "width": 29,
+      "tall": true,
+      "style": "lamp",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.3,
+        0.3
+      ]
+    },
+    {
+      "point": [
+        90.9,
+        26.7
+      ],
+      "asset": "res://assets/regions/environment/royal-11-banner.webp",
+      "width": 36,
+      "tall": true,
+      "style": "banner",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        85,
+        26.7
+      ],
+      "asset": "res://assets/regions/environment/royal-08-cypress.webp",
+      "width": 82,
+      "tall": true,
+      "style": "tree",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.4,
+        0.4
+      ]
+    },
+    {
+      "point": [
+        88,
+        24.9
+      ],
+      "asset": "res://assets/regions/environment/royal-17-wall.webp",
+      "width": 105,
+      "tall": false,
+      "style": "wall",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        1.1,
+        0.28
+      ]
+    },
+    {
+      "point": [
+        69.1,
+        34.3
+      ],
+      "asset": "res://assets/regions/environment/royal-09-flower-urn.webp",
+      "width": 30,
+      "tall": false,
+      "style": "flowers",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        74.9,
+        31.7
+      ],
+      "asset": "res://assets/regions/environment/royal-11-banner.webp",
+      "width": 36,
+      "tall": true,
+      "style": "banner",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        69,
+        31.7
+      ],
+      "asset": "res://assets/regions/environment/royal-08-cypress.webp",
+      "width": 82,
+      "tall": true,
+      "style": "tree",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.4,
+        0.4
+      ]
+    },
+    {
+      "point": [
+        85.1,
+        35.3
+      ],
+      "asset": "res://assets/regions/environment/royal-09-flower-urn.webp",
+      "width": 30,
+      "tall": false,
+      "style": "flowers",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        91,
+        35.3
+      ],
+      "asset": "res://assets/regions/environment/royal-10-lamp.webp",
+      "width": 29,
+      "tall": true,
+      "style": "lamp",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.3,
+        0.3
+      ]
+    },
+    {
+      "point": [
+        90.9,
+        32.7
+      ],
+      "asset": "res://assets/regions/environment/royal-11-banner.webp",
+      "width": 36,
+      "tall": true,
+      "style": "banner",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        85,
+        32.7
+      ],
+      "asset": "res://assets/regions/environment/royal-08-cypress.webp",
+      "width": 82,
+      "tall": true,
+      "style": "tree",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.4,
+        0.4
+      ]
+    },
+    {
+      "point": [
+        74.9,
+        36.2
+      ],
+      "asset": "res://assets/regions/environment/royal-11-banner.webp",
+      "width": 36,
+      "tall": true,
+      "style": "banner",
+      "anchor": [
+        0.5,
+        0.96
+      ]
+    },
+    {
+      "point": [
+        69,
+        36.2
+      ],
+      "asset": "res://assets/regions/environment/royal-08-cypress.webp",
+      "width": 82,
+      "tall": true,
+      "style": "tree",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.4,
+        0.4
+      ]
+    },
+    {
+      "point": [
+        76,
+        38
+      ],
+      "asset": "res://assets/regions/environment/royal-07-tree.webp",
+      "width": 135,
+      "tall": true,
+      "style": "tree",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "point": [
+        84,
+        37
+      ],
+      "asset": "res://assets/regions/environment/royal-07-tree.webp",
+      "width": 135,
+      "tall": true,
+      "style": "tree",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "point": [
+        12.3,
+        23
+      ],
+      "asset": "res://assets/regions/environment/royal-10-lamp.webp",
+      "width": 29,
+      "tall": true,
+      "style": "lamp",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.28,
+        0.28
+      ]
+    },
+    {
+      "point": [
+        12.3,
+        47
+      ],
+      "asset": "res://assets/regions/environment/royal-10-lamp.webp",
+      "width": 29,
+      "tall": true,
+      "style": "lamp",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.28,
+        0.28
+      ]
+    },
+    {
+      "point": [
+        19.7,
+        23
+      ],
+      "asset": "res://assets/regions/environment/royal-10-lamp.webp",
+      "width": 29,
+      "tall": true,
+      "style": "lamp",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.28,
+        0.28
+      ]
+    },
+    {
+      "point": [
+        19.7,
+        47
+      ],
+      "asset": "res://assets/regions/environment/royal-10-lamp.webp",
+      "width": 29,
+      "tall": true,
+      "style": "lamp",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.28,
+        0.28
+      ]
+    },
+    {
+      "point": [
+        44.3,
+        47
+      ],
+      "asset": "res://assets/regions/environment/royal-10-lamp.webp",
+      "width": 29,
+      "tall": true,
+      "style": "lamp",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.28,
+        0.28
+      ]
+    },
+    {
+      "point": [
+        51.7,
+        23
+      ],
+      "asset": "res://assets/regions/environment/royal-10-lamp.webp",
+      "width": 29,
+      "tall": true,
+      "style": "lamp",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.28,
+        0.28
+      ]
+    },
+    {
+      "point": [
+        51.7,
+        47
+      ],
+      "asset": "res://assets/regions/environment/royal-10-lamp.webp",
+      "width": 29,
+      "tall": true,
+      "style": "lamp",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.28,
+        0.28
+      ]
+    },
+    {
+      "point": [
+        76.3,
+        23
+      ],
+      "asset": "res://assets/regions/environment/royal-10-lamp.webp",
+      "width": 29,
+      "tall": true,
+      "style": "lamp",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.28,
+        0.28
+      ]
+    },
+    {
+      "point": [
+        76.3,
+        47
+      ],
+      "asset": "res://assets/regions/environment/royal-10-lamp.webp",
+      "width": 29,
+      "tall": true,
+      "style": "lamp",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.28,
+        0.28
+      ]
+    },
+    {
+      "point": [
+        83.7,
+        23
+      ],
+      "asset": "res://assets/regions/environment/royal-10-lamp.webp",
+      "width": 29,
+      "tall": true,
+      "style": "lamp",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.28,
+        0.28
+      ]
+    },
+    {
+      "point": [
+        83.7,
+        47
+      ],
+      "asset": "res://assets/regions/environment/royal-10-lamp.webp",
+      "width": 29,
+      "tall": true,
+      "style": "lamp",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.28,
+        0.28
+      ]
+    },
+    {
+      "point": [
+        65.3,
+        7
+      ],
+      "asset": "res://assets/regions/environment/royal-10-lamp.webp",
+      "width": 29,
+      "tall": true,
+      "style": "lamp",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "point": [
+        65.3,
+        23
+      ],
+      "asset": "res://assets/regions/environment/royal-10-lamp.webp",
+      "width": 29,
+      "tall": true,
+      "style": "lamp",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "point": [
+        65.3,
+        31
+      ],
+      "asset": "res://assets/regions/environment/royal-10-lamp.webp",
+      "width": 29,
+      "tall": true,
+      "style": "lamp",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "point": [
+        65.3,
+        47
+      ],
+      "asset": "res://assets/regions/environment/royal-10-lamp.webp",
+      "width": 29,
+      "tall": true,
+      "style": "lamp",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "point": [
+        65.3,
+        55
+      ],
+      "asset": "res://assets/regions/environment/royal-10-lamp.webp",
+      "width": 29,
+      "tall": true,
+      "style": "lamp",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "point": [
+        65.3,
+        63
+      ],
+      "asset": "res://assets/regions/environment/royal-10-lamp.webp",
+      "width": 29,
+      "tall": true,
+      "style": "lamp",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "point": [
+        55.4,
+        24
+      ],
+      "asset": "res://assets/regions/environment/royal-12-bench.webp",
+      "width": 68,
+      "tall": false,
+      "style": "bench",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.7,
+        0.35
+      ]
+    },
+    {
+      "point": [
+        55.4,
+        48
+      ],
+      "asset": "res://assets/regions/environment/royal-12-bench.webp",
+      "width": 68,
+      "tall": false,
+      "style": "bench",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.7,
+        0.35
+      ]
+    },
+    {
+      "point": [
+        69.6,
+        24
+      ],
+      "asset": "res://assets/regions/environment/royal-12-bench.webp",
+      "width": 68,
+      "tall": false,
+      "style": "bench",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.7,
+        0.35
+      ]
+    },
+    {
+      "point": [
+        69.6,
+        26
+      ],
+      "asset": "res://assets/regions/environment/royal-19-flowerbed.webp",
+      "width": 83,
+      "tall": false,
+      "style": "flowers",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        1,
+        0.35
+      ]
+    },
+    {
+      "point": [
+        69.6,
+        48
+      ],
+      "asset": "res://assets/regions/environment/royal-12-bench.webp",
+      "width": 68,
+      "tall": false,
+      "style": "bench",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.7,
+        0.35
+      ]
+    },
+    {
+      "point": [
+        22,
+        22
+      ],
+      "asset": "res://assets/regions/environment/royal-14-statue.webp",
+      "width": 120,
+      "tall": false,
+      "style": "monument",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.75,
+        0.75
+      ]
+    },
+    {
+      "point": [
+        42,
+        48
+      ],
+      "asset": "res://assets/regions/environment/royal-13-fountain.webp",
+      "width": 128,
+      "tall": false,
+      "style": "monument",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.75,
+        0.75
+      ]
+    },
+    {
+      "point": [
+        74,
+        48
+      ],
+      "asset": "res://assets/regions/environment/royal-13-fountain.webp",
+      "width": 128,
+      "tall": false,
+      "style": "monument",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.75,
+        0.75
+      ]
+    },
+    {
+      "point": [
+        43.5,
+        11.8
+      ],
+      "asset": "res://assets/regions/environment/royal-12-bench.webp",
+      "width": 70,
+      "tall": false,
+      "style": "bench",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.7,
+        0.35
+      ]
+    },
+    {
+      "point": [
+        43.5,
+        22
+      ],
+      "asset": "res://assets/regions/environment/royal-19-flowerbed.webp",
+      "width": 88,
+      "tall": false,
+      "style": "flowers",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.8,
+        0.35
+      ]
+    },
+    {
+      "point": [
+        43.5,
+        47.8
+      ],
+      "asset": "res://assets/regions/environment/royal-12-bench.webp",
+      "width": 70,
+      "tall": false,
+      "style": "bench",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.7,
+        0.35
+      ]
+    },
+    {
+      "point": [
+        43.5,
+        58
+      ],
+      "asset": "res://assets/regions/environment/royal-19-flowerbed.webp",
+      "width": 88,
+      "tall": false,
+      "style": "flowers",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.8,
+        0.35
+      ]
+    },
+    {
+      "point": [
+        43.5,
+        59.8
+      ],
+      "asset": "res://assets/regions/environment/royal-12-bench.webp",
+      "width": 70,
+      "tall": false,
+      "style": "bench",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.7,
+        0.35
+      ]
+    },
+    {
+      "point": [
+        52.5,
+        22
+      ],
+      "asset": "res://assets/regions/environment/royal-19-flowerbed.webp",
+      "width": 88,
+      "tall": false,
+      "style": "flowers",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.8,
+        0.35
+      ]
+    },
+    {
+      "point": [
+        52.5,
+        23.8
+      ],
+      "asset": "res://assets/regions/environment/royal-12-bench.webp",
+      "width": 70,
+      "tall": false,
+      "style": "bench",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.7,
+        0.35
+      ]
+    },
+    {
+      "point": [
+        52.5,
+        47.8
+      ],
+      "asset": "res://assets/regions/environment/royal-12-bench.webp",
+      "width": 70,
+      "tall": false,
+      "style": "bench",
+      "anchor": [
+        0.5,
+        0.96
+      ],
+      "collision": [
+        0.7,
+        0.35
+      ]
+    }
+  ]
+}

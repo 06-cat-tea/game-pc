@@ -22,6 +22,10 @@
 
 构建工具优先使用 GODOT_PATH，也可发现 artifacts/godot/engine 中的本地引擎。安装制作依赖使用 pnpm install --frozen-lockfile。运行、原生回归和 Web 导出也可直接执行 node tools/godot.cjs run、test、build-web，无需安装制作依赖。单独复制 godot/ 后还可直接使用其中的 build.ps1 构建 Windows 包，不需要 Node。
 
+## 加载画面与旅途提示
+
+首次下载、启动和场景切换共用10张高清插画与30条分类提示：画面每8秒淡入切换，提示每6秒轮换；快速加载完成后立即进入游戏。减少动效时固定背景，资源下载失败时保留重试。网页预览图独立按需加载，不需要先下载完整游戏包。详见 [加载画面维护说明](docs/Godot-加载画面轮播.md)。
+
 ## 网页游玩与发布
 
 使用支持 WebGL 2 的电脑浏览器和键盘鼠标，打开网页后点击游戏画面获得输入焦点；首次加载需要下载完整资源。Web 导出采用 Compatibility 渲染与单线程模式，不依赖跨源隔离响应头。本地预览需通过 HTTP 服务打开，不能直接双击 index.html。

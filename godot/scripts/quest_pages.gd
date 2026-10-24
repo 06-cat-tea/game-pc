@@ -55,6 +55,7 @@ func journal():
 		var scene="town-wall" if not s.scene_progress.get("town-wall:survey",false) else "town-drain" if not s.scene_progress.get("town-drain:survey",false) else "town-trial"
 		var e=runtime.entrance_for(scene); game.seek(e.region,"entrance",e.id))
 	main.completed=s.chapter_complete; main.rank=2 if s.chapter_complete else 1; main.order=-2
+	main.desc+="\n\n当前目标\n"+("✓  " if s.scene_progress.get("town-wall:survey",false) else "◇  ")+"调查城墙巡径\n"+("✓  " if s.scene_progress.get("town-drain:survey",false) else "◇  ")+"调查旧城地下渠\n"+("✓  " if s.chapter_complete else "◇  ")+"完成公会试炼"
 	if main.completed: main.callback=Callable()
 	entries.append(main)
 	if s.chapter_complete:

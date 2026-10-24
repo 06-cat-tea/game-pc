@@ -1,0 +1,41 @@
+{
+  "generator": "image_gen.imagegen",
+  "reference": "../../ui-concepts/genshin-v1/01-exploration.png",
+  "specs": [
+    {
+      "id": "buildings-a",
+      "transparent": true,
+      "p": "Production game asset for the approved Ashen Frontier isometric medieval town redesign. Match reference screenshot's painterly anime fantasy stone-and-timber buildings, warm cream limestone walls, weathered oak timber framing, blue and terracotta tiled roofs, climbing greenery, blue-and-gold pennants, restrained warm sunny lighting from upper left. Orthographic isometric camera 30 degree elevated, front and right wall visible, NOT perspective photograph. No UI, lettering, watermarks, ground rectangle, floating island or cast shadow. Create ONE transparent sprite atlas with a strict 2 by 2 equal grid, FOUR COMPLETELY SEPARATE full buildings, no touching, generous transparent empty margin in every cell, consistent scale and style, all roofs and bases intact. Square canvas, highest detail. Top left: tall slender town clocktower, blue pointed tiled roof, large readable ivory clock dial, stone arched ground door, blue banners. Top right: modest chapel with terracotta roof, arched windows and small bell tower, flower planters. Bottom left: half timber guildhall with blue roof, shield crest no text, broad arched wooden front door. Bottom right: warm half timber inn with terracotta roof, balcony, flower boxes, hanging unlettered sign. Each building centered within its own quarter, no background, real transparent alpha. Keep all artwork of each sprite strictly in its own cell. Reference is visual style only."
+    },
+    {
+      "id": "buildings-b",
+      "transparent": true,
+      "p": "Production game asset for the approved Ashen Frontier isometric medieval town redesign. Match reference screenshot's painterly anime fantasy stone-and-timber buildings, warm cream limestone walls, weathered oak timber framing, blue and terracotta tiled roofs, climbing greenery, blue-and-gold pennants, restrained warm sunny lighting from upper left. Orthographic isometric camera 30 degree elevated, front and right wall visible, NOT perspective photograph. No UI, lettering, watermarks, ground rectangle, floating island or cast shadow. Create ONE transparent sprite atlas strict 2 by 2 equal grid, four fully separate buildings, generous transparent margin in each cell, no overlap and every roof/base intact, square high detail canvas. Top left: cozy town general store, ochre terracotta gable roof, cream canvas awning, vegetable baskets by door, compact shop. Top right: small civic royal hall, cream stone, blue slate roofs and blue banners, elegant but NOT gigantic castle, arched doorway. Bottom left: artisan residential quarter, TWO connected compact timber homes with blue tiled roofs, forge chimney and small woodwork bench. Bottom right: star academy, blue slate hip roof, modest observatory cupola, brass armillary detail, cream stone arched entry. Real transparent alpha, no backdrop. Consistent isometric camera and sunlight. Reference only for style."
+    },
+    {
+      "id": "buildings-c",
+      "transparent": true,
+      "p": "Production game asset for the approved Ashen Frontier isometric medieval town redesign. Match reference screenshot's painterly anime fantasy stone-and-timber buildings, warm cream limestone walls, weathered oak timber framing, blue and terracotta tiled roofs, climbing greenery, blue-and-gold pennants, restrained warm sunny lighting from upper left. Orthographic isometric camera 30 degree elevated, front and right wall visible, NOT perspective photograph. No UI, lettering, watermarks, ground rectangle, floating island or cast shadow. Create ONE transparent sprite atlas strict 2 by 2 equal grid, 4 separate sprites generous transparent margin each, square high detail. Top left: compact alchemist cottage with green-blue tiled roof, rounded stone doorway, small blue glass bottles and herb boxes outside, no label. Top right: timber town stable, low terracotta roof, open doorway, fenced stall, hay and barrel. Bottom left: modest town north gatehouse, low cream stone arch between TWO small blue-roof watchtowers, no large castle, gate opens through center. Bottom right: charming ordinary half timber terracotta-roof small townhouse for environmental filler, no special function. Real transparent alpha, no ground tile/base, no overlap. Reference is style only."
+    },
+    {
+      "id": "props",
+      "transparent": true,
+      "p": "Generate a production-ready TRANSPARENT PNG sprite sheet, square 2 by 2 equal grid with wide EMPTY TRANSPARENT gutters. Four isometric hand-painted medieval fantasy props, clean isolated cutouts. Each object fully contained in its own cell with 12 percent transparent margin. Top left one full lush leafy green oak tree with visible trunk. Top right slender black iron streetlamp with a small blue banner and a glass lantern that is SWITCHED OFF. Bottom left low cream limestone wall with pink and white flowers and wood fence. Bottom right small timber fruit stall with cream canvas awning, baskets and crates. Warm cream stone and oak, muted foliage, soft daylight painted directly on objects only. Entire background MUST be alpha zero, hard clean cutout contours, no gradient, no blur, no glow, no light bloom, no aura, NO black or green background, NO cast shadow, no ground, no text. Orthographic isometric 30 degree elevated camera."
+    },
+    {
+      "id": "ground",
+      "transparent": false,
+      "p": "Seamless game ground material atlas. ONE SQUARE canvas divided precisely into 2x2 equal square texture swatches, flush edges, no borders or labels. Top-left: lush hand-painted sunlit muted green meadow grass, tiny occasional clover, NO large flowers. Top-right: warm taupe earth with fine sparse pebbles. Bottom-left: pale warm sand earthy fine texture. Bottom-right: irregular warm grey limestone cobblestone paving, moderately sized roughly rectangular worn stones, varied ivory and light grey hues, faint moss seams. All four textures seen straight down flat orthographic, evenly lit, no perspective, no buildings, no cast shadows, no gradients, no vignettes, no text. Painterly realistic anime fantasy town style, subtle color variation, each swatch tileable independently."
+    },
+    {
+      "id": "menu-background",
+      "transparent": false,
+      "p": "Full bleed landscape 16:9 clean background illustration ONLY for a premium minimalist anime fantasy game UI, no UI itself, NO TEXT, no characters, no objects in foreground, no logo. Soft midnight blue and slate starlit sky, subtle scattered stars and extremely thin champagne-gold orbital curves, distant softly blurred pale cream medieval fantasy town and spires reflected in still water along very bottom. Calm generous empty dark blue negative space in upper 80%. Elegant Genshin Impact character menu atmosphere, refined painterly art, restrained celestial motifs, subtle depth. High resolution."
+    },
+    {
+      "id": "world-map",
+      "transparent": false,
+      "p": "Landscape 16:9 high detail HAND PAINTED TOP-DOWN WORLD MAP ONLY, no UI, no text, no letters, no compass, no labels, no border, no markers. Original compact medieval fantasy kingdom with exactly six distinct regions connected by pale winding roads. Center south at 48% across 58% down: cozy cream stone and terracotta town centered on clocktower beside blue lake. Northwest at 26% across 32% down: lush deep green whispering woodland. Northeast at 73% across 32% down: ochre ember canyon and ruined stone bridges. Southwest at 25% across 73% down: misty lavender moonlit marsh and ruins. Southeast at 75% across 72% down: blue sea and white sea-cliffs with lighthouse. North center at 50% across 16% down: distant ivory royal city with blue roofs and mountains behind. Cohesive Genshin-inspired map palette sage green, desaturated ochre, pale grey limestone and deep teal water, richly illustrated but calm readable landscape, overhead cartography, not angle looking to horizon, map occupies whole canvas. No floating perspective screen."
+    }
+  ]
+}

@@ -22,33 +22,33 @@ func setup(view: WorldView, depth: Node2D):
 	backdrop.polygon=PackedVector2Array([bounds.position,Vector2(bounds.end.x,bounds.position.y),bounds.end,Vector2(bounds.position.x,bounds.end.y)]); backdrop.color=Color(region.palette.fog); backdrop.z_index=-20; add_child(backdrop)
 	ground=RegionGround.new(); ground.z_index=-5; add_child(ground); ground.setup(region.id)
 	var details=RegionDetails.new(); details.z_index=-4; add_child(details); details.setup(region)
-	var ambient=CanvasModulate.new(); ambient.color=Color(region.palette.ambient); add_child(ambient)
 	for b in region.buildings:
-		var pos=world.iso(Vector2(b.x+b.w/2,b.y+b.d/2)); var width=float(b.w+b.d)*58
+		var pos=world.iso(Vector2(b.x+b.w/2,b.y+b.d/2)); var width=float(b.get("display_width",float(b.w+b.d)*58))
 		var shadow=world._shadow(depth,pos,width*.88); var sprite=world._sprite(depth,b.art,pos,width,b.anchor)
 		world._caption(sprite,b.name); world.targets.append({"kind":"building","id":b.id,"label":b.name,"point":Vector2(b.entry[0],b.entry[1]),"node":sprite,"width":width})
-		visuals.append({"node":sprite,"shadow":shadow,"fade":true})
+		visuals.append({"node":sprite,"shadow":shadow,"fade":true}); world.lighting.add_emission(sprite)
 	for decor in region.decor:
 		var pos=world.iso(Vector2(decor.point[0],decor.point[1])); var shadow=world._shadow(depth,pos,decor.width*.68)
 		var sprite=world._sprite(depth,decor.asset,pos,decor.width,decor.anchor)
 		visuals.append({"node":sprite,"shadow":shadow,"fade":decor.tall and decor.style!="lamp"})
+		if decor.style=="banner":
+			var flag_material=ShaderMaterial.new(); flag_material.shader=load("res://shaders/region_flag.gdshader"); sprite.material=flag_material; flags.append(flag_material)
+		if decor.style=="lamp": world.lighting.add_source(Vector2(decor.point[0],decor.point[1]),Color("ffd28a"),250,1.0,sprite.texture.get_height()*sprite.scale.y*.84)
 	var exit=Node2D.new(); exit.position=world.iso(Vector2(region.spawn[0],region.spawn[1]))+Vector2(-56,28); depth.add_child(exit)
 	var icon=Sprite2D.new(); icon.texture=WorldPresentation.texture("res://assets/refined-world/interaction.svg"); icon.scale=Vector2(.5,.3); exit.add_child(icon); world._caption(exit,"返回晨星镇")
 	world.targets.append({"kind":"travel","id":"town","label":"返回晨星镇","point":Vector2(region.spawn[0],region.spawn[1])+Vector2(0,1),"node":exit,"width":70.0})
 	var ramp=Gradient.new(); ramp.colors=PackedColorArray([Color.WHITE,Color(1,1,1,0)]); var radial=GradientTexture2D.new(); radial.gradient=ramp; radial.fill=GradientTexture2D.FILL_RADIAL; radial.fill_from=Vector2(.5,.5); radial.fill_to=Vector2(1,.5); radial.width=256; radial.height=256
-	for data in region.lights:
-		var light=PointLight2D.new(); light.texture=radial; light.position=world.iso(Vector2(data.point[0],data.point[1]))-Vector2(0,55); light.color=Color(data.color); light.energy=data.energy; light.texture_scale=data.radius/128.0; light.enabled=false; add_child(light); lights.append(light)
+	if region.id!="city":
+		for data in region.lights: world.lighting.add_source(Vector2(data.point[0],data.point[1]),Color(data.color),float(data.radius),maxf(.6,float(data.energy)*2.5),float(data.get("height",55)))
 	for id in world.db.raw.npcs:
 		var npc=world.db.raw.npcs[id]
 		if npc.get("place","")==region.id and npc.has("position"): world._add_npc(depth,id,Vector2(npc.position.x,npc.position.y))
-	if region.id=="city":
-		for d in region.districts:
-			var sprite=world._sprite(depth,region.environment["royal-11-banner"],world.iso(Vector2(d.x+4,d.y-8)),46,[.5,.95]); var material_value=ShaderMaterial.new(); material_value.shader=load("res://shaders/region_flag.gdshader"); sprite.material=material_value; flags.append(material_value)
 	particles=CPUParticles2D.new(); particles.amount=32 if region.id in ["wood","fen"] else 18; particles.lifetime=9; particles.preprocess=1; particles.emission_shape=CPUParticles2D.EMISSION_SHAPE_RECTANGLE; particles.emission_rect_extents=Vector2(920,580); particles.gravity=Vector2.ZERO; particles.direction=Vector2(-1,.4); particles.spread=22; particles.initial_velocity_min=7; particles.initial_velocity_max=19; particles.scale_amount_min=1; particles.scale_amount_max=2.8; particles.color=Color(region.palette.accent,.38); particles.texture=radial; particles.scale=Vector2.ONE*.018; particles.emission_rect_extents/=particles.scale.x; particles.z_index=3; add_child(particles)
 	particles.initial_velocity_min/=particles.scale.x; particles.initial_velocity_max/=particles.scale.x
 	_update_visibility()
 
 func freeze_for_capture():
+	world.lighting.freeze_for_map()
 	capture=true; scene_clock=0; ground.set_clock(0); particles.hide(); set_process(false)
 	backdrop.hide()
 	for cell in ground.layers[0].get_used_cells():
@@ -93,6 +93,3 @@ func _update_visibility():
 		node.modulate.a=.38 if obscured else 1.0
 	for resident in residents:
 		resident.node.visible=resident.node.position.distance_to(center)<1600; resident.shadow.visible=resident.node.visible
-	var nearest=lights.duplicate(); nearest.sort_custom(func(a,b): return a.position.distance_squared_to(center)<b.position.distance_squared_to(center))
-	for light in lights: light.enabled=false
-	for light in nearest.slice(0,4): light.enabled=light.position.distance_to(center)<1300

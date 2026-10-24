@@ -25,7 +25,9 @@ static func walkable(id: String, point: Vector2) -> bool:
 		for b in region.buildings: cache.buildings.append(Rect2(b.x-.3,b.y-.3,b.w+.6,b.d+.6))
 		for b in region.bridges: cache.bridges.append(Rect2(b.x-b.w/2,b.y-b.d/2,b.w,b.d))
 		for decor in region.decor:
-			if decor.style=="cliff" and decor.tall: cache.cliffs.append(Rect2(decor.point[0]-.65,decor.point[1]-.65,1.3,1.3))
+			if decor.has("collision"):
+				var half=Vector2(decor.collision[0],decor.collision[1]); cache.cliffs.append(Rect2(Vector2(decor.point[0],decor.point[1])-half,half*2))
+			elif decor.style=="cliff" and decor.tall: cache.cliffs.append(Rect2(decor.point[0]-.65,decor.point[1]-.65,1.3,1.3))
 		geometry[id]=cache
 	var cache=geometry[id]
 	for rect in cache.buildings:

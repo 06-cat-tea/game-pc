@@ -3,7 +3,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const defaultRoot = path.resolve(__dirname, '../artifacts/godot/web');
-const mime = {'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.wasm':'application/wasm','.pck':'application/octet-stream','.png':'image/png','.svg':'image/svg+xml','.ico':'image/x-icon','.txt':'text/plain; charset=utf-8','.json':'application/json; charset=utf-8'};
+const mime = {'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.wasm':'application/wasm','.pck':'application/octet-stream','.webp':'image/webp','.png':'image/png','.svg':'image/svg+xml','.ico':'image/x-icon','.txt':'text/plain; charset=utf-8','.json':'application/json; charset=utf-8'};
 
 async function startServer({root=defaultRoot,port=0,host='127.0.0.1'}={}) {
   root = path.resolve(root);

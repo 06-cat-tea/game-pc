@@ -40,8 +40,10 @@ func build(kind: String, subject: String) -> bool:
 
 func shell(title: String) -> Control:
 	var root=game.overlay_root
-	UIkit.art(root,"res://assets/ui/orbit.svg",Vector2.ZERO,Vector2(1920,1080),true)
-	UIkit.card(root,Vector2(0,0),Vector2(1920,1080),Color(1,1,1,0.0),Color.TRANSPARENT)
+	var dark=title in ["角色详情","旅途记录","公会委托板","职业技艺"]
+	root.set_meta("starlit_dark",dark)
+	UIkit.art(root,"res://assets/starlit-town/menu-background.webp",Vector2.ZERO,Vector2(1920,1080),true)
+	UIkit.card(root,Vector2.ZERO,Vector2(1920,1080),Color(UIkit.NIGHT,.28) if dark else Color(UIkit.PAPER,.93),Color.TRANSPARENT)
 	UIkit.icon_button(root,"back","返回",Vector2(56,52),game.back_menu)
 	UIkit.text(root,title,Vector2(148,54),Vector2(630,50),36)
 	UIkit.text(root,"ASHEN FRONTIER  /  星陨纪事",Vector2(150,108),Vector2(700,30),17,UIkit.GOLD)
@@ -53,7 +55,7 @@ func shell(title: String) -> Control:
 	return UIkit.canvas(root,Vector2(64,178),Vector2(1792,804))
 
 func _tabs(parent: Node, kind: String, subject: String):
-	var x=0
+	var x=maxf(0,(1792-game.session.state.members.size()*214)/2.0)
 	for id in game.session.state.members:
 		var button=UIkit.action(parent,game.db.actors[id].display_name,Vector2(x,0),Vector2(202,66),func(): redraw(kind,id))
 		button.icon=load(game.db.art("portraits",id,"avatar")); button.expand_icon=true; button.add_theme_constant_override("icon_max_width",44); UIkit.selected(button,id==subject)
@@ -64,6 +66,7 @@ func _section(parent: Node, title: String, y: float, width: float):
 
 func _terminal():
 	var root=game.overlay_root
+	root.set_meta("starlit_dark",false)
 	UIkit.card(root,Vector2.ZERO,Vector2(1920,1080),Color(0.22,0.25,0.28,0.15),Color.TRANSPARENT)
 	var panel=UIkit.canvas(root,Vector2(1160,0),Vector2(760,1080))
 	UIkit.art(panel,"res://assets/ui/orbit.svg",Vector2.ZERO,Vector2(760,1080),true)
@@ -108,7 +111,7 @@ func _character(root: Control, id: String):
 	UIkit.text(root,"TP %d / 100" % member.get("tp",0) if awakened else "尚未觉醒",Vector2(0,655),Vector2(220,34),22)
 	var tp=UIkit.bar(root,member.get("tp",0),100); tp.position=Vector2(0,698); tp.size=Vector2(220,5); tp.add_theme_stylebox_override("fill",UIkit.meter(UIkit.GOLD))
 	UIkit.action(root,"觉醒档案" if awakened else "追踪觉醒故事",Vector2(0,728),Vector2(220,58),func(): game.open_menu("awakening",id)).tooltip_text=game.session.progression.status(id)
-	UIkit.art(root,game.db.art("portraits",id),Vector2(240,70),Vector2(870,730))
+	UIkit.art(root,game.db.art("portraits",id),Vector2(265,70),Vector2(830,730))
 	var detail=UIkit.canvas(root,Vector2(1180,110),Vector2(610,690))
 	UIkit.text(detail,GameContent.JOB_NAMES[member.job],Vector2.ZERO,Vector2(580,36),23,UIkit.GOLD)
 	UIkit.text(detail,game.db.actors[id].display_name,Vector2(0,48),Vector2(600,76),43)
@@ -200,6 +203,9 @@ func _inventory(root: Control, id: String):
 	var selection={}
 	for entry in entries:
 		var node=UIkit.button(grid,"",func(): ui_state.selection=entry.id; redraw("inventory",id)); node.custom_minimum_size=Vector2(156,166); node.tooltip_text=entry.name
+		node.set_meta("grid_tile",true)
+		node.add_theme_stylebox_override("normal",UIkit.button_style(Color("e3e6e9"),Color("d0d4d9"),8))
+		node.add_theme_stylebox_override("hover",UIkit.button_style(Color("f4eee2"),UIkit.GOLD,8))
 		UIkit.selected(node,entry.id==ui_state.selection)
 		var path=ItemIcons.path(game.db,entry.item)
 		var art=UIkit.art(node,path,Vector2(14,8),Vector2(128,102))
@@ -207,8 +213,11 @@ func _inventory(root: Control, id: String):
 		UIkit.text(node,entry.name,Vector2(9,111),Vector2(138,30),18,UIkit.INK if entry.id==ui_state.selection else UIkit.INK).horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
 		UIkit.text(node,"+%d" % entry.rank if entry.kind=="gear" else "×%d" % entry.rank,Vector2(12,139),Vector2(130,25),17,UIkit.INK if entry.id==ui_state.selection else UIkit.GOLD).horizontal_alignment=HORIZONTAL_ALIGNMENT_RIGHT
 		if entry.id==ui_state.selection: selection=entry
+	for index in maxi(0,15-entries.size()):
+		var empty=Panel.new(); empty.custom_minimum_size=Vector2(156,166); empty.mouse_filter=Control.MOUSE_FILTER_IGNORE
+		empty.add_theme_stylebox_override("panel",UIkit.style(Color("e6e7e7"),Color("d6d9dc"),8)); grid.add_child(empty)
 	ItemIcons.strip(root,game.db,{"gold":s.gold,"herb":s.materials.herb,"ore":s.materials.ore,"shard":s.materials.shard},Vector2(240,738),210)
-	var detail=UIkit.card(root,Vector2(1156,108),Vector2(636,680))
+	var detail=UIkit.card(root,Vector2(1156,108),Vector2(636,680),Color(UIkit.PAPER,.88),UIkit.LINE)
 	if selection.is_empty(): UIkit.text(detail,"这个分类还没有物品",Vector2(40,260),Vector2(556,100),30,UIkit.MUTED); return
 	var art=UIkit.art(detail,ItemIcons.path(game.db,selection.item),Vector2(205,24),Vector2(226,190))
 	if art.texture==null: art.texture=UIkit.icon("potion")
@@ -262,9 +271,12 @@ func _journal(_root: Control):
 func _map(root: Control):
 	var ui_state=state("map")
 	if not ui_state.has("region"): ui_state.region=game.world.scene_id if game.db.is_outdoor(game.world.scene_id) else "town"
+	if ui_state.category=="all": ui_state.category="world"
+	var world_button=UIkit.action(root,"六地总览",Vector2.ZERO,Vector2(160,44),func(): ui_state.category="world"; redraw("map")); UIkit.selected(world_button,ui_state.category=="world")
 	for i in GameContent.OUTDOORS.size():
 		var id=GameContent.OUTDOORS[i]
-		var button=UIkit.action(root,game.db.location_title(id),Vector2(i*189,0),Vector2(177,44),func(): ui_state.region=id; ui_state.category="region"; ui_state.selection=""; redraw("map")); button.add_theme_font_size_override("font_size",18); UIkit.selected(button,id==ui_state.region)
+		var button=UIkit.action(root,game.db.location_title(id),Vector2(176+i*162,0),Vector2(152,44),func(): ui_state.region=id; ui_state.category="region"; ui_state.selection=""; redraw("map")); button.add_theme_font_size_override("font_size",18); UIkit.selected(button,id==ui_state.region)
+	if ui_state.category=="world": _world_map(root,ui_state); return
 	if game.db.regions.has(ui_state.region) and not (ui_state.category=="current" and game.db.raw.scenes.has(game.world.scene_id)): _region_map(root,ui_state); return
 	if ui_state.selection=="": ui_state.selection="clocktower"
 	var current=ui_state.category=="current" and game.db.raw.scenes.has(game.world.scene_id)
@@ -303,6 +315,23 @@ func _map(root: Control):
 	for i in GameContent.ROUTES.size():
 		var route_id=GameContent.ROUTES[i]
 		UIkit.action(root,game.db.raw.scenes[route_id].title,Vector2(24+i*367,718),Vector2(343,52),func(): game.seek("town","entrance",game.session.tasks.entrance_for(route_id).id),false,game.session.state.battle!=null)
+
+func _world_map(root: Control, ui_state: Dictionary):
+	var picture=UIkit.art(root,"res://assets/starlit-town/world-map.webp",Vector2(0,68),Vector2(1150,704),true)
+	picture.stretch_mode=TextureRect.STRETCH_SCALE
+	var positions={"town":Vector2(.48,.58),"wood":Vector2(.26,.32),"pass":Vector2(.73,.32),"fen":Vector2(.25,.73),"coast":Vector2(.75,.72),"city":Vector2(.50,.16)}
+	for id in GameContent.OUTDOORS:
+		var point=Vector2(0,68)+positions[id]*Vector2(1150,704)
+		var button=UIkit.action(root,game.db.location_title(id),point-Vector2(85,25),Vector2(170,50),func(): ui_state.region=id; redraw("map"),true)
+		button.add_theme_font_size_override("font_size",20); UIkit.selected(button,id==ui_state.region)
+	var detail=UIkit.card(root,Vector2(1186,0),Vector2(606,788),Color(UIkit.PAPER,.9),UIkit.LINE)
+	var id=ui_state.region
+	UIkit.art(detail,"res://assets/loading/"+id+".webp",Vector2(30,32),Vector2(546,290),true)
+	UIkit.text(detail,game.db.location_title(id),Vector2(32,350),Vector2(540,60),38)
+	UIkit.text(detail,"当前所在地" if game.db.place_of(game.world.scene_id)==id else "六地归途 · 地区总览",Vector2(32,424),Vector2(540,40),23,UIkit.GOLD)
+	UIkit.text(detail,"钟塔的第十三声，等待一个回答。" if id=="town" else game.db.regions[id].get("description","沿路探索地标，记录归途与见闻。"),Vector2(32,480),Vector2(540,124),24)
+	UIkit.action(detail,"查看地区地图",Vector2(32,626),Vector2(542,60),func(): ui_state.category="region"; ui_state.selection=""; redraw("map"),true)
+	UIkit.action(detail,"前往本区域" if game.world.scene_id!=id else "当前已抵达",Vector2(32,706),Vector2(542,58),func(): await game.travel_to(id),false,game.world.scene_id==id or game.session.state.battle!=null or game.session.state.training)
 
 func _region_map(root: Control, ui_state: Dictionary):
 	var id=ui_state.region; var region=game.db.regions[id]; var selected={}

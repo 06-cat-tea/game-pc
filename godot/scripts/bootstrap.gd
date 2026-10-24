@@ -8,9 +8,12 @@ func _ready():
 	var error=ResourceLoader.load_threaded_request(path)
 	if error!=OK: loading.fail("无法准备主场景。"); return
 	while ResourceLoader.load_threaded_get_status(path)==ResourceLoader.THREAD_LOAD_IN_PROGRESS:
+		var amount=[]; ResourceLoader.load_threaded_get_status(path,amount)
+		if not amount.is_empty(): loading.set_progress(float(amount[0]))
 		await get_tree().process_frame
 	if ResourceLoader.load_threaded_get_status(path)!=ResourceLoader.THREAD_LOAD_LOADED:
 		loading.fail("主场景资源读取失败。"); return
+	loading.set_progress(-1)
 	loading.stage("正在初始化旅程与界面")
 	await get_tree().process_frame
 	get_tree().change_scene_to_packed(ResourceLoader.load_threaded_get(path))

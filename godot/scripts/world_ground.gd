@@ -20,5 +20,12 @@ func setup(_content: GameContent, id: String):
 			WorldPresentation.terrain_cells=layer.tile_map_data
 		else: layer.tile_map_data=WorldPresentation.terrain_cells
 		layer.update_internals()
+	# A continuous meadow beyond the navigable grid prevents black edges at the town boundary.
+	var backdrop=Polygon2D.new(); backdrop.z_index=-10
+	backdrop.polygon=PackedVector2Array([Vector2(-8000,-5000),Vector2(8000,-5000),Vector2(8000,8000),Vector2(-8000,8000)])
+	backdrop.texture=WorldPresentation.texture("res://assets/starlit-town/grass.png")
+	backdrop.texture_repeat=CanvasItem.TEXTURE_REPEAT_ENABLED
+	backdrop.uv=PackedVector2Array([Vector2(0,0),Vector2(16000,0),Vector2(16000,13000),Vector2(0,13000)])
+	add_child(backdrop)
 
 func iso(point: Vector2) -> Vector2: return WorldPresentation.iso(point,"town")
