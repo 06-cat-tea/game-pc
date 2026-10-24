@@ -24,9 +24,9 @@ const checks = [], screenshots = [], errors = [], warnings = [], responses = [];
 const reportPath = path.join(directory, 'report.json');
 let context, page, server, url, browserVersion, stage = 'launch';
 const wait = ms => page.waitForTimeout(ms);
-// Firefox's first software-WebGL scene upload may finish several frames after
-// the engine promise, especially when multiple browser channels run together.
-const sceneWait = ms => wait(browserName === 'firefox' ? Math.max(ms, 4500) : ms);
+// The shell's ready promise precedes Godot scene/resource upload. Allow all
+// software-WebGL channels to finish that upload before sending menu gestures.
+const sceneWait = ms => wait(Math.max(ms, 4500));
 function check(ok, label, details) {
   assert(ok, label);
   checks.push({label, ...(details ? {details} : {})});
@@ -64,7 +64,7 @@ async function launch() {
   context.on('page', attach);
   page = context.pages()[0] || await context.newPage();
   attach(page);
-  page.setDefaultTimeout(15000);
+  page.setDefaultTimeout(90000);
   await boot();
 }
 async function boot() {
@@ -75,13 +75,15 @@ async function boot() {
   await page.locator('#canvas').focus();
 }
 async function click(x, y) {
-  const box = await page.locator('#canvas').boundingBox();
+  // Keep the real canvas bounds and wait for the browser main thread before
+  // dispatching trusted pointer gestures (file dialogs depend on that gesture).
+  const box = await page.locator('#canvas').boundingBox({timeout: 90000});
   assert(box && box.width > 0 && box.height > 0, 'Game canvas is visible');
   await page.mouse.click(box.x + x * box.width / 1920, box.y + y * box.height / 1080);
   await wait(450);
 }
 async function move(x, y) {
-  const box = await page.locator('#canvas').boundingBox();
+  const box = await page.locator('#canvas').boundingBox({timeout: 90000});
   await page.mouse.move(box.x + x * box.width / 1920, box.y + y * box.height / 1080, {steps: 4});
   await wait(100);
 }
@@ -129,6 +131,41 @@ async function saveJSON(name) {
 async function transfer(status) {
   await page.waitForFunction(expected => window.AshenFrontierSaveFiles?.lastResult?.operation === 'import' && window.AshenFrontierSaveFiles.lastResult.status === expected, status);
   return page.evaluate(() => window.AshenFrontierSaveFiles.lastResult);
+}
+async function waitForPersistedSave(expected) {
+  // Observe the real IDBFS transaction; a fixed sleep can race software WebGL
+  // and reload the previous autosave. This does not write or flush test data.
+  await page.waitForFunction(async expected => {
+    const databases = await indexedDB.databases();
+    for (const {name} of databases) {
+      if (!name?.startsWith('/userfs')) continue;
+      const saved = await new Promise(resolve => {
+        const request = indexedDB.open(name);
+        request.onerror = () => resolve(null);
+        request.onsuccess = () => {
+          const db = request.result;
+          if (!db.objectStoreNames.contains('FILE_DATA')) { db.close(); resolve(null); return; }
+          const transaction = db.transaction('FILE_DATA', 'readonly');
+          let contents = null;
+          const cursor = transaction.objectStore('FILE_DATA').openCursor();
+          cursor.onsuccess = () => {
+            const entry = cursor.result;
+            if (!entry) return;
+            if (String(entry.key).endsWith('/saves/autosave.json')) contents = entry.value.contents;
+            entry.continue();
+          };
+          transaction.oncomplete = () => { db.close(); resolve(contents); };
+          transaction.onerror = () => { db.close(); resolve(null); };
+        };
+      });
+      if (!saved) continue;
+      const canonical = value => Array.isArray(value) ? value.map(canonical) : value && typeof value === 'object' ? Object.fromEntries(Object.keys(value).sort().map(key => [key, canonical(value[key])])) : value;
+      try {
+        if (JSON.stringify(canonical(JSON.parse(new TextDecoder().decode(saved)))) === JSON.stringify(canonical(expected))) return true;
+      } catch (_) { /* A previous transaction may still be committing. */ }
+    }
+    return false;
+  }, expected, {timeout: 90000, polling: 500});
 }
 async function importJSON(input, expected) {
   const choosing = page.waitForEvent('filechooser');
@@ -233,7 +270,7 @@ async function main() {
   assert.deepEqual((await saveJSON('roundtrip')).state, initial.state);
   check(true, '下载的 JSON 可通过上传恢复完整原生状态');
   await importJSON(moved.filename, 'complete');
-  await wait(2700); // Let Godot's user:// filesystem synchronization reach IndexedDB.
+  await waitForPersistedSave(moved.state);
 
   stage = 'reload-persistence';
   await page.reload({waitUntil: 'domcontentloaded'});
