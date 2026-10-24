@@ -24,9 +24,9 @@ const checks = [], screenshots = [], errors = [], warnings = [], responses = [];
 const reportPath = path.join(directory, 'report.json');
 let context, page, server, url, browserVersion, stage = 'launch';
 const wait = ms => page.waitForTimeout(ms);
-// Firefox's first software-WebGL scene upload may finish several frames after
-// the engine promise, especially when multiple browser channels run together.
-const sceneWait = ms => wait(browserName === 'firefox' ? Math.max(ms, 4500) : ms);
+// The shell's ready promise precedes Godot scene/resource upload. Allow all
+// software-WebGL channels to finish that upload before sending menu gestures.
+const sceneWait = ms => wait(Math.max(ms, 4500));
 function check(ok, label, details) {
   assert(ok, label);
   checks.push({label, ...(details ? {details} : {})});
@@ -75,15 +75,15 @@ async function boot() {
   await page.locator('#canvas').focus();
 }
 async function click(x, y) {
-  // The shell pins #canvas to the complete viewport. Avoid querying layout
-  // on the browser main thread while software WebGL is presenting a frame.
-  const box = {x: 0, y: 0, ...page.viewportSize()};
-  assert(box.width > 0 && box.height > 0, 'Game viewport is visible');
+  // Keep the real canvas bounds and wait for the browser main thread before
+  // dispatching trusted pointer gestures (file dialogs depend on that gesture).
+  const box = await page.locator('#canvas').boundingBox({timeout: 90000});
+  assert(box && box.width > 0 && box.height > 0, 'Game canvas is visible');
   await page.mouse.click(box.x + x * box.width / 1920, box.y + y * box.height / 1080);
   await wait(450);
 }
 async function move(x, y) {
-  const box = {x: 0, y: 0, ...page.viewportSize()};
+  const box = await page.locator('#canvas').boundingBox({timeout: 90000});
   await page.mouse.move(box.x + x * box.width / 1920, box.y + y * box.height / 1080, {steps: 4});
   await wait(100);
 }
