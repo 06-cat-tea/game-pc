@@ -74,6 +74,7 @@ func run():
 	await load("res://tests/refined_ui_acceptance.gd").new().run(self,check)
 	await load("res://tests/regions_acceptance.gd").new().run(self,check)
 	await load("res://tests/royal_daylight_acceptance.gd").new().run(self,check)
+	await load("res://tests/regional_redraw_acceptance.gd").new().run(self,check)
 	var content_acceptance=load("res://tests/story_acceptance.gd").new()
 	await content_acceptance.run(self,check)
 	check(content_acceptance.completed,"完整剧情验收执行到末尾，不能因脚本错误跳过")

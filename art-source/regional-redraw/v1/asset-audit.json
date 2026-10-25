@@ -1,0 +1,103 @@
+{
+  "generator": "image_gen.imagegen",
+  "images": [
+    {
+      "file": "approved-reference.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 4193383,
+      "sha256": "2a862239f551ce7cdbd6d213cb58ed27cbf48922bc04618d4b6079e354ac7f27"
+    },
+    {
+      "file": "coast-buildings.png",
+      "width": 1535,
+      "height": 1024,
+      "bytes": 1870016,
+      "sha256": "86603ca8774a2dc37e3d2f9eb4cb97274267efd7011fab98d5e43741c5a438ae"
+    },
+    {
+      "file": "coast-props.png",
+      "width": 1368,
+      "height": 1150,
+      "bytes": 2501647,
+      "sha256": "cb6265cc1d476c135688fb000abe0f898a995d10922a8e6cbb70b335d3fd2a32"
+    },
+    {
+      "file": "dock-material.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 3660572,
+      "sha256": "a51d9a524a102e25362e06ab1b7610f1511957837e39614c508986cae1be2043"
+    },
+    {
+      "file": "fen-buildings.png",
+      "width": 1365,
+      "height": 1152,
+      "bytes": 2753785,
+      "sha256": "9169a6891a2a26ba455827e9f6f8eb2024b8be1423be90a2090dbe14e173916e"
+    },
+    {
+      "file": "fen-props.png",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 2107174,
+      "sha256": "c72698618bfde9ae8bcfc322bc02a9983e4063dfcefbef3fc8b603c82d49b5a6"
+    },
+    {
+      "file": "ground.png",
+      "width": 1671,
+      "height": 941,
+      "bytes": 4078528,
+      "sha256": "34057d43ae90e87c954d8fef1756d50b07eff61a0996f6c6a0ec997f6e05354f"
+    },
+    {
+      "file": "harbor-facilities.png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2904313,
+      "sha256": "86ef72184a5bc51d4bf8d2e7b8deaec61a979f4206ccbd94d5237cf5e654d262"
+    },
+    {
+      "file": "landmarks.png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 3004762,
+      "sha256": "8ea9191e3a1537edaac5c909e4e2335ac31730b5300778e9f23cbfab410483c3"
+    },
+    {
+      "file": "pass-buildings.png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2699961,
+      "sha256": "330f3c3e12727dd46c23776b89ff5672f59c01d589354365b729c9dcd113923a"
+    },
+    {
+      "file": "pass-props.png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2557056,
+      "sha256": "31974d1bbf35ca1791b242c1837318dd9863456b3d570220d3879b490ac61f13"
+    },
+    {
+      "file": "paths.png",
+      "width": 1374,
+      "height": 1145,
+      "bytes": 4211392,
+      "sha256": "b59c9918487f39d90700592e09e636f63c0b09e5139459f14410eba6ebe8cb61"
+    },
+    {
+      "file": "wood-buildings.png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2687539,
+      "sha256": "f421df84c7974c6b20d7e1150e54ee523277910077173108b05272f9dab2585d"
+    },
+    {
+      "file": "wood-props.png",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 2597308,
+      "sha256": "358e1cb75c51ae52a000ee0beb0dab465db7fd7066fe14495cbefb3a4b439ab7"
+    }
+  ]
+}

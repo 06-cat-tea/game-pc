@@ -6,6 +6,7 @@ uniform vec2 map_cells=vec2(64.0,48.0);
 uniform vec4 water_color : source_color=vec4(.3,.5,.6,1.0);
 uniform int layer_kind=0;
 uniform int biome=0;
+uniform bool painted_region=false;
 uniform float scene_clock=0.0;
 uniform float night_strength=0.0;
 uniform vec2 lamp_positions[8];
@@ -15,13 +16,19 @@ void fragment(){
 	vec2 grid=vec2(world.x/96.0+world.y/48.0,world.y/48.0-world.x/96.0);
 	vec3 mask=texture(terrain_mask,grid/map_cells).rgb;
 	float variation=.94+.045*sin(grid.x*.37+grid.y*.22)+.03*cos(grid.y*.46-grid.x*.19);
-	vec3 base=texture(ground_art,grid/5.0).rgb*variation;
+	vec2 ground_uv=grid/(painted_region?8.0:5.0);
+	// Mirrored sampling joins painted material edges without a hard tile seam.
+	if(painted_region)ground_uv=abs(fract(ground_uv*.5)*2.0-1.0);
+	vec3 base=texture(ground_art,ground_uv).rgb*variation;
 	vec3 color=mix(base,vec3(.43,.40,.35),mask.b*.45);float alpha=1.0;
 	if(layer_kind==1){
-		color=texture(road_art,grid/4.0).rgb;
-		if(biome==0)color=mix(color,base,.34);
-		if(biome==1)color=mix(color,vec3(.52,.40,.28),.40);
-		if(biome==2)color=mix(color,vec3(.43,.46,.52),.26);
+		vec2 road_uv=grid/4.0;if(painted_region)road_uv=abs(fract(road_uv*.5)*2.0-1.0);
+		color=texture(road_art,road_uv).rgb;
+		if(!painted_region){
+		 if(biome==0)color=mix(color,base,.34);
+		 if(biome==1)color=mix(color,vec3(.52,.40,.28),.40);
+		 if(biome==2)color=mix(color,vec3(.43,.46,.52),.26);
+		}
 		alpha=smoothstep(.10,.88,mask.r)*.94;
 	}
 	if(layer_kind==2){

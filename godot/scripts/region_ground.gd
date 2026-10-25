@@ -12,6 +12,7 @@ func setup(id: String):
 		layer.collision_enabled=false; layer.navigation_enabled=false; layer.occlusion_enabled=false
 		var material_value=ShaderMaterial.new(); material_value.shader=load("res://shaders/region_ground.gdshader")
 		material_value.set_shader_parameter("ground_art",WorldPresentation.texture(region.ground)); material_value.set_shader_parameter("road_art",WorldPresentation.texture(region.road)); material_value.set_shader_parameter("terrain_mask",WorldPresentation.texture(region.mask)); material_value.set_shader_parameter("map_cells",Vector2(region.columns,region.rows)); material_value.set_shader_parameter("layer_kind",index)
+		material_value.set_shader_parameter("painted_region",region.get("artVersion","")=="regional-redraw-v1")
 		material_value.set_shader_parameter("water_color",Color(region.palette.water)); material_value.set_shader_parameter("biome",["wood","pass","fen","coast","city"].find(id)); layer.material=material_value
 		add_child(layer); layers.append(layer); materials.append(material_value)
 		var key=id+"-"+str(index)

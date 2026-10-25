@@ -25,12 +25,15 @@ func setup(view: WorldView, depth: Node2D):
 	for b in region.buildings:
 		var pos=world.iso(Vector2(b.x+b.w/2,b.y+b.d/2)); var width=float(b.get("display_width",float(b.w+b.d)*58))
 		var shadow=world._shadow(depth,pos,width*.88); var sprite=world._sprite(depth,b.art,pos,width,b.anchor)
+		if region.get("artVersion","")=="regional-redraw-v1": sprite.texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
 		world._caption(sprite,b.name); world.targets.append({"kind":"building","id":b.id,"label":b.name,"point":Vector2(b.entry[0],b.entry[1]),"node":sprite,"width":width})
 		visuals.append({"node":sprite,"shadow":shadow,"fade":true}); world.lighting.add_emission(sprite)
 	for decor in region.decor:
 		var pos=world.iso(Vector2(decor.point[0],decor.point[1])); var shadow=world._shadow(depth,pos,decor.width*.68)
 		var sprite=world._sprite(depth,decor.asset,pos,decor.width,decor.anchor)
+		if region.get("artVersion","")=="regional-redraw-v1": sprite.texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
 		visuals.append({"node":sprite,"shadow":shadow,"fade":decor.tall and decor.style!="lamp"})
+		if decor.style=="structure": world.lighting.add_emission(sprite)
 		if decor.style=="banner":
 			var flag_material=ShaderMaterial.new(); flag_material.shader=load("res://shaders/region_flag.gdshader"); sprite.material=flag_material; flags.append(flag_material)
 		if decor.style=="lamp": world.lighting.add_source(Vector2(decor.point[0],decor.point[1]),Color("ffd28a"),250,1.0,sprite.texture.get_height()*sprite.scale.y*.84)
@@ -43,6 +46,10 @@ func setup(view: WorldView, depth: Node2D):
 	for id in world.db.raw.npcs:
 		var npc=world.db.raw.npcs[id]
 		if npc.get("place","")==region.id and npc.has("position"): world._add_npc(depth,id,Vector2(npc.position.x,npc.position.y))
+	for data in region.get("ambient_residents",[]):
+		var p=Vector2(data.points[0][0],data.points[0][1]); var actor=world._sprite(depth,world.db.art("actors",data.actor),world.iso(p),65,[.5,.95])
+		var actor_shadow=world._shadow(depth,world.iso(p),38)
+		residents.append({"node":actor,"shadow":actor_shadow,"data":data,"point":p,"index":1})
 	particles=CPUParticles2D.new(); particles.amount=32 if region.id in ["wood","fen"] else 18; particles.lifetime=9; particles.preprocess=1; particles.emission_shape=CPUParticles2D.EMISSION_SHAPE_RECTANGLE; particles.emission_rect_extents=Vector2(920,580); particles.gravity=Vector2.ZERO; particles.direction=Vector2(-1,.4); particles.spread=22; particles.initial_velocity_min=7; particles.initial_velocity_max=19; particles.scale_amount_min=1; particles.scale_amount_max=2.8; particles.color=Color(region.palette.accent,.38); particles.texture=radial; particles.scale=Vector2.ONE*.018; particles.emission_rect_extents/=particles.scale.x; particles.z_index=3; add_child(particles)
 	particles.initial_velocity_min/=particles.scale.x; particles.initial_velocity_max/=particles.scale.x
 	_update_visibility()
@@ -68,7 +75,7 @@ func _process(delta: float):
 	ground.set_clock(0.0 if reduced else scene_clock)
 	for material_value in flags: material_value.set_shader_parameter("scene_clock",0.0 if reduced else scene_clock)
 	particles.position=world.camera.position
-	if not world.blocked:
+	if not stopped:
 		for resident in residents:
 			if not resident.node.visible: continue
 			var target=resident.data.points[resident.index]; var destination=Vector2(target[0],target[1]); var step=resident.point.move_toward(destination,delta*.65)
