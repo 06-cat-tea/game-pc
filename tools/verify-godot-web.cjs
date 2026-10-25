@@ -428,6 +428,29 @@ async function main() {
   check(cityNightSave.state.phase===3&&cityNightSave.state.location.scene==='city','昼夜表现不改变角色与任务进度');
   await importJSON({name:'restore-before-city-check.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(beforeTraining.state))},'complete');
 
+  stage = 'four-region-redraw';
+  const regionSpots={wood:[16,35],pass:[38,27],fen:[28,27],coast:[37,30.5]};
+  let previousRegion=null;
+  for(const [id,[x,y]] of Object.entries(regionSpots)){
+    // Exercise the production save import and renderer, without engine test hooks.
+    await openSaves();
+    const fixture=structuredClone(beforeTraining.state);
+    fixture.location={scene:id,x,y};fixture.phase=1;fixture.settings.reduce_motion=true;fixture.story.returns=[];
+    await importJSON({name:id+'-redraw.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(fixture))},'complete');
+    await sceneWait(4500);const rendered=await shot('region-redraw-'+id);
+    if(previousRegion)assert(await difference(previousRegion,rendered)>.12,'Distinct biome visuals: '+id);
+    previousRegion=rendered;
+    await openSaves();const saved=await saveJSON('region-redraw-'+id);
+    assert.equal(saved.state.location.scene,id);assert.deepEqual(saved.state.members,fixture.members);assert.deepEqual(saved.state.quests,fixture.quests);
+    check(true,'Web重绘区域可实际渲染且角色任务进度完整：'+id);
+    if(id==='coast'){
+      fixture.phase=3;
+      await importJSON({name:'harbor-night.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(fixture))},'complete');
+      await sceneWait(4500);const night=await shot('region-redraw-harbor-night');
+      check(await difference(rendered,night)>.25,'Web大型港区昼夜与独立设施正常渲染');
+    }else await closeMenu();
+  }
+
   stage = 'legacy-url';
   const legacy = new URL('frontier.html', url).href;
   await page.goto(legacy, {waitUntil: 'domcontentloaded', timeout: 60000});

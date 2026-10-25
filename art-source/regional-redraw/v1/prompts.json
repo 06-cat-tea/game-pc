@@ -1,0 +1,138 @@
+{
+  "generator": "image_gen.imagegen",
+  "reference": "art-source/regional-redraw/v1/approved-reference.png",
+  "specs": [
+    {
+      "id": "wood-buildings",
+      "names": [
+        "forest-hut",
+        "moss-shrine",
+        "moon-well",
+        "windmill-farm"
+      ],
+      "transparent": true,
+      "prompt": "Production-ready painted isometric fantasy RPG sprites matching the attached approved four-region concept. Match Morningstar Town craftsmanship: warm cream limestone, detailed weathered oak framing, individually painted blue slate or terracotta roof tiles, restrained greenery and fine material detail. Orthographic isometric 30 degree elevated view, front and right wall visible, identical camera and scale, neutral soft daylight from upper left. ONE SQUARE high-resolution transparent atlas in a strict 2 by 2 equal grid. Four entirely separate complete isolated objects, one centered in each cell, 14 percent empty transparent margin around every object and wide empty gutters. Keep every roof, blade, tree branch and base inside its own cell. Genuine alpha-zero background. No captions, letters, HUD, watermark, ground tile, floating island, perspective horizon, cast shadow, bloom or aura. Shadows and night lighting will be provided by the engine. No pre-lit bright windows. Do not include any neighboring buildings or large scenery behind a sprite. TOP LEFT: A cozy single woodland cottage with blue slate roof, cream stone base, oak timber framing, modest cream awning, herb planters, stacked logs and a clearly visible wooden entrance. No surrounding forest. TOP RIGHT: An ancient mossy stone shrine ruin, two broken tall arches around a small open court, carved lintel, subtle ivy and a clear walk-through front entrance. Compact recognizable silhouette, not an intact house. BOTTOM LEFT: A small circular limestone moon well with still pale blue water, low carved rim, two slender partial pillars, tiny trailing flowers. No tree, no huge arched building, no glow. BOTTOM RIGHT: A handsome working windmill with a slender cream stone tower, terracotta cap and FOUR intact wooden sails, compact attached timber millhouse, sacks and a low step at its visible entry. Wheat fields will be separate game objects."
+    },
+    {
+      "id": "pass-buildings",
+      "names": [
+        "waystation",
+        "grayforge",
+        "caravan-yard",
+        "ridge-barracks"
+      ],
+      "transparent": true,
+      "prompt": "Production-ready painted isometric fantasy RPG sprites matching the attached approved four-region concept. Match Morningstar Town craftsmanship: warm cream limestone, detailed weathered oak framing, individually painted blue slate or terracotta roof tiles, restrained greenery and fine material detail. Orthographic isometric 30 degree elevated view, front and right wall visible, identical camera and scale, neutral soft daylight from upper left. ONE SQUARE high-resolution transparent atlas in a strict 2 by 2 equal grid. Four entirely separate complete isolated objects, one centered in each cell, 14 percent empty transparent margin around every object and wide empty gutters. Keep every roof, blade, tree branch and base inside its own cell. Genuine alpha-zero background. No captions, letters, HUD, watermark, ground tile, floating island, perspective horizon, cast shadow, bloom or aura. Shadows and night lighting will be provided by the engine. No pre-lit bright windows. Do not include any neighboring buildings or large scenery behind a sprite. TOP LEFT: An ochre canyon caravan waystation, two-storey cream stone and oak, muted terracotta roof, shaded timber veranda, unlettered hanging sign and modest supply baskets, visible ground door. TOP RIGHT: A functional grey stone forge workshop, blue slate gable roof, substantial brick chimney, open dark forge arch, anvils and tool rack sheltered under an attached lean-to. Furnace unlit in this daylight asset. BOTTOM LEFT: A low practical mine caravan depot, heavy oak shed and small cream stone office, weathered terracotta roof, open loading bay, bundled supplies and spare wagon wheels, unique silhouette distinct from barracks. BOTTOM RIGHT: A compact ridge guard barracks with crenellated pale stone watch corner and low blue slate roof, disciplined timber gate, muted blue pennant without letters, a clear arched front door. Not a giant castle."
+    },
+    {
+      "id": "fen-buildings",
+      "names": [
+        "sunken-temple",
+        "royal-crypt",
+        "moon-shrine",
+        "cloud-observatory"
+      ],
+      "transparent": true,
+      "prompt": "Production-ready painted isometric fantasy RPG sprites matching the attached approved four-region concept. Match Morningstar Town craftsmanship: warm cream limestone, detailed weathered oak framing, individually painted blue slate or terracotta roof tiles, restrained greenery and fine material detail. Orthographic isometric 30 degree elevated view, front and right wall visible, identical camera and scale, neutral soft daylight from upper left. ONE SQUARE high-resolution transparent atlas in a strict 2 by 2 equal grid. Four entirely separate complete isolated objects, one centered in each cell, 14 percent empty transparent margin around every object and wide empty gutters. Keep every roof, blade, tree branch and base inside its own cell. Genuine alpha-zero background. No captions, letters, HUD, watermark, ground tile, floating island, perspective horizon, cast shadow, bloom or aura. Shadows and night lighting will be provided by the engine. No pre-lit bright windows. Do not include any neighboring buildings or large scenery behind a sprite. TOP LEFT: A partly ruined wetland temple, pale weathered limestone gothic arches, one intact entry portico, broken roof, moss and subtle violet flowers. Front stone steps clearly visible. No water plane around it. TOP RIGHT: An ancient royal crypt entrance, low solemn carved limestone mausoleum with squat dark blue roof, worn statues integrated at the sides, moss and a clearly visible recessed double door. No cemetery background. BOTTOM LEFT: A small circular purification altar with a shallow blue water basin, four slender weathered columns, pale limestone dais and restrained carved star emblem. No magical light or aura. BOTTOM RIGHT: An elegant compact observatory, cream stone cylindrical tower with a modest brass-and-blue domed telescope roof, wraparound stone stair and visible ground door, weathered by wetland climate. It rests on the ground; no floating platform or island."
+    },
+    {
+      "id": "coast-buildings",
+      "names": [
+        "lighthouse",
+        "fisher-hut",
+        "wreck-shrine",
+        "tide-harbor"
+      ],
+      "transparent": true,
+      "prompt": "Production-ready painted isometric fantasy RPG sprites matching the attached approved four-region concept. Match Morningstar Town craftsmanship: warm cream limestone, detailed weathered oak framing, individually painted blue slate or terracotta roof tiles, restrained greenery and fine material detail. Orthographic isometric 30 degree elevated view, front and right wall visible, identical camera and scale, neutral soft daylight from upper left. ONE SQUARE high-resolution transparent atlas in a strict 2 by 2 equal grid. Four entirely separate complete isolated objects, one centered in each cell, 14 percent empty transparent margin around every object and wide empty gutters. Keep every roof, blade, tree branch and base inside its own cell. Genuine alpha-zero background. No captions, letters, HUD, watermark, ground tile, floating island, perspective horizon, cast shadow, bloom or aura. Shadows and night lighting will be provided by the engine. No pre-lit bright windows. Do not include any neighboring buildings or large scenery behind a sprite. TOP LEFT: A graceful pale limestone cylindrical coastal lighthouse with brass glass lantern room, dark blue small cap, one low terracotta-roof attached keeper room and visible entrance. Entire lighthouse must be intact, no cliff pedestal. TOP RIGHT: A weathered oak-and-cream-stone fisher cottage with blue slate roof, small cream awning, hanging ropes, modest fish baskets and visible doorway. No surrounding pier. BOTTOM LEFT: A small maritime memorial shrine assembled from old ship ribs and carved pale stone, a short mast with a weathered blue pennant and a low offering basin. Grounded compact silhouette, no full ship. BOTTOM RIGHT: One modest standalone harbor administration office, two-storey cream limestone and oak with a blue slate roof, arched doorway and a small blue pennant. This is ONLY the office within a much larger multi-building harbor district. Do not attach warehouses, docks or other buildings to this office."
+    },
+    {
+      "id": "harbor-facilities",
+      "names": [
+        "harbor-warehouse",
+        "harbor-fishmarket",
+        "harbor-boathouse",
+        "harbor-crane"
+      ],
+      "transparent": true,
+      "prompt": "Production-ready painted isometric fantasy RPG sprites matching the attached approved four-region concept. Match Morningstar Town craftsmanship: warm cream limestone, detailed weathered oak framing, individually painted blue slate or terracotta roof tiles, restrained greenery and fine material detail. Orthographic isometric 30 degree elevated view, front and right wall visible, identical camera and scale, neutral soft daylight from upper left. ONE SQUARE high-resolution transparent atlas in a strict 2 by 2 equal grid. Four entirely separate complete isolated objects, one centered in each cell, 14 percent empty transparent margin around every object and wide empty gutters. Keep every roof, blade, tree branch and base inside its own cell. Genuine alpha-zero background. No captions, letters, HUD, watermark, ground tile, floating island, perspective horizon, cast shadow, bloom or aura. Shadows and night lighting will be provided by the engine. No pre-lit bright windows. Do not include any neighboring buildings or large scenery behind a sprite. TOP LEFT: One substantial independent harbor warehouse, elongated weathered oak and cream limestone structure, low blue slate gable roof, large cargo doors and an upper loading hatch. Modest sacks and crates beside its own doors. No other buildings, water or docks. TOP RIGHT: One independent open-sided covered fish auction market hall, low cream canvas and blue slate roof on oak posts, stone base, a few fish baskets and sorting tables under the canopy. No other buildings or pavement extending beyond its footprint. BOTTOM LEFT: One independent coastal shipwright workshop and covered boathouse, weathered oak framing, terracotta roof, large open arch with an unfinished small boat hull inside, tools and spare timber. No dock or surrounding water. BOTTOM RIGHT: One tall functional medieval timber harbor loading crane with a wooden turning jib, rope pulley and a suspended small cargo net. Stable heavy oak base, entire crane complete and self-contained. No dock or boat beneath it."
+    },
+    {
+      "id": "landmarks",
+      "names": [
+        "deep-mine",
+        "ember-fortress",
+        "violet-rift",
+        "fishing-boat"
+      ],
+      "transparent": true,
+      "prompt": "Production-ready painted isometric fantasy RPG sprites matching the attached approved four-region concept. Match Morningstar Town craftsmanship: warm cream limestone, detailed weathered oak framing, individually painted blue slate or terracotta roof tiles, restrained greenery and fine material detail. Orthographic isometric 30 degree elevated view, front and right wall visible, identical camera and scale, neutral soft daylight from upper left. ONE SQUARE high-resolution transparent atlas in a strict 2 by 2 equal grid. Four entirely separate complete isolated objects, one centered in each cell, 14 percent empty transparent margin around every object and wide empty gutters. Keep every roof, blade, tree branch and base inside its own cell. Genuine alpha-zero background. No captions, letters, HUD, watermark, ground tile, floating island, perspective horizon, cast shadow, bloom or aura. Shadows and night lighting will be provided by the engine. No pre-lit bright windows. Do not include any neighboring buildings or large scenery behind a sprite. TOP LEFT: A believable ochre canyon mine portal embedded in a self-contained irregular rock outcrop, heavy oak supports, dark tunnel opening, a short narrow-gauge rail stub and one ore basket. No large ground rectangle. TOP RIGHT: A compact ruined ochre-limestone frontier fortress with broken crenellated towers, a visible stone gate and partial ruined walls, muted blue pennants, ivy sparingly. No lava, demons, fire or floating island. BOTTOM LEFT: A wetland amethyst dungeon entrance: low weathered limestone arch built around a rocky fissure with a few violet crystals at the sides, dark accessible doorway, moss and subtle pale reeds. No glow or giant crystal explosion. BOTTOM RIGHT: One modest complete medieval fishing sailboat with oak hull, furled cream sail, coiled ropes and a small blue pennant. Isometric same camera, empty transparent background, no water, no dock, no shadow. Waterline near lower hull, no detached pieces."
+    },
+    {
+      "id": "wood-props",
+      "names": [
+        "wood-oak",
+        "wood-birch",
+        "wood-garden",
+        "wheat-patch"
+      ],
+      "transparent": true,
+      "prompt": "Production-ready painted isometric fantasy RPG sprites matching the attached approved four-region concept. Match Morningstar Town craftsmanship: warm cream limestone, detailed weathered oak framing, individually painted blue slate or terracotta roof tiles, restrained greenery and fine material detail. Orthographic isometric 30 degree elevated view, front and right wall visible, identical camera and scale, neutral soft daylight from upper left. ONE SQUARE high-resolution transparent atlas in a strict 2 by 2 equal grid. Four entirely separate complete isolated objects, one centered in each cell, 14 percent empty transparent margin around every object and wide empty gutters. Keep every roof, blade, tree branch and base inside its own cell. Genuine alpha-zero background. No captions, letters, HUD, watermark, ground tile, floating island, perspective horizon, cast shadow, bloom or aura. Shadows and night lighting will be provided by the engine. No pre-lit bright windows. Do not include any neighboring buildings or large scenery behind a sprite. TOP LEFT: One full mature lush green oak tree with detailed branching canopy, visible trunk and roots, natural asymmetric silhouette. TOP RIGHT: One full slender silver-barked birch tree with delicate green canopy and visible trunk, distinct from the oak. BOTTOM LEFT: One low woodland garden corner: short weathered oak fence, ferns, white and pink wildflowers and a few small cream rocks. Low and compact, no tall tree. BOTTOM RIGHT: One dense small patch of ripe golden wheat with a few bent stalks and a little exposed earth at the roots. Irregular natural edges, no fence and no square platform."
+    },
+    {
+      "id": "pass-props",
+      "names": [
+        "canyon-cliff",
+        "ore-supplies",
+        "forge-bench",
+        "mine-cart"
+      ],
+      "transparent": true,
+      "prompt": "Production-ready painted isometric fantasy RPG sprites matching the attached approved four-region concept. Match Morningstar Town craftsmanship: warm cream limestone, detailed weathered oak framing, individually painted blue slate or terracotta roof tiles, restrained greenery and fine material detail. Orthographic isometric 30 degree elevated view, front and right wall visible, identical camera and scale, neutral soft daylight from upper left. ONE SQUARE high-resolution transparent atlas in a strict 2 by 2 equal grid. Four entirely separate complete isolated objects, one centered in each cell, 14 percent empty transparent margin around every object and wide empty gutters. Keep every roof, blade, tree branch and base inside its own cell. Genuine alpha-zero background. No captions, letters, HUD, watermark, ground tile, floating island, perspective horizon, cast shadow, bloom or aura. Shadows and night lighting will be provided by the engine. No pre-lit bright windows. Do not include any neighboring buildings or large scenery behind a sprite. TOP LEFT: One irregular layered ochre sandstone cliff outcrop, angular but naturally weathered, a few cracks and sparse hardy grass, no rectangular terrain tile. TOP RIGHT: One compact functional mining supply group: two ore crates, one barrel, sacks and a coil of rope, grounded single cluster. BOTTOM LEFT: One sheltered blacksmith workbench with a small anvil, tongs, hammer, wood supports and a few tools; open structure, no roofed house. BOTTOM RIGHT: One small iron ore cart filled with dull grey ore on a SHORT intact pair of rails and sleepers. Compact standalone prop, no huge track or landscape."
+    },
+    {
+      "id": "fen-props",
+      "names": [
+        "wetland-willow",
+        "wetland-reeds",
+        "ruin-wall",
+        "marsh-rock"
+      ],
+      "transparent": true,
+      "prompt": "Production-ready painted isometric fantasy RPG sprites matching the attached approved four-region concept. Match Morningstar Town craftsmanship: warm cream limestone, detailed weathered oak framing, individually painted blue slate or terracotta roof tiles, restrained greenery and fine material detail. Orthographic isometric 30 degree elevated view, front and right wall visible, identical camera and scale, neutral soft daylight from upper left. ONE SQUARE high-resolution transparent atlas in a strict 2 by 2 equal grid. Four entirely separate complete isolated objects, one centered in each cell, 14 percent empty transparent margin around every object and wide empty gutters. Keep every roof, blade, tree branch and base inside its own cell. Genuine alpha-zero background. No captions, letters, HUD, watermark, ground tile, floating island, perspective horizon, cast shadow, bloom or aura. Shadows and night lighting will be provided by the engine. No pre-lit bright windows. Do not include any neighboring buildings or large scenery behind a sprite. TOP LEFT: One complete graceful wetland willow tree with slender bent trunk and layered drooping blue-green foliage, visible roots, no water plane. TOP RIGHT: One low natural wetland vegetation cluster: reeds, sedges, a few lily leaves and two small violet flowers. No water rectangle and no glow. BOTTOM LEFT: One low broken cream limestone wall and partial column, moss and trailing ivy, small ruined masonry cluster, no complete shrine. BOTTOM RIGHT: One small cluster of weathered wetland limestone rocks with moss and tiny ferns, irregular low silhouette, no glow."
+    },
+    {
+      "id": "coast-props",
+      "names": [
+        "fishing-rack",
+        "harbor-supplies",
+        "coastal-pine",
+        "coastal-rock"
+      ],
+      "transparent": true,
+      "prompt": "Production-ready painted isometric fantasy RPG sprites matching the attached approved four-region concept. Match Morningstar Town craftsmanship: warm cream limestone, detailed weathered oak framing, individually painted blue slate or terracotta roof tiles, restrained greenery and fine material detail. Orthographic isometric 30 degree elevated view, front and right wall visible, identical camera and scale, neutral soft daylight from upper left. ONE SQUARE high-resolution transparent atlas in a strict 2 by 2 equal grid. Four entirely separate complete isolated objects, one centered in each cell, 14 percent empty transparent margin around every object and wide empty gutters. Keep every roof, blade, tree branch and base inside its own cell. Genuine alpha-zero background. No captions, letters, HUD, watermark, ground tile, floating island, perspective horizon, cast shadow, bloom or aura. Shadows and night lighting will be provided by the engine. No pre-lit bright windows. Do not include any neighboring buildings or large scenery behind a sprite. TOP LEFT: One practical timber fishing rack with a loosely hung net, coiled rope and two woven baskets. Airy visible net mesh, entire rack intact. TOP RIGHT: One compact harbor supply group: two worn oak barrels, a wooden fish crate, bundled rope, a small folded cream sailcloth. No lettering. BOTTOM LEFT: One complete windswept coastal pine with bent trunk, dark sage green canopy and visible roots, elegant asymmetric silhouette. BOTTOM RIGHT: One irregular pale limestone sea rock outcrop with weathered cracks, sparse sea grass and two small white flowers, no water."
+    },
+    {
+      "id": "ground",
+      "names": [
+        "wood-ground",
+        "pass-ground",
+        "fen-ground",
+        "coast-ground"
+      ],
+      "transparent": false,
+      "prompt": "Game ground MATERIAL atlas, ONE SQUARE high resolution canvas precisely divided into 2x2 equal flush square swatches with NO gutter, border or labels. Each is an independently seamless repeatable top-down flat orthographic texture, even soft neutral daylight, no cast shadows, no perspective, no gradients, no objects or large plants. Match the fine painterly detailed materials of the attached approved fantasy game concept. Restrained varied natural color, not oversharpened. TOP LEFT: muted natural woodland meadow grass with small clover and fine fallen leaves. TOP RIGHT: warm ochre fine canyon soil with sparse gravel and subtle weathered rock grit. BOTTOM LEFT: cool blue-green damp marsh turf, moss and fine dark peat, no standing water. BOTTOM RIGHT: pale sandy coastal earth with sparse sage grass and small limestone chips"
+    },
+    {
+      "id": "paths",
+      "names": [
+        "wood-road",
+        "pass-road",
+        "fen-road",
+        "coast-road"
+      ],
+      "transparent": false,
+      "prompt": "Game ground MATERIAL atlas, ONE SQUARE high resolution canvas precisely divided into 2x2 equal flush square swatches with NO gutter, border or labels. Each is an independently seamless repeatable top-down flat orthographic texture, even soft neutral daylight, no cast shadows, no perspective, no gradients, no objects or large plants. Match the fine painterly detailed materials of the attached approved fantasy game concept. Restrained varied natural color, not oversharpened. TOP LEFT: warm compacted earth woodland footpath, tiny gravel and faint leaf fragments, no grass border. TOP RIGHT: ochre-grey compacted rocky canyon gravel path, natural varied pebbles, no railway. BOTTOM LEFT: weathered irregular pale grey limestone paving with faint cool moss in seams, subtle broken edges within the material. BOTTOM RIGHT: warm pale limestone coastal cobblestone paving, gently worn and salt-weathered, fine sandy seams"
+    }
+  ]
+}
